@@ -159,11 +159,11 @@ define([
 
             }).follow().done(function(){
 
-                return wait(500);
+                return wait(3000);
 
             }).follow().done(function(){
 
-                //promise.fire(); // 结束，进入下一章节
+                promise.fire(); // 结束，进入下一章节
 
             });
 

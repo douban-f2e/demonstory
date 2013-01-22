@@ -16,9 +16,10 @@ require([
     'mo/key',
     'mo/easing',
     'choreo',
+    'eventmaster',
     'movie/director',
     'mo/domready'
-], function(_, $, key, easingLib, choreo, director){
+], function(_, $, key, easingLib, choreo, event, director){
 
     choreo.config({
         easing: easingLib
@@ -34,13 +35,20 @@ require([
         script: '../chapter/2'
     }];
 
+    var observer = event();
+
     director.init({
+        observer: observer,
         story: story,
         stageStyle: '../dist/css/stage.css'
     });
 
     key().up(['space', 'right'], function(){
         director.next();
+    });
+
+    observer.bind('end', function(){
+        //director.next();
     });
 
 });

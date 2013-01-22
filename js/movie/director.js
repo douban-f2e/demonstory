@@ -11,11 +11,12 @@ define([
         
         CHN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
         DEFAULTS = {
+            observer: event(),
             story: [],
             stageStyle: ''
         },
 
-        observer = event();
+        observer;
 
     var director = {
 
@@ -24,6 +25,7 @@ define([
             this.currentChapter = 0;
             this.curtain = $('.curtain');
             this.stage = $('#stage');
+            observer = opt.observer;
         },
 
         next: function(){

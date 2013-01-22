@@ -36,7 +36,9 @@ html,body {
     color: #fff;
     text-align: center;
     margin: 0px 0 0 0;
-    @include transition(opacity 0.4s ease-in-out);
+    @include transition(
+      opacity 0.4s ease-in-out
+    );
     opacity:0;
 
     h6 {

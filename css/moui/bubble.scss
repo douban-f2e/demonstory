@@ -1,0 +1,110 @@
+@import "compass/css3";
+
+.moui-bubble {
+  display:inline;
+  opacity:0;
+  position:absolute;
+  @include transition(
+    opacity 0.4s ease-in-out
+  );
+
+  .content {
+    display:inline;
+    padding:10px;
+    border:3px solid #333;
+    border-radius:5px;
+    background:#ffc;
+    color:#333;
+    font-size:24px;
+  }
+
+  .arrow {
+    width:20px;
+    height:20px;
+    background:#ffc;
+    border:3px solid #333;
+    position:absolute;
+  }
+
+  &.active {
+    opacity:1;
+  }
+
+  &.top-arrow {
+    padding: 20px 0 0 0;
+    margin: 20px 0 0 0;
+
+    &.left-align {
+
+      .content {
+      
+      }
+
+    }
+
+    &.center-align {
+    
+    }
+
+    &.right-align {
+    
+    }
+
+  }
+
+  &.bottom-arrow {
+    padding: 0 0 20px 0;
+    margin: 0 0 20px 0;
+
+    &.left-align {
+    
+    }
+
+    &.center-align {
+    
+    }
+
+    &.right-align {
+    
+    }
+
+  }
+
+  &.left-arrow {
+    padding: 0 0 0 20px;
+    margin: 0 0 0 20px;
+
+    &.top-align {
+    
+    }
+
+    &.center-align {
+    
+    }
+
+    &.bottom-align {
+    
+    }
+
+  }
+
+  &.right-arrow {
+    padding: 0 20px 0 0;
+    margin: 0 20px 0 0;
+
+    &.top-align {
+    
+    }
+
+    &.center-align {
+    
+    }
+
+    &.bottom-align {
+    
+    }
+
+  }
+
+}
+
