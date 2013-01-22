@@ -3,11 +3,13 @@ define([
     'mo/lang',
     'dollar',
     'eventmaster',
-    'choreo'
-], function(_, $, event, choreo){
+    'choreo',
+    'moui/bubble'
+], function(_, $, event, choreo, bubble){
 
     function Demon(opt){
-        var body = $(opt.body || document.body),
+        var win = this.window = opt.window || window,
+            body = $(win.document.body),
             origin = this.origin = $(opt.origin);
         this.eyeLeft = $('<span class="eye eye-left"><span></span></span>');
         this.eyeRight = $('<span class="eye eye-right"><span></span></span>');
@@ -186,8 +188,19 @@ define([
             });
         },
 
-        speak: function(){
-        
+        speak: function(text, duration, clock){
+            var promise = new event.Promise(),
+                words = bubble({
+                    content: text, 
+                    target: this.me[0], 
+                    clock: clock,
+                    window: this.window
+                });
+            setTimeout(function(){
+                promise.fire();
+                words.destroy();
+            }, duration);
+            return promise;
         }
 
     };

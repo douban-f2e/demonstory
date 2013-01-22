@@ -2,8 +2,9 @@
 define([
     'mo/lang',
     'dollar',
+    'moui/stick',
     'eventmaster'
-], function(_, $, event){
+], function(_, $, stick, event){
 
     var util = {};
 

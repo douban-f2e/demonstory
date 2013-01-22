@@ -5,6 +5,7 @@ html,body {
   width:100%;
   height:100%;
   overflow:hidden;
+  font-family:Helvetica,sans-serif;
 }
 
 #stage {
@@ -32,12 +33,30 @@ html,body {
   }
 
   .announce {
-    font-size: 40px;
     color: #fff;
     text-align: center;
-    margin: 250px 0 0 0;
+    margin: 0px 0 0 0;
     @include transition(opacity 0.4s ease-in-out);
     opacity:0;
+
+    h6 {
+      font-size: 40px;
+      margin:230px auto 0 auto;
+    }
+
+    h2 {
+      font-size: 60px;
+      margin:50px auto;
+    }
+
+    .desc {
+      font-size:20px;
+      color:#ccc;
+      line-height:1.6;
+      margin:0 auto;
+      text-align:left;
+      width:600px;
+    }
 
     &.active {
       opacity:1;

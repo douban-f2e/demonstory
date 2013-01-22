@@ -3,20 +3,24 @@ define([
     'mo/lang',
     'dollar',
     'mo/network',
+    'mo/template',
     'eventmaster'
-], function(_, $, net, event){
+], function(_, $, net, tpl, event){
 
-    var _DEFAULTS = {
-        story: [],
-        stageStyle: ''
-    };
+    var TPL_ANNOUNCE = '<h6>第{%= order %}幕</h6><h2>{%= title %}</h2><div class="desc">{%= desc %}</div>',
+        
+        CHN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
+        DEFAULTS = {
+            story: [],
+            stageStyle: ''
+        },
 
-    var observer = event();
+        observer = event();
 
     var director = {
 
         init: function(opt){
-            _.config(this, opt, _DEFAULTS);
+            _.config(this, opt, DEFAULTS);
             this.currentChapter = 0;
             this.curtain = $('.curtain');
             this.stage = $('#stage');
@@ -46,9 +50,9 @@ define([
                         }, 200);
                     }).attr('src', chapter.stage);
 
-                    return observer.promise('ready');
+                });
 
-                }).follow().done(function(win){
+                observer.when('ready', 'announceHidden').done(function(win){
 
                     director.curtain.addClass('folded');
                     setTimeout(function(){
@@ -78,17 +82,24 @@ define([
     
     };
 
-    function screen(text, duration){
+    function screen(title, desc, duration){
         var box = director.curtain.find('.announce')
-            .html(text)
+            .html(tpl.convertTpl(TPL_ANNOUNCE, {
+                order: CHN_NUM[director.currentChapter - 1],
+                title: title,
+                desc: desc
+            }))
             .addClass('active');
-        setTimeout(function(){
+        observer.when('ready', 'announceEnd').then(function(){
             box.removeClass('active');
             setTimeout(function(){
-                observer.fire('start');
-            }, 400);
+               observer.fire('announceHidden');
+            }, 500);
+        });
+        setTimeout(function(){
+            observer.fire('announceEnd');
         }, duration || 1000);
-        return observer.promise('start');
+        return observer.promise('announceEnd');
     }
 
     return director;

@@ -7,12 +7,16 @@ define([
     'movie/demon'
 ], function(_, $, event, util, demon){
 
-    var wait = util.wait;
+    var wait = util.wait,
+
+        DESC = "A long time ago, in a galaxy far, far away...<br>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. ", 
+
+        jump_count = 0;
 
     return {
 
         announce: function(screen){
-            return screen('第一幕', 1000);
+            return screen('导航链接的诞生', DESC, 2000);
         },
 
         main: function(win, promise){
@@ -21,12 +25,12 @@ define([
                 demon_home = demon({
                     origin: nav_elms[0], 
                     className: 'nav-link', 
-                    body: doc.body 
+                    window: win
                 }),
                 demon_update = demon({
                     origin: nav_elms[1], 
                     className: 'nav-link', 
-                    body: doc.body 
+                    window: win
                 });
 
             demon_home.showBody();
@@ -42,16 +46,22 @@ define([
 
             }).follow().done(function(){
 
-                return wait(200);
+                //return wait(200);
+                return demon_home.speak('要有脚！', 600, 6);
 
             }).follow().done(function(){
 
                 demon_home.showLegs();
-                return wait(400 + 1000);
+                return wait(400 + 400);
 
             }).follow().done(function(){
 
-                return wait(200);
+                return demon_home.rotateEye('130deg', 400);
+
+            }).follow().done(function(){
+
+                //return wait(200);
+                return demon_home.speak('要有手！', 600, 6);
 
             }).follow().done(function(){
 
@@ -60,7 +70,10 @@ define([
 
             }).follow().done(function(){
 
+                demon_home.speak('木哈哈哈哈哈！！！', 2000, 6);
+
                 demon_home.rotateEye('-90deg', 400);
+
                 demon_home.rotateHand('left', '150deg', 400);
                 return demon_home.rotateHand('right', '-150deg', 400);
 
@@ -76,15 +89,36 @@ define([
 
             }).follow().done(function(){
 
-                return demon_home.jump(40, [], 800);
+                var fn = arguments.callee;
 
-            }).follow().done(function(){
+                demon_home.rotateHand('left', '60deg', 200).done(function(){
+                    return demon_home.rotateHand('left', '150deg', 200);
+                }).follow().done(function(){
+                    return demon_home.rotateHand('left', '60deg', 200);
+                }).follow().done(function(){
+                    return demon_home.rotateHand('left', '150deg', 200);
+                });
 
-                return demon_home.jump(40, [], 800);
+                demon_home.rotateHand('right', '-30deg', 200).done(function(){
+                    return demon_home.rotateHand('right', '-50deg', 200);
+                }).follow().done(function(){
+                    return demon_home.rotateHand('right', '-30deg', 200);
+                }).follow().done(function(){
+                    return demon_home.rotateHand('right', '-50deg', 200);
+                });
 
-            }).follow().done(function(){
+                demon_home.rotateEye('-30deg', 400).done(function(){
+                    demon_home.rotateEye('-160deg', 400);
+                });
 
-                return wait(200);
+                return demon_home.jump(40, [], 805).done(function(){
+                    if (jump_count++ < 2) {
+                        return fn();
+                    } else {
+                        jump_count = 0;
+                        return wait(200);
+                    }
+                }).follow();
 
             }).follow().done(function(){
 
@@ -105,7 +139,11 @@ define([
                 demon_home.rotateHand('left', '50deg', 100);
                 demon_home.rotateHand('right', '50deg', 100);
 
-                return demon_home.walk([-100, 0], 1000, 'easeOut');
+                return demon_home.jump(30, [-50, 0], 400, 'easeOut');
+
+            }).follow().done(function(){
+
+                return demon_home.walk([-60, 0], 600, 'easeOut');
 
             }).follow().done(function(){
 
@@ -121,11 +159,14 @@ define([
 
             }).follow().done(function(){
 
+                return wait(500);
+
+            }).follow().done(function(){
+
+                promise.fire();
+
             });
 
-            //setTimeout(function(){
-                //promise.fire();
-            //}, 3000);
             return promise;
         },
 
