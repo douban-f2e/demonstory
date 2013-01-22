@@ -163,7 +163,7 @@ define([
 
             }).follow().done(function(){
 
-                promise.fire();
+                //promise.fire(); // 结束，进入下一章节
 
             });
 
