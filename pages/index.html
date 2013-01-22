@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://www.douban.com/ -->
+<html lang="zh-CN" class="ua-mac ua-webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta content="提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。" name="description">
+<title>豆瓣</title>
+<script type="text/javascript" src="./index_files/packed_ad3738113870.js" async="true"></script><script>
+window.Douban=window.Douban||{};var Do=function(){Do.actions.push([].slice.call(arguments))};Do.ready=function(){Do.actions.push([].slice.call(arguments))};Do.add=Do.define=function(a,b){Do.mods[a]=b};Do.global=function(){Do.global.mods=Array.prototype.concat(Do.global.mods,[].slice.call(arguments))};Do.global.mods=[];Do.mods={};Do.actions=[];function set_cookie(g,f,d,e){var b=new Date(),a,c;b.setTime(b.getTime()+((f||30)*24*60*60*1000));a="; expires="+b.toGMTString();for(c in g){document.cookie=c+"="+g[c]+a+"; domain="+(d||"douban.com")+"; path="+(e||"/")}}function get_cookie(b){var e=b+"=",a=document.cookie.split(";"),d,f;for(d=0;d<a.length;d++){f=a[d];while(f.charAt(0)==" "){f=f.substring(1,f.length)}if(f.indexOf(e)===0){return f.substring(e.length,f.length).replace(/\"/g,"")}}return null}Douban.init_show_login=function(a){Do("dialog",function(){var b="/j/misc/login_form";dui.Dialog({title:"登录",url:b,width:/device-mobile/i.test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:350,cache:true,callback:function(c,d){d.node.addClass("dialog-login");d.node.find("h2").css("display","none");d.node.find(".hd h3").replaceWith(d.node.find(".bd h3"));d.node.find("form").css({border:"none",width:"auto",padding:"0"});d.update()}}).open()})};Do(function(){$.ajax_withck=function(a){if(a.type=="POST"){a.data=$.extend(a.data||{},{ck:get_cookie("ck")})}return $.ajax(a)};$.postJSON_withck=function(a,b,c){$.post_withck(a,b,c,"json")};$.post_withck=function(a,c,d,b){if($.isFunction(c)){b=d;d=c;c={}}return $.ajax({type:"POST",url:a,data:$.extend(c,{ck:get_cookie("ck")}),success:d,dataType:b||"text"})};$("html").click(function(c){var a=$(c.target),b=a.attr("class");if(!b){return}$(b.match(/a_(\w+)/gi)).each($.proxy(function(d,f){var e=Douban[f.replace(/^a_/,"init_")];if(typeof e==="function"){c.preventDefault();e.call(this,c)}},a[0]))})});
+    Do.add('dialog', {path: 'http://img3.douban.com/js/ui/packed_dialog8321689615.js', type: 'js', requires: ['http://img3.douban.com/css/ui/packed_dialog4563741467.css']});
+    Do.global('http://img3.douban.com/js/sns/fp/packed_base6505908882.js', 'dialog');
+</script>
+<link rel="stylesheet" href="http://img3.douban.com/css/core/packed__init_6312190557.css">
+
+<link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/357d3622e5735188.css">
+<script src="./index_files/ga.js" async="true"></script></head>
+
+<body>
+
+
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav global-nav-a">
+  <div class="bd">
+    
+
+
+
+
+
+
+<div class="top-nav-info">
+    <span class="perf-metric"><!-- _performtips_ --></span>
+    
+     <ul>
+       <li><a href="http://www.douban.com/doumail/">豆邮<em>(19)</em></a></li>
+       <li class="nav-user-account">
+       <a target="_blank" href="http://www.douban.com/accounts/" class="bn-more"><span>Dexter.Yy的帐号</span><span class="arrow"></span></a>
+       <div class="more-items">
+      <table cellpadding="0" cellspacing="0">
+            <tbody><tr><td><a href="http://www.douban.com/people/Dexter_Yy/">我的豆瓣</a></td></tr>
+            <tr><td><a target="_blank" href="http://www.douban.com/accounts/">我的帐号</a></td></tr>
+            <tr><td><a href="http://www.douban.com/accounts/logout?ck=bVT8">退出</a></td></tr>
+         </tbody></table>
+       </div>
+       </li>
+     </ul>
+</div>
+
+
+    <div class="top-nav-reminder">
+        <a href="http://www.douban.com/notification/" class="lnk-remind">提醒
+        </a>
+    <div class="more-items">
+      <div class="bd">
+          <p style="display:none;" class="no-new-notis">最近没有收到新提醒...</p>
+        <ul>
+          
+  
+        
+            
+            <li>
+            <div id="reply_notify_397596468" class="item-req">
+                    <div class="content">
+                        广播 <a href="http://www.douban.com/people/Dexter_Yy/status/1084600825/">Day One的快速记录、语义标签...</a> 有了1条新回复
+                    </div>
+                </div>
+            </li>
+        
+            
+            <li>
+            <div id="reply_notify_397562188" class="item-req">
+                    <div class="content">
+                        你有 <a href="http://movie.douban.com/notifications">1条</a> 电影提醒
+                    </div>
+                </div>
+            </li>
+        
+            
+            <li>
+            <div id="reply_notify_397357240" class="item-req">
+                    <div class="content">
+                        有&nbsp;<a href="http://www.douban.com/contacts/rlist">1&nbsp;个人</a> 关注你
+                    </div>
+                </div>
+            </li>
+        
+            
+    <li>
+<div id="reply_notify_175018841" class="new-reply-item item-req ">
+    <div class="content">
+        广播 
+        
+        <a href="http://www.douban.com/people/45119625/status/1084900152/">看福尔摩斯学习了一种新语言W...</a> 有了新回复
+    </div>
+    <div class="ops">
+        <a class="j a_delete_reply_notify topic-no-reply" title="删除" href="http://www.douban.com/#175018841">不再提醒</a>
+    </div>
+</div>
+    </li>
+
+            
+        
+            
+    <li>
+<div id="reply_notify_170166354" class="new-reply-item item-req ">
+    <div class="content">
+        日记 
+        
+        <a href="http://www.douban.com/note/253103174/">父亲谈创新</a> 有了新回复
+    </div>
+    <div class="ops">
+        <a class="j a_delete_reply_notify topic-no-reply" title="删除" href="http://www.douban.com/#170166354">不再提醒</a>
+    </div>
+</div>
+    </li>
+
+            
+        
+        </ul>
+      </div>
+      <div class="ft">
+        <a href="http://www.douban.com/notification/">查看全部提醒
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="on">
+              <a href="./index_files/index.html">豆瓣</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://book.douban.com/">读书</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://movie.douban.com/">电影</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://music.douban.com/">音乐</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/location/">同城</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/group/">小组</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://read.douban.com/?dcs=top-nav&dcm=douban" target="_blank">阅读</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+            </li>
+          
+            <li>
+              <a href="http://www.douban.com/#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tbody><tr><td><a href="http://9.douban.com/" target="_blank">九点</a></td></tr>
+                    
+                    <tr><td><a href="http://alphatown.com/" target="_blank">阿尔法城</a></td></tr>
+                    
+                    <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                </tbody></table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+   
+    
+
+
+
+
+
+
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+
+    <div class="nav-search">
+      <form action="http://www.douban.com/search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">书籍、电影、音乐、小组、小站、成员</label>
+          <div class="inp"><input id="inp-query" name="q" size="22" title="搜索书、电影、音乐、小组、小站、成员" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="nav-logo">
+      <a href="./index_files/index.html">豆瓣社区</a>
+    </div>
+
+    <div class="nav-items">
+     <ul>
+      <li><a href="./index_files/index.html">首页</a></li>
+          <li><a href="http://www.douban.com/update/">友邻广播</a></li>
+          <li><a href="http://www.douban.com/mine/">我的豆瓣</a></li>
+          <li><a href="http://www.douban.com/explore/">浏览发现</a></li>
+      <li><a href="http://www.douban.com/neighborhood/">周边生活</a></li>
+     </ul>
+     </div>
+
+  </div>
+  </div>
+</div>
+
+
+
+
+<div id="wrapper">
+
+
+<div id="bd">
+   <div class="main">
+   <h1>欢迎，Dexter.Yy</h1>
+     
+
+
+
+
+
+
+
+
+
+
+<div class="guess3-setting">
+    <div class="hd">
+      <a href="http://www.douban.com/#" class="a_guess_setting">首页设置</a>
+    </div>
+    <div class="bd" style="display:none;">
+    <i class="arrow"></i>
+    <form method="post"><div style="display:none;"><input type="hidden" name="ck" value="bVT8"></div>
+        <fieldset>
+        <div class="frm-bd">
+            <legend>首页有豆瓣的精选热点内容。你还希望多看点什么？</legend>
+            <div class="item">
+                <label for="setting-hot-108"><span class="checkbox checkbox-checked"><input type="checkbox" checked="checked" name="hot" value="108" id="setting-hot-108"></span><b>相册</b> 成员的主题照片集</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-101"><span class="checkbox checkbox-checked"><input type="checkbox" checked="checked" name="hot" value="101" id="setting-hot-101"></span><b>读书</b> 最近流行的书刊</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-102"><span class="checkbox checkbox-checked"><input type="checkbox" checked="checked" name="hot" value="102" id="setting-hot-102"></span><b>电影</b> 最近流行的影视剧</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-103"><span class="checkbox checkbox-checked"><input type="checkbox" checked="checked" name="hot" value="103" id="setting-hot-103"></span><b>音乐</b> 最近流行的专辑</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-104"><span class="checkbox checkbox-checked"><input type="checkbox" checked="checked" name="hot" value="104" id="setting-hot-104"></span><b>同城活动</b> 值得出门的好活动</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-107"><span class="checkbox checkbox-checked"><input type="checkbox" checked="checked" name="hot" value="107" id="setting-hot-107"></span><b>日记</b> 成员写下的经历和想法</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-109"><span class="checkbox"><input type="checkbox" name="hot" value="109" id="setting-hot-109"></span><b>线上活动</b> 大家一起办主题图片展</label>
+            </div>
+            </div>
+            <div class="frm-ft">
+            <div class="btn">
+                <input type="submit" class="btn-submit" value="保存">
+                <a href="http://www.douban.com/#" class="lnk-close a_setting_close">收起</a>
+            </div>
+            <p>你“喜欢”的越多，首页就越符合你口味。</p>
+            </div>
+        </fieldset>
+    </form>
+  </div>
+</div>
+<script>
+var PERSONAL_GUESS_TIP = '11';
+</script>
+
+
+
+<div class="guess3-list">
+
+
+
+
+
+    
+    
+
+<div class="guess-item subject-item" id="1137591:1002:4844730|2013-01-21+00:40:58" unique_id="1002:4844730">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 4844730, channel: 302, engine: 3020101, pos: 1})" href="http://movie.douban.com/subject/4844730/" target="_blank"><img src="./index_files/s11175425.jpg" alt="好景在望"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 4844730, channel: 302, engine: 3020101, pos: 1})" href="http://movie.douban.com/subject/4844730/" target="_blank">好景在望</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.4</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">弗兰克·克拉斯 Frank Coraci</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">凯文·詹姆斯 Kevin James / 萨尔玛·海耶克 Salma Hayek</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">喜剧 / 动作</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>在这部喜剧中，凯文·詹姆斯扮演了一个叫做斯科特·沃斯的42岁的生物老师，他在一间破败的学校里教书，生活索然无味。可是突然有一天，他却萌...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    品客喜欢的电影
+        &nbsp;|&nbsp;
+        198人看过
+    <span class="pubtime">今天凌晨</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-4844730-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-4844730-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="14308" unique_id="1001:20453160">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 20453160, channel: 101, engine: 1, pos: 2})" href="http://book.douban.com/subject/20453160/" target="_blank"><img src="./index_files/s24516716.jpg" alt="天才引导的历程：数学中的伟大定理"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 20453160, channel: 101, engine: 1, pos: 2})" href="http://book.douban.com/subject/20453160/" target="_blank">天才引导的历程：数学中的伟大定理</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>9.1</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">William Dunham</span>
+                </li>
+                <li>
+                <span class="label">定价：</span>
+                <span class="value">45.00</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>本书将两千多年的数学发展历程融为十二章内容，每章都包含了三个基本组成部分，即历史背景、人物传记以及在这些“数学杰作”中所表现出的创造...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点读书
+        &nbsp;|&nbsp;
+        955人想读
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20453160-wish">想读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20453160-do">在读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20453160-collect">读过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1137591:1001:20471302|2013-01-20+23:06:23" unique_id="1001:20471302">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 20471302, channel: 201, engine: 1, pos: 3})" href="http://book.douban.com/subject/20471302/" target="_blank"><img src="./index_files/s24522948.jpg" alt="在你身边，为你设计"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 20471302, channel: 201, engine: 1, pos: 3})" href="http://book.douban.com/subject/20471302/" target="_blank">在你身边，为你设计</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.2</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">腾讯公司用户研究与体验设计部</span>
+                </li>
+                <li>
+                <span class="label">定价：</span>
+                <span class="value">69.00元</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>设计属于所有人，也意在为所有人使用，这既是设计的价值，也是设计的责任。腾讯公司用户研究与体验设计部编著的《在你身边为你设计》是腾讯核...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    你可能喜欢的图书
+        &nbsp;|&nbsp;
+        2404人想读
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20471302-wish">想读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20471302-do">在读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20471302-collect">读过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1137591:1003:20279457|2013-01-20+23:05:52" unique_id="1003:20279457">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1003, tid: 20279457, channel: 203, engine: 1, pos: 4})" href="http://music.douban.com/subject/20279457/" target="_blank"><img src="./index_files/s24577360.jpg" alt="SID 10th Anniversary BEST(完全生産限定盤)(DVD付)"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1003, tid: 20279457, channel: 203, engine: 1, pos: 4})" href="http://music.douban.com/subject/20279457/" target="_blank">SID 10th Anniversary BEST(完全生産限定盤)(DVD付)</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.2</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">表演者：</span>
+                <span class="value">シド</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    你可能喜欢的专辑
+        &nbsp;|&nbsp;
+        12人想听
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20279457-wish">想听</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20279457-do">在听</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20279457-collect">听过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item event-item" id="1137591:1011:18109453|2013-01-20+23:03:52" unique_id="1011:18109453">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1011, tid: 18109453, channel: 204, engine: 1, pos: 5})" href="http://www.douban.com/event/18109453/" target="_blank"><img src="./index_files/80486040a47c9e5.jpg" alt="当色彩消失的时候——印象派版画中国巡展"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1011, tid: 18109453, channel: 204, engine: 1, pos: 5})" href="http://www.douban.com/event/18109453/" target="_blank">当色彩消失的时候——印象派版画中国巡展</a>
+    </div>
+
+        <div class="from">
+        </div>
+
+            
+            <div class="desc">
+            <ul>
+                <li><span class="label">时间：</span><span class="value">01月09日 - 02月26日</span></li>
+                <li><span class="label">地点：</span><span class="value">北京 海淀区 西三环北路万寿寺内北京艺术博物馆</span></li>
+
+                <li>
+                    票价：20元(万寿寺门票)
+                </li>
+
+            </ul>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    你可能喜欢的同城活动
+        &nbsp;|&nbsp;
+        102人要参加
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        <span class="usr-btn event-btn"><a href="http://www.douban.com/#" data-interest="wish" data-id="18109453">感兴趣</a></span>
+        <span class="usr-btn event-btn"><a href="http://www.douban.com/#" data-interest="do" data-id="18109453">要参加</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="1137591:1026:74689482|2013-01-20+22:58:12" unique_id="1026:74689482">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/74689482/" target="_blank" onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 74689482, channel: 208, engine: 1, pos: 6})">
+            <span class="pic1"><img src="./index_files/p1662228741.jpg" alt="千年老妖是如何炼成的 之 唇部篇"><i></i></span>
+            <span class="pic2"><img src="./index_files/p1835602930.jpg"><i></i></span>
+            <span class="pic3"><img src="./index_files/p1831702730.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 74689482, channel: 208, engine: 1, pos: 6})" href="http://www.douban.com/photos/album/74689482/" target="_blank">千年老妖是如何炼成的 之 唇部篇</a>
+    </div>
+
+        <div class="from">
+                <img src="./index_files/u56810987-36.jpg" width="16" height="16">
+                yemama 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    你可能喜欢的相册
+        &nbsp;|&nbsp;
+        1113人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="74689482" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1137591:1002:1766571|2013-01-20+22:42:37" unique_id="1002:1766571">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 1766571, channel: 302, engine: 3020101, pos: 7})" href="http://movie.douban.com/subject/1766571/" target="_blank"><img src="./index_files/s1637856.jpg" alt="机动战士高达0083 吉恩的残光"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 1766571, channel: 302, engine: 3020101, pos: 7})" href="http://movie.douban.com/subject/1766571/" target="_blank">机动战士高达0083 吉恩的残光</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.8</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">今西隆志</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">动画 / 科幻</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>UC.(宇宙世纪)0079年，人类已经在宇宙发展并建立了许多巨大的殖民卫星，让人类能够居住在宇宙中。位于SIDE3的吉翁公国不堪忍受地球联邦政府对...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    恶魔的步调喜欢的电影
+        &nbsp;|&nbsp;
+        1380人看过
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-1766571-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-1766571-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1137591:1002:1307697|2013-01-20+22:21:05" unique_id="1002:1307697">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 1307697, channel: 302, engine: 3020101, pos: 8})" href="http://movie.douban.com/subject/1307697/" target="_blank"><img src="./index_files/s1317977.jpg" alt="芝加哥"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 1307697, channel: 302, engine: 3020101, pos: 8})" href="http://movie.douban.com/subject/1307697/" target="_blank">芝加哥</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.3</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">Rob Marshall</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">Renée Zellweger / Catherine Zeta-Jones</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">喜剧 / 犯罪</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>两个女人，有着相似的经历，甚至是相似的心计，展开了为求成名的争夺战。
+维尔玛（凯瑟琳•泽塔-琼斯 Catherine Zeta-Jones饰）是一个夜总...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    SWX喜欢的电影
+        &nbsp;|&nbsp;
+        43254人看过
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-1307697-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-1307697-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item event-item promotional-item" id="other:1011:18139747" unique_id="1011:18139747">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1011, tid: 18139747, channel: None, engine: None, pos: 9})" href="http://www.douban.com/event/18139747/" target="_blank"><img src="./index_files/8c39b630456f5ef.jpg" alt="痴人乐队"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1011, tid: 18139747, channel: None, engine: None, pos: 9})" href="http://www.douban.com/event/18139747/" target="_blank">痴人乐队</a>
+    </div>
+
+        <div class="from">
+        </div>
+
+            
+            <div class="desc">
+            <ul>
+                <li><span class="label">时间：</span><span class="value">01月26日</span></li>
+                <li><span class="label">地点：</span><span class="value">北京 东城区 交道口南大街东棉花胡同7号</span></li>
+
+                <li>票价：53元</li>
+
+            </ul>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点同城活动
+        &nbsp;|&nbsp;
+        18人要参加
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+         <span class="usr-btn"><a href="http://www.douban.com/event/18139747/" target="_blank">在线购票</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="14305" unique_id="1026:62402544">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/62402544/" target="_blank" onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 62402544, channel: 108, engine: 1, pos: 10})">
+            <span class="pic1"><img src="./index_files/p1558872316.jpg" alt="我 /的 /手 /工 /书 /"><i></i></span>
+            <span class="pic2"><img src="./index_files/p1845133740.jpg"><i></i></span>
+            <span class="pic3"><img src="./index_files/p1845133776.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 62402544, channel: 108, engine: 1, pos: 10})" href="http://www.douban.com/photos/album/62402544/" target="_blank">我 /的 /手 /工 /书 /</a>
+    </div>
+
+        <div class="from">
+                <img src="./index_files/u51134827-26.jpg" width="16" height="16">
+                卜卜 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    热点相册
+        &nbsp;|&nbsp;
+        4407人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="62402544" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="14304" unique_id="1001:11442895">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 11442895, channel: 106, engine: 1, pos: 11})" href="http://book.douban.com/subject/11442895/" target="_blank"><img src="./index_files/s11106536.jpg" alt="永不抵达的列车"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 11442895, channel: 106, engine: 1, pos: 11})" href="http://book.douban.com/subject/11442895/" target="_blank">永不抵达的列车</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>9.0</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">杜涌涛徐百柯</span>
+                </li>
+                <li>
+                <span class="label">定价：</span>
+                <span class="value">32.80元</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>在一片纷乱喧嚣中，冰点仿佛一位笃定的观察者，将目光一次次投向大变革中那些普通的小人物，注视他们被时代裹挟的命运，诉说他们微小的愿望与...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    精选热点
+        &nbsp;|&nbsp;
+        1729人想读
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-11442895-wish">想读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-11442895-do">在读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-11442895-collect">读过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item promotional-item" id="other:1052:298487" unique_id="1052:298487">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1052, tid: 298487, channel: None, engine: None, pos: 12})" href="http://book.douban.com/guess_redirect?item_id=298487" target="_blank"><img src="./index_files/298487.jpg" alt="等我胖了再揍你"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1052, tid: 298487, channel: None, engine: None, pos: 12})" href="http://book.douban.com/guess_redirect?item_id=298487" target="_blank">等我胖了再揍你</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.4</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">菜小龟</span>
+                </li>
+            <li>售价：0.99元</li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>包含作者菜小龟的十五首短诗以及漫画作者anusman为每首诗歌创作的漫画。是一部轻松有趣的诗歌&amp;绘本小册子。 1、一首诗取一个概括内容的标题，...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点阅读作品
+        &nbsp;|&nbsp;
+        7136人试读
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+          <span class="usr-btn"><a href="http://book.douban.com/guess_redirect?item_id=298487" target="_blank">在线阅读</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1137591:1002:3232146|2013-01-20+16:18:58" unique_id="1002:3232146">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 3232146, channel: 302, engine: 3020101, pos: 13})" href="http://movie.douban.com/subject/3232146/" target="_blank"><img src="./index_files/s3279510.jpg" alt="搞怪拍档"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 3232146, channel: 302, engine: 3020101, pos: 13})" href="http://movie.douban.com/subject/3232146/" target="_blank">搞怪拍档</a>
+                
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">谷田部胜义</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">頓宮恭子 / 島津冴子</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">短片 / 动作</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>ダーティペア（OVA版）
+---------------------------------------------
+1987年から1988年にかけてOVA作品として2話1セットで発売。SF作家の...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    Godannar喜欢的电影
+        &nbsp;|&nbsp;
+        6人看过
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-3232146-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-3232146-do">在看</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-3232146-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="14300" unique_id="1003:20515610">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1003, tid: 20515610, channel: 103, engine: 1, pos: 14})" href="http://music.douban.com/subject/20515610/" target="_blank"><img src="./index_files/s24612252.jpg" alt="Suit &amp; Tie"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1003, tid: 20515610, channel: 103, engine: 1, pos: 14})" href="http://music.douban.com/subject/20515610/" target="_blank">Suit &amp; Tie</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.8</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">表演者：</span>
+                <span class="value">Justin Timberlake / Jay-Z</span>
+                </li>
+                <li>
+                <span class="label">流派：</span>
+                <span class="value">流行</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>JT将于1月14日发行新单《Suit &amp; Tie》</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点专辑
+        &nbsp;|&nbsp;
+        200人想听
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20515610-wish">想听</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20515610-do">在听</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20515610-collect">听过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item" id="14299" unique_id="1015:258380025">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1015, tid: 258380025, channel: 107, engine: 1, pos: 15})" href="http://www.douban.com/note/258380025/" target="_blank">论屌丝为何物？</a>
+    </div>
+
+        <div class="from">
+                <img src="./index_files/u33379360-159.jpg" width="16" height="16">
+                刀劈三观荔枝 的日记
+        </div>
+
+            <div class="desc">
+            <p>首先如何定义屌丝？什么样的人叫做屌丝？是纯粹的智力缺陷还是纯粹的智识缺少？是贫穷和匮乏的一群人？我以为，屌丝和智商多少，乃至掌握了多少财富无关，它是一种态度，它可以如此概括：一个人不知道自己的方位，也就是说他不知道这个世界有多大，他以自我为中心，世界围绕着他转，他很少意识到自己的缺点，不能反思和自我教育，所以他根本不清楚自己与他人之间的差距，他也无法更接近一个真实的世界，纯粹地活在自己建构的世界中，爱幻想，有妄图和动机...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点日记
+        &nbsp;|&nbsp;
+        1114人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="258380025" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item promotional-item" id="other:1002:3821067" unique_id="1002:3821067">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 3821067, channel: None, engine: None, pos: 16})" href="http://movie.douban.com/subject/3821067/" target="_blank"><img src="./index_files/s24591423.jpg" alt="一代宗师"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1002, tid: 3821067, channel: None, engine: None, pos: 16})" href="http://movie.douban.com/subject/3821067/" target="_blank">一代宗师</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.6</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">王家卫 Kar Wai Wong</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">梁朝伟 Tony Leung Chiu Wai / 章子怡 Ziyi Zhang</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">剧情 / 动作</span>
+                </li>
+            <li>票价：38元</li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>广东佛山人叶问（梁朝伟 饰），年少时家境优渥，师从咏春拳第三代传人陈华顺学习拳法，师傅“一条腰带一口气”的告诫，支持他走过兵荒马乱、...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点电影
+        &nbsp;|&nbsp;
+        84164人看过
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+          <span class="usr-btn"><a href="http://movie.douban.com/subject/3821067/cinema" target="_blank">在线购票</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="14298" unique_id="1001:20499070">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 20499070, channel: 101, engine: 1, pos: 17})" href="http://book.douban.com/subject/20499070/" target="_blank"><img src="./index_files/s24587280.jpg" alt="这个社会会好吗"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1001, tid: 20499070, channel: 101, engine: 1, pos: 17})" href="http://book.douban.com/subject/20499070/" target="_blank">这个社会会好吗</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.2</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">熊培云</span>
+                </li>
+                <li>
+                <span class="label">定价：</span>
+                <span class="value">39.00</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>乌托邦时代，为了未来否定现在；功利主义时代，为了现在舍弃未来。当中国从一种极端滑向另一种极端的时候，熊培云以一如既往的乐观态度，唤回...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点读书
+        &nbsp;|&nbsp;
+        1012人想读
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20499070-wish">想读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20499070-do">在读</a></span>
+                  <span class="usr-btn subject-btn"><a href="http://www.douban.com/#" name="pbtn-20499070-collect">读过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item" id="1137591:1015:258585458|2013-01-20+13:01:55" unique_id="1015:258585458">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1015, tid: 258585458, channel: 207, engine: 1, pos: 18})" href="http://www.douban.com/note/258585458/" target="_blank">黑暗培养皿</a>
+    </div>
+
+        <div class="from">
+                <img src="./index_files/u1216758-154.jpg" width="16" height="16">
+                头马 的日记
+        </div>
+
+            <div class="desc">
+            <p>“黑暗培养皿？”
+R君盯着我。
+“还有那种东西？”
+我点点头。
+我和R君是2年前在推理社招新会上认识的。当时他加入推理社已经1年，算是社里的中坚力量之一。招新的事情自然轮到他头上。无非就是些苦力活，画画海报，写招新简章，布置会场之类的事情。虽然说R君是推理社的，但他从来就没表现出对推理有多大兴趣。相反他常常表示自己喜欢的是严肃文学，譬如，嗯，陀思妥耶夫斯基这种的。至于为什么没有加入文学社反而去了推理社，他表示那是因...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    你可能喜欢的日记
+        &nbsp;|&nbsp;
+        182人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="258585458" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="1137591:1026:62790824|2013-01-20+13:00:02" unique_id="1026:62790824">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/62790824/" target="_blank" onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 62790824, channel: 208, engine: 1, pos: 19})">
+            <span class="pic1"><img src="./index_files/p1844072947.jpg" alt="图纸需要熬夜"><i></i></span>
+            <span class="pic2"><img src="./index_files/p1844075573.jpg"><i></i></span>
+            <span class="pic3"><img src="./index_files/p1844075216.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 62790824, channel: 208, engine: 1, pos: 19})" href="http://www.douban.com/photos/album/62790824/" target="_blank">图纸需要熬夜</a>
+    </div>
+
+        <div class="from">
+                <img src="./index_files/u2327409-15.jpg" width="16" height="16">
+                Zeeyd 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    你可能喜欢的相册
+        &nbsp;|&nbsp;
+        524人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="62790824" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="14297" unique_id="1026:16491967">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/16491967/" target="_blank" onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 16491967, channel: 108, engine: 1, pos: 20})">
+            <span class="pic1"><img src="./index_files/p1819247101.jpg" alt="可爱动物"><i></i></span>
+            <span class="pic2"><img src="./index_files/p1846313721.jpg"><i></i></span>
+            <span class="pic3"><img src="./index_files/p1844606852.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: &#39;guess&#39;, version: 3, type: 1, kind: 1026, tid: 16491967, channel: 108, engine: 1, pos: 20})" href="http://www.douban.com/photos/album/16491967/" target="_blank">可爱动物</a>
+    </div>
+
+        <div class="from">
+                <img src="./index_files/u1121975-2.jpg" width="16" height="16">
+                幽篁 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    热点相册
+        &nbsp;|&nbsp;
+        2863人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="16491967" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<div class="guess-note guess-more"><a href="http://www.douban.com/#" class="a_guess_more">加载更多</a></div>
+</div>
+<input value="0" id="guess-hidden-value" style="display:none;">
+<textarea id="guess-hidden-cache" style="display:none;"></textarea>
+
+
+
+
+   </div>
+
+
+
+   <div class="side">
+       
+
+
+
+
+    
+
+
+
+<div class="notify-mod">
+    <h2>发现更多有趣的内容:</h2>
+    <a href="http://www.douban.com/subject/explore">喜欢的东西</a>
+        / <a href="http://www.douban.com/app/">移动应用</a>
+</div>
+
+  
+
+
+
+
+  <div id="dale_homepage_login_top_right"></div>
+
+
+       
+<div class="mod" id="db-online-events">
+    <div class="hd">
+            <span class="func">
+                <a class="bn-create" href="http://www.douban.com/online/create"><span>创建线上活动</span></a>
+            </span>
+        
+    <h2>
+        线上活动
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/online/?g=d">更多</a>
+                ) </span>
+    </h2>
+
+    </div>
+    <div class="bd">
+        
+        
+        
+<ul class="clearbox">
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11446574/">找个同年同月同日的人一起旅行吧~</a>
+            </div>
+            <div class="desc">
+                时间：1月9日 - 3月31日
+                <br><span class="num">12947人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11447708/">大家说说自己的一个书房梦吧</a>
+            </div>
+            <div class="desc">
+                时间：1月10日 - 2月9日
+                <br><span class="num">1628人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11450373/">找个同年同月同日生的孩子一起旅行吧</a>
+            </div>
+            <div class="desc">
+                时间：1月13日 - 2月28日
+                <br><span class="num">9798人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11451670/">一张图、一句话证明你还在坚持梦想！</a>
+            </div>
+            <div class="desc">
+                时间：1月15日 - 2月5日
+                <br><span class="num">1587人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11449314/">2012，你去过哪？2013，你想去哪？</a>
+            </div>
+            <div class="desc">
+                时间：2月10日 - 5月9日
+                <br><span class="num">3696人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11445449/">亮出你的Pro身份来！</a>
+            </div>
+            <div class="desc">
+                时间：1月8日 - 2月7日
+                <br><span class="num">735人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11447039/">「私 藏 物 件 交 换 会 ， 分 享 旧 时 光 」</a>
+            </div>
+            <div class="desc">
+                时间：1月10日 - 2月9日
+                <br><span class="num">2550人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11445089/">交流最近想入手的小物❤秀秀你置办的年货吧</a>
+            </div>
+            <div class="desc">
+                时间：1月8日 - 2月28日
+                <br><span class="num">3075人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+          <div id="dale_homepage_online_activity_promo_1"><iframe id="dale_homepage_online_activity_promo_1_frame" frameborder="0" scrolling="no" style="overflow: hidden; margin: 0px 0px 20px;" width="245" height="50"></iframe></div>
+        </li>
+        <li class="block clearfix">
+          <div id="dale_homepage_online_activity_promo_2"></div>
+        </li>
+</ul>
+
+        
+    </div>
+</div>
+
+       <div class="mod">
+           
+
+<div id="db-sites">
+    <div class="hd">
+        
+    <h2>
+        发现小组
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/group/explore">更多</a>
+                ) </span>
+    </h2>
+
+    </div>
+    <div class="bd">
+        <div class="content">
+            
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/33112/">
+                    <img src="./index_files/g33112-1.jpg" alt="我的暗恋唱成这首歌、" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/33112/">我的暗恋唱成这首歌、</a></h3>
+                12711成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/chiangmai/">
+                    <img src="./index_files/g124308-2.jpg" alt="清迈" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/chiangmai/">清迈</a></h3>
+                8025成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/39627/">
+                    <img src="./index_files/g39627-25.jpg" alt="有没有人听我读一首诗" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/39627/">有没有人听我读一首诗</a></h3>
+                6492成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/pku/">
+                    <img src="./index_files/g11447-2.jpg" alt="北京大学" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/pku/">北京大学</a></h3>
+                8082成员
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+       </div>
+       
+
+
+
+
+
+<div class="mobile-app-entrance block5 app-main">
+
+    <a class="entrance-link first-link" href="http://www.douban.com/mobile/">
+        <span class="app-icon icon-main"></span>
+        <span class="main-title">豆瓣移动应用</span>
+        <span class="sub-title">点击下载</span>
+    </a>
+</div>
+
+   </div>
+</div>
+
+
+<div id="ft">
+
+
+
+<span id="icp" class="fleft gray-link">
+    © 2005－2013 douban.com, all rights reserved
+  <br>
+  <a href="http://www.miibeian.gov.cn/">京ICP证090015号</a>&nbsp;&nbsp;京ICP备11027288号&nbsp;&nbsp;网络视听许可证<a href="http://www.douban.com/about?topic=licence" target="_blank">0110418</a>号&nbsp;&nbsp;文网文[2009]267号&nbsp;<img src="./index_files/biaoshi.gif" align="absmiddle"><br> 京公网安备110105000728&nbsp;&nbsp;新出网证(京)字129号
+</span>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://www.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://www.douban.com/mobile/">移动应用</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+</div>
+</div>
+
+<div class="back-to-top" style="left: 809px;">
+<a href="http://www.douban.com/#">↑回顶部</a>
+</div>
+<script type="text/javascript" src="./index_files/packed_jquery.min6301986802.js" async="true"></script><script type="text/javascript" src="./index_files/packed_base6505908882.js" async="true"></script><link type="text/css" rel="stylesheet" href="./index_files/packed_dialog4563741467.css"><script type="text/javascript" src="./index_files/packed_dialog8321689615.js" async="true"></script><script src="./index_files/packed__init_7701316160.js" data-cfg-corelib="http://img3.douban.com/js/packed_jquery.min6301986802.js"></script>
+
+<script type="text/javascript" src="./index_files/6abd079ca8ae0d08.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]); 
+
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+    _gaq.push(['_setVar', '113']);
+
+
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+
+
+<!-- hogg4-->
+
+<!-- douban ad begin -->
+
+
+
+
+
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = 'http://erebor.douban.com/',
+            userId = '1137591',
+            browserId = 'w9AHXdHFVTU',
+            ipAddress = '114.246.108.147',
+            criteria = '3:/',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_homepage_online_activity_promo_1', 'dale_homepage_online_activity_promo_2', 'dale_homepage_login_top_right'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, ip: ipAddress, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'http://img3.douban.com/js/packed_ad3738113870.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+ 
+<!-- douban ad end -->
+
+
+
+
+
+
+
+<object data="http://img3.douban.com/js/separation/packed__all295341955.js" width="0" height="0"></object><object data="http://img3.douban.com/js/packed_douban1000047119.js" width="0" height="0"></object></body></html>

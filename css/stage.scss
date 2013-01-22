@@ -1,0 +1,145 @@
+@import "base";
+
+.demon {
+  position: absolute;
+  padding: 5px 10px;
+  border:2px solid transparent;
+  @include transition(
+    background-color 0.4s ceaser('easeInOutBack')
+  );
+
+  span {
+    z-index:1;
+  }
+
+  .eye {
+    display:block;
+    width:20px;
+    height:20px;
+    background:#fff;
+    border:1px solid #000;
+    border-radius:20px;
+    position:absolute;
+    left:0px;
+    top:-15px;
+    @include transform(scale(0));
+    @include transform-origin(50% 50%);
+    @include transition(
+      transform 0.4s ceaser('easeOutBack')
+    );
+
+    span {
+      display:block;
+      width:5px;
+      height:5px;
+      background:#000;
+      border-radius:5px;
+      position: absolute;
+      top: 10px - 5px/2;
+      left: 10px - 5px/2;
+      @include transform-origin(50% 50%);
+    }
+
+  }
+
+  .eye-right {
+    left:auto;
+    right:0px;
+  }
+
+  .hand {
+    width:5px;
+    height:0px;
+    background:#333;
+    border-radius:10px;
+    position:absolute;
+    top: 8px;
+    left: -2px;
+    @include transform-origin(50% 0%);
+    @include transform(rotate(30deg));
+    @include transition(
+      height 0.4s ceaser('easeOutBack')
+    );
+  }
+
+  .hand-right {
+    left:auto;
+    right:-2px;
+    @include transform(rotate(-30deg));
+  }
+
+  .leg {
+    width:5px;
+    height:0px;
+    background:#333;
+    position:absolute;
+    top: 100%;
+    left: 0px;
+    @include transform-origin(50% 0%);
+    @include transition(
+      height 0.4s ease-in-out
+    );
+  }
+
+  .leg-right {
+    left:auto;
+    right:0px;
+  }
+
+  &.waken {
+    background:darken(#edf4ed, 10%);
+    //border:2px solid #333;
+    //@include box-shadow(0px 1px 5px #333); 
+  }
+
+  &.has-eyes {
+
+    .eye {
+      @include transform(scale(1));
+      //@include animation-name(eye);
+      //@include animation-duration(1.0s);
+      //@include animation-delay(0.4s);
+      //@include animation-timing-function(linear);
+      //@include animation-iteration-count(infinite);
+      //@include animation-direction(alternate);
+      ////@include animation-fill-mode(forwards);
+      ////@include animation-play-state();
+    }
+
+  }
+
+  &.has-hands {
+
+    .hand {
+      height:30px;
+    }
+
+  }
+
+  &.has-legs {
+
+    .leg {
+      height:20px;
+    }
+
+  }
+
+}
+
+@include keyframes(eye) {
+  0% {
+    @include transform(
+      rotate(0deg)
+    );
+  }
+  //50% {
+    //@include transform(
+      //rotate(-80deg)
+    //);
+  //}
+  100% {
+    @include transform(
+      rotate(180deg)
+    );
+  }
+}
