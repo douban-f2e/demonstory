@@ -153,13 +153,14 @@ define([
             }).follow().done(function(){
 
                 wait(200).done(function(){
-                    demon_home.walk([-50], 800, 'easeOut');
+                    return demon_home.walk([-50], 800, 'easeOut');
                 });
 
                 return demon_update.walk([-50], 2000, 'linear');
 
             }).follow().done(function(){
 
+                demon_home.squintEye();
                 return wait(3000);
 
             }).follow().done(function(){

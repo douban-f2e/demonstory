@@ -41,6 +41,17 @@
       @include transform-origin(50%, 50%);
     }
 
+    &.squint {
+
+      span {
+        width:100%;
+        height:3px;
+        left:50%;
+        margin-left:-50%;
+      }
+    
+    }
+
   }
 
   .eye-right {

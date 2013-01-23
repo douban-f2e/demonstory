@@ -12,7 +12,7 @@
     opacity 0.4s ease-in-out
   );
 
-  .content {
+  .moui-content {
     display:inline-block;
     max-width:400px;
     padding:20px;
@@ -23,7 +23,7 @@
     font-size:18px;
   }
 
-  .arrow {
+  .moui-arrow {
     width: 0px;
     height: 0px;
     border-style: solid;
@@ -51,7 +51,7 @@
       //margin-top:20px;
     }
 
-    .arrow {
+    .moui-arrow {
       border-width: 0 20px 40px 20px;
       border-color: transparent transparent #666 transparent;
 
@@ -68,7 +68,7 @@
       margin-left:-30px;
       @include transform-origin(0%, 0%);
 
-      .arrow {
+      .moui-arrow {
         top: 0;
         left: 30px;
       }
@@ -78,7 +78,7 @@
     &.center-align {
       @include transform-origin(50%, 0%);
     
-      .arrow {
+      .moui-arrow {
         top: 0;
         left: 50%;
         margin-left:-20px;
@@ -90,7 +90,7 @@
       margin-left:30px;
       @include transform-origin(100%, 0%);
 
-      .arrow {
+      .moui-arrow {
         top: 0;
         right: 30px;
       }
@@ -107,7 +107,7 @@
       //margin-top:-20px;
     }
 
-    .arrow {
+    .moui-arrow {
       border-width: 40px 20px 0 20px;
       border-color: #666 transparent transparent transparent;
 
@@ -124,7 +124,7 @@
       margin-left:-30px;
       @include transform-origin(0%, 100%);
 
-      .arrow {
+      .moui-arrow {
         bottom: 0;
         left: 30px;
       }
@@ -134,7 +134,7 @@
     &.center-align {
       @include transform-origin(50%, 100%);
     
-      .arrow {
+      .moui-arrow {
         bottom: 0;
         left: 50%;
         margin-left:-20px;
@@ -146,7 +146,7 @@
       margin-left:30px;
       @include transform-origin(100%, 100%);
 
-      .arrow {
+      .moui-arrow {
         bottom: 0;
         right: 30px;
       }
@@ -164,7 +164,7 @@
       //margin-left:20px;
     }
 
-    .arrow {
+    .moui-arrow {
       border-width: 20px 40px 20px 0;
       border-color: transparent #666 transparent transparent;
 
@@ -181,7 +181,7 @@
       margin-top:-30px;
       @include transform-origin(0%, 0%);
     
-      .arrow {
+      .moui-arrow {
         left: 0;
         top: 30px;
       }
@@ -191,7 +191,7 @@
     &.center-align {
       @include transform-origin(0%, 50%);
     
-      .arrow {
+      .moui-arrow {
         left: 0;
         top: 50%;
         margin-top:-20px;
@@ -203,7 +203,7 @@
       margin-top:30px;
       @include transform-origin(0%, 100%);
     
-      .arrow {
+      .moui-arrow {
         left: 0;
         bottom: 30px;
       }
@@ -220,7 +220,7 @@
       //margin-left:-20px;
     }
 
-    .arrow {
+    .moui-arrow {
       border-width: 20px 0 20px 40px;
       border-color: transparent transparent transparent #666;
 
@@ -237,7 +237,7 @@
       margin-top:-30px;
       @include transform-origin(100%, 0%);
     
-      .arrow {
+      .moui-arrow {
         right: 0;
         top: 30px;
       }
@@ -247,7 +247,7 @@
     &.center-align {
       @include transform-origin(100%, 50%);
     
-      .arrow {
+      .moui-arrow {
         right: 0;
         top: 50%;
         margin-top:-20px;
@@ -259,7 +259,7 @@
       margin-top:-30px;
       @include transform-origin(100%, 100%);
     
-      .arrow {
+      .moui-arrow {
         right: 0;
         bottom: 30px;
       }

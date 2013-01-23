@@ -11,6 +11,7 @@ define([
         var win = this.window = opt.window || window,
             body = $(win.document.body),
             origin = this.origin = $(opt.origin);
+        this._resolved_promise = event().resolve();
         this.eyeLeft = $('<span class="eye eye-left"><span></span></span>');
         this.eyeRight = $('<span class="eye eye-right"><span></span></span>');
         this.handLeft = $('<span class="hand hand-left"></span>');
@@ -60,8 +61,6 @@ define([
 
         rotateEye: function(deg, duration, easing){
             var action = choreo().play(),
-                //current = choreo.transform(this.eyeLeft[0], 'rotate'),
-                //v = 'rotate(' + (parseFloat(current) + parseFloat(deg)) + 'deg)';
                 v = 'rotate(' + deg + ')';
             action.actor(this.eyeLeft[0], {
                 transform: v
@@ -73,6 +72,7 @@ define([
         },
 
         moveEye: function(offset, duration, easing){
+            this.normalEye();
             var action = choreo().play(),
                 left_pupil = this.eyeLeft.find('span')[0],
                 max = this.eyeLeft[0].scrollHeight/2 - left_pupil.scrollHeight/2,
@@ -85,6 +85,25 @@ define([
             }, duration, easing);
             return action.follow();
         },
+
+        squintEye: function(duration){
+            var self = this,
+                promise = new event.Promise();
+            this.moveEye(0);
+            this.eyeLeft.concat(this.eyeRight).addClass('squint');
+            setTimeout(function(){
+                if (duration) {
+                    self.normalEye();
+                }
+                promise.fire();
+            }, duration || 0);
+            return promise;
+        },
+
+        normalEye: function(){
+            this.eyeLeft.concat(this.eyeRight).removeClass('squint');
+            return this;
+        }, 
 
         rotateHand: function(side, deg, duration, easing){
             var action = choreo().play(),
@@ -206,6 +225,10 @@ define([
                 }, duration);
             }, 0);
             return promise;
+        },
+
+        follow: function(){
+            return this._resolved_promise;
         }
 
     };

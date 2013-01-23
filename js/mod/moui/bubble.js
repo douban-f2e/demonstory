@@ -6,14 +6,14 @@ define('moui/bubble', [
 ], function(_, $, stick){
 
     var window = this,
-        TPL_BUBBLE = '<div class="moui-bubble"><div class="content"></div><div class="arrow"><div></div></div></div>',
+        TPL_BUBBLE = '<div class="moui-bubble"><div class="moui-content"></div><div class="moui-arrow"><div></div></div></div>',
         NEGATIVE = [6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6];
 
     function Bubble(opt){
         this._config = {};
         this._node = $(TPL_BUBBLE);
-        this._content = this._node.find('.content');
-        this._arrow = this._node.find('.myarrow');
+        this._content = this._node.find('.moui-content');
+        this._arrow = this._node.find('.moui-arrow');
         this.set(opt);
         this._node.appendTo(this._config.window.document.body);
     }
