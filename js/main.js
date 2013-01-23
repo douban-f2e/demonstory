@@ -48,7 +48,7 @@ require([
     });
 
     observer.bind('end', function(){
-        //director.next();
+        director.next();
     });
 
 });

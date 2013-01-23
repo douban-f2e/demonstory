@@ -17,8 +17,7 @@ define([
         this.handRight = $('<span class="hand hand-right"></span>');
         this.legLeft = $('<span class="leg leg-left"></span>');
         this.legRight = $('<span class="leg leg-right"></span>');
-        this.me = origin.clone();
-        this.me.css({
+        this.me = origin.clone().css({
             top: origin.offset().top + 'px',
             left: origin.offset().left + 'px'
         }).addClass('demon')
@@ -197,9 +196,15 @@ define([
                     window: this.window
                 });
             setTimeout(function(){
-                promise.fire();
-                words.destroy();
-            }, duration);
+                words.show();
+                setTimeout(function(){
+                    promise.fire();
+                    words.hide();
+                    setTimeout(function(){
+                        words.destroy();
+                    }, 400);
+                }, duration);
+            }, 0);
             return promise;
         }
 

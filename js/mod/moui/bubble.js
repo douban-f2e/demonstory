@@ -2,11 +2,11 @@
 define('moui/bubble', [
     'mo/lang',
     'dollar',
-    'moui/stick'
+    'moui/util/stick'
 ], function(_, $, stick){
 
     var window = this,
-        TPL_BUBBLE = '<div class="moui-bubble"><div class="content"></div><div class="myarrow"></div></div>',
+        TPL_BUBBLE = '<div class="moui-bubble"><div class="content"></div><div class="arrow"><div></div></div></div>',
         NEGATIVE = [6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6];
 
     function Bubble(opt){
@@ -15,7 +15,7 @@ define('moui/bubble', [
         this._content = this._node.find('.content');
         this._arrow = this._node.find('.myarrow');
         this.set(opt);
-        this.open();
+        this._node.appendTo(this._config.window.document.body);
     }
 
     Bubble.prototype = {
@@ -47,16 +47,16 @@ define('moui/bubble', [
                 align = arrow_clock % 3;
             if (quadrant === 0 || quadrant === 4) {
                 node.addClass('top-arrow')
-                    .addClass(['center', 'right', 'left'][align] + '-align');
+                    .addClass(['center', 'left', 'right'][align] + '-align');
             } else if (quadrant === 1) {
                 node.addClass('right-arrow')
-                    .addClass(['center', 'bottom', 'top'][align] + '-align');
+                    .addClass(['center', 'top', 'bottom'][align] + '-align');
             } else if (quadrant === 2) {
                 node.addClass('bottom-arrow')
-                    .addClass(['center', 'right', 'left'][align] + '-align');
+                    .addClass(['center', 'left', 'right'][align] + '-align');
             } else if (quadrant === 3) {
                 node.addClass('left-arrow')
-                    .addClass(['center', 'bottom', 'top'][align] + '-align');
+                    .addClass(['center', 'top', 'bottom'][align] + '-align');
             }
             stick(this._config.target, this._node[0], clock);
         },
@@ -64,27 +64,18 @@ define('moui/bubble', [
         setContent: function(text){
             this._content.html(text);
         },
-    
-        showLoading: function(text){
 
-        },
-
-        hideLoading: function(){
-
-        },
-
-        open: function(){
+        show: function(){
             if (this.opened) {
                 return;
             }
             this.opened = true;
-            this._node.appendTo(this._config.window.document.body)
-                .addClass('active');
+            this._node.addClass('active');
             this.setAlign(this._config.target, this._config.clock);
             return this;
         },
 
-        close: function(){
+        hide: function(){
             if (!this.opened) {
                 return;
             }

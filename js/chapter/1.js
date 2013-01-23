@@ -16,7 +16,7 @@ define([
     return {
 
         announce: function(screen){
-            return screen('导航链接的诞生', DESC, 2000);
+            return screen('导航链接的诞生', DESC, 1000);
         },
 
         main: function(win, promise){
@@ -47,7 +47,7 @@ define([
             }).follow().done(function(){
 
                 //return wait(200);
-                return demon_home.speak('要有脚！', 600, 6);
+                return demon_home.speak('要有脚！', 800, 6);
 
             }).follow().done(function(){
 
@@ -61,7 +61,7 @@ define([
             }).follow().done(function(){
 
                 //return wait(200);
-                return demon_home.speak('要有手！', 600, 6);
+                return demon_home.speak('要有手！', 800, 9);
 
             }).follow().done(function(){
 
@@ -70,7 +70,8 @@ define([
 
             }).follow().done(function(){
 
-                demon_home.speak('木哈哈哈哈哈！！！', 2000, 6);
+                demon_home.speak('木哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！！！', 
+                    1000, 7);
 
                 demon_home.rotateEye('-90deg', 400);
 
@@ -163,7 +164,7 @@ define([
 
             }).follow().done(function(){
 
-                promise.fire(); // 结束，进入下一章节
+                //promise.fire(); // 结束，进入下一章节
 
             });
 
