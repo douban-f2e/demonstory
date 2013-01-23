@@ -1,0 +1,1 @@
+(function(a){a.fn.splat=function(){return this.map(function(b,c){return a(c)})}})(jQuery);
