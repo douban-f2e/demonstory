@@ -1,0 +1,1 @@
+(function(a){a.fn.replaceClass=function(b,c){a(this).removeClass(b).addClass(c)}})(jQuery);

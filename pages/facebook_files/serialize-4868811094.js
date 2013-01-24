@@ -1,0 +1,1 @@
+define("mod/serialize",["jquery"],function(b){b=b||window.$;var a=function(d){var f={},c="",e=d.serializeArray();b.each(e,function(){c=this.name;if(f[c]){if(!b.isArray(f[c])){f[c]=[f[c]]}f[c].push(this.value||"")}else{f[c]=this.value||""}});return f};return a});

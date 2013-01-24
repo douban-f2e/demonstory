@@ -26,13 +26,16 @@ require([
     });
 
     var story = [{
-        stage: 'pages/index.html', 
+        stage: 'pages/index.html',
         style: '../dist/css/chapter/1.css',
         script: '../chapter/1'
     }, {
-        stage: 'pages/update.html', 
+        stage: 'pages/update.html',
         style: '../dist/css/chapter/2.css',
         script: '../chapter/2'
+    }, {
+        stage: 'pages/facebook.html',
+        script: '../chapter/facebook'
     }];
 
     var observer = event();
