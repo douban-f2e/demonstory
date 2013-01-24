@@ -33,7 +33,7 @@ define([
       }).follow().done(function() {
         return demonCover.speak('大家好，我是科幻作品“打造脸书”', 3000, 2)
       }).follow().done(function() {
-        demonCover.speak('其实，Facebook 是豆瓣的一部分...', 2500, 3)
+        demonCover.speak('大家有所不知，其实 Facebook 曾是豆瓣的一部分...', 3500, 3)
         demonWang = demon({
           origin: wang[0]
         , window: win
@@ -42,7 +42,7 @@ define([
       }).follow().done(function() {
         demonWang.rotateEye('200deg', 400)
         demonWang.moveEye(0.6, 200);
-        return demonWang.speak('嘿！别胡说！我是元老！', 2000, 9)
+        return demonWang.speak('简直一派胡言！', 1500, 9)
       }).follow().done(function() {
         return demonWang.speak('我可是看着脸书一路走过来的！', 2000, 10)
       }).follow().done(function() {
@@ -55,7 +55,7 @@ define([
       }).follow().done(function() {
         return demonWang.walk([10, 50], 300, 'easeOut')
       }).follow().done(function() {
-        return demonCover.speak('后来为了避免被反垄断法缠身，驴踪王先一步拆分了公司。', 4000, 3)
+        return demonCover.speak('后来为了避免被反垄断法缠身，驴宗王先一步拆分了公司。', 4000, 3)
       }).follow().done(function() {
         return demonWang.speak('。。。', 1000, 10)
       }).follow().done(function() {
@@ -71,9 +71,9 @@ define([
       }).follow().done(function() {
         return demonCover.speak('最近被封的 github 的正是 Code 项目的延续...', 3000, 2)
       }).follow().done(function() {
-        return demonCover.speak('这些拆分后的小公司大都在各自的领域树立了行业标杆，激起了整个互联网的进取之心', 5000, 3)
+        return demonCover.speak('这些拆分后的小公司大都成了各自领域的标杆，从而激起了整个互联网的进取之心', 5000, 3)
       }).follow().done(function() {
-        return demonCover.speak('这也正是驴踪王的初衷... ', 3000, 3)
+        return demonCover.speak('这才是驴宗王的初衷啊... ', 3000, 3)
       }).follow().done(function() {
         return demonWang.walk([-10, -50], 300, 'easeOut')
       }).follow().done(function() {
@@ -101,7 +101,7 @@ define([
       }).follow().done(function() {
         demonBtn.rotateHand('left', '150deg', 400);
         demonBtn.rotateHand('right', '-150deg', 400);
-        return demonBtn.speak('快来戳我购买！', 1500, 3)
+        return demonBtn.speak('现在戳我购买还送 192k 高速 VPN 哦！', 2500, 3)
       }).follow().done(function() {
         demonWang.speak('赞！', 1000, 10)
         return demonCover.speak('赞！', 1000, 3)
