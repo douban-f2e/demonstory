@@ -1,6 +1,6 @@
 @import "base";
 
-.nav-link.demon {
+%nav-link {
   font-size:15px;
   color: #072!important;
   margin:-10px 0 0 -12px;
@@ -21,3 +21,22 @@
 
 }
 
+.demon-update.demon {
+  @extend %nav-link;
+  z-index:5;
+}
+
+.demon-home.demon {
+  @extend %nav-link;
+}
+
+.demon-suit {
+  margin-top: -32px;
+  padding:0;
+  border:0;
+
+  img {
+    width: 80px;
+  }
+
+}

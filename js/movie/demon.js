@@ -142,7 +142,8 @@ define([
         },
 
         move: function(offsets, duration, easing){
-            var action = choreo(),
+            var self = this,
+                action = choreo(),
                 x = parseFloat(offsets[0] || 0),
                 y = parseFloat(offsets[1] || 0),
                 currentX = parseFloat(choreo.transform(this.me[0], 'translateX')) || 0,
@@ -150,11 +151,15 @@ define([
             x += currentX,
             y += currentY;
         
+            self.me.addClass('moving');
+
             action.actor(this.me[0], {
                 'transform': 'translate(' + x + 'px, ' + y + 'px)'
             }, duration, easing);
 
-            return action.play().follow();
+            return action.play().follow().done(function(){
+                self.me.removeClass('moving');
+            });
         },
 
         walk: function(offsets, duration, easing){
@@ -222,7 +227,7 @@ define([
                 clock: clock
             });
             self._wordsTimer = setTimeout(function(){
-                self._words.show();
+                self._words.show().update();
                 self._wordsTimer = setTimeout(function(){
                     self._words.hide();
                     self._wordsTimer = setTimeout(function(){

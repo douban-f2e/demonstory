@@ -27,15 +27,15 @@ require([
 
     var story = [{
         stage: 'pages/index.html',
-        style: '../dist/css/chapter/1.css',
-        script: '../chapter/1'
-    }, {
-        stage: 'pages/update.html',
-        style: '../dist/css/chapter/2.css',
-        script: '../chapter/2'
+        style: '../dist/css/chapter/intro.css',
+        script: '../chapter/intro'
     }, {
         stage: 'pages/facebook.html',
         script: '../chapter/facebook'
+    }, {
+        stage: 'pages/index.html',
+        style: '../dist/css/chapter/sample.css',
+        script: '../chapter/sample'
     }];
 
     var observer = event();

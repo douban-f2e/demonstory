@@ -134,6 +134,10 @@
 
   }
 
+  &.moving {
+    z-index:10;
+  }
+
   &.bow-left {
     @include transform-origin(0%, 100%);
   }

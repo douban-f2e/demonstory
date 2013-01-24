@@ -45,6 +45,7 @@ define('moui/bubble', [
                 arrow_clock = NEGATIVE[clock],
                 quadrant = Math.floor((arrow_clock + 1) / 3),
                 align = arrow_clock % 3;
+            node[0].className = node[0].className.replace(/(\w+\-arrow|\w+\-align)/, '');
             if (quadrant === 0 || quadrant === 4) {
                 node.addClass('top-arrow')
                     .addClass(['center', 'left', 'right'][align] + '-align');
@@ -65,13 +66,17 @@ define('moui/bubble', [
             this._content.html(text);
         },
 
+        update: function(){
+            this.setAlign(this._config.target, this._config.clock);
+        },
+
         show: function(){
             if (this.opened) {
                 return;
             }
             this.opened = true;
             this._node.addClass('active');
-            this.setAlign(this._config.target, this._config.clock);
+            this.update();
             return this;
         },
 
