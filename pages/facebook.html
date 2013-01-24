@@ -1,159 +1,1623 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="ua-mac ua-webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT"><meta name="keywords" content="打造Facebook,电子书,电子版,试读,完整版,下载,购买,阅读"><meta name="description" content="打造Facebook的完整电子版，支持iPhone,iPad,安卓,Kindle阅读"><link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon"><link rel="canonical" href="http://read.douban.com/ebook/500486/"><title> 打造Facebook - 豆瓣阅读
-    </title><script>;(function() {
-      if (!/*@cc_on!@*/0) { return }
-      var elements
-      = 'abbr article aside audio canvas datalist details dialog '
-      + 'eventsource figure footer header hgroup mark menu meter '
-      + 'nav output progress section time video'
-
-      ;(elements).replace(/\w+/g, function(e) {
-        document.createElement(e)
-      })
-})()
-    </script><link href="http://img3.douban.com/ark/css/arkui/mod/console-6240688642.css" rel="stylesheet"><script>//必须放在head的前面，执行时间~3ms可以忽略
-      //配合它，do.js放在最后
-
-      var Do = function() {
-      Do.actions.push([].slice.call(arguments));
-    };
-
-    Do.ready = function() {
-      Do.actions.push([].slice.call(arguments));
-    };
-
-    Do.add = Do.define = function(name, opts) {
-      Do.mods[name] = opts;
-    };
-
-    Do.global = function() {
-      Do.global.mods = Array.concat(Do.global.mods, [].slice.call(arguments));
-    };
-
-    Do.global.mods = [];
-    Do.mods = {};
-    Do.actions = [];
-    </script><link href="http://img3.douban.com/ark/css/store/main-3136170189.css" rel="stylesheet"><!--[if lt IE 8]><link href="http://img3.douban.com/ark/css/store/mod/anti-old-ie-1695778210.css" rel="stylesheet"><![endif]--><script src="./facebook_files/define-7937223091.js"></script><script>
-      define.ns('Ark');
-      define.config({
-        'jquery': '$',
-        'mod/ga': 'Ark.ga',
-        'mod/cookie': 'Ark.cookie',
-        'mod/ajax': 'Ark.ajax',
-        'mod/lang': 'Ark._',
-        'mod/template': 'Ark.template',
-        'widget/profile': 'Ark.profile'
-      });
-
-      Do.add('common', {
-        path: "http://img3.douban.com/ark/js/mod/common-4595469274.js",
-        type: 'js'
-      });
-
-      Do.add('mod/cookie', {
-        path: "http://img3.douban.com/ark/js/mod/cookie-8382434327.js",
-        type: 'js'
-      });
-
-      Do.add('mod/ajax', {
-        path: "http://img3.douban.com/ark/js/mod/ajax-6157800039.js",
-        requires: ['mod/cookie', 'widget/profile'],
-        type: 'js'
-      });
-
-      Do.add('mod/ga', {
-        path: "http://img3.douban.com/ark/js/mod/ga-9345343233.js",
-        type: 'js'
-      });
-
-      Do.add('mod/lang', {
-        path: "http://img3.douban.com/ark/js/mod/lang-7496976627.js",
-        type: 'js'
-      });
-
-      Do.add('mod/template', {
-        path: "http://img3.douban.com/ark/js/mod/template-7366070928.js",
-        requires: ['mod/lang'],
-        type: 'js'
-      });
-
-      Do.add('widget/profile', {
-        path: "http://img3.douban.com/ark/js/widget/profile-7418307342.js",
-        requires: ['mod/template', 'mod/cookie'],
-        type: 'js'
-      });
-    </script><script>
-      define.config({
-        'widget/purchase-mixin/ga': 'Ark.PurchaseMixinGa'
-        , 'widget/afford-gift': 'Ark.AffordGiftWidget'
-        , 'lib/fsm': 'StateMachine'
-      })
-
-      Do.add('search', {
-        path: "http://img3.douban.com/ark/js/store/search-8872614050.js",
-        requires: ['mod/template'],
-        type: 'js'
-      });
-
-      Do('common');
-    </script><link href="http://img3.douban.com/ark/css/store/mod/overlay-5510761620.css" rel="stylesheet"><script>
-      'mod/serialize': 'Ark.serialize'
-    </script><style type="text/css"></style><link href="http://img3.douban.com/ark/css/store/mod/overlay-5510761620.css" rel="stylesheet"><script>
-      define.config({
-      'mod/serialize': 'Ark.serialize'
-    });
-
-    Do.add( 'widget/purchase-mixin/ga'
-           , {path: 'http://img3.douban.com/ark/js/store/widget/purchase-mixin-ga-5590222566.js'
-             , requires: ['mod/ga']
-             , type: 'js'
-           })
-           Do.add('lib/fsm', {path: 'http://img3.douban.com/ark/js/lib/state-machine-1546913474.js', type: 'js'})
-           Do.add('mod/serialize', {path: 'http://img3.douban.com/ark/js/mod/serialize-4868811094.js', type: 'js'})
-           Do.add('mod:dataposter', {path: 'http://img3.douban.com/ark/js/lib/dataposter-5870530794.js', type: 'js'})
-           Do.add('dui:overlay', {path: 'http://img3.douban.com/ark/js/lib/dui.overlay-7374326677.js', type: 'js'})
-           Do.add('ui/confirm', {path: 'http://img3.douban.com/ark/js/ui/confirm-4166724933.js', type: 'js'})
-           Do.add('ui/alert', {path: 'http://img3.douban.com/ark/js/ui/alert-2703366823.js', type: 'js'})
-           Do.add('widget/afford-gift', {
-             path: 'http://img3.douban.com/ark/js/store/widget/afford-gift-6917654537.js'
-             , type: 'js'
-             , requires: [ 'mod/ajax', 'lib/fsm', 'ui/confirm', 'mod/template'
-               , 'ui/alert', 'mod/ga', 'widget/purchase-mixin/ga']
-           })
-    </script><script>
-      define.config({
-        'widget/vote': 'Ark.vote'
-      })
-      Do.add('jquery:replace-class', {
-        path: 'http://img3.douban.com/ark/js/lib/jquery/jquery.replace-class-4556646374.js',
-        type: 'js'
-      })
-      Do.add('review-item', {
-        path: 'http://img3.douban.com/ark/js/store/review/review-item-437414685.js',
-        type: 'js'
-      })
-      Do.add('widget/vote', {
-        path: 'http://img3.douban.com/ark/js/store/review/widget/vote-1615890537.js',
-        type: 'js',
-        requires: ['mod/template', 'mod/ajax']
-      })
-      Do('review-item')
-    </script><script>
-      define.config({
-        'ui/apply-dialog': 'Ark.applyDialog'
-      })
-    </script><link rel="stylesheet" href="http://img3.douban.com/ark/css/store/review-5815565795.css">
-    <link rel="stylesheet" href="http://img3.douban.com/ark/css/store/ebook-5482124943.css"><script>
-      Do.add('tabs', {path: 'http://img3.douban.com/ark/js/widget/tabs-14882365.js', type: 'js'})
-    Do.add('jquery.splat', {path: 'http://img3.douban.com/ark/js/lib/jquery/jquery.splat-7268594106.js', type: 'js'})
-    Do.add('app', {path: 'http://img3.douban.com/ark/js/store/ebook-6607804735.js', type: 'js'
-           , requires: ['jquery.splat', 'tabs']})
-           Do('app')
-  </script><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://apkgdchjdlmlbfkifhoacoehkghfjnje/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://apkgdchjdlmlbfkifhoacoehkghfjnje/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></head><body><div class="wrapper"><header><div class="top-info"><div class="inner"><h1 class="logo" title="豆瓣阅读"><a href="http://read.douban.com/">豆瓣阅读</a></h1><form id="frm-search" action="http://read.douban.com/search" method="get"><input id="input-query" type="text" name="q" maxlength="60" size="22" value="" placeholder="作品名 / 书名 / 作者 " autocomplete="off"><input id="btn-search" type="submit" value="搜索"></form><ul id="suggest-list" class="suggests-list"></ul><script id="tmpl-suggest-item" type="text/template"><li>{{- suggest }}</li></script><script>
-              Do('search')
-      </script><ul class="entrances"><li><a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook&app_server=gardner8&profile=shire"><span style="color:orange"> 200 ms </span></a></li><li class="kindle-delivery"><a href="http://read.douban.com/kindle">Kindle递送</a></li><li class="reader-entrance"><a href="http://read.douban.com/reader">我的阅读器</a></li></ul></div></div><nav class="nav nav-store"><div class="inner"><ul class="items"><li><a href="http://read.douban.com/">作品商店</a></li><li><a href="http://read.douban.com/category/new">分类浏览</a></li><li><a href="http://read.douban.com/author/selection">个人作者</a></li><li><a href="http://read.douban.com/provider/2637315/">合作方</a></li><li><a href="http://read.douban.com/category/free">免费</a></li></ul><ul class="items items-minor user-info"><li class="nav-account"><a class="name" href="http://read.douban.com/account/" title="账户">mockee</a>[<a class="logout" href="http://read.douban.com/logout?ck=9sFb">退出</a>] </li><li><a href="http://read.douban.com/account/">账户</a></li></ul></div></nav></header><div class="main"><article class="col col9 app-article"><div class="article-profile-section article-profile-primary"><div class="cover"><img width="110px" height="164px" src="./facebook_files/500486.jpg" alt=""></div><div class="article-profile-bd"><h1 class="article-title">打造Facebook</h1><p class="subtitle">亲历Facebook爆发的5年</p><p class="author"><span class="label">作者</span><span class="labeled-text">王淮 祝文让</span></p><p class="category"><span class="label">类别</span><span class="labeled-text">非虚构 / 图书</span></p><p class=""><span class="label">出版社</span><span class="labeled-text">印刷工业出版社</span></p><p class=""><span class="label">出版年月</span><span class="labeled-text">2013年2月</span></p><p class=""><span class="label">ISBN</span><span class="labeled-text"><a href="http://book.douban.com/subject/20471120/" title="7514207635">7514207635</a></span></p><div class="rating article-rating">(<a href="http://read.douban.com/ebook/500486/ratings" class="rating-amount">3人评价</a>)</div><div class="article-profile-actions"><div class="ebook-actions"><a class="afford-gift-none btn-info btn" data-readable-price="18.00" data-price="1800" data-article-id="500486" data-href="/ebook/500486/present" aid="500486" data-widget="afford-gift" data-title="打造Facebook" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">赠送</a><a rel="dialog" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" class="btn btn-info" data-width="440" data-class="sharing-article dialog-sharing" data-href="/ebook/500486/share">推荐</a></div><div class="article-actions purchase-none purchase-layout-horizontal" data-readable-price="18.00" data-price="1800" data-article-id="500486" data-widget="purchase" data-title="打造Facebook"><span class="price-tag">18.00元</span><a data-action="purchase" class="btn purchase" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" aid="500486" data-href="/j/article/500486/buy">购买</a><form class="form-get-sample" action="http://read.douban.com/ebook/500486/sample" method="POST" target="_blank"><div style="display:none;"><input type="hidden" name="ck" value="9sFb"></div><button class="btn btn-minor btn-preview" type="submit" name="submit">试读</button></form></div></div></div></div><div class="reading-place"><span class="place-title">支持多平台阅读</span><ul class="device-list"><li><a class="icon-device-web" href="http://read.douban.com/intro/web">Web</a></li><li><a class="icon-device-iphone" href="http://read.douban.com/intro/iphone">iPhone</a></li><li><a class="icon-device-ipad" href="http://read.douban.com/intro/ipad">iPad</a></li><li><a class="icon-device-android" href="http://read.douban.com/intro/android">Android</a></li><li><a class="icon-device-kindle" href="http://read.douban.com/intro/kindle">Kindle</a></li></ul></div><div class="article-profile-section article-abstract"><h2>导言</h2><div class="abstract-full"><div class="info"><p>这本书的书名——《打造Facebook：亲历Facebook爆发的5年》很嚣张，谁有资格可以说这句话呢，当然，扎克伯格最有资格，但他不会亲自来告诉你，至少从目前的情况来看，近几年都不大可能。而且，这不是一个人的公司。里面的每一人，尤其是工程师，既是公司文化的承受者，同时也在不断的改造着公司的文化。我想强调的是团队，是团队的力量打造了Facebook。而让团队凝聚在一起并充满战斗力的，即其文化。这种文化，包括一些做事的方式，为什么这么做的原因，和对这些做法和原因的认同。写这本《打造Facebook：亲历Facebook爆发的5年》，是想剖析Facebook文化的精髓，还有这里面的思考过程和前后的变化，详细解释当中最有价值和最值得学习的那几点。尤其作为早期员工，我们奠定了这些文化的基础。</p></div><div class="info"><p>一位前Facebook员工的亲身经历，一段充满创业激情和汗水的日子——国内第一本、也是唯一一本由内部人士撰写的Facebook文化书，为你讲述这个全球最大社交网络从无到有的点点滴滴。</p></div><div class="info"><p>王淮，毕业于浙江大学和斯坦福大学。Facebook第二位中国籍工程师，第一位中国籍研发经理。最初进入Facebook时任工程师，后转为管理者，一手开创了Facebook的支付安全和客服工具领域。</p><p>最早进入Facebook的中国籍员工，大部分都由他推荐，并因此收到CEO桑德伯格的感谢信。更为可贵的是，作为早期员工，他参与塑造了Facebook文化与价值观。在Facebook的5年（2007-2011），正好是Facebook上市前，集中爆发的5年。刚加入时，在Facebook只有2000万月活跃客户，离开时已8亿多活跃用户，增长45倍，用户人数占地球人口的15%。2011年离开Facebook后，回国做天使投资人，希望用自己在Facebook的经验帮助创业者。现为天使投资人薛蛮子、徐小平的投资搭档，致景投资合伙人，兼任大众点评网、百姓网CEO顾问。</p></div></div><div class="expand-article-abstract">（<a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-action="expand">展开</a>） </div></div><div class="article-profile-section table-of-contents"><h2>目录</h2><ol><li><h5>推荐序：学习Facebook文化</h5></li><li><h5>自序：亲历Facebook爆发的5年</h5></li><li><h5>第一章</h5></li><li><h5>扎克伯格的真实一面</h5></li><li><h5>第一节 第一次见到他问了奇怪的问题</h5></li><li style="display: none;"><h5>第二节 第一次F8大会，我们在台上台下一起颤抖</h5></li><li style="display: none;"><h5>第三节 扎克伯格在公司内部知无不言</h5></li><li style="display: none;"><h5>第四节 每年一项新“挑战”</h5></li><li style="display: none;"><h5>第五节 《社交网络》“只有2%是真的”——穿的T恤和拖鞋</h5></li><li style="display: none;"><h5>第六节 关注用户体验细节，更指明产品发展方向</h5></li><li style="display: none;"><h5>第二章</h5></li><li style="display: none;"><h5>打进Facebook</h5></li><li style="display: none;"><h5>第一节 选Facebook还是Google</h5></li><li style="display: none;"><h5>第二节 在雅虎的负面经验：“公司政治”问题</h5></li><li style="display: none;"><h5>第三节 Facebook工程师面试聊什么</h5></li><li style="display: none;"><h5>第四节 Facebook的招聘标准：只和最好的人合作</h5></li><li style="display: none;"><h5>第五节 找到一流人才的途径</h5></li><li style="display: none;"><h5>第六节 面试中忌讳的几个问题</h5></li><li style="display: none;"><h5>第七节 招聘永远是第一位的</h5></li><li style="display: none;"><h5>第三章</h5></li><li style="display: none;"><h5>欢迎来到“新兵训练营”</h5></li><li style="display: none;"><h5>第一节 为什么要有新兵训练营</h5></li><li style="display: none;"><h5>第二节 新兵在这6周里究竟要做什么</h5></li><li style="display: none;"><h5>第三节 谁可以做新兵训练营的导师</h5></li><li style="display: none;"><h5>第四节 导师需要做什么</h5></li><li style="display: none;"><h5>第五节 如何为新员工找到合适的工作职位</h5></li><li style="display: none;"><h5>第六节 训练营不仅是新员工培训班，也是经理培训班</h5></li><li style="display: none;"><h5>第四章</h5></li><li style="display: none;"><h5>黑客文化是Facebook的核心理念</h5></li><li style="display: none;"><h5>第一节 黑客创立公司</h5></li><li style="display: none;"><h5>第二节 黑客的驱动力是不断地学习和再创造</h5></li><li style="display: none;"><h5>第三节 Facebook的“黑客之道”</h5></li><li style="display: none;"><h5>第四节 找到黑客级别的工程师</h5></li><li style="display: none;"><h5>第五节 工程师驱动文化</h5></li><li style="display: none;"><h5>第六节 产品开发的三个准则</h5></li><li style="display: none;"><h5>第七节 硅谷盛行的“工具文化”</h5></li><li style="display: none;"><h5>第八节 想换组，公司帮你——Hack-A-Month计划</h5></li><li style="display: none;"><h5>第五章</h5></li><li style="display: none;"><h5>从个人成长为团队管理者</h5></li><li style="display: none;"><h5>第一节 成长为更全面的工程师</h5></li><li style="display: none;"><h5>第二节 接受新挑战：进入支付相关领域</h5></li><li style="display: none;"><h5>第三节 一次危机成为打造团队的机会</h5></li><li style="display: none;"><h5>第四节 如何招到你想要的人手</h5></li><li style="display: none;"><h5>第五节 如何有效管理你的团队</h5></li><li style="display: none;"><h5>第六节 如何有效分配工作任务</h5></li><li style="display: none;"><h5>第七节 增进亲密感以减少紧张关系</h5></li><li style="display: none;"><h5>第八节 如何开展一对一碰头会</h5></li><li style="display: none;"><h5>第九节 “升职”的意义</h5></li><li style="display: none;"><h5>第十节 导师文化：寻找一位可信赖的导师帮你提高</h5></li><li style="display: none;"><h5>第六章</h5></li><li style="display: none;"><h5>解密Facebook产品的开发流程</h5></li><li style="display: none;"><h5>第一节 描绘远景 设置目标</h5></li><li style="display: none;"><h5>第二节 收集想法并排出优先次序</h5></li><li style="display: none;"><h5>第三节 跨团队沟通</h5></li><li style="display: none;"><h5>第四节 告知所有可能关心的人</h5></li><li style="display: none;"><h5>第五节 设计产品</h5></li><li style="display: none;"><h5>第六节 指定项目责任人</h5></li><li style="display: none;"><h5>第七节 定期碰头会</h5></li><li style="display: none;"><h5>第八节 了解进度 汇总报告</h5></li><li style="display: none;"><h5>第九节 发布产品 监测数据</h5></li><li style="display: none;"><h5>第七章</h5></li><li style="display: none;"><h5>慷慨而严谨的考核激励体系</h5></li><li style="display: none;"><h5>第一节 重要而费时的业绩评价</h5></li><li style="display: none;"><h5>第二节 意见反馈需要持续进行</h5></li><li style="display: none;"><h5>第三节 如何升职与加薪</h5></li><li style="display: none;"><h5>第四节 究竟卖不卖股票，这个问题很头疼</h5></li><li style="display: none;"><h5>第五节 上市对公司发展的影响</h5></li><li style="display: none;"><h5>第六节 员工离职创业并非坏事</h5></li><li style="display: none;"><h5>第八章</h5></li><li style="display: none;"><h5>我眼中的天使投资与创新精神</h5></li><li style="display: none;"><h5>第一节 美国还是中国</h5></li><li style="display: none;"><h5>第二节 一个中心：先是“天使”，再谈“投资”</h5></li><li style="display: none;"><h5>第三节 如何考察投资项目</h5></li><li style="display: none;"><h5>第四节 创业者要靠谱、有激情、有能力，最佳创业团队是三人组</h5></li><li style="display: none;"><h5>第五节 如何判断创业者的能力和诚信</h5></li><li style="display: none;"><h5>第六节 希望自己被创业者挑选</h5></li><li style="display: none;"><h5>第七节 将硅谷的经验带给创业者</h5></li><li style="display: none;"><h5>第八节 四大指导原则</h5></li><li style="display: none;"><h5>第九节 “山寨”为什么这样红</h5></li><li style="display: none;"><h5>第十节 如何变得更有创新精神</h5></li><li style="display: none;"><h5>第十一节 改变“山寨”不能坐等</h5></li><li style="display: none;"><h5>第十二节 要勇于尝试“破坏性创新”</h5></li></ol><div class="expand-table">（<a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-action="expand">展开</a>） </div></div><div class="article-profile-section article-profile-secondary"><h2>作品信息</h2><p class=""><span class="label">页数</span><span class="labeled-text">447页</span></p><p class=""><span class="label">首次发表</span><span class="labeled-text">豆瓣阅读</span></p><p class="inline-tags"><span class="label">标签</span><span class="labeled-text"><a href="http://read.douban.com/tag/%E4%BA%92%E8%81%94%E7%BD%91/">互联网(14)</a><span class="sep">/</span><a href="http://read.douban.com/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机(22)</a><span class="sep">/</span><a href="http://read.douban.com/tag/%E5%95%86%E4%B8%9A/">商业(11)</a><span class="sep">/</span><a href="http://read.douban.com/tag/%E5%88%9B%E4%B8%9A/">创业(5)</a><span class="sep">/</span><a href="http://read.douban.com/tag/%E7%AE%A1%E7%90%86/">管理(9)</a><span class="sep">/</span><a href="http://read.douban.com/tag/Facebook/">Facebook(1)</a></span></p><p class=""><span class="label">开售时间</span><span class="labeled-text">2013-01</span></p></div><div class="article-profile-section article-reviews-section reviews"><div class="reviews-heading"><h3 class="reviews-heading-title">评论<span class="total-reviews-count">1</span></h3><span class="msg-disabled">购买后可以写评论</span><div id="read-review-tabs" class="review-tabs"><ul><li class="tab ark-tab-activated"><a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">有用</a></li><li class="tab"><a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">最新</a></li></ul></div></div><div id="book-reviews" class="review-lists"><div class="review-list read-review-list" style=""><ul class="reviews"><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/beiyuu/" class="pic"><img src="./facebook_files/u1949819-15.jpg" alt="BeiYuu"></a></div><div class="info"><div class="title"><a href="http://read.douban.com/review/1007057/">只有好的棋手才会走运</a></div><div class="author"><a href="http://www.douban.com/people/beiyuu/">BeiYuu</a></div><div class="desc">能和Facebook这样的公司一起成长太幸福，对作者真是羡慕嫉妒恨。 Facebook快速并且顺利的成长，作者初期选择他，悬念并不大，不过在第一章谈到对公司的忠诚度倒是个不错的话题，树倒猢狲散、墙倒众人推，这就是现实，更何况赤裸裸的签订的打工合同，每个人都会做对自己最有利的选择，同样的，公司招聘也不是做慈善，所以... </div><div class="simple-impression"><span class="date">2013-01-22</span><span class="voted-num">1有用</span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="1007057" data-review-name="review"><b class="triangle-bottom"></b></a></div></li></ul></div><div class="review-list read-review-list" style="display: none;"><ul class="reviews"><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/beiyuu/" class="pic"><img src="./facebook_files/u1949819-15.jpg" alt="BeiYuu"></a></div><div class="info"><div class="title"><a href="http://read.douban.com/review/1007057/">只有好的棋手才会走运</a></div><div class="author"><a href="http://www.douban.com/people/beiyuu/">BeiYuu</a></div><div class="desc">能和Facebook这样的公司一起成长太幸福，对作者真是羡慕嫉妒恨。 Facebook快速并且顺利的成长，作者初期选择他，悬念并不大，不过在第一章谈到对公司的忠诚度倒是个不错的话题，树倒猢狲散、墙倒众人推，这就是现实，更何况赤裸裸的签订的打工合同，每个人都会做对自己最有利的选择，同样的，公司招聘也不是做慈善，所以... </div><div class="simple-impression"><span class="date">2013-01-22</span><span class="voted-num">1有用</span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="1007057" data-review-name="review"><b class="triangle-bottom"></b></a></div></li></ul></div></div></div><div class="article-profile-section article-reviews-section reviews"><div class="reviews-heading"><h3 class="reviews-heading-title">来自豆瓣读书的评论<span class="total-reviews-count">22</span></h3><div id="book-review-tabs" class="review-tabs"><ul><li class="tab ark-tab-activated"><a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">有用</a></li><li class="tab"><a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">最新</a></li></ul></div></div><div class="book-review-lists"><div class="book-review-list" style=""><ul class="book-reviews review-list"><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/39683088/" class="pic" target="_blank"><img src="./facebook_files/u39683088-1.jpg" alt="nonoidea"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5726975/" target="_blank">这是我写的, 感觉还行 - 写了一个简介, 在www.nonoidea.com/?p=372</a></div><div class="author"><a href="http://www.douban.com/people/39683088/" target="_blank">nonoidea</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc"> 热腾腾的新书终于上桌了. 欢迎感兴趣的朋友品尝. 先品后评, 正面负面, 只要真情, 不胜感激. 书在当当, 京东和卓越上, 据说只要出钱就可以买了, 特方便… 元旦在京东上下一蛋, 3号收到. 这本书的标题有标题党嫌疑, 但内容绝对是关于如何打造的一些干货分享 – 大多不是扎克伯格一个人想出来的, 当然更不是我想出来的, ... <span class="comments-num">（<a href="http://book.douban.com/review/5726975/#comments" target="_blank">9回应</a>） </span></div><div class="impression"><span class="date">2013-01-04</span><span class="voted-num">15有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5726975" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/Fenng/" class="pic" target="_blank"><img src="./facebook_files/u1025061-11.jpg" alt="Fenng"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5731443/" target="_blank">从工程师的角度看 Facebook</a></div><div class="author"><a href="http://www.douban.com/people/Fenng/" target="_blank">Fenng</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc"> 王淮以自己的亲身经历讲述了 Facebook 的五年经验。关于 Facebook，我们从新闻上了解太多了，但是这家公司的内部情况，其实外界知之甚少。比如，Facebook 是怎么招聘的? 怎么做项目? Facebook 的黑客文化都包括哪些? ...... 有的时候能看到一些零零散散的文章，但相对系统的介绍则不多。一口气读完这本《打造 Facebook》... <span class="comments-num">（<a href="http://book.douban.com/review/5731443/#comments" target="_blank">7回应</a>） </span></div><div class="impression"><span class="date">2013-01-08</span><span class="voted-num">11有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5731443" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/allstar/" class="pic" target="_blank"><img src="./facebook_files/u1239444-38.jpg" alt="蜀道路口star哥"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5735196/" target="_blank">他们每时每刻都在为世界创造真正的价值</a></div><div class="author"><a href="http://www.douban.com/people/allstar/" target="_blank">蜀道路口star哥</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc"> 推荐给所有认同工程师文化的同学。 有一群人，他们的驱动力是不断学习和不断创造，他们的理想是将世界变得更好，并投身于此，积极进取。他们是理想主义者，胸怀大志；他们也是实干家，为更好的世界每日添砖加瓦。 他们每时每刻都在为世界创造真正的价值。 这类人，酷一点的名字叫黑客(Hacker)或者极客(Geek)，亲切一点... </div><div class="impression"><span class="date">2013-01-10</span><span class="voted-num">6有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5735196" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/Quantum_Panda/" class="pic" target="_blank"><img src="./facebook_files/u1033190-7.jpg" alt="量子熊猫"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5749113/" target="_blank">工程师的细节之美</a></div><div class="author"><a href="http://www.douban.com/people/Quantum_Panda/" target="_blank">量子熊猫</a><span title="5" class="rating-stars stars-small-context stars-small-5"></span></div><div class="desc"> 工程师的细节之美 电影《超时空接触》中，地球人准备和高技术外星人通讯，朱迪·福斯特饰演的女主角为外星人准备的问题是，他们如何发展了高度的文明，却没有自我毁灭。这个问题稍作修改就是我想询问Facebook 的：他们是如何在短短几年时间，从一家创业公司迅速变身为大公司，却没有自我毁灭？ 这个问题并不奇怪。不... <span class="comments-num">（<a href="http://book.douban.com/review/5749113/#comments" target="_blank">3回应</a>） </span></div><div class="impression"><span class="date">2013-01-21</span><span class="voted-num">5有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5749113" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/wohaoaini/" class="pic" target="_blank"><img src="./facebook_files/u3594923-31.jpg" alt="我"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5749936/" target="_blank">Facebook，从来只用盗版</a></div><div class="author"><a href="http://www.douban.com/people/wohaoaini/" target="_blank">我</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc">“说到借鉴，硅谷那边是这样的：创意可以借鉴，但“执行”是不能照抄的，就好比Facebook并不是第一家做社交网络的公司，但它的最终产品跟别人都不一样。而中国很多公司不仅复制创意，也复制“执行”，就很不好了。国内有一家知名公司，基本是Facebook推出什么样的新应用，它很快就复制出来，有时甚至是把源代码原封不动搬...</div><div class="impression"><span class="date">2013-01-21</span><span class="voted-num">5有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5749936" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/raully7/" class="pic" target="_blank"><img src="./facebook_files/u2621812-3.jpg" alt="ppYang"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5731172/" target="_blank">对脸书做事方法一个比较全面的介绍</a></div><div class="author"><a href="http://www.douban.com/people/raully7/" target="_blank">ppYang</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc"> 很早就读了王淮哥写的《我在Facebook的十点经验总结》，很实在、有启发。所以尽管这次书名很土，还是第一时间买了。既希望看到更多干货和想法，也是对之前分享的感谢。 两百多页，大概三个小时看完。作者分享了自己在facebook的经历，涉及招聘、培训、文化、工作流程、自己工作转变等各方面的内容。可以说是全面而诚恳的... </div><div class="impression"><span class="date">2013-01-08</span><span class="voted-num">3有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5731172" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li></ul><div class="reviews-summary"><a class="reviews-all" href="http://book.douban.com/subject/20471120/reviews?sort=score" target="_blank"> 更多评论 22 </a></div></div><div class="book-review-list" style="display: none;"><ul class="book-reviews review-list"><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/mjshi/" class="pic" target="_blank"><img src="./facebook_files/u1351357-2.jpg" alt="mjshi"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5752120/" target="_blank">还行！</a></div><div class="author"><a href="http://www.douban.com/people/mjshi/" target="_blank">mjshi</a><span title="3" class="rating-stars stars-small-context stars-small-3"></span></div><div class="desc"> 在多看上买的电子版来看的。其实这本书名字叫“那些年我在Facebook的日子”更准确。内容比较朴实，都是干货，可以借鉴到工作中。 怎么说书也要有个结尾吧，看到最后感觉戛然而止，还以为是盗版的。 </div><div class="impression"><span class="date">2013-01-23</span><span class="voted-num">0有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5752120" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/xiongbo/" class="pic" target="_blank"><img src="./facebook_files/u54914964-4.jpg" alt="二师兄"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5751054/" target="_blank">我想说的是科幻世界4.99</a></div><div class="author"><a href="http://www.douban.com/people/xiongbo/" target="_blank">二师兄</a><span title="3" class="rating-stars stars-small-context stars-small-3"></span></div><div class="desc"> 我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！ 我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！ 我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！ 我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！ </div><div class="impression"><span class="date">2013-01-22</span><span class="voted-num">0有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5751054" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/fanxuan88/" class="pic" target="_blank"><img src="./facebook_files/u3521036-6.jpg" alt="茶小微"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5750536/" target="_blank">这本书里给我留下深刻印象的话都在后半程</a></div><div class="author"><a href="http://www.douban.com/people/fanxuan88/" target="_blank">茶小微</a><span title="3" class="rating-stars stars-small-context stars-small-3"></span></div><div class="desc"> 如果你想说服其他人采取你的想法，你需要两样东西，一个是故事，或者叫做例子，就是为什么这样做有效，能不能让你的说法有感染力，让你的说法给人留下印象；另一个就是数据，让你的说法有数据的支持，那么可信度会高很多。 对于你做出来的产品，你必须是它的用户，你自己会使用它，有使用它的欲望和精力，而这种经历会反... </div><div class="impression"><span class="date">2013-01-22</span><span class="voted-num">0有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5750536" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/iamzilu/" class="pic" target="_blank"><img src="./facebook_files/user_normal.jpg" alt="zodzod_张浩"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5750490/" target="_blank">从facebook学什么</a></div><div class="author"><a href="http://www.douban.com/people/iamzilu/" target="_blank">zodzod_张浩</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc"> 王淮的这本书绝对值得一个互联网从业人员读三遍以上。第一遍看故事，第二遍找和工作相关的细节相对比，第三遍要仔细咂摸，思考为什么要这样。我合上书之后，觉得以下几个问题最有意思： 1. 使用社会网络——社会网络公司一定是最懂“社会网络”的 别误会，这不是说facebook招人是在facebook上招的。恰恰相反，facebook... </div><div class="impression"><span class="date">2013-01-22</span><span class="voted-num">0有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5750490" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/itsyarkee/" class="pic" target="_blank"><img src="./facebook_files/u8545425-11.jpg" alt="Yarkee"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5750288/" target="_blank">Facebook是Geek的天堂</a></div><div class="author"><a href="http://www.douban.com/people/itsyarkee/" target="_blank">Yarkee</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc"> 1. 这本书描绘了一个技术Geek们的乌托邦; 2. 这样的乌托邦只适合技术大拿去玩，对技术没有激情的程序员即使去了Fackbook，最终也会被淘汰; 3. 国内的互联网环境决定着国内的互联网公司学不来Fackbook的这种玩法; 4. 书里提到的Geek文化和工程师文化大家欣赏欣赏就好，别急着模仿，免得画虎类猫。5. 这是本好书，推荐程序员... </div><div class="impression"><span class="date">2013-01-22</span><span class="voted-num">0有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5750288" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li><li class="review-item collapsed"><div class="user-avatar"><a href="http://www.douban.com/people/wohaoaini/" class="pic" target="_blank"><img src="./facebook_files/u3594923-31.jpg" alt="我"></a></div><div class="info"><div class="title"><a href="http://book.douban.com/review/5749936/" target="_blank">Facebook，从来只用盗版</a></div><div class="author"><a href="http://www.douban.com/people/wohaoaini/" target="_blank">我</a><span title="4" class="rating-stars stars-small-context stars-small-4"></span></div><div class="desc">“说到借鉴，硅谷那边是这样的：创意可以借鉴，但“执行”是不能照抄的，就好比Facebook并不是第一家做社交网络的公司，但它的最终产品跟别人都不一样。而中国很多公司不仅复制创意，也复制“执行”，就很不好了。国内有一家知名公司，基本是Facebook推出什么样的新应用，它很快就复制出来，有时甚至是把源代码原封不动搬...</div><div class="impression"><span class="date">2013-01-21</span><span class="voted-num">5有用</span><span class="version"><a href="http://book.douban.com/subject/20471120/" target="_blank">印刷工业出版社2013版</a></span></div><a class="btn-view-detail" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#" data-review-id="5749936" data-review-name="subject_review"><b class="triangle-bottom"></b></a></div></li></ul><div class="reviews-summary"><a class="reviews-all" href="http://book.douban.com/subject/20471120/reviews?sort=time" target="_blank"> 更多评论 22 </a></div></div></div></div></article><aside class="col col4"><section><div class="hd tags-heading"><h3>作品标签</h3></div><div class="bd"><ul class="tags"><li><a href="http://read.douban.com/tag/%E4%BA%92%E8%81%94%E7%BD%91/"><span class="works-category">互联网</span><span class="works-total">14</span></a></li><li><a href="http://read.douban.com/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><span class="works-category">计算机</span><span class="works-total">22</span></a></li><li><a href="http://read.douban.com/tag/%E5%95%86%E4%B8%9A/"><span class="works-category">商业</span><span class="works-total">11</span></a></li><li><a href="http://read.douban.com/tag/%E5%88%9B%E4%B8%9A/"><span class="works-category">创业</span><span class="works-total">5</span></a></li><li><a href="http://read.douban.com/tag/%E7%AE%A1%E7%90%86/"><span class="works-category">管理</span><span class="works-total">9</span></a></li><li><a href="http://read.douban.com/tag/Facebook/"><span class="works-category">Facebook</span><span class="works-total">1</span></a></li></ul></div></section><section><div class="hd author-heading"><h3>作者</h3></div><div class="bd"><div class="author-info"><h4><a href="http://read.douban.com/author/63687279">
-                    <span class="wang"><img src="./facebook_files/4ad1dfc7373c61b.jpg" class="avatar" alt="王淮"></span><span class="name">王淮</span></a></h4><p>Facebook早期员工；Facebook第一位华裔研发经理；致景投资创始合伙人; 点评网、百姓网CEO顾问</p></div></div></section><section><div class="hd author-heading"><h3>读者动态</h3></div><ul class="reader-actions"><li class="reader-action"><div class="action-user"><a href="http://www.douban.com/people/lovedogman/" target="_blank"><img src="./facebook_files/u3458721-5.jpg" alt="lovedogman"></a></div><div class="action-desc"><a href="http://www.douban.com/people/lovedogman/" target="_blank">lovedogman</a><div class="action-msg"><span>5分钟前 购买</span></div></div></li><li class="reader-action"><div class="action-user"><a href="http://www.douban.com/people/wRap/" target="_blank"><img src="./facebook_files/u9222013-9.jpg" alt="wRap"></a></div><div class="action-desc"><a href="http://www.douban.com/people/wRap/" target="_blank">wRap</a><div class="action-msg"><span>6分钟前 试读</span></div></div></li><li class="reader-action"><div class="action-user"><a href="http://www.douban.com/people/54484782/" target="_blank"><img src="./facebook_files/u54484782-4.jpg" alt="ATP"></a></div><div class="action-desc"><a href="http://www.douban.com/people/54484782/" target="_blank">ATP</a><div class="action-msg"><span>13分钟前 试读</span></div></div></li><li class="reader-action"><div class="action-user"><a href="http://www.douban.com/people/year1917/" target="_blank"><img src="./facebook_files/u46151922-18.jpg" alt="随风飘散"></a></div><div class="action-desc"><a href="http://www.douban.com/people/year1917/" target="_blank">随风飘散</a><div class="action-msg"><span>27分钟前 购买</span></div></div></li><li class="reader-action"><div class="action-user"><a href="http://www.douban.com/people/shisanshuo/" target="_blank"><img src="./facebook_files/u36340581-4.jpg" alt="three.ten KE"></a></div><div class="action-desc"><a href="http://www.douban.com/people/shisanshuo/" target="_blank">three.ten KE</a><div class="action-msg"><span>1小时前 购买</span></div></div></li><li class="reader-action"><div class="action-user"><a href="http://www.douban.com/people/xulao/" target="_blank"><img src="./facebook_files/u4259077-71.jpg" alt="老徐"></a></div><div class="action-desc"><a href="http://www.douban.com/people/xulao/" target="_blank">老徐</a><div class="action-msg"><span>今天下午 购买</span></div></div></li></ul></section><div class="section ">&gt;<a href="http://read.douban.com/ebook/500486/ratings" class="ratings-count">3人评价</a></div></aside><script id="wrong-password-tmpl" type="text/template"><div class="dialog-content-bd"><p> 密码或验证码错误，请重试 </p><div class="confirming-actions"><a class="btn btn-large btn-confirm" data-confirm="true">重试</a><a class="btn btn-minor btn-large btn-cancel" data-confirm="false">取消</a></div></div></script><script id="confirm-purchase-tmpl" type="text/template"><div class="dialog-content-bd"><p> 确定购买《{{- title }}》？ </p><p class="secondary balance"> 作品价格 {{- readablePrice }} 元 </p><div class="confirming-actions purchase-confirming-actions"><a class="btn btn-large btn-confirm" data-confirm="true">确定</a><a class="btn btn-minor btn-large btn-cancel" data-confirm="false">取消</a></div></div><div class="dialog-content-ft"><label id="checkbox-setting"><input type="checkbox" name="secretly" value="on" />&nbsp;购买仅自己可见 </label></div></script><script id="confirm-present-tmpl" type="text/template"><div class="dialog-content-bd"><p> 确定赠送《{{- title }}》？ </p><p class="secondary balance"> 作品价格 {{- readablePrice }} 元 </p><div class="confirming-actions purchase-confirming-actions"><a class="btn btn-large btn-confirm" data-confirm="true">确定</a><a class="btn btn-minor btn-large btn-cancel" data-confirm="false">取消</a></div></div></script><script id="insufficent-funds-tmpl" type="text/template"><div class="dialog-content-bd"><p> 账号余额不足，去充值？ </p><div class="confirming-actions purchase-confirming-actions"><a class="btn btn-large btn-confirm" href="/account/?{{- referrerType }}={{- articleId }}" data-confirm="true">去充值</a><a class="btn btn-minor btn-large btn-cancel" data-confirm="false">暂时不用</a></div></div></script><script id="purchase-success-tmpl" type="text/template"><div class="dialog-content-bd"><div class="success-sign">购买成功！</div><p> 你可以去阅读器中阅读这篇作品了 </p></div></script><script id="present-success-tmpl" type="text/template"><div class="dialog-content-bd"><div class="success-sign">赠送成功！</div></div></script><script id="checking-passport-tmpl" type="text/template"><form method="POST" class="form-check-pass form-confirm dialog-content-bd"><div style="display:none;"><input type="hidden" name="ck" value="9sFb"/></div><p> 输入登录密码确认支付 </p><p class="secondary"> 你的豆瓣账号是 {{= email }} </p><div class="verify-passport"><input type="password" name="password" class="input-wide input-password" placeholder="输入你的登录密码" /></div> {{ if (needCaptcha) { }} <div class="verify-captcha"><img class="img-captcha" src="{{= captchaUrl }}" /><input type="hidden" name="captcha_id" value="{{= captchaId }}" /><input type="text" name="captcha_so" class="input-wide input-captcha" placeholder="输入上图中的单词" /></div> {{ } }} <div class="confirming-actions"><a class="btn btn-large btn-confirm" data-confirm="true">确认支付</a><a class="btn btn-minor btn-large btn-cancel" data-confirm="false">取消</a></div></form></script><script>
-        </script><script type="text/template" id="share-button-tmpl"> {{ if (isLogined) { }} <a rel="dialog" href="#" class="btn btn-info btn-share" data-width="440" data-class="sharing-review dialog-sharing" data-href="/review/{{= reviewId }}/share">推荐</a> {{ } }} </script><script type="text/template" id="impression-actions-tmpl"><div class="impression-actions"> {{= shareButtonTmpl }} <div class="impression"> {{ if (canRead) { }} {{ if (isVoted) { }} <span class="voted">已投票</span>{{= votes }}人觉得这篇评论有用 {{ } else { }} 你认为这篇评论 <a href="#" data-review-id="{{= reviewId }}" class="btn btn-vote">有用 <span class="voted-num">{{= votes }}</span></a> {{ } }} {{ } else { }} {{= votes }}人觉得这篇评论有用 {{ } }} </div></div></script><script type="text/template" id="tmpl-mention"><ul> {{ $.each(users, function(key, user) { }} <li id="{{- user.uid }}"><img src="{{- user.avatar }}">{{= user.username }}&nbsp; <span>({{= user.uid }})</span></li> {{ }) }} </ul></script><script>
-        </script><footer><div class="inner"><div class="copyright"> © 2005 - 2013 douban.com, all rights reserved<br>网络视听许可证<a href="http://www.douban.com/about?topic=licence" target="_blank">0110418</a>号 &nbsp;&nbsp;文网文[2009]267号&nbsp;&nbsp;新出网证(京)字129号 <img width="15" height="17" src="./facebook_files/biaoshi.gif"></div><div class="ft-nav"><a href="http://read.douban.com/contact">联系我们</a>·<a href="http://read.douban.com/copyright">版权声明</a>·<a href="http://book.douban.com/help/ask?category=book&type=39">使用反馈</a></div><script>
-          </script></div><!--[if lt IE 8]><script>
-  </script></body></html>
+<html lang="zh-CN" class="ua-mac ua-webkit">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+    <meta name="keywords" content="打造Facebook,电子书,电子版,试读,完整版,下载,购买,阅读">
+    <meta name="description" content="打造Facebook的完整电子版，支持iPhone,iPad,安卓,Kindle阅读">
+    <title>
+      打造Facebook - 豆瓣阅读
+    </title>
+    <link href="./facebook_files/main-3136170189.css" rel="stylesheet">
+    <link rel="stylesheet" href="./facebook_files/review-5815565795.css">
+    <link rel="stylesheet" href="./facebook_files/ebook-5482124943.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="top-info">
+          <div class="inner">
+            <h1 class="logo" title="豆瓣阅读">
+              <a href="http://read.douban.com/">
+                豆瓣阅读
+              </a>
+            </h1>
+            <form id="frm-search" action="http://read.douban.com/search" method="get">
+              <input id="input-query" type="text" name="q" maxlength="60" size="22"
+              value="" placeholder="作品名 / 书名 / 作者 " autocomplete="off">
+              <input id="btn-search" type="submit" value="搜索">
+            </form>
+            <ul id="suggest-list" class="suggests-list">
+            </ul>
+            <ul class="entrances">
+              <li>
+              <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook&app_server=gardner8&profile=shire">
+                <span style="color:orange">
+                  200 ms
+                </span>
+              </a>
+              </li>
+              <li class="kindle-delivery">
+              <a href="http://read.douban.com/kindle">
+                Kindle递送
+              </a>
+              </li>
+              <li class="reader-entrance">
+              <a href="http://read.douban.com/reader">
+                我的阅读器
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="nav nav-store">
+          <div class="inner">
+            <ul class="items">
+              <li>
+              <a href="http://read.douban.com/">
+                作品商店
+              </a>
+              </li>
+              <li>
+              <a href="http://read.douban.com/category/new">
+                分类浏览
+              </a>
+              </li>
+              <li>
+              <a href="http://read.douban.com/author/selection">
+                个人作者
+              </a>
+              </li>
+              <li>
+              <a href="http://read.douban.com/provider/2637315/">
+                合作方
+              </a>
+              </li>
+              <li>
+              <a href="http://read.douban.com/category/free">
+                免费
+              </a>
+              </li>
+            </ul>
+            <ul class="items items-minor user-info">
+              <li class="nav-account">
+              <a class="name" href="http://read.douban.com/account/" title="账户">
+                mockee
+              </a>
+              [
+              <a class="logout" href="http://read.douban.com/logout?ck=9sFb">
+                退出
+              </a>
+              ]
+              </li>
+              <li>
+              <a href="http://read.douban.com/account/">
+                账户
+              </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <div class="main">
+        <article class="col col9 app-article">
+          <div class="article-profile-section article-profile-primary">
+            <div class="cover">
+              <img width="110px" height="164px" src="./facebook_files/500486.jpg" alt="">
+            </div>
+            <div class="article-profile-bd">
+              <h1 class="article-title">
+                打造Facebook
+              </h1>
+              <p class="subtitle">
+              亲历Facebook爆发的5年
+              </p>
+              <p class="author">
+              <span class="label">
+                作者
+              </span>
+              <span class="labeled-text">
+                王淮 祝文让
+              </span>
+              </p>
+              <p class="category">
+              <span class="label">
+                类别
+              </span>
+              <span class="labeled-text">
+                非虚构 / 图书
+              </span>
+              </p>
+              <p class="">
+              <span class="label">
+                出版社
+              </span>
+              <span class="labeled-text">
+                印刷工业出版社
+              </span>
+              </p>
+              <p class="">
+              <span class="label">
+                出版年月
+              </span>
+              <span class="labeled-text">
+                2013年2月
+              </span>
+              </p>
+              <p class="">
+              <span class="label">
+                ISBN
+              </span>
+              <span class="labeled-text">
+                <a href="http://book.douban.com/subject/20471120/" title="7514207635">
+                  7514207635
+                </a>
+              </span>
+              </p>
+              <div class="rating article-rating">
+                (
+                <a href="http://read.douban.com/ebook/500486/ratings" class="rating-amount">
+                  3人评价
+                </a>
+                )
+              </div>
+              <div class="article-profile-actions">
+                <div class="ebook-actions">
+                  <a class="afford-gift-none btn-info btn" data-readable-price="18.00" data-price="1800"
+                    data-article-id="500486" data-href="/ebook/500486/present" aid="500486"
+                    data-widget="afford-gift" data-title="打造Facebook" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">
+                    赠送
+                  </a>
+                  <a rel="dialog" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#"
+                    class="btn btn-info" data-width="440" data-class="sharing-article dialog-sharing"
+                    data-href="/ebook/500486/share">
+                    推荐
+                  </a>
+                </div>
+                <div class="article-actions purchase-none purchase-layout-horizontal"
+                  data-readable-price="18.00" data-price="1800" data-article-id="500486"
+                  data-widget="purchase" data-title="打造Facebook">
+                  <span class="price-tag">
+                    18.00元
+                  </span>
+                  <a data-action="purchase" class="btn purchase" href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#"
+                    aid="500486" data-href="/j/article/500486/buy">
+                    购买
+                  </a>
+                  <form class="form-get-sample" action="http://read.douban.com/ebook/500486/sample"
+                    method="POST" target="_blank">
+                    <div style="display:none;">
+                      <input type="hidden" name="ck" value="9sFb">
+                    </div>
+                    <button class="btn btn-minor btn-preview" type="submit" name="submit">
+                      试读
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reading-place">
+            <span class="place-title">
+              支持多平台阅读
+            </span>
+            <ul class="device-list">
+              <li>
+              <a class="icon-device-web" href="http://read.douban.com/intro/web">
+                Web
+              </a>
+              </li>
+              <li>
+              <a class="icon-device-iphone" href="http://read.douban.com/intro/iphone">
+                iPhone
+              </a>
+              </li>
+              <li>
+              <a class="icon-device-ipad" href="http://read.douban.com/intro/ipad">
+                iPad
+              </a>
+              </li>
+              <li>
+              <a class="icon-device-android" href="http://read.douban.com/intro/android">
+                Android
+              </a>
+              </li>
+              <li>
+              <a class="icon-device-kindle" href="http://read.douban.com/intro/kindle">
+                Kindle
+              </a>
+              </li>
+            </ul>
+          </div>
+          <div class="article-profile-section article-abstract">
+            <h2>
+              导言
+            </h2>
+            <div class="abstract-full">
+              <div class="info">
+                <p>
+                这本书的书名——《打造Facebook：亲历Facebook爆发的5年》很嚣张，谁有资格可以说这句话呢，当然，扎克伯格最有资格，但他不会亲自来告诉你，至少从目前的情况来看，近几年都不大可能。而且，这不是一个人的公司。里面的每一人，尤其是工程师，既是公司文化的承受者，同时也在不断的改造着公司的文化。我想强调的是团队，是团队的力量打造了Facebook。而让团队凝聚在一起并充满战斗力的，即其文化。这种文化，包括一些做事的方式，为什么这么做的原因，和对这些做法和原因的认同。写这本《打造Facebook：亲历Facebook爆发的5年》，是想剖析Facebook文化的精髓，还有这里面的思考过程和前后的变化，详细解释当中最有价值和最值得学习的那几点。尤其作为早期员工，我们奠定了这些文化的基础。
+                </p>
+              </div>
+              <div class="info">
+                <p>
+                一位前Facebook员工的亲身经历，一段充满创业激情和汗水的日子——国内第一本、也是唯一一本由内部人士撰写的Facebook文化书，为你讲述这个全球最大社交网络从无到有的点点滴滴。
+                </p>
+              </div>
+              <div class="info">
+                <p>
+                王淮，毕业于浙江大学和斯坦福大学。Facebook第二位中国籍工程师，第一位中国籍研发经理。最初进入Facebook时任工程师，后转为管理者，一手开创了Facebook的支付安全和客服工具领域。
+                </p>
+                <p>
+                最早进入Facebook的中国籍员工，大部分都由他推荐，并因此收到CEO桑德伯格的感谢信。更为可贵的是，作为早期员工，他参与塑造了Facebook文化与价值观。在Facebook的5年（2007-2011），正好是Facebook上市前，集中爆发的5年。刚加入时，在Facebook只有2000万月活跃客户，离开时已8亿多活跃用户，增长45倍，用户人数占地球人口的15%。2011年离开Facebook后，回国做天使投资人，希望用自己在Facebook的经验帮助创业者。现为天使投资人薛蛮子、徐小平的投资搭档，致景投资合伙人，兼任大众点评网、百姓网CEO顾问。
+                </p>
+              </div>
+            </div>
+            <div class="expand-article-abstract">
+              （
+              <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#"
+                data-action="expand">
+                展开
+              </a>
+              ）
+            </div>
+          </div>
+          <div class="article-profile-section table-of-contents">
+            <h2>
+              目录
+            </h2>
+            <ol>
+              <li>
+              <h5>
+                推荐序：学习Facebook文化
+              </h5>
+              </li>
+              <li>
+              <h5>
+                自序：亲历Facebook爆发的5年
+              </h5>
+              </li>
+              <li>
+              <h5>
+                第一章
+              </h5>
+              </li>
+              <li>
+              <h5>
+                扎克伯格的真实一面
+              </h5>
+              </li>
+              <li>
+              <h5>
+                第一节 第一次见到他问了奇怪的问题
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 第一次F8大会，我们在台上台下一起颤抖
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 扎克伯格在公司内部知无不言
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 每年一项新“挑战”
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 《社交网络》“只有2%是真的”——穿的T恤和拖鞋
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 关注用户体验细节，更指明产品发展方向
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                打进Facebook
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 选Facebook还是Google
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 在雅虎的负面经验：“公司政治”问题
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 Facebook工程师面试聊什么
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 Facebook的招聘标准：只和最好的人合作
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 找到一流人才的途径
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 面试中忌讳的几个问题
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第七节 招聘永远是第一位的
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                欢迎来到“新兵训练营”
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 为什么要有新兵训练营
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 新兵在这6周里究竟要做什么
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 谁可以做新兵训练营的导师
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 导师需要做什么
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 如何为新员工找到合适的工作职位
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 训练营不仅是新员工培训班，也是经理培训班
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                黑客文化是Facebook的核心理念
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 黑客创立公司
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 黑客的驱动力是不断地学习和再创造
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 Facebook的“黑客之道”
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 找到黑客级别的工程师
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 工程师驱动文化
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 产品开发的三个准则
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第七节 硅谷盛行的“工具文化”
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第八节 想换组，公司帮你——Hack-A-Month计划
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                从个人成长为团队管理者
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 成长为更全面的工程师
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 接受新挑战：进入支付相关领域
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 一次危机成为打造团队的机会
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 如何招到你想要的人手
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 如何有效管理你的团队
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 如何有效分配工作任务
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第七节 增进亲密感以减少紧张关系
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第八节 如何开展一对一碰头会
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第九节 “升职”的意义
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第十节 导师文化：寻找一位可信赖的导师帮你提高
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                解密Facebook产品的开发流程
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 描绘远景 设置目标
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 收集想法并排出优先次序
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 跨团队沟通
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 告知所有可能关心的人
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 设计产品
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 指定项目责任人
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第七节 定期碰头会
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第八节 了解进度 汇总报告
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第九节 发布产品 监测数据
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第七章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                慷慨而严谨的考核激励体系
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 重要而费时的业绩评价
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 意见反馈需要持续进行
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 如何升职与加薪
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 究竟卖不卖股票，这个问题很头疼
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 上市对公司发展的影响
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 员工离职创业并非坏事
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第八章
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                我眼中的天使投资与创新精神
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第一节 美国还是中国
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第二节 一个中心：先是“天使”，再谈“投资”
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第三节 如何考察投资项目
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第四节 创业者要靠谱、有激情、有能力，最佳创业团队是三人组
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第五节 如何判断创业者的能力和诚信
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第六节 希望自己被创业者挑选
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第七节 将硅谷的经验带给创业者
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第八节 四大指导原则
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第九节 “山寨”为什么这样红
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第十节 如何变得更有创新精神
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第十一节 改变“山寨”不能坐等
+              </h5>
+              </li>
+              <li style="display: none;">
+              <h5>
+                第十二节 要勇于尝试“破坏性创新”
+              </h5>
+              </li>
+            </ol>
+            <div class="expand-table">
+              （
+              <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#"
+                data-action="expand">
+                展开
+              </a>
+              ）
+            </div>
+          </div>
+          <div class="article-profile-section article-profile-secondary">
+            <h2>
+              作品信息
+            </h2>
+            <p class="">
+            <span class="label">
+              页数
+            </span>
+            <span class="labeled-text">
+              447页
+            </span>
+            </p>
+            <p class="">
+            <span class="label">
+              首次发表
+            </span>
+            <span class="labeled-text">
+              豆瓣阅读
+            </span>
+            </p>
+            <p class="inline-tags">
+            <span class="label">
+              标签
+            </span>
+            <span class="labeled-text">
+              <a href="http://read.douban.com/tag/%E4%BA%92%E8%81%94%E7%BD%91/">
+                互联网(14)
+              </a>
+              <span class="sep">
+                /
+              </span>
+              <a href="http://read.douban.com/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                计算机(22)
+              </a>
+              <span class="sep">
+                /
+              </span>
+              <a href="http://read.douban.com/tag/%E5%95%86%E4%B8%9A/">
+                商业(11)
+              </a>
+              <span class="sep">
+                /
+              </span>
+              <a href="http://read.douban.com/tag/%E5%88%9B%E4%B8%9A/">
+                创业(5)
+              </a>
+              <span class="sep">
+                /
+              </span>
+              <a href="http://read.douban.com/tag/%E7%AE%A1%E7%90%86/">
+                管理(9)
+              </a>
+              <span class="sep">
+                /
+              </span>
+              <a href="http://read.douban.com/tag/Facebook/">
+                Facebook(1)
+              </a>
+            </span>
+            </p>
+            <p class="">
+            <span class="label">
+              开售时间
+            </span>
+            <span class="labeled-text">
+              2013-01
+            </span>
+            </p>
+          </div>
+          <div class="article-profile-section article-reviews-section reviews">
+            <div class="reviews-heading">
+              <h3 class="reviews-heading-title">
+                评论
+                <span class="total-reviews-count">
+                  1
+                </span>
+              </h3>
+              <span class="msg-disabled">
+                购买后可以写评论
+              </span>
+              <div id="read-review-tabs" class="review-tabs">
+                <ul>
+                  <li class="tab ark-tab-activated">
+                  <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">
+                    有用
+                  </a>
+                  </li>
+                  <li class="tab">
+                  <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">
+                    最新
+                  </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="book-reviews" class="review-lists">
+              <div class="review-list read-review-list" style="">
+                <ul class="reviews">
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/beiyuu/" class="pic">
+                      <img src="./facebook_files/u1949819-15.jpg" alt="BeiYuu">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://read.douban.com/review/1007057/">
+                        只有好的棋手才会走运
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/beiyuu/">
+                        BeiYuu
+                      </a>
+                    </div>
+                    <div class="desc">
+                      能和Facebook这样的公司一起成长太幸福，对作者真是羡慕嫉妒恨。 Facebook快速并且顺利的成长，作者初期选择他，悬念并不大，不过在第一章谈到对公司的忠诚度倒是个不错的话题，树倒猢狲散、墙倒众人推，这就是现实，更何况赤裸裸的签订的打工合同，每个人都会做对自己最有利的选择，同样的，公司招聘也不是做慈善，所以...
+                    </div>
+                    <div class="simple-impression">
+                      <span class="date">
+                        2013-01-22
+                      </span>
+                      <span class="voted-num">
+                        1有用
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="review-list read-review-list" style="display: none;">
+                <ul class="reviews">
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/beiyuu/" class="pic">
+                      <img src="./facebook_files/u1949819-15.jpg" alt="BeiYuu">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://read.douban.com/review/1007057/">
+                        只有好的棋手才会走运
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/beiyuu/">
+                        BeiYuu
+                      </a>
+                    </div>
+                    <div class="desc">
+                      能和Facebook这样的公司一起成长太幸福，对作者真是羡慕嫉妒恨。 Facebook快速并且顺利的成长，作者初期选择他，悬念并不大，不过在第一章谈到对公司的忠诚度倒是个不错的话题，树倒猢狲散、墙倒众人推，这就是现实，更何况赤裸裸的签订的打工合同，每个人都会做对自己最有利的选择，同样的，公司招聘也不是做慈善，所以...
+                    </div>
+                    <div class="simple-impression">
+                      <span class="date">
+                        2013-01-22
+                      </span>
+                      <span class="voted-num">
+                        1有用
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="article-profile-section article-reviews-section reviews">
+            <div class="reviews-heading">
+              <h3 class="reviews-heading-title">
+                来自豆瓣读书的评论
+                <span class="total-reviews-count">
+                  22
+                </span>
+              </h3>
+              <div id="book-review-tabs" class="review-tabs">
+                <ul>
+                  <li class="tab ark-tab-activated">
+                  <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">
+                    有用
+                  </a>
+                  </li>
+                  <li class="tab">
+                  <a href="http://read.douban.com/ebook/500486/?icn=index-banner&ici=facebook#">
+                    最新
+                  </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="book-review-lists">
+              <div class="book-review-list" style="">
+                <ul class="book-reviews review-list">
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/39683088/" class="pic" target="_blank">
+                      <img src="./facebook_files/u39683088-1.jpg" alt="nonoidea">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5726975/" target="_blank">
+                        这是我写的, 感觉还行 - 写了一个简介, 在www.nonoidea.com/?p=372
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/39683088/" target="_blank">
+                        nonoidea
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      热腾腾的新书终于上桌了. 欢迎感兴趣的朋友品尝. 先品后评, 正面负面, 只要真情, 不胜感激. 书在当当, 京东和卓越上, 据说只要出钱就可以买了,
+                      特方便… 元旦在京东上下一蛋, 3号收到. 这本书的标题有标题党嫌疑, 但内容绝对是关于如何打造的一些干货分享 – 大多不是扎克伯格一个人想出来的,
+                      当然更不是我想出来的, ...
+                      <span class="comments-num">
+                        （
+                        <a href="http://book.douban.com/review/5726975/#comments" target="_blank">
+                          9回应
+                        </a>
+                        ）
+                      </span>
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-04
+                      </span>
+                      <span class="voted-num">
+                        15有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/Fenng/" class="pic" target="_blank">
+                      <img src="./facebook_files/u1025061-11.jpg" alt="Fenng">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5731443/" target="_blank">
+                        从工程师的角度看 Facebook
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/Fenng/" target="_blank">
+                        Fenng
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      王淮以自己的亲身经历讲述了 Facebook 的五年经验。关于 Facebook，我们从新闻上了解太多了，但是这家公司的内部情况，其实外界知之甚少。比如，Facebook
+                      是怎么招聘的? 怎么做项目? Facebook 的黑客文化都包括哪些? ...... 有的时候能看到一些零零散散的文章，但相对系统的介绍则不多。一口气读完这本《打造
+                      Facebook》...
+                      <span class="comments-num">
+                        （
+                        <a href="http://book.douban.com/review/5731443/#comments" target="_blank">
+                          7回应
+                        </a>
+                        ）
+                      </span>
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-08
+                      </span>
+                      <span class="voted-num">
+                        11有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/allstar/" class="pic" target="_blank">
+                      <img src="./facebook_files/u1239444-38.jpg" alt="蜀道路口star哥">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5735196/" target="_blank">
+                        他们每时每刻都在为世界创造真正的价值
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/allstar/" target="_blank">
+                        蜀道路口star哥
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      推荐给所有认同工程师文化的同学。 有一群人，他们的驱动力是不断学习和不断创造，他们的理想是将世界变得更好，并投身于此，积极进取。他们是理想主义者，胸怀大志；他们也是实干家，为更好的世界每日添砖加瓦。
+                      他们每时每刻都在为世界创造真正的价值。 这类人，酷一点的名字叫黑客(Hacker)或者极客(Geek)，亲切一点...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-10
+                      </span>
+                      <span class="voted-num">
+                        6有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/Quantum_Panda/" class="pic" target="_blank">
+                      <img src="./facebook_files/u1033190-7.jpg" alt="量子熊猫">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5749113/" target="_blank">
+                        工程师的细节之美
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/Quantum_Panda/" target="_blank">
+                        量子熊猫
+                      </a>
+                      <span title="5" class="rating-stars stars-small-context stars-small-5">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      工程师的细节之美 电影《超时空接触》中，地球人准备和高技术外星人通讯，朱迪·福斯特饰演的女主角为外星人准备的问题是，他们如何发展了高度的文明，却没有自我毁灭。这个问题稍作修改就是我想询问Facebook
+                      的：他们是如何在短短几年时间，从一家创业公司迅速变身为大公司，却没有自我毁灭？ 这个问题并不奇怪。不...
+                      <span class="comments-num">
+                        （
+                        <a href="http://book.douban.com/review/5749113/#comments" target="_blank">
+                          3回应
+                        </a>
+                        ）
+                      </span>
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-21
+                      </span>
+                      <span class="voted-num">
+                        5有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/wohaoaini/" class="pic" target="_blank">
+                      <img src="./facebook_files/u3594923-31.jpg" alt="我">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5749936/" target="_blank">
+                        Facebook，从来只用盗版
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/wohaoaini/" target="_blank">
+                        我
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      “说到借鉴，硅谷那边是这样的：创意可以借鉴，但“执行”是不能照抄的，就好比Facebook并不是第一家做社交网络的公司，但它的最终产品跟别人都不一样。而中国很多公司不仅复制创意，也复制“执行”，就很不好了。国内有一家知名公司，基本是Facebook推出什么样的新应用，它很快就复制出来，有时甚至是把源代码原封不动搬...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-21
+                      </span>
+                      <span class="voted-num">
+                        5有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/raully7/" class="pic" target="_blank">
+                      <img src="./facebook_files/u2621812-3.jpg" alt="ppYang">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5731172/" target="_blank">
+                        对脸书做事方法一个比较全面的介绍
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/raully7/" target="_blank">
+                        ppYang
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      很早就读了王淮哥写的《我在Facebook的十点经验总结》，很实在、有启发。所以尽管这次书名很土，还是第一时间买了。既希望看到更多干货和想法，也是对之前分享的感谢。
+                      两百多页，大概三个小时看完。作者分享了自己在facebook的经历，涉及招聘、培训、文化、工作流程、自己工作转变等各方面的内容。可以说是全面而诚恳的...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-08
+                      </span>
+                      <span class="voted-num">
+                        3有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+                <div class="reviews-summary">
+                  <a class="reviews-all" href="http://book.douban.com/subject/20471120/reviews?sort=score"
+                    target="_blank">
+                    更多评论 22
+                  </a>
+                </div>
+              </div>
+              <div class="book-review-list" style="display: none;">
+                <ul class="book-reviews review-list">
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/mjshi/" class="pic" target="_blank">
+                      <img src="./facebook_files/u1351357-2.jpg" alt="mjshi">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5752120/" target="_blank">
+                        还行！
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/mjshi/" target="_blank">
+                        mjshi
+                      </a>
+                      <span title="3" class="rating-stars stars-small-context stars-small-3">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      在多看上买的电子版来看的。其实这本书名字叫“那些年我在Facebook的日子”更准确。内容比较朴实，都是干货，可以借鉴到工作中。 怎么说书也要有个结尾吧，看到最后感觉戛然而止，还以为是盗版的。
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-23
+                      </span>
+                      <span class="voted-num">
+                        0有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/xiongbo/" class="pic" target="_blank">
+                      <img src="./facebook_files/u54914964-4.jpg" alt="二师兄">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5751054/" target="_blank">
+                        我想说的是科幻世界4.99
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/xiongbo/" target="_blank">
+                        二师兄
+                      </a>
+                      <span title="3" class="rating-stars stars-small-context stars-small-3">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！ 我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！ 我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！
+                      我想说的是科幻世界4.99和本书的18来说，真是TM的太超值了！
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-22
+                      </span>
+                      <span class="voted-num">
+                        0有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/fanxuan88/" class="pic" target="_blank">
+                      <img src="./facebook_files/u3521036-6.jpg" alt="茶小微">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5750536/" target="_blank">
+                        这本书里给我留下深刻印象的话都在后半程
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/fanxuan88/" target="_blank">
+                        茶小微
+                      </a>
+                      <span title="3" class="rating-stars stars-small-context stars-small-3">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      如果你想说服其他人采取你的想法，你需要两样东西，一个是故事，或者叫做例子，就是为什么这样做有效，能不能让你的说法有感染力，让你的说法给人留下印象；另一个就是数据，让你的说法有数据的支持，那么可信度会高很多。
+                      对于你做出来的产品，你必须是它的用户，你自己会使用它，有使用它的欲望和精力，而这种经历会反...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-22
+                      </span>
+                      <span class="voted-num">
+                        0有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/iamzilu/" class="pic" target="_blank">
+                      <img src="./facebook_files/user_normal.jpg" alt="zodzod_张浩">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5750490/" target="_blank">
+                        从facebook学什么
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/iamzilu/" target="_blank">
+                        zodzod_张浩
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      王淮的这本书绝对值得一个互联网从业人员读三遍以上。第一遍看故事，第二遍找和工作相关的细节相对比，第三遍要仔细咂摸，思考为什么要这样。我合上书之后，觉得以下几个问题最有意思：
+                      1. 使用社会网络——社会网络公司一定是最懂“社会网络”的 别误会，这不是说facebook招人是在facebook上招的。恰恰相反，facebook...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-22
+                      </span>
+                      <span class="voted-num">
+                        0有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/itsyarkee/" class="pic" target="_blank">
+                      <img src="./facebook_files/u8545425-11.jpg" alt="Yarkee">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5750288/" target="_blank">
+                        Facebook是Geek的天堂
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/itsyarkee/" target="_blank">
+                        Yarkee
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      1. 这本书描绘了一个技术Geek们的乌托邦; 2. 这样的乌托邦只适合技术大拿去玩，对技术没有激情的程序员即使去了Fackbook，最终也会被淘汰;
+                      3. 国内的互联网环境决定着国内的互联网公司学不来Fackbook的这种玩法; 4. 书里提到的Geek文化和工程师文化大家欣赏欣赏就好，别急着模仿，免得画虎类猫。5.
+                      这是本好书，推荐程序员...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-22
+                      </span>
+                      <span class="voted-num">
+                        0有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="review-item collapsed">
+                  <div class="user-avatar">
+                    <a href="http://www.douban.com/people/wohaoaini/" class="pic" target="_blank">
+                      <img src="./facebook_files/u3594923-31.jpg" alt="我">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <div class="title">
+                      <a href="http://book.douban.com/review/5749936/" target="_blank">
+                        Facebook，从来只用盗版
+                      </a>
+                    </div>
+                    <div class="author">
+                      <a href="http://www.douban.com/people/wohaoaini/" target="_blank">
+                        我
+                      </a>
+                      <span title="4" class="rating-stars stars-small-context stars-small-4">
+                      </span>
+                    </div>
+                    <div class="desc">
+                      “说到借鉴，硅谷那边是这样的：创意可以借鉴，但“执行”是不能照抄的，就好比Facebook并不是第一家做社交网络的公司，但它的最终产品跟别人都不一样。而中国很多公司不仅复制创意，也复制“执行”，就很不好了。国内有一家知名公司，基本是Facebook推出什么样的新应用，它很快就复制出来，有时甚至是把源代码原封不动搬...
+                    </div>
+                    <div class="impression">
+                      <span class="date">
+                        2013-01-21
+                      </span>
+                      <span class="voted-num">
+                        5有用
+                      </span>
+                      <span class="version">
+                        <a href="http://book.douban.com/subject/20471120/" target="_blank">
+                          印刷工业出版社2013版
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+                <div class="reviews-summary">
+                  <a class="reviews-all" href="http://book.douban.com/subject/20471120/reviews?sort=time"
+                    target="_blank">
+                    更多评论 22
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <aside class="col col4">
+          <section>
+            <div class="hd tags-heading">
+              <h3>
+                作品标签
+              </h3>
+            </div>
+            <div class="bd">
+              <ul class="tags">
+                <li>
+                <a href="http://read.douban.com/tag/%E4%BA%92%E8%81%94%E7%BD%91/">
+                  <span class="works-category">
+                    互联网
+                  </span>
+                  <span class="works-total">
+                    14
+                  </span>
+                </a>
+                </li>
+                <li>
+                <a href="http://read.douban.com/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA/">
+                  <span class="works-category">
+                    计算机
+                  </span>
+                  <span class="works-total">
+                    22
+                  </span>
+                </a>
+                </li>
+                <li>
+                <a href="http://read.douban.com/tag/%E5%95%86%E4%B8%9A/">
+                  <span class="works-category">
+                    商业
+                  </span>
+                  <span class="works-total">
+                    11
+                  </span>
+                </a>
+                </li>
+                <li>
+                <a href="http://read.douban.com/tag/%E5%88%9B%E4%B8%9A/">
+                  <span class="works-category">
+                    创业
+                  </span>
+                  <span class="works-total">
+                    5
+                  </span>
+                </a>
+                </li>
+                <li>
+                <a href="http://read.douban.com/tag/%E7%AE%A1%E7%90%86/">
+                  <span class="works-category">
+                    管理
+                  </span>
+                  <span class="works-total">
+                    9
+                  </span>
+                </a>
+                </li>
+                <li>
+                <a href="http://read.douban.com/tag/Facebook/">
+                  <span class="works-category">
+                    Facebook
+                  </span>
+                  <span class="works-total">
+                    1
+                  </span>
+                </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <div class="hd author-heading">
+              <h3>
+                作者
+              </h3>
+            </div>
+            <div class="bd">
+              <div class="author-info">
+                <h4>
+                  <a href="http://read.douban.com/author/63687279">
+                    <span class="wang">
+                      <img src="./facebook_files/4ad1dfc7373c61b.jpg" class="avatar" alt="王淮">
+                    </span>
+                    <span class="name">
+                      王淮
+                    </span>
+                  </a>
+                </h4>
+                <p>
+                Facebook早期员工；Facebook第一位华裔研发经理；致景投资创始合伙人; 点评网、百姓网CEO顾问
+                </p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="hd author-heading">
+              <h3>
+                读者动态
+              </h3>
+            </div>
+            <ul class="reader-actions">
+              <li class="reader-action">
+              <div class="action-user">
+                <a href="http://www.douban.com/people/lovedogman/" target="_blank">
+                  <img src="./facebook_files/u3458721-5.jpg" alt="lovedogman">
+                </a>
+              </div>
+              <div class="action-desc">
+                <a href="http://www.douban.com/people/lovedogman/" target="_blank">
+                  lovedogman
+                </a>
+                <div class="action-msg">
+                  <span>
+                    5分钟前 购买
+                  </span>
+                </div>
+              </div>
+              </li>
+              <li class="reader-action">
+              <div class="action-user">
+                <a href="http://www.douban.com/people/wRap/" target="_blank">
+                  <img src="./facebook_files/u9222013-9.jpg" alt="wRap">
+                </a>
+              </div>
+              <div class="action-desc">
+                <a href="http://www.douban.com/people/wRap/" target="_blank">
+                  wRap
+                </a>
+                <div class="action-msg">
+                  <span>
+                    6分钟前 试读
+                  </span>
+                </div>
+              </div>
+              </li>
+              <li class="reader-action">
+              <div class="action-user">
+                <a href="http://www.douban.com/people/54484782/" target="_blank">
+                  <img src="./facebook_files/u54484782-4.jpg" alt="ATP">
+                </a>
+              </div>
+              <div class="action-desc">
+                <a href="http://www.douban.com/people/54484782/" target="_blank">
+                  ATP
+                </a>
+                <div class="action-msg">
+                  <span>
+                    13分钟前 试读
+                  </span>
+                </div>
+              </div>
+              </li>
+              <li class="reader-action">
+              <div class="action-user">
+                <a href="http://www.douban.com/people/year1917/" target="_blank">
+                  <img src="./facebook_files/u46151922-18.jpg" alt="随风飘散">
+                </a>
+              </div>
+              <div class="action-desc">
+                <a href="http://www.douban.com/people/year1917/" target="_blank">
+                  随风飘散
+                </a>
+                <div class="action-msg">
+                  <span>
+                    27分钟前 购买
+                  </span>
+                </div>
+              </div>
+              </li>
+              <li class="reader-action">
+              <div class="action-user">
+                <a href="http://www.douban.com/people/shisanshuo/" target="_blank">
+                  <img src="./facebook_files/u36340581-4.jpg" alt="three.ten KE">
+                </a>
+              </div>
+              <div class="action-desc">
+                <a href="http://www.douban.com/people/shisanshuo/" target="_blank">
+                  three.ten KE
+                </a>
+                <div class="action-msg">
+                  <span>
+                    1小时前 购买
+                  </span>
+                </div>
+              </div>
+              </li>
+              <li class="reader-action">
+              <div class="action-user">
+                <a href="http://www.douban.com/people/xulao/" target="_blank">
+                  <img src="./facebook_files/u4259077-71.jpg" alt="老徐">
+                </a>
+              </div>
+              <div class="action-desc">
+                <a href="http://www.douban.com/people/xulao/" target="_blank">
+                  老徐
+                </a>
+                <div class="action-msg">
+                  <span>
+                    今天下午 购买
+                  </span>
+                </div>
+              </div>
+              </li>
+            </ul>
+          </section>
+          <div class="section ">
+            &gt;
+            <a href="http://read.douban.com/ebook/500486/ratings" class="ratings-count">
+              3人评价
+            </a>
+          </div>
+        </aside>
+        <footer>
+          <div class="inner">
+            <div class="copyright">
+              © 2005 - 2013 douban.com, all rights reserved
+              <br>
+              网络视听许可证
+              <a href="http://www.douban.com/about?topic=licence" target="_blank">
+                0110418
+              </a>
+              号 &nbsp;&nbsp;文网文[2009]267号&nbsp;&nbsp;新出网证(京)字129号
+              <img width="15" height="17" src="./facebook_files/biaoshi.gif">
+            </div>
+            <div class="ft-nav">
+              <a href="http://read.douban.com/contact">
+                联系我们
+              </a>
+              ·
+              <a href="http://read.douban.com/copyright">
+                版权声明
+              </a>
+              ·
+              <a href="http://book.douban.com/help/ask?category=book&type=39">
+                使用反馈
+              </a>
+            </div>
+          </div>
+        </body>
+      </html>

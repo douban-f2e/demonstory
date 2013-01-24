@@ -1,0 +1,77 @@
+.author-info{margin-bottom:15px}
+.author-info a{display:block}
+.author-info a:hover{color:#6e3939;background:transparent}
+.author-info h4{margin-bottom:16px}
+.author-info .avatar{display:inline-block;vertical-align:middle;width:48px;height:48px;margin-right:12px;background-color:#eee}
+.author-info .name{font-size:16px;font-weight:bold}
+.author-info p{font-size:12px}
+.author-other-works .title{color:#666;margin-bottom:10px}
+.works-list{font-size:14px}
+.works-list li{margin-bottom:6px}
+.events{zoom:1;}
+.events h4{font-size:12px;margin-bottom:5px}
+.events p{margin-bottom:0;font-size:12px;color:#999}
+.events .bd{border-top:2px solid #6e3939}
+.events .item{padding:10px;margin-bottom:5px;background:#f8f8f2}
+.events .author{margin-right:5px}
+.events li:last-child{margin-bottom:none}
+.hd-lined,.tags-heading,.author-heading{padding-bottom:10px;border-bottom:1px solid #ddd}
+.tags-heading h3,.author-heading h3,.events-heading h3{color:#000;font-size:16px}
+.cover{width:116px}
+.app-article .label,.app-article .labeled-text{font-size:12px}
+.app-article .label{margin-right:5px}
+.labeled-text .sep{margin:0 3px}
+.article-title{margin-bottom:5px}
+.abstract-full p{text-indent:24px;line-height:21px}
+.abstract-full .info{margin-bottom:21px}
+.reading-place{margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #ddd}
+.icon-device-web,.icon-device-iphone,.icon-device-ipad,.icon-device-android,.icon-device-kindle{background:url("/ark/pics/icon-devices-mini.png?v=5804496454") no-repeat}
+.icon-device-web{padding-left:33px !important;background-position:2px -5px}
+.icon-device-iphone{background-position:3px -184px}
+.icon-device-ipad{background-position:3px -48px}
+.icon-device-android{background-position:3px -93px}
+.icon-device-kindle{background-position:3px -142px}
+.place-title,.device-list,.device-list li{display:inline-block;*display:inline;*zoom:1;vertical-align:middle}
+.device-list{font-size:0;overflow:hidden;margin-left:15px;}
+.device-list li{margin-right:10px}
+.device-list a,.device-list span{display:block;font-size:12px;text-align:center;line-height:23px;padding-left:30px}
+.device-list a:hover{color:#6e3939;background-color:transparent;opacity:.8;filter:alpha(opacity=80)}
+.unsupported-devices{display:inline-block;*display:inline;*zoom:1;color:#999;margin-left:30px;}
+.unsupported-devices .icon-device-web,.unsupported-devices .icon-device-iphone,.unsupported-devices .icon-device-ipad,.unsupported-devices .icon-device-android,.unsupported-devices .icon-device-kindle{background-image:url("/ark/pics/icon-devices-mini-gray.png?v=4462653187")}
+.unsupported-info{color:#999;margin-top:-15px;margin-bottom:15px}
+.app-article,.app-article p{font-size:12px;min-height:21px;margin-bottom:0}
+.app-article .reviews-summary{margin-top:1em;text-align:right}
+.app-article .rating{margin-top:8px}
+.article-rating{line-height:18px;color:#6e3939;}
+.article-rating .rating-stars,.article-rating .rating-average,.article-rating .rating-amount{vertical-align:middle;_vertical-align:baseline}
+.article-rating .rating-average{margin-right:8px}
+.article-rating .no-rating-amount{color:#666}
+.app-article .article-profile-actions{margin-top:20px}
+.article-profile-primary{border-bottom:1px solid #ddd;padding-bottom:20px;margin-bottom:13px}
+.app-article .short-story-meta{font-size:12px}
+.table-of-contents,.article-meta{margin-top:20px}
+.article-meta{margin-bottom:10px}
+.table-of-contents{line-height:1.8}
+.table-of-contents li:nth-child(n+6){display:none}
+.table-of-contents .story-item{padding-left:16px;margin-bottom:10px;background:url("/ark/pics/toc-leading-dot.png?v=4082033618") no-repeat 0 6px}
+.expand-table a:hover,.expand-article-abstract a:hover{color:#6e3939;background-color:transparent}
+.article-reviews-section{border-top:1px solid #e7e7dc;padding-top:2em}
+.reviews-heading{padding-bottom:5px}
+.reviews-heading .reviews-heading-title{float:left;color:#000;font-size:16px;margin-right:16px;line-height:30px;height:30px}
+.review-tabs,.reviews-heading,.review-tabs ul{overflow:hidden;_zoom:1}
+.review-tabs li{float:left}
+.reviews-heading-title .total-reviews-count{font-size:87.5%;color:#999;margin-left:5px}
+.reviews-heading{border-bottom:1px solid #ddd}
+.reviews-heading .review-tabs{border:0;padding-bottom:0}
+.reviews-heading .msg-disabled,.reviews-heading .btn-new-review{float:right;margin-top:2px}
+.reviews-heading .msg-disabled{color:#999}
+.article-profile-actions .article-actions,.article-profile-primary .article-profile-actions{overflow:hidden;_zoom:1}
+.article-profile-primary .btn-present,.article-profile-primary .btn-share{float:right;_display:inline;font-size:12px}
+.article-profile-primary .btn-present{margin-right:.5em}
+.reader-action{font-size:0;padding-bottom:20px}
+.action-user{margin-right:12px;float:left;vertical-align:top}
+.action-desc{vertical-align:top;overflow:hidden;*zoom:1;font-size:12px;width:185px}
+.action-msg{margin:5px 0 15px;color:#666}
+.ebook-actions{float:right;}
+.ebook-actions .btn{margin-left:5px}
+.works-total{color:#999;margin-left:3px}
