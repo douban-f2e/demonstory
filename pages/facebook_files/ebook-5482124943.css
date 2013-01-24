@@ -25,7 +25,7 @@
 .abstract-full p{text-indent:24px;line-height:21px}
 .abstract-full .info{margin-bottom:21px}
 .reading-place{margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #ddd}
-.icon-device-web,.icon-device-iphone,.icon-device-ipad,.icon-device-android,.icon-device-kindle{background:url("/ark/pics/icon-devices-mini.png?v=5804496454") no-repeat}
+.icon-device-web,.icon-device-iphone,.icon-device-ipad,.icon-device-android,.icon-device-kindle{background:url("icon-devices-mini.png?v=5804496454") no-repeat}
 .icon-device-web{padding-left:33px !important;background-position:2px -5px}
 .icon-device-iphone{background-position:3px -184px}
 .icon-device-ipad{background-position:3px -48px}
@@ -37,7 +37,7 @@
 .device-list a,.device-list span{display:block;font-size:12px;text-align:center;line-height:23px;padding-left:30px}
 .device-list a:hover{color:#6e3939;background-color:transparent;opacity:.8;filter:alpha(opacity=80)}
 .unsupported-devices{display:inline-block;*display:inline;*zoom:1;color:#999;margin-left:30px;}
-.unsupported-devices .icon-device-web,.unsupported-devices .icon-device-iphone,.unsupported-devices .icon-device-ipad,.unsupported-devices .icon-device-android,.unsupported-devices .icon-device-kindle{background-image:url("/ark/pics/icon-devices-mini-gray.png?v=4462653187")}
+.unsupported-devices .icon-device-web,.unsupported-devices .icon-device-iphone,.unsupported-devices .icon-device-ipad,.unsupported-devices .icon-device-android,.unsupported-devices .icon-device-kindle{background-image:url("icon-devices-mini-gray.png?v=4462653187")}
 .unsupported-info{color:#999;margin-top:-15px;margin-bottom:15px}
 .app-article,.app-article p{font-size:12px;min-height:21px;margin-bottom:0}
 .app-article .reviews-summary{margin-top:1em;text-align:right}
@@ -53,7 +53,7 @@
 .article-meta{margin-bottom:10px}
 .table-of-contents{line-height:1.8}
 .table-of-contents li:nth-child(n+6){display:none}
-.table-of-contents .story-item{padding-left:16px;margin-bottom:10px;background:url("/ark/pics/toc-leading-dot.png?v=4082033618") no-repeat 0 6px}
+.table-of-contents .story-item{padding-left:16px;margin-bottom:10px;background:url("toc-leading-dot.png?v=4082033618") no-repeat 0 6px}
 .expand-table a:hover,.expand-article-abstract a:hover{color:#6e3939;background-color:transparent}
 .article-reviews-section{border-top:1px solid #e7e7dc;padding-top:2em}
 .reviews-heading{padding-bottom:5px}
