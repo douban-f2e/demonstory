@@ -31,9 +31,11 @@ define([
         util.showDemon(demonCover)
         return wait(200 + 2000)
       }).follow().done(function() {
-        return demonCover.speak('大家好，我是科幻作品“打造脸书”', 3000, 2)
+        return demonCover.speak('大家好，我是科幻作品“打造脸书”', 2000, 2)
       }).follow().done(function() {
-        demonCover.speak('大家有所不知，其实 Facebook 曾是豆瓣的一部分...', 3500, 3)
+        demonCover.speak('各位可能有所不知，大洋彼岸的 Facebook 曾是豆瓣的一部分...', 3000, 3)
+        return wait(600)
+      }).follow().done(function() {
         demonWang = demon({
           origin: wang[0]
         , window: win
@@ -50,7 +52,7 @@ define([
       }).follow().done(function() {
         return demonCover.speak('傻孩子，你先听我说', 2000, 3)
       }).follow().done(function() {
-        demonCover.speak('其实早在04年，豆瓣就已经统领了大半个互联网。', 4000, 3)
+        demonCover.speak('其实早在04年，豆瓣就已经统领了大半个互联网。', 3000, 3)
         return wait(4000 + 300)
       }).follow().done(function() {
         return demonWang.walk([10, 50], 300, 'easeOut')
@@ -59,7 +61,7 @@ define([
       }).follow().done(function() {
         return demonWang.speak('。。。', 1000, 10)
       }).follow().done(function() {
-        return demonCover.speak('你所在的所谓 Facebook 正是拆分后的大社区。', 4000, 2)
+        return demonCover.speak('你所在的所谓 Facebook 正是拆分后的大社区。', 3000, 2)
       }).follow().done(function() {
         return demonCover.speak('当然还有你不知道的...', 2000, 3)
       }).follow().done(function() {
@@ -67,7 +69,7 @@ define([
       }).follow().done(function() {
         return demonCover.speak('twitter 其实是友邻广播。', 2000, 2)
       }).follow().done(function() {
-        return demonCover.speak('豆瓣FM 变成了拥有一切天赋的女人 —— 潘多拉。', 3000, 3)
+        return demonCover.speak('豆瓣FM 后来成了潘多拉。', 2000, 3)
       }).follow().done(function() {
         return demonCover.speak('最近被封的 github 的正是 Code 项目的延续...', 3000, 2)
       }).follow().done(function() {
@@ -91,7 +93,7 @@ define([
       }).follow().done(function() {
         return demonWang.speak('愿闻其详！', 1500, 10)
       }).follow().done(function() {
-        return demonCover.speak('都在电子版特别后记呐...', 2000, 3)
+        return demonCover.speak('都在电子特别版后记呐...', 2000, 3)
       }).follow().done(function() {
         demonBtn = demon({
           origin: btn[0]
