@@ -89,6 +89,7 @@ define([
         squintEye: function(duration){
             var self = this,
                 promise = new event.Promise();
+            this.rotateEye('0');
             this.moveEye(0);
             this.eyeLeft.concat(this.eyeRight).addClass('squint');
             setTimeout(function(){
@@ -207,23 +208,29 @@ define([
         },
 
         speak: function(text, duration, clock){
-            var promise = new event.Promise(),
-                words = bubble({
-                    content: text, 
-                    target: this.me[0], 
-                    clock: clock,
-                    window: this.window
+            var self = this,
+                promise = new event.Promise();
+            clearTimeout(self._wordsTimer);
+            if (!self._words) {
+                self._words = bubble({
+                    target: self.me[0], 
+                    window: self.window
                 });
-            setTimeout(function(){
-                words.show();
-                setTimeout(function(){
-                    promise.fire();
-                    words.hide();
-                    setTimeout(function(){
-                        words.destroy();
+            }
+            self._words.set({
+                content: text,
+                clock: clock
+            });
+            self._wordsTimer = setTimeout(function(){
+                self._words.show();
+                self._wordsTimer = setTimeout(function(){
+                    self._words.hide();
+                    self._wordsTimer = setTimeout(function(){
+                        self._words.destroy();
+                        promise.fire();
                     }, 400);
                 }, duration);
-            }, 0);
+            }, 10);
             return promise;
         },
 
