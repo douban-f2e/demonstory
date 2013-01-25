@@ -282,6 +282,62 @@ define([
 
                 piggyDemon.speak('热烈有请豆瓣唯一高端人士，流一手！！！', 1400, 8);
 
+                wait(1400 + 200).done(function() {
+
+                    var liuyishou = judges['liuyishou'].demon;
+
+                    liuyishou.walk([ 660, -13 ], 2000);
+
+                    wait(2000 + 200).done(function() {
+
+                        liuyishou.speak('重要的不是流一手，而是流一被子。', 2000, 12);
+
+                    });
+
+                });
+
+                return wait(1600 + 2200 + 2000 + 200);
+
+            }).follow().done(function() {
+
+                piggyDemon.speak('接下来是酒仙桥超哥！！', 1400, 8);
+
+                wait(1400 + 200).done(function() {
+
+                    var chaoge = judges['chaoge'].demon;
+
+                    chaoge.walk([ 460, -10 ], 1500);
+
+                    wait(1500 + 200).done(function() {
+
+                        chaoge.speak('为什么有人喜欢黑柴静和刘瑜。整天从傻逼那儿找智商优越感，有意思吗？', 2000, 12);
+
+                    });
+
+                });
+
+                return wait(1600 + 1700 + 2000 + 200);
+
+            }).follow().done(function() {
+
+                piggyDemon.speak('最后一位评委老湿就是我们可爱的tgnn！！', 1400, 8);
+
+                wait(1400 + 200).done(function() {
+
+                    var tgnn = judges['tgnn'].demon;
+
+                    tgnn.walk([ 260, -10 ], 1000);
+
+                    wait(1000 + 200).done(function() {
+
+                        tgnn.speak('理财投资褥羊毛，电器产品都知道，你们虽然too森破，照样能说一大套。', 2000, 2);
+
+                    });
+
+                });
+
+                return wait(1600 + 1200 + 2000 + 200);
+
             })
 
 
