@@ -340,6 +340,41 @@ define([
 
             })
 
+            /* section#1 一代宗师 by lifei */
+            .follow().done(function() {
+
+            })
+            /* end fo section#1 */
+
+            /* section#2 FM by lifei */
+            .follow().done(function() {
+
+            })
+            /* end fo section#2 */
+
+            /* section#3 相册 by gonghao */
+            .follow().done(function() {
+
+            })
+            /* end fo section#3 */
+
+            /* section#4 猫 by zhaoguo */
+            .follow().done(function() {
+
+            })
+            /* end fo section#4 */
+
+            /* section#5 阿北 by gonghao */
+            .follow().done(function() {
+
+            })
+            /* end fo section#5 */
+
+            /* section#6 拖黑 by zhaoguo */
+            .follow().done(function() {
+
+            })
+            /* end fo section#6 */
 
         },
 
