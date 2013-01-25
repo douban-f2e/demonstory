@@ -10,7 +10,41 @@ define([
 
     var wait = util.wait,
 
-        DESC = '本节目由豆瓣友邻广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣小组，豆瓣 FM及豆瓣更多赞助播出。豆瓣读书，带来雪姨与五点钟。豆瓣电影，让好电影来找你。豆瓣 FM，与好音乐不期而遇。上 fili, 与 502 也不期而遇。';
+        DESC = '本节目由豆瓣友邻广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣小组，豆瓣 FM及豆瓣更多赞助播出。豆瓣读书，带来雪姨与五点钟。豆瓣电影，让好电影来找你。豆瓣 FM，与好音乐不期而遇。上 fili, 与 502 也不期而遇。',
+
+        TPL_JUDGE = '<div class="judge"><img width="96" height="96" src="/pics/guess/{ID}.jpg">{NAME}</div>',
+
+        JUDGE_LIST = [
+            { name: '卢十三', id: '13' },
+            { name: '影子', id: 'yingzi' },
+            { name: 'su37', id: 'su37' },
+            { name: '流一手', id: 'liuyishou' },
+            { name: '超哥', id: 'chaoge' },
+            { name: 'tgnn', id: 'tgnn' },
+        ];
+
+    function initJudges(win) {
+        var judges = {};
+
+        JUDGE_LIST.forEach(function(item) {
+            var dom = $(TPL_JUDGE.replace('{ID}', item.id).replace('{NAME}', item.name)).appendTo(win.document.body),
+                demonItem = demon({
+                    origin: dom,
+                    className: 'demon-' + item.id,
+                    window: win
+                });
+
+            demonItem.showBody().showHands().showLegs();
+
+            judges[item.id] = {
+                name: item.name,
+                dom: dom,
+                demon: demonItem
+            };
+        });
+
+        return judges;
+    }
 
     return {
 
@@ -25,9 +59,12 @@ define([
                 piggy = $('<div></div>').appendTo(document.body),
                 piggyAvatar = new Image(),
                 piggyPromise = new event.Promise(),
-                piggyDemon;
+                piggyDemon,
+                judges = initJudges(win);
 
-            piggyAvatar.src = '/pics/piggy-avatar.jpg';
+            piggyAvatar.src = '/pics/guess/piggy-avatar.jpg';
+            piggyAvatar.width = 96;
+            piggyAvatar.height = 96;
             piggyAvatar.onload = function() {
                 piggyPromise.fire();
             };
@@ -86,7 +123,7 @@ define([
                     transform: 'translateX(-1500px)'
                 }, 1000, 'easeInOut').follow().done(function() {
 
-                    var guessStyle = $('<link rel="stylesheet" herf="/css/chapter/guess-style.css">').appendTo($('head', doc)),
+                    var guessStyle = $('<link rel="stylesheet" href="../dist/css/chapter/guess-style.css">').appendTo($('head', doc)),
                         wrapper = $('#wrapper', doc);
 
                     wrapper
@@ -110,6 +147,140 @@ define([
                 });
 
                 return wait(1500 + 200);
+
+            }).follow().done(function() {
+
+                piggyDemon.rotateHand('left', '20deg', 300, 'easeIn');
+                piggyDemon.rotateHand('right', '-20deg', 500, 'easeIn');
+
+                return wait(500 + 300);
+
+            }).follow().done(function() {
+
+                piggyDemon.walk([ -250, -100 ], 1200, 'easeInOut');
+
+                wait(1200 + 500).done(function() {
+
+                    piggyDemon.speak('接下来，我们隆重邀请敬爱的评委们，大家鼓掌～～～～', 1000, 12);
+
+                });
+
+                return wait(2800 + 400);
+
+            }).follow().done(function() {
+
+                piggyDemon.speak('第一位是兆维卢十三老湿，大家欢迎～', 800, 6);
+
+                wait(700).done(function() {
+
+                    var lu13 = judges['13'].demon;
+
+                    lu13.rotateHand('right', '-60deg');
+                    lu13.rotateHand('left', '-66deg');
+
+                    lu13.walk([ 1200, -10 ], 3500);
+
+                    wait(3500 + 300).done(function() {
+
+                        lu13.rotateHand('left', '140deg', 500);
+                        lu13.rotateHand('right', '-130deg', 440);
+
+                        wait(600).done(function() {
+
+                            lu13.speak('我是一名工程师，我喜欢用trello，所以我女朋友踹了我。', 2500, 12);
+
+                            wait(2500 + 200).done(function() {
+
+                                lu13.rotateHand('left', '30deg', 300);
+                                lu13.rotateHand('right', '-32deg', 240);
+
+                            });
+
+                        });
+
+                    });
+
+                });
+
+                return wait(800 + 3800 + 3000 + 800);
+
+            }).follow().done(function() {
+
+                piggyDemon.speak('接下来是芙蓉镇应支书～～', 2000, 8);
+
+                wait(2000 + 200).done(function() {
+
+                    var yingzi = judges['yingzi'].demon;
+
+                    yingzi.walk([ 1060, -14 ], 3000);
+
+                    wait(3000 + 200).done(function() {
+
+                        yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 2500, 10);
+
+                    });
+
+                });
+
+                return wait(8400 + 200);
+
+            }).follow().done(function() {
+
+                piggyDemon.speak('下一位是根本就没有 su37 ？？！！', 2000, 8);
+
+                wait(2000 + 200).done(function() {
+
+                    var su37 = judges['su37'].demon;
+
+                    su37.walk([ 860, -12 ], 2600);
+
+                    wait(2600 + 200).done(function() {
+
+                        su37.speak('为了方便大家记忆，从今年开始，以后每年我都是37岁，今后大家再也不用计算我多少岁啦，是不是好轻松的感觉！举手之劳，方便别人，方便自己，低碳环保，利国利民。', 4000, 12);
+
+                        wait(5000 + 20).done(function() {
+
+                            su37.rotateHand('right', '-56deg', 200);
+
+                            wait(200 + 100).done(function() {
+
+                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 1500, 1);
+
+                                wait(1500 + 200).done(function() {
+
+                                    var lu13 = judges['13'].demon,
+                                        yingzi = judges['yingzi'].demon;
+
+                                    lu13.speak('不行啊？！', 1000, 12);
+
+                                    wait(300).done(function() {
+
+                                        yingzi.speak('不行啊？！', 800, 10);
+
+                                    });
+
+                                    wait(1500 + 200).done(function() {
+
+                                        su37.speak('。。。', 800, 1);
+                                        su37.rotateHand('right', '-28deg', 200);
+
+                                    });
+
+                                });
+
+                            });
+
+                        });
+
+                    });
+
+                });
+
+                return wait(15000 + 1000);
+
+            }).follow().done(function() {
+
+                piggyDemon.speak('热烈有请豆瓣唯一高端人士，流一手！！！', 1400, 8);
 
             })
 
