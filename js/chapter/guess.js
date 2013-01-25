@@ -18,7 +18,6 @@ define([
             { name: '卢十三', id: '13' },
             { name: '影子', id: 'yingzi' },
             { name: 'su37', id: 'su37' },
-            { name: '流一手', id: 'liuyishou' },
             { name: '超哥', id: 'chaoge' },
             { name: 'tgnn', id: 'tgnn' },
         ];
@@ -60,7 +59,10 @@ define([
                 piggyAvatar = new Image(),
                 piggyPromise = new event.Promise(),
                 piggyDemon,
-                judges = initJudges(win);
+                materials = $('#materials', doc),
+                sectionDemons = {},
+                judges = initJudges(win),
+                viewportWidth = win.innerWidth;
 
             piggyAvatar.src = '/pics/guess/piggy-avatar.jpg';
             piggyAvatar.width = 96;
@@ -129,14 +131,25 @@ define([
                     wrapper
                         .attr('style', '')
                         .css('opacity', 0)
-                        .html('\
-                            <div id="bd">\
-                                <div class="main">\
-                                    <h1>欢迎，各位评委</h1>\
-                                    <div class="guess3-list"></div>\
-                                </div>\
-                            </div>\
-                        ');
+                        .html(materials.html());
+
+                    $('.wyssy-item-con', wrapper).each(function() {
+                        var dom = $(this),
+                            index = dom.data('section'),
+                            sectionDemon;
+
+                        dom.css('visibility', 'hidden');
+
+                        sectionDemon = demon({
+                            origin: dom,
+                            className: 'demon-section',
+                            window: win
+                        });
+
+                        sectionDemon.showBody().showHands().showLegs();
+
+                        sectionDemons[index] = sectionDemon;
+                    });
 
                     var action = choreo().play();
 
@@ -157,7 +170,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.walk([ -250, -100 ], 1200, 'easeInOut');
+                piggyDemon.walk([ -140, -100 ], 1200, 'easeInOut');
 
                 wait(1200 + 500).done(function() {
 
@@ -232,7 +245,7 @@ define([
 
                     var su37 = judges['su37'].demon;
 
-                    su37.walk([ 860, -12 ], 2600);
+                    su37.walk([ 820, -12 ], 2600);
 
                     wait(2600 + 200).done(function() {
 
@@ -280,33 +293,13 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('热烈有请豆瓣唯一高端人士，流一手！！！', 1400, 8);
-
-                wait(1400 + 200).done(function() {
-
-                    var liuyishou = judges['liuyishou'].demon;
-
-                    liuyishou.walk([ 660, -13 ], 2000);
-
-                    wait(2000 + 200).done(function() {
-
-                        liuyishou.speak('重要的不是流一手，而是流一被子。', 2000, 12);
-
-                    });
-
-                });
-
-                return wait(1600 + 2200 + 2000 + 200);
-
-            }).follow().done(function() {
-
                 piggyDemon.speak('接下来是酒仙桥超哥！！', 1400, 8);
 
                 wait(1400 + 200).done(function() {
 
                     var chaoge = judges['chaoge'].demon;
 
-                    chaoge.walk([ 460, -10 ], 1500);
+                    chaoge.walk([ 550, -10 ], 1500);
 
                     wait(1500 + 200).done(function() {
 
@@ -343,11 +336,15 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
+                return wait(0);
+
             })
             /* end fo section#1 */
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+
+                return wait(0);
 
             })
             /* end fo section#2 */
@@ -355,11 +352,25 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
+                var sectionDemon = sectionDemons[3];
+
+                sectionDemon.me.css({
+                    left: -sectionDemon.me.width() + 'px',
+                    top: '110px',
+                    visibility: 'visible'
+                });
+
+                sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
+
+                return wait(3000 + 200);
+
             })
             /* end fo section#3 */
 
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
+
+                return wait(0);
 
             })
             /* end fo section#4 */
@@ -367,11 +378,15 @@ define([
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
 
+                return wait(0);
+
             })
             /* end fo section#5 */
 
             /* section#6 拖黑 by zhaoguo */
             .follow().done(function() {
+
+                return wait(0);
 
             })
             /* end fo section#6 */
