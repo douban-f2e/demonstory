@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="ua-mac ua-webkit">
+    <head>
+        <title>豆瓣</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="./豆瓣_files/packed_ad3738113870.js" async="true"></script><script>
+            window.Douban=window.Douban||{};var Do=function(){Do.actions.push([].slice.call(arguments))};Do.ready=function(){Do.actions.push([].slice.call(arguments))};Do.add=Do.define=function(a,b){Do.mods[a]=b};Do.global=function(){Do.global.mods=Array.prototype.concat(Do.global.mods,[].slice.call(arguments))};Do.global.mods=[];Do.mods={};Do.actions=[];function set_cookie(g,f,d,e){var b=new Date(),a,c;b.setTime(b.getTime()+((f||30)*24*60*60*1000));a="; expires="+b.toGMTString();for(c in g){document.cookie=c+"="+g[c]+a+"; domain="+(d||"douban.com")+"; path="+(e||"/")}}function get_cookie(b){var e=b+"=",a=document.cookie.split(";"),d,f;for(d=0;d<a.length;d++){f=a[d];while(f.charAt(0)==" "){f=f.substring(1,f.length)}if(f.indexOf(e)===0){return f.substring(e.length,f.length).replace(/\"/g,"")}}return null}Douban.init_show_login=function(a){Do("dialog",function(){var b="/j/misc/login_form";dui.Dialog({title:"登录",url:b,width:/device-mobile/i.test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:350,cache:true,callback:function(c,d){d.node.addClass("dialog-login");d.node.find("h2").css("display","none");d.node.find(".hd h3").replaceWith(d.node.find(".bd h3"));d.node.find("form").css({border:"none",width:"auto",padding:"0"});d.update()}}).open()})};Do(function(){$.ajax_withck=function(a){if(a.type=="POST"){a.data=$.extend(a.data||{},{ck:get_cookie("ck")})}return $.ajax(a)};$.postJSON_withck=function(a,b,c){$.post_withck(a,b,c,"json")};$.post_withck=function(a,c,d,b){if($.isFunction(c)){b=d;d=c;c={}}return $.ajax({type:"POST",url:a,data:$.extend(c,{ck:get_cookie("ck")}),success:d,dataType:b||"text"})};$("html").click(function(c){var a=$(c.target),b=a.attr("class");if(!b){return}$(b.match(/a_(\w+)/gi)).each($.proxy(function(d,f){var e=Douban[f.replace(/^a_/,"init_")];if(typeof e==="function"){c.preventDefault();e.call(this,c)}},a[0]))})});
+            </script>
+            <link rel="stylesheet" href="http://img3.douban.com/css/core/packed__init_6312190557.css">
+            <link rel="stylesheet" href="http://img3.douban.com/misc/mixed_static/357d3622e5735188.css">
+            <script type="text/javascript" src="./豆瓣_files/packed_jquery.min6301986802.js" async="true"></script><script type="text/javascript" src="./豆瓣_files/packed_base6505908882.js" async="true"></script><link type="text/css" rel="stylesheet" href="./豆瓣_files/packed_dialog4563741467.css"><script type="text/javascript" src="./豆瓣_files/packed_dialog8321689615.js" async="true"></script><script src="./豆瓣_files/packed__init_7701316160.js" data-cfg-corelib="http://img3.douban.com/js/packed_jquery.min6301986802.js"></script>
+        </head>
+
+<body screen_capture_injected="true">
+
+    <div id="db-global-nav" class="global-nav global-nav-a">
+        <div class="bd">
+
+            <div class="top-nav-info">
+                <ul>
+                    <li><a href="http://www.douban.com/doumail/">豆邮</a></li>
+                    <li class="nav-user-account">
+                    <a target="_blank" href="http://www.douban.com/accounts/" class="bn-more"><span>帐号</span><span class="arrow"></span></a>
+                    <div class="more-items">
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody><tr><td><a href="http://www.douban.com/people/beiyuu/">我的豆瓣</a></td></tr>
+                                <tr><td><a target="_blank" href="http://www.douban.com/accounts/">我的帐号</a></td></tr>
+                                <tr><td><a href="http://www.douban.com/accounts/logout?ck=vhwW">退出</a></td></tr>
+                        </tbody></table>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="top-nav-reminder">
+                <a href="http://www.douban.com/notification/" class="lnk-remind">提醒
+                </a>
+                <div class="more-items">
+                    <div class="bd">
+                        <p style="display:none;" class="no-new-notis">最近没有收到新提醒...</p>
+                        <ul>
+
+
+
+
+                            <li>
+                            <div class="content">
+                                <a href="http://site.douban.com/106941/">间隔年The-Gap-Year</a> 邀请你参加 
+                                <a href="http://www.douban.com/event/18183213/">前瞻2013青藏线骑行</a>
+                            </div>
+                            </li>
+
+
+                            <li>
+                            <div class="content">
+                                <a href="http://site.douban.com/onewaystreet/">单向街·图书馆</a> 邀请你参加 
+                                <a href="http://www.douban.com/event/18188877/">《趁，此身未老》新书发布会</a>
+                            </div>
+                            </li>
+
+
+                            <li>
+                            <div id="reply_notify_402264101" class="item-req">
+                                <div class="content">
+                                    有 <a href="http://read.douban.com/account/notifications?dcs=noti&dcm=douban&dct=wish" target="_blank">2本你想读的图书</a> 在豆瓣阅读上架
+                                </div>
+                            </div>
+                            </li>
+
+
+                            <li>
+                            <div id="reply_notify_175592353" class="new-reply-item item-req ">
+                                <div class="content">
+                                    广播 
+
+                                    <a href="http://www.douban.com/people/joe9046133/status/1087515190/">国语流行歌曲有能听的新歌吗...</a> 有了新回复
+                                </div>
+                                <div class="ops">
+                                    <a class="j a_delete_reply_notify topic-no-reply" title="删除" href="http://www.douban.com/#175592353">不再提醒</a>
+                                </div>
+                            </div>
+                            </li>
+
+
+
+
+                            <li>
+                            <div class="content"> 
+                                <a href="http://site.douban.com/station/">豆瓣汽车站</a> 邀请你参加 
+                                <a href="http://www.douban.com/online/11458374/">敢不敢说说你曾经为你的梦想做过多少“傻”事~</a> 线上活动
+                            </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="ft">
+                        <a href="http://www.douban.com/notification/">查看全部提醒
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-nav-items">
+                <ul>
+
+
+                    <li class="on">
+                    <a href="./豆瓣_files/豆瓣.html">豆瓣</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://book.douban.com/">读书</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://movie.douban.com/">电影</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://music.douban.com/">音乐</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://www.douban.com/location/">同城</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://www.douban.com/group/">小组</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://read.douban.com/?dcs=top-nav&dcm=douban" target="_blank">阅读</a>
+                    </li>
+
+
+                    <li>
+                    <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+                    </li>
+
+                    <li>
+                    <a href="http://www.douban.com/#more" class="bn-more"><span>更多</span></a>
+                    <div class="more-items">
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tbody><tr><td><a href="http://9.douban.com/" target="_blank">九点</a></td></tr>
+
+                                <tr><td><a href="http://alphatown.com/" target="_blank">阿尔法城</a></td></tr>
+
+                                <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                        </tbody></table>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+
+    <div class="nav-search">
+      <form action="http://www.douban.com/search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">书籍、电影、音乐、小组、小站、成员</label>
+          <div class="inp"><input id="inp-query" name="q" size="22" title="搜索书、电影、音乐、小组、小站、成员" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="nav-logo">
+      <a href="./豆瓣_files/豆瓣.html">豆瓣社区</a>
+    </div>
+
+    <div class="nav-items">
+     <ul>
+      <li><a href="./豆瓣_files/豆瓣.html">首页</a></li>
+          <li><a href="http://www.douban.com/update/">友邻广播</a></li>
+          <li><a href="http://www.douban.com/mine/">我的豆瓣</a></li>
+          <li><a href="http://www.douban.com/explore/">浏览发现</a></li>
+      <li><a href="http://www.douban.com/neighborhood/">周边生活</a></li>
+     </ul>
+     </div>
+
+  </div>
+  </div>
+</div>
+
+           <div class="wyssy-item-con">
+               <div class="guess-item subject-item promotional-item" id="other:1052:444394" unique_id="1052:444394">
+
+                   <div class="bd">
+
+
+                       <div class="pic" style="margin:10px;">
+                           <a href="http://book.douban.com/guess_redirect?item_id=444394" target="_blank"><img src="wyssy/xiaribd.jpg"></a>
+                           <a href="http://book.douban.com/guess_redirect?item_id=444394" target="_blank"><img src="wyssy/dongribd.jpg"></a><br><br>
+                           <a href="http://book.douban.com/guess_redirect?item_id=444394" target="_blank"><img src="wyssy/qiuribd.jpg"></a>
+                       </div>
+                       <div class="content">
+                           <div class="title">
+                               <a href="http://book.douban.com/guess_redirect?item_id=444394" target="_blank">夏冬秋三便当</a>
+
+
+                               <div class="rating">
+                                   <span class="rating-stars">★★★★☆</span> <b>8.1</b>
+                               </div>
+                           </div>
+
+                           <div class="from">
+                               <ul>
+                                   <li>
+                                   <span class="label">作者：</span>
+                                   <span class="value">吉井忍</span>
+                                   </li>
+                               </ul>
+                           </div>
+
+                           <div class="desc">
+                               <p>秉承日式料理传统，以中国当季食材，制作适合冬季享用的美味便当。逐一图解日本最具人气的便当菜肴，亲子丼、烤饭团、玉子烧、味噌汤……初心者亦能轻松上手。</p>
+                           </div>
+                       </div>
+
+                       <div class="source">
+                           热点阅读作品
+                           &nbsp;|&nbsp;
+                           9330人试读
+                           <span class="pubtime">35分钟前</span>
+                       </div>
+
+                   </div>
+               </div>
+            </div>
+
+            <div class="wyssy-item-con">
+                <div class="guess-item subject-item promotional-item">
+                    <div class="bd">
+                        <div class="pic">
+                            <a href="http://movie.douban.com/subject/3821067/" target="_blank"><img src="wyssy/yidaizongshi.jpg" style="width:150px;"></a>
+                        </div>
+                        <div class="content">
+                            <div class="title">
+                                <a href="http://movie.douban.com/subject/20278174/" target="_blank">一代宗师</a>
+                                <div class="rating"><span class="rating-stars">★★★★☆</span> <b>7.6</b></div>
+                            </div>
+                            <div class="from">
+                                <ul>
+                                    <li><span class="label">导演：</span><span class="value">王家卫</span></li>
+                                    <li><span class="label">主演：</span><span class="value">梁朝伟 / 章子怡 / 张震 / 宋慧乔 / 赵本山</span></li>
+                                    <li><span class="label">类型：</span><span class="value">剧情 / 动作 / 传记</span></li> 
+                                </ul>
+                            </div>
+                            <div class="desc">
+                                <p>广东佛山人叶问（梁朝伟 饰），年少时家境优渥，师从咏春拳第三代传人陈华顺学习拳法，师傅“一条腰带一口气”的告诫，支持他走过兵荒马乱、....</p>
+                            </div>
+                        </div>
+                        <div class="source">热点电影&nbsp;|&nbsp;81541人看过<span class="pubtime">2013-01-08</span></div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="wyssy-item-con">
+               <div class="guess-item subject-item promotional-item" >
+                   <div class="bd">
+                       <div class="pic">
+                           <a href="http://read.douban.com/ebook/316702/" target="_blank"><img src="wyssy/nvwangqichang.jpg" style="width:150px"></a>
+                       </div>
+                       <div class="content">
+                           <div class="title">
+                               <a href="http://book.douban.com/guess_redirect?item_id=444394" target="_blank">论文艺女青年如何培养女王气场</a>
+                               <div class="rating">
+                                   <span class="rating-stars">★★★★☆</span> <b>7.4</b>
+                               </div>
+                           </div>
+
+                           <div class="from">
+                               <ul><li><span class="label">作者：</span>
+                                   <span class="value">丁小云</span>
+                               </li></ul>
+                           </div>
+
+                           <div class="desc">
+                               <p>虽然据科学研究，胸大的女人的智商普遍要比胸小的女人高一些，但鉴于很多很漂亮的大胸女人让自己活成了一个花瓶，甚至是活成了一只任由社会宰割的肉鸡。所以现在的我更倾向于这样去看待身材与气场的关系。</p>
+                           </div>
+                       </div>
+                       <div class="source">
+                           热点阅读作品&nbsp;|&nbsp;250人试读<span class="pubtime">38分钟前</span>
+                       </div>
+
+                   </div>
+               </div>
+            </div>
+
+            <div class="wyssy-item-con">
+                <div class="guess-item subject-item promotional-item">
+                    <div class="bd">
+                        <div class="pic">
+                            <a href="http://music.douban.com/subject/1924543/" target="_blank"><img src="wyssy/zhegeshijie.jpg" style="width:150px;"></a>
+                        </div>
+                        <div class="content">
+                            <div class="title"> 
+                                <a href="http://movie.douban.com/subject/20278174/" target="_blank">这个世界会好吗</a>
+                                <div class="rating"><span class="rating-stars">★★★★★</span> <b>9.1</b></div>
+                            </div>
+                            <div class="from">
+                                <ul>
+                                    <li><span class="label">表演者：</span><span class="value"> 李志 </span></li>
+                                    <li><span class="label">发行时间：</span><span class="value">2006</span></li> 
+                                </ul>
+                            </div>
+                            <div class="desc">
+                                <p>比如“谁的父亲死了，请你告诉我如何悲伤”，像不像加缪笔下的默尔索？那个心中有爱却不知如何对母亲表达悲伤的人？那个因不按习俗表达悲伤就被法庭以道德罪处死的局外人？</p>
+                            </div>
+                        </div>
+                        <div class="source">BeiYuu喜欢的唱片&nbsp;|&nbsp;9245人听过<span class="pubtime">2010-06-20</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wyssy-item-con">
+                <div class="guess-item subject-item promotional-item">
+                    <div class="bd">
+                        <div class="pic">
+                            <a href="http://movie.douban.com/subject/11610693/" target="_blank"><img src="wyssy/kuailedaojia.jpg" style="width:150px;"></a>
+                        </div>
+                        <div class="content">
+                            <div class="title">
+                                <a href="http://movie.douban.com/subject/20278174/" target="_blank">快乐到家</a>
+                                <div class="rating"><span class="rating-stars">★☆☆☆☆</span> <b>3.1</b></div>
+                            </div>
+                            <div class="from">
+                                <ul>
+                                    <li><span class="label">导演：</span><span class="value">傅华阳</span></li>
+                                    <li><span class="label">主演：</span><span class="value">何炅 / 谢娜 / 李维嘉 / 吴昕 / 杜海涛</span></li>
+                                    <li><span class="label">类型：</span><span class="value">喜剧</span></li> 
+                                </ul>
+                            </div>
+                            <div class="desc">
+                                <p>受众人追捧却独爱宠物狗乐乐“爱狗不爱人”的富家千金乖乖（吴昕 饰），想利用“全球名犬选美大赛”让乐乐扬名立万，请到担任本次大赛评委的知名训犬大师“狗博士”何马（何炅 饰）和宠物美容师韦加斯（李维嘉 饰）出马，将“屌丝狗”乐乐一番包装打造终于麻雀变凤凰</p>
+                            </div>
+                        </div>
+                        <div class="source">热点电影&nbsp;|&nbsp;1541人看过<span class="pubtime">2013-01-08</span></div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="wyssy-item-con">
+               <div class="guess-item subject-item promotional-item" >
+                   <div class="bd">
+                       <div class="pic">
+                           <a href="http://read.douban.com/ebook/316702/" target="_blank"><img src="wyssy/lichengpeng.jpg" style="width:150px"></a>
+                       </div>
+                       <div class="content">
+                           <div class="title">
+                               <a href="http://book.douban.com/guess_redirect?item_id=444394" target="_blank">全世界人民都知道</a>
+                               <div class="rating">
+                                   <span class="rating-stars">★★★☆☆</span> <b>6.7</b>
+                               </div>
+                           </div>
+
+                           <div class="from">
+                               <ul><li><span class="label">作者：</span>
+                                   <span class="value">李承鹏 </span>
+                               </li></ul>
+                           </div>
+
+                           <div class="desc">
+                               <p>他为尊严写作，智力的尊严、记忆的尊严、亲情的尊严、表达的尊严、生育的尊严……因为他不相信一群没有尊严的国民，能建起一个强大的国家。个人有尊严，国家才美丽，且看大眼如何用幽默、辛辣而温情的笔触诠释这全世界都知道的道理。</p>
+                           </div>
+                       </div>
+                       <div class="source">
+                           热点阅读作品&nbsp;|&nbsp;606人推荐<span class="pubtime">19890604</span>
+                       </div>
+
+                   </div>
+               </div>
+            </div>
+
+            <div class="wyssy-item-con" style="text-align:center">
+                <img src="wyssy/maomao.png" style="width:98%;margin-bottom:15px;">
+            </div>
+
+            <div class="wyssy-item-con">
+                <div class="guess-item" >
+                    <div class="bd">
+                        <div class="content">
+                            <div class="title">
+                                <a href="http://site.douban.com/133573/widget/notes/8343724/note/259794558/" target="_blank">21天精通精益创业</a>
+                            </div>
+
+                            <div class="from">
+                                <img src="http://img3.douban.com/view/site/small/public/dbc7dba7a4856d0.jpg" width="16" height="16">
+                                程序员都是傻逼小站 的日记
+                            </div>
+
+                            <div class="desc">
+                                <p>我们正处在一个空前的全球创业兴盛时代，但无数创业公司都黯然收场，以失败告终。对于新创企业，传统的管理思维并不适用，所以新一代的创业者需要找到建立成功企业的新思路。精益创业代表了一种不断形成创新的新方法，它源于“精益生产 ”的理念，提倡企业进行“验证性学习”，先向市场推出极 简的原型产品，然后在不断地试验和学习中，以最小的成本和有效的方式验证产品是否符合用户需求，并迭代优化产品，灵活调整方向。这一模式不仅针对车库创业派，对于全球最大企业内部的新创业务也同样适用。</p>
+                            </div>
+                        </div>
+                        <div class="source">
+                            阿北喜欢的日记&nbsp;|&nbsp;2000人喜欢 <span class="pubtime">今天下午</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wyssy-item-con">
+                <div class="guess-item album-item" id="1949819:1026:85197250|2013-01-25+16:10:24" unique_id="1026:85197250">
+                    <div class="bd">
+                        <div class="pic">
+                            <a href="http://site.douban.com/lady/widget/biz_album/12511194/" target="_blank" >
+                                <span class="pic1"><img src="wyssy/yourong1.jpg" ><i></i></span>
+                                <span class="pic2"><img src="wyssy/yourong2.png"><i></i></span>
+                                <span class="pic3"><img src="wyssy/yourong3.png"><i></i></span>
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="title">
+                                <a href="http://site.douban.com/lady/widget/biz_album/12511194/" target="_blank">有容乃大</a>
+                            </div>
+                            <div class="from">
+                                <img src="http://img3.douban.com/view/site/small/public/3e61f6f8346bb67.jpg" width="16" height="16">
+                                美女如云小站 的相册
+                            </div>
+                        </div>
+                        <div class="source">
+                            热点相册 &nbsp;|&nbsp; 2333人喜欢  <span class="pubtime">1小时前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <style type="text/css">
+                .wyssy-item-con{margin:0 auto;;width:560px;left:50px;border:1px solid #eeebe7;padding-top:20px;overflow:hidden;margin-bottom:50px;}
+                .wyssy-item-con .guess-item {margin-bottom:0;}
+                .wyssy-item-con .album-item {margin-bottom:0;margin-right:20px;}
+                .wyssy-item-con .guess-item .bd{border:none;}
+                .wyssy-item-con .guess-item .desc{padding-right:30px;}
+                .wyssy-item-con .event-item .pic, .subject-item .pic { float: right; margin: 0 30px 0 30px;}
+            </style>
+
+</body></html>
