@@ -15,11 +15,11 @@ define([
         TPL_JUDGE = '<div class="judge"><img width="96" height="96" src="/pics/guess/{ID}.jpg">{NAME}</div>',
 
         JUDGE_LIST = [
-            { name: '卢十三', id: '13' },
+            { name: '卢十三', id: 'lu13' },
             { name: '影子', id: 'yingzi' },
             { name: 'su37', id: 'su37' },
             { name: '超哥', id: 'chaoge' },
-            { name: 'tgnn', id: 'tgnn' },
+            { name: 'tgnn', id: 'tgnn' }
         ];
 
     function initJudges(win) {
@@ -148,6 +148,12 @@ define([
 
                         sectionDemon.showBody().showHands().showLegs();
 
+                        sectionDemon.me.css({
+                            left: -sectionDemon.me.width() - 20 + 'px',
+                            top: '110px',
+                            visibility: 'visible'
+                        });
+
                         sectionDemons[index] = sectionDemon;
                     });
 
@@ -186,7 +192,7 @@ define([
 
                 wait(700).done(function() {
 
-                    var lu13 = judges['13'].demon;
+                    var lu13 = judges['lu13'].demon;
 
                     lu13.rotateHand('right', '-60deg');
                     lu13.rotateHand('left', '-66deg');
@@ -261,7 +267,7 @@ define([
 
                                 wait(1500 + 200).done(function() {
 
-                                    var lu13 = judges['13'].demon,
+                                    var lu13 = judges['lu13'].demon,
                                         yingzi = judges['yingzi'].demon;
 
                                     lu13.speak('不行啊？！', 1000, 12);
@@ -352,15 +358,166 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                var sectionDemon = sectionDemons[3];
+                var sectionDemon = sectionDemons[3],
+                    tgnn = judges['tgnn'].demon,
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon;
 
-                sectionDemon.me.css({
-                    left: -sectionDemon.me.width() + 'px',
-                    top: '110px',
-                    visibility: 'visible'
+                piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12);
+
+                wait(1500 + 200).done(function() {
+
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+
+                    wait(1000).done(function() {
+
+                        tgnn.speak('想：这个。。。还算有点儿意思嘛。。。', 1000, 12);
+
+                        su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12);
+
+                        return wait(1000 + 800);
+
+                    }).follow().done(function() {
+
+                        chaoge.speak('想：这也能黑柴静？！', 1000, 12);
+
+                        return wait(1000 + 300);
+
+                    }).follow().done(function() {
+
+                        yingzi.speak('想：嗯，给力！', 500, 10);
+
+                        lu13.speak('想：大爱X大呀！', 600, 12);
+
+                        return wait(800 + 200);
+
+                    });
+
+                    return wait(5000 + 200);
+
+                }).follow().done(function() {
+
+                    var action = choreo().play();
+
+                    action.actor($('#db-global-nav', doc)[0], {
+                        opacity: 0.5
+                    }, 200);
+
+                    action.actor($('#db-nav-sns', doc)[0], {
+                        opacity: 0.5
+                    }, 200);
+
+                    wait(200).done(function() {
+
+                        $('<img width="300" height="300" src="/pics/guess/pause.gif">')
+                            .css({
+                                position: 'absolute',
+                                top: '20px',
+                                right: '20px'
+                            })
+                            .appendTo(doc.body);
+
+                        return wait(500);
+
+                    }).follow().done(function() {
+
+                        var action = choreo().play();
+
+                        action.actor(doc.body, {
+                            translateY: '1640px',
+                            scale: 2
+                        }, 800, 'easeOut');
+
+                        return wait(800 + 200);
+
+                    }).follow().done(function() {
+
+                        var mouse = $('<img id="mouse" width="23" height="42" src="/pics/guess/mouse.png">')
+                                .css({
+                                    position: 'absolute',
+                                    top: '170px',
+                                    left: '290px',
+                                    zIndex: '1'
+                                }).appendTo(doc.body),
+
+                            action = choreo().play();
+
+                        action.actor(mouse[0], {
+                            top: '170px',
+                            left: '490px',
+                        }, 500, 'easeOut');
+
+                        return wait(500 + 200);
+
+                    }).follow().done(function() {
+
+                        var saveAs = $('<img id="save-as" width="182" height="206" src="/pics/guess/save-as.jpg">')
+                                .css({
+                                    position: 'absolute',
+                                    top: '50px',
+                                    left: '430px',
+                                    opacity: 0
+                                }).appendTo(doc.body),
+
+                            action = choreo().play();
+
+                        action.actor(saveAs[0], {
+                            opacity: 1
+                        }, 300, 'easeIn');
+
+                        return wait(300 + 200);
+
+                    }).follow().done(function() {
+
+                        var saveAsDialog = $('<img id="save-as-dlg" width="500" height="351" src="/pics/guess/save-as-dlg.jpg">')
+                                .css({
+                                    position: 'absolute',
+                                    top: '95px',
+                                    left: '370px',
+                                    opacity: 0
+                                }).appendTo(doc.body),
+
+                            action = choreo().play();
+
+                        $('#mouse', doc).css('zIndex', 0);
+
+                        action.actor(saveAsDialog[0], {
+                            opacity: 1
+                        }, 300, 'easeInOut');
+
+                        return wait(300 + 800);
+
+                    }).follow().done(function() {
+
+                        $('#mouse', doc).remove();
+                        $('#save-as', doc).remove();
+
+                        var saveAsDialog = $('#save-as-dlg', doc),
+                            action = choreo().play();
+
+                        action.actor(saveAsDialog[0], {
+                            opacity: 0
+                        }, 200, 'easeIn').follow().done(function() {
+                            saveAsDialog.remove();
+                        });
+
+                        return wait(200 + 500);
+
+                    }).follow().done(function() {
+
+                        var action = choreo().play();
+
+                        action.actor(doc.body, {
+                            translateY: '0',
+                            scale: 1
+                        }, 500, 'easeIn');
+
+                    })
+
                 });
 
-                sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
 
                 return wait(3000 + 200);
 
