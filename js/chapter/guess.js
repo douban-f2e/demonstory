@@ -411,7 +411,7 @@ define([
 
                     wait(200).done(function() {
 
-                        $('<img width="300" height="300" src="/pics/guess/pause.gif">')
+                        $('<img id="pause" width="300" height="300" src="/pics/guess/pause.gif">')
                             .css({
                                 position: 'absolute',
                                 top: '20px',
@@ -499,7 +499,9 @@ define([
 
                         action.actor(saveAsDialog[0], {
                             opacity: 0
-                        }, 200, 'easeIn').follow().done(function() {
+                        }, 200, 'easeIn');
+
+                        action.follow().done(function() {
                             saveAsDialog.remove();
                         });
 
@@ -514,10 +516,57 @@ define([
                             scale: 1
                         }, 500, 'easeIn');
 
-                    })
+                        return action;
+
+                    }).follow().done(function() {
+
+                        var action = choreo().play();
+
+                        action.actor($('#pause', doc)[0], {
+                            opacity: 0
+                        }, 200, 'easeIn');
+
+                        action.actor($('#db-global-nav', doc)[0], {
+                            opacity: 1
+                        }, 200);
+
+                        action.actor($('#db-nav-sns', doc)[0], {
+                            opacity: 1
+                        }, 200);
+
+                        action.follow().done(function() {
+                            $('#pause', doc).remove();
+                        });
+
+                        return wait(200 + 200);
+
+                    }).follow().done(function() {
+
+                        $('#pause', doc).remove();
+
+                        var lu13 = judges['lu13'].demon,
+                            yingzi = judges['yingzi'].demon,
+                            su37 = judges['su37'].demon,
+                            chaoge = judges['chaoge'].demon,
+                            tgnn = judges['tgnn'].demon;
+
+                        lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
+                        su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        tgnn.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+
+                        return wait(2000 + 200);
+
+                    }).follow().done(function() {
+
+                        var sectionDemon = sectionDemons[3];
+
+                        sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+
+                    });
 
                 });
-
 
                 return wait(3000 + 200);
 
