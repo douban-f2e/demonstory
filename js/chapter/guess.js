@@ -358,7 +358,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     tgnn = judges['tgnn'].demon,
