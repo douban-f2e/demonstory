@@ -358,6 +358,8 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
+                return wait(0);
+
                 var sectionDemon = sectionDemons[3],
                     tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
@@ -545,12 +547,6 @@ define([
 
                         $('#pause', doc).remove();
 
-                        var lu13 = judges['lu13'].demon,
-                            yingzi = judges['yingzi'].demon,
-                            su37 = judges['su37'].demon,
-                            chaoge = judges['chaoge'].demon,
-                            tgnn = judges['tgnn'].demon;
-
                         lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
                         yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
                         su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
@@ -576,7 +572,7 @@ define([
 
                 });
 
-                return sectionPromise;
+                // return sectionPromise;
 
             })
             /* end fo section#3 */
@@ -592,7 +588,83 @@ define([
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
 
-                return wait(0);
+                var sectionDemon = sectionDemons[5],
+                    tgnn = judges['tgnn'].demon,
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
+
+                piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 2500, 12);
+
+                sectionDemon.me.css('top', '140px');
+
+                wait(2500 + 200).done(function() {
+
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+
+                    wait(1000).done(function() {
+
+                        chaoge.speak('想：月『精』日记又出现了！', 1500, 10);
+                        su37.speak('想：月『精』日记又出现了！', 1500, 12);
+                        lu13.speak('想：月『精』日记又出现了！', 1500, 12);
+
+                    });
+
+                    return wait(5000 + 200);
+
+                }).follow().done(function() {
+
+                    var action = choreo().play();
+
+                    action.actor(doc.body, {
+                        scale: 2.6,
+                        translateX: '370px',
+                        translateY: '2300px'
+                    }, 800, 'easeOut');
+
+                    return wait(800 + 200);
+
+                }).follow().done(function() {
+
+                    var ahbeiLike = $('.ahbei-like', sectionDemon.me),
+                        shiningDuration = 300,
+                        shiningTimes = 3,
+                        i = 1;
+
+                    ahbeiLike.css('color', 'red');
+
+                    for (; i < shiningTimes; i++) {
+
+                        var fn = (function(count) {
+                            if (count % 2 == 0) {
+                                ahbeiLike.attr('style', '');
+                            } else {
+                                ahbeiLike.css('color', 'red');
+                            }
+                        })(i);
+
+                        wait(shiningDuration * i).done(fn);
+                    }
+
+                    return wait(shiningDuration * shiningTimes + 300);
+
+                }).follow().done(function() {
+
+                    var action = choreo().play();
+
+                    action.actor(doc.body, {
+                        scale: 1,
+                        translateX: '0',
+                        translateY: '0'
+                    }, 800, 'easeIn');
+
+                    return wait(800 + 200);
+
+                });
+
+                return sectionPromise;
 
             })
             /* end fo section#5 */

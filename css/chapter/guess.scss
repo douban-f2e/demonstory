@@ -9,12 +9,38 @@
         }
     }
 
-    &.demon-section {
-        background: #fff;
-        padding: 0;
+    &.wyssy-item-con {
+        width: 560px;
         border: 1px solid #eeebe7;
-    }
+        padding: 20px 0 0;
+        // overflow: hidden;
+        margin-bottom:50px;
+        background: #fff;
 
+        .guess-item {
+            margin-bottom: 0;
+
+            .bd {
+                border: none;
+            }
+
+            .desc {
+                padding-right: 30px;
+            }
+        }
+
+        .album-item {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+
+        .event-item .pic,
+        .subject-item .pic {
+            float: right;
+            margin: 0 30px 0 30px;
+        }
+
+    }
 }
 
 .judge {
@@ -28,36 +54,3 @@
     line-height: 1;
 }
 
-.wyssy-item-con {
-    margin: 0 auto;
-    width: 560px;
-    left: 50px;
-    border: 1px solid #eeebe7;
-    padding-top: 20px;
-    // overflow: hidden;
-    margin-bottom:50px;
-
-    .guess-item {
-        margin-bottom: 0;
-
-        .bd {
-            border: none;
-        }
-
-        .desc {
-            padding-right: 30px;
-        }
-    }
-
-    .album-item {
-        margin-bottom: 0;
-        margin-right: 20px;
-    }
-
-    .event-item .pic,
-    .subject-item .pic {
-        float: right;
-        margin: 0 30px 0 30px;
-    }
-
-}
