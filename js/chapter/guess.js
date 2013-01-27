@@ -358,7 +358,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     tgnn = judges['tgnn'].demon,
@@ -572,7 +572,7 @@ define([
 
                 });
 
-                // return sectionPromise;
+                return sectionPromise;
 
             })
             /* end fo section#3 */
@@ -587,6 +587,8 @@ define([
 
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
+
+                return wait(0);
 
                 var sectionDemon = sectionDemons[5],
                     tgnn = judges['tgnn'].demon,
