@@ -358,7 +358,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                // return wait(0);
+                return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     tgnn = judges['tgnn'].demon,
@@ -588,7 +588,7 @@ define([
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[5],
                     tgnn = judges['tgnn'].demon,
@@ -606,7 +606,7 @@ define([
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
 
-                    wait(1000).done(function() {
+                    wait(3000).done(function() {
 
                         chaoge.speak('想：月『精』日记又出现了！', 1500, 10);
                         su37.speak('想：月『精』日记又出现了！', 1500, 12);
@@ -632,8 +632,8 @@ define([
 
                     var ahbeiLike = $('.ahbei-like', sectionDemon.me),
                         shiningDuration = 300,
-                        shiningTimes = 3,
-                        i = 1;
+                        shiningTimes = 5,
+                        i = 0;
 
                     ahbeiLike.css('color', 'red');
 
@@ -641,9 +641,13 @@ define([
 
                         var fn = (function(count) {
                             if (count % 2 == 0) {
-                                ahbeiLike.attr('style', '');
+                                return function() {
+                                    ahbeiLike.attr('style', '');
+                                };
                             } else {
-                                ahbeiLike.css('color', 'red');
+                                return function() {
+                                    ahbeiLike.css('color', 'red');
+                                };
                             }
                         })(i);
 
@@ -663,6 +667,26 @@ define([
                     }, 800, 'easeIn');
 
                     return wait(800 + 200);
+
+                }).follow().done(function() {
+
+                    lu13.speak('通过！！！', 2000, 1);
+                    yingzi.speak('通过！！！', 2000, 11);
+                    su37.speak('通过！！！', 2000, 12);
+                    chaoge.speak('通过！！！', 2000, 12);
+                    tgnn.speak('通过！！！', 2000, 12);
+
+                    return wait(2000 + 200);
+
+                }).follow().done(function() {
+
+                    sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+
+                    return wait(3000 + 200);
+
+                }).follow().done(function() {
+
+                    sectionPromise.fire();
 
                 });
 
