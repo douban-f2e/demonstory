@@ -363,7 +363,8 @@ define([
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
-                    lu13 = judges['lu13'].demon;
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
                 piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12);
 
@@ -516,7 +517,7 @@ define([
                             scale: 1
                         }, 500, 'easeIn');
 
-                        return action;
+                        return wait(500 + 200);
 
                     }).follow().done(function() {
 
@@ -564,11 +565,18 @@ define([
 
                         sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
 
+                        return wait(3000 + 200);
+
+                    }).follow().done(function() {
+
+                        // section end
+                        sectionPromise.fire();
+
                     });
 
                 });
 
-                return wait(3000 + 200);
+                return sectionPromise;
 
             })
             /* end fo section#3 */
