@@ -40,6 +40,9 @@ require([
         stage: 'pages/update.html',
         style: '../dist/css/chapter/guess.css',
         script: '../chapter/guess'
+    }, {
+        stage: 'pages/end/guess.html',
+        script: '../chapter/end'
     }];
 
     var observer = event();
