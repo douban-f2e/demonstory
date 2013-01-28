@@ -115,6 +115,34 @@ define([
             return action.follow();
         },
 
+        waveHand: function(side, times, gap, deg, duration) {
+          side = side || 'left';
+          times = times || 6;
+          duration = duration || 400;
+          gap = gap || 30;
+          deg = deg || 150;
+
+          var self = this;
+          var ended = false;
+          function doRotate() {
+            if (!times) return;
+            var d = deg + gap;
+            if (ended) {
+              d = 30;
+              duration = 200;
+            } else if (times == 1) {
+              ended = true;
+              times += 1;
+            }
+            self.rotateHand(side, d + 'deg', duration).done(function() {
+              times--;
+              gap = - gap;
+              doRotate();
+            });
+          }
+          return doRotate();
+        },
+
         rotateLeg: function(side, deg, duration, easing){
             var action = choreo().play(),
                 v = 'rotate(' + deg + ')';
