@@ -16,7 +16,7 @@ define([
     return {
 
         announce: function(screen){
-            return screen('首页', DESC, 1000);
+            return screen('首页', DESC, 5000);
         },
 
         main: function(win, promise){
@@ -332,7 +332,7 @@ define([
 
             }).follow().done(function(){
 
-                //promise.fire(); // 结束，进入下一章节
+                promise.fire(); // 结束，进入下一章节
 
             });
 
