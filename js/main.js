@@ -40,6 +40,10 @@ require([
         stage: 'pages/facebook.html',
         script: '../chapter/facebook'
     }, {
+      stage: 'pages/update_old1.html',
+      script: '../chapter/chaos.js',
+      style: '../dist/css/chapter/chaos.css'
+    }, {
         stage: 'pages/end/guess.html',
         script: '../chapter/end'
     }/*, {
@@ -60,8 +64,8 @@ require([
         director.next();
     });
 
-    observer.bind('end', function(){
+    //observer.bind('end', function(){
         //director.next();
-    });
+    //});
 
 });

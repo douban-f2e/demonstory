@@ -15,7 +15,7 @@
   .moui-content {
     display:inline-block;
     max-width:300px;
-    padding:20px;
+    padding:22px;
     border:5px solid #666;
     border-radius:20px;
     background:#ffc;
@@ -66,7 +66,7 @@
 
     &.left-align {
       margin-left:-30px;
-      @include transform-origin(0%, 0%);
+      @include transform-origin(20%, 0%);
 
       .moui-arrow {
         top: 0;
@@ -88,7 +88,7 @@
 
     &.right-align {
       margin-left:30px;
-      @include transform-origin(100%, 0%);
+      @include transform-origin(80%, 0%);
 
       .moui-arrow {
         top: 0;
@@ -122,7 +122,7 @@
 
     &.left-align {
       margin-left:-30px;
-      @include transform-origin(0%, 100%);
+      @include transform-origin(20%, 100%);
 
       .moui-arrow {
         bottom: 0;
@@ -144,7 +144,7 @@
 
     &.right-align {
       margin-left:30px;
-      @include transform-origin(100%, 100%);
+      @include transform-origin(80%, 100%);
 
       .moui-arrow {
         bottom: 0;
@@ -179,7 +179,7 @@
 
     &.top-align {
       margin-top:-30px;
-      @include transform-origin(0%, 0%);
+      @include transform-origin(0%, 20%);
     
       .moui-arrow {
         left: 0;
@@ -201,7 +201,7 @@
 
     &.bottom-align {
       margin-top:30px;
-      @include transform-origin(0%, 100%);
+      @include transform-origin(0%, 80%);
     
       .moui-arrow {
         left: 0;
@@ -235,7 +235,7 @@
 
     &.top-align {
       margin-top:-30px;
-      @include transform-origin(100%, 0%);
+      @include transform-origin(100%, 20%);
     
       .moui-arrow {
         right: 0;
@@ -256,8 +256,8 @@
     }
 
     &.bottom-align {
-      margin-top:-30px;
-      @include transform-origin(100%, 100%);
+      margin-top:30px;
+      @include transform-origin(100%, 80%);
     
       .moui-arrow {
         right: 0;

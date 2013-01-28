@@ -54,10 +54,10 @@ define('moui/bubble', [
                     .addClass(['center', 'top', 'bottom'][align] + '-align');
             } else if (quadrant === 2) {
                 node.addClass('bottom-arrow')
-                    .addClass(['center', 'left', 'right'][align] + '-align');
+                    .addClass(['center', 'right', 'left'][align] + '-align');
             } else if (quadrant === 3) {
                 node.addClass('left-arrow')
-                    .addClass(['center', 'top', 'bottom'][align] + '-align');
+                    .addClass(['center', 'bottom', 'top'][align] + '-align');
             }
             stick(this._config.target, this._node[0], clock);
         },
