@@ -12,8 +12,6 @@ define([
 
         DESC = '本节目由豆瓣友邻广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣小组，豆瓣 FM及豆瓣更多赞助播出。豆瓣读书，带来雪姨与五点钟。豆瓣电影，让好电影来找你。豆瓣 FM，与好音乐不期而遇。上 fili, 与 502 也不期而遇。',
 
-        TPL_JUDGE = '<div class="judge"><img width="96" height="96" src="/pics/guess/{ID}.jpg">{NAME}</div>',
-
         JUDGE_LIST = [
             { name: '卢十三', id: 'lu13' },
             { name: '影子', id: 'yingzi' },
@@ -27,7 +25,7 @@ define([
         var judges = {};
 
         JUDGE_LIST.forEach(function(item) {
-            var dom = $(TPL_JUDGE.replace('{ID}', item.id).replace('{NAME}', item.name)).appendTo(win.document.body),
+            var dom = $('#judge-' + item.id, $(win.document)),
                 demonItem = demon({
                     origin: dom,
                     className: 'demon-' + item.id,
@@ -56,8 +54,7 @@ define([
 
         main: function(win, promise) {
             var doc = win.document,
-                piggy = $('<div></div>').appendTo(document.body),
-                piggyAvatar = new Image(),
+                piggy = $('#host-piggy', doc),
                 piggyPromise = new event.Promise(),
                 piggyDemon,
                 materials = $('#materials', doc),
@@ -65,21 +62,13 @@ define([
                 judges = initJudges(win),
                 viewportWidth = win.innerWidth;
 
-            piggyAvatar.src = '/pics/guess/piggy-avatar.jpg';
-            piggyAvatar.width = 96;
-            piggyAvatar.height = 96;
-            piggyAvatar.onload = function() {
-                piggyPromise.fire();
-            };
 
             piggyPromise.done(function() {
 
-                piggy
-                    .append(piggyAvatar)
-                    .css({
+                piggy.css({
                         position: 'fixed',
-                        top: ($(window).height() - piggyAvatar.height) / 2 + 'px',
-                        right: -piggyAvatar.width + 'px'
+                        top: ($(window).height() - 96) / 2 + 'px',
+                        right: -96 + 'px'
                     });
 
                 piggyDemon = demon({
@@ -126,15 +115,14 @@ define([
                     transform: 'translateX(-1500px)'
                 }, 1000, 'easeInOut').follow().done(function() {
 
-                    var guessStyle = $('<link rel="stylesheet" href="../dist/css/chapter/guess-style.css">').appendTo($('head', doc)),
-                        wrapper = $('#wrapper', doc);
+                    var wrapper = $('#wrapper', doc);
 
                     wrapper
                         .attr('style', '')
                         .css('opacity', 0)
-                        .html(materials.html());
+                        .html('');
 
-                    $('.wyssy-item-con', wrapper).each(function() {
+                    $('.wyssy-item-con', materials).each(function() {
                         var dom = $(this),
                             index = dom.data('section'),
                             sectionDemon;
@@ -535,7 +523,7 @@ define([
 
                     wait(200).done(function() {
 
-                        $('<img id="pause" width="300" height="300" src="/pics/guess/pause.gif">')
+                        $('#pause', doc)
                             .css({
                                 position: 'absolute',
                                 top: '20px',
@@ -558,7 +546,7 @@ define([
 
                     }).follow().done(function() {
 
-                        var mouse = $('<img id="mouse" width="23" height="42" src="/pics/guess/mouse.png">')
+                        var mouse = $('#mouse', doc)
                                 .css({
                                     position: 'absolute',
                                     top: '170px',
@@ -577,7 +565,7 @@ define([
 
                     }).follow().done(function() {
 
-                        var saveAs = $('<img id="save-as" width="182" height="206" src="/pics/guess/save-as.jpg">')
+                        var saveAs = $('#save-as', doc)
                                 .css({
                                     position: 'absolute',
                                     top: '50px',
@@ -595,7 +583,7 @@ define([
 
                     }).follow().done(function() {
 
-                        var saveAsDialog = $('<img id="save-as-dlg" width="500" height="351" src="/pics/guess/save-as-dlg.jpg">')
+                        var saveAsDialog = $('#save-as-dlg', doc)
                                 .css({
                                     position: 'absolute',
                                     top: '95px',
@@ -985,6 +973,8 @@ define([
 
             });
             /* end fo section#6 */
+
+            piggyPromise.fire();
 
         },
 
