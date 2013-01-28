@@ -26,17 +26,17 @@ require([
     });
 
     var story = [{
-        //stage: 'pages/index.html',
-        //style: '../dist/css/chapter/intro.css',
-        //script: '../chapter/intro'
-    //}, {
-        //stage: 'pages/update.html',
-        //style: '../dist/css/chapter/guess.css',
-        //script: '../chapter/guess'
-    //}, {
-        //stage: 'pages/facebook.html',
-        //script: '../chapter/facebook'
-    //}, {
+        stage: 'pages/index.html',
+        style: '../dist/css/chapter/intro.css',
+        script: '../chapter/intro'
+    }, {
+        stage: 'pages/update.html',
+        style: '../dist/css/chapter/guess.css',
+        script: '../chapter/guess'
+    }, {
+        stage: 'pages/facebook.html',
+        script: '../chapter/facebook'
+    }, {
       stage: 'pages/update_old1.html',
       script: '../chapter/chaos.js',
       style: '../dist/css/chapter/chaos.css'
@@ -48,7 +48,6 @@ require([
         style: '../dist/css/chapter/sample.css',
         script: '../chapter/sample'
     }*/];
-
 
     var observer = event();
 
@@ -62,10 +61,8 @@ require([
         director.next();
     });
 
-    observer.bind('end', function(){
+    //observer.bind('end', function(){
         //director.next();
-    });
-
-    director.next();
+    //});
 
 });
