@@ -77,8 +77,7 @@
                 <div class="sp-nav">
                     <div class="sp-logo">
                         <a href="http://site.douban.com/106371/" class="logo">
-                            <img src="./f2e_files/blank.gif" style="background:url(http://img3.douban.com/view/site/small/public/76fa5d05db1cb4c.jpg) no-repeat 0 0;"
-                            width="48" height="48" alt="前端攻城师">
+                          <span id="robot"><img src="./f2e_files/76fa5d05db1cb4c.jpg" width="48" height="48" alt="前端攻城师"></span>
                             前端攻城师
                         </a>
                     </div>
@@ -108,28 +107,8 @@
                                     </span>
                                 </a>
                             </li>
-                            <li id="room-admin" class="opt">
-                                <a id="admin-icon" href="http://site.douban.com/106371/admin/">
-                                    管理
-                                </a>
-                            </li>
                         </ul>
                     </div>
-                    <script>
-                        var isRoomEmpty = false,
-                        isSiteFirstEnter = false Do('slider', 'room-setting');
-                        Do(function() {
-                            $(function() {
-                                $('.mod:has(.edit)').live('mouseenter',
-                                function(e) {
-                                    $(e.currentTarget).addClass('mod-stat-active');
-                                }).live('mouseleave',
-                                function(e) {
-                                    $(e.currentTarget).removeClass('mod-stat-active');
-                                });
-                            });
-                        });
-                    </script>
                 </div>
                 <div class="sp-fn-box">
                     <a class="box-close" href="http://site.douban.com/106371/room/5042/#">
@@ -322,6 +301,11 @@
                 </div>
             </div>
             <div id="content">
+                <div class="article">
+                  <div class="slides">
+                    <img id="diors" src="./f2e_files/diors.jpg">
+                  </div>
+                </div>
                 <div class="aside drop-area ui-sortable">
                     <div class="mod" id="sp-user">
                         <div class="bd">
