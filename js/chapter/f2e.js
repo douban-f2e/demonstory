@@ -10,7 +10,20 @@ define([
   var wait = util.wait
     , DESC = ""
     , jump_count = 0
-    , action = choreo().play()
+
+  function fadeIn(element, duration) {
+    var action = choreo().play()
+    return action.actor(element, {
+      opacity: 1
+    }, duration || 1000, 'easeIn')
+  }
+
+  function fadeOut(element, duration) {
+    var action = choreo().play()
+    return action.actor(element, {
+      opacity: 0
+    }, duration || 1000, 'easeOut')
+  }
 
   return {
     announce: function(screen){
@@ -25,6 +38,7 @@ define([
           })
         , imgDiors = $('#diors', doc)
         , imgReception = $('#reception', doc)
+        , imgCraftsman = $('#craftsman', doc)
 
       wait(1000).done(function() {
         util.showDemon(demonRobot)
@@ -91,9 +105,7 @@ define([
         return demonRobot.walk([-160, -10], 600, 'easeOut')
       }).follow().done(function() {
         demonRobot.rotateHand('right', '-30deg', 200);
-        return action.actor(imgDiors[0], {
-          opacity: 1
-        }, 1000, 'easeIn')
+        return fadeIn(imgDiors[0])
       }).follow().done(function() {
         demonRobot.rotateHand('right', '-90deg', 200);
         return demonRobot.speak('做前端的人自然就是前端工程师了', 2500, 0)
@@ -109,10 +121,7 @@ define([
         demonRobot.rotateHand('right', '-30deg', 200)
         return demonRobot.walk([200, -150], 1000, 'easeOut')
       }).follow().done(function() {
-        var action = choreo().play()
-        return action.actor(imgReception[0], {
-          opacity: 1
-        }, 1000, 'easeIn')
+        return fadeIn(imgReception[0])
       }).follow().done(function() {
         demonRobot.rotateLeg('left', '90deg', 300)
         demonRobot.rotateLeg('right', '-90deg', 300)
@@ -127,7 +136,30 @@ define([
         demonRobot.moveEye(0.6, 200)
         return demonRobot.walk([45, 240], 1000, 'easeOut')
       }).follow().done(function() {
-        return demonRobot.speak('咪咪～乖～', 2500, 0)
+        return demonRobot.speak('咪咪～乖～', 1500, 0)
+      }).follow().done(function() {
+        return fadeOut(imgReception[0])
+      }).follow().done(function() {
+        imgReception.hide()
+        demonRobot.rotateEye('0deg', 0)
+        demonRobot.moveEye(0, 200)
+        return demonRobot.walk([130, -245], 1000, 'easeOut')
+      }).follow().done(function() {
+        return demonRobot.rotateHand('right', '-180deg', 300)
+      }).follow().done(function() {
+        return demonRobot.speak('其实前端与其他码农的工作无异，需要将需求人肉转化为机器语言。', 5000, 7)
+      }).follow().done(function() {
+        return demonRobot.speak('区别在于，前端代码会蜕变为优雅易用的界面展示在用户面前。', 5000, 7)
+      }).follow().done(function() {
+        demonRobot.rotateHand('left', '180deg', 300)
+        demonRobot.rotateHand('right', '-30deg', 300)
+        return demonRobot.walk([-80, 0], 1000, 'easeOut')
+      }).follow().done(function() {
+        return demonRobot.speak('早在驴宗年间，并没有多少人提及前端开发这个词儿。', 4000, 6)
+      }).follow().done(function() {
+        return demonRobot.speak('大家所熟知的更多是叫做网页制作，特平易近人一词儿，一听就是个民间手艺活儿。', 6000, 6)
+      }).follow().done(function() {
+        return fadeIn(imgCraftsman[0])
       })
 
       return promise

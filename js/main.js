@@ -37,13 +37,13 @@ var story = [{
         stage: 'pages/facebook.html',
         script: '../chapter/facebook'
     }, {
-      stage: 'pages/update_old1.html',
-      script: '../chapter/chaos.js',
-      style: '../dist/css/chapter/chaos.css'
+        stage: 'pages/update_old1.html',
+        script: '../chapter/chaos.js',
+        style: '../dist/css/chapter/chaos.css'
     }, {
-      stage: 'pages/f2e.html',
-      script: '../chapter/f23.js',
-      style: '../dist/css/chapter/f2e.css'
+        stage: 'pages/f2e.html',
+        script: '../chapter/f2e.js',
+        style: '../dist/css/chapter/f2e.css'
     }, {
         stage: 'pages/end/guess.html',
         script: '../chapter/end'
