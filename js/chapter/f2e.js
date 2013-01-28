@@ -11,187 +11,84 @@ define([
         f2e_list = [
             { name: 'Kejun', id: 'kejun' },
             { name: 'Dexter.yy', id: 'yy' }
-        ]
+        ],
+        wrapper,
+        f2es,
         jump_count = 0;
 
     return {
-
         announce: function(screen){
             return screen('导航链接的诞生', DESC, 1000);
         },
-
         main: function(win, promise){
 
             var body = $('body', win.document),
-            person_tmpl = '<img width="96" height="96" src="/pics/gavatar/${id}.jpg">${name}'
+                person_tmpl = '<img width="96" height="96" src="/pics/gavatar/${id}.jpg">${name}'
 
-            function init(){
+            function initF2es(){
+                var f2es = {};
                 f2e_list.forEach(function(item){
                     var person = item.name,
-                    node = document.createElement('div')
-                    node.className = 'f2e ' + item.id
-                    $(node).html(person_tmpl.replace('${id}', item.id)
-                        .replace('${name}', item.name))
-                        body.append(node)
+                        node = document.createElement('div');
+
+                    node.className = 'f2e ' + item.id;
+                    node = $(node);
+                    node.html(person_tmpl.replace('${id}', item.id)
+                        .replace('${name}', item.name));
+
+                    body.append(node)
+                    node.css({
+                        position: 'absolute',
+                        top: '0px',
+                        left: '0px'
+                    })
+
+                    var demonItem = demon({
+                        origin: node[0],
+                        className: 'demon-' + item.id,
+                        window: win
+                    });
+                    demonItem.showBody().showHands().showLegs();
+                    f2es[item.id] = {
+                        name: item.name,
+                        dom: node,
+                        demon: demonItem
+                    };
                 })
+                return f2es
             }
-            init()
 
-            var doc = win.document,
-                nav_elms = $('.nav-items li a', doc),
-                demon_home = demon({
-                    origin: nav_elms[0], 
-                    className: 'nav-link', 
-                    window: win
-                }),
-                demon_update = demon({
-                    origin: nav_elms[1], 
-                    className: 'nav-link', 
-                    window: win
-                });
+            f2es = initF2es()
+            var _time = 0
+            var w = function(time){
+                time = time*1000
+                _time += time
+                return _time
+            }
+            var t = function(time){
+                time = time*1000
+                _time += time
+                return time
+            }
 
-            demon_home.showBody();
-            wait(400).done(function(){
+            wrapper = $('.wrapper', win.document)
+            var baseLeft = wrapper[0].offsetLeft
 
-                demon_home.showEyes();
-                return wait(400 + 1000);
-
+            var kejun = f2es.kejun.demon
+              , yy = f2es.yy.demon;
+            wait(w(0.4)).done(function(){
+                return kejun.walk([ baseLeft, 200 ], t(3));
             }).follow().done(function(){
-
-                demon_home.rotateEye('90deg', 0);
-                return demon_home.moveEye(0.6, 200);
-
+                return kejun.speak('要说前端开发是什么， 那得花开两朵，各自一枝', t(5), 3)
             }).follow().done(function(){
-
-                //return wait(200);
-                return demon_home.speak('要有脚！', 800, 6);
-
+                return wait(w(0.3))
             }).follow().done(function(){
-
-                demon_home.showLegs();
-                return wait(400 + 400);
-
-            }).follow().done(function(){
-
-                return demon_home.rotateEye('130deg', 400);
-
-            }).follow().done(function(){
-
-                //return wait(200);
-                return demon_home.speak('要有手！', 800, 9);
-
-            }).follow().done(function(){
-
-                demon_home.showHands();
-                return wait(400 + 500);
-
-            }).follow().done(function(){
-
-                demon_home.speak('木哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！！！', 
-                    1000, 7);
-
-                demon_home.rotateEye('-90deg', 400);
-
-                demon_home.rotateHand('left', '150deg', 400);
-                return demon_home.rotateHand('right', '-150deg', 400);
-
-            }).follow().done(function(){
-
-                demon_home.rotateHand('left', '50deg', 400);
-                return demon_home.rotateHand('right', '-50deg', 400);
-
-            }).follow().done(function(){
-
-                demon_home.rotateHand('left', '150deg', 400);
-                return demon_home.rotateHand('right', '-150deg', 400);
-
-            }).follow().done(function(){
-
-                var fn = arguments.callee;
-
-                demon_home.rotateHand('left', '60deg', 200).done(function(){
-                    return demon_home.rotateHand('left', '150deg', 200);
-                }).follow().done(function(){
-                    return demon_home.rotateHand('left', '60deg', 200);
-                }).follow().done(function(){
-                    return demon_home.rotateHand('left', '150deg', 200);
-                });
-
-                demon_home.rotateHand('right', '-30deg', 200).done(function(){
-                    return demon_home.rotateHand('right', '-50deg', 200);
-                }).follow().done(function(){
-                    return demon_home.rotateHand('right', '-30deg', 200);
-                }).follow().done(function(){
-                    return demon_home.rotateHand('right', '-50deg', 200);
-                });
-
-                demon_home.rotateEye('-30deg', 400).done(function(){
-                    demon_home.rotateEye('-160deg', 400);
-                });
-
-                return demon_home.jump(40, [], 805).done(function(){
-                    if (jump_count++ < 2) {
-                        return fn();
-                    } else {
-                        jump_count = 0;
-                        return wait(200);
-                    }
-                }).follow();
-
-            }).follow().done(function(){
-
-                return demon_home.moveEye(0, 200);
-
-            }).follow().done(function(){
-
-                util.showDemon(demon_update);
-                return wait(200);
-
-            }).follow().done(function(){
-
-                demon_home.rotateEye('0deg', 0);
-                return demon_home.moveEye(0.8, 400);
-
-            }).follow().done(function(){
-
-                demon_home.rotateHand('left', '50deg', 100);
-                demon_home.rotateHand('right', '50deg', 100);
-
-                return demon_home.jump(30, [-50, 0], 400, 'easeOut');
-
-            }).follow().done(function(){
-
-                return demon_home.walk([-60, 0], 600, 'easeOut');
-
-            }).follow().done(function(){
-
-                return wait(500);
-
-            }).follow().done(function(){
-
-                wait(200).done(function(){
-                    return demon_home.walk([-50], 800, 'easeOut');
-                });
-
-                return demon_update.walk([-50], 2000, 'linear');
-
-            }).follow().done(function(){
-
-                demon_home.squintEye();
-                return wait(3000);
-
-            }).follow().done(function(){
-
-                //promise.fire(); // 结束，进入下一章节
-
-            });
-
+                yy.speak('要说前端开发是什么， 那得花开两朵，各自一枝', t(5), 3)
+            })
             return promise;
         },
 
-        reset: function(){
-        
-        }
+        reset: function(){}
 
     };
 
