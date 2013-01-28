@@ -1,0 +1,1 @@
+var oList=$(".widget-photo-list li");oList.hover(function(){$(this).children(".info").fadeIn("fast")},function(){$(this).children(".info").fadeOut("fast")});
