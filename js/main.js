@@ -48,6 +48,7 @@ require([
     */
     var story = [{
       stage: 'pages/f2e.html',
+      style: '../dist/css/chapter/f2e.css',
       script: '../chapter/f2e'
     }]
 

@@ -1,0 +1,59 @@
+#materials {
+    display:none;
+}
+.demon {
+
+    &.demon-piggy {
+        padding: 0;
+        border: none;
+
+        img {
+            vertical-align: top;
+        }
+    }
+
+    &.wyssy-item-con {
+        width: 560px;
+        border: 1px solid #eeebe7;
+        padding: 20px 0 0;
+        // overflow: hidden;
+        margin-bottom:50px;
+        background: #fff;
+
+        .guess-item {
+            margin-bottom: 0;
+
+            .bd {
+                border: none;
+            }
+
+            .desc {
+                padding-right: 30px;
+            }
+        }
+
+        .album-item {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+
+        .event-item .pic,
+        .subject-item .pic {
+            float: right;
+            margin: 0 30px 0 30px;
+        }
+
+    }
+}
+
+.judge {
+    position: absolute;
+    top: 550px;
+    left: -140px;
+    width: 96px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+}
+

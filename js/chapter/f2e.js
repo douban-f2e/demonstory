@@ -8,6 +8,10 @@ define([
 
     var wait = util.wait,
         DESC = "豆瓣前端的故事",
+        f2e_list = [
+            { name: 'Kejun', id: 'kejun' },
+            { name: 'Dexter.yy', id: 'yy' }
+        ]
         jump_count = 0;
 
     return {
@@ -17,6 +21,22 @@ define([
         },
 
         main: function(win, promise){
+
+            var body = $('body', win.document),
+            person_tmpl = '<img width="96" height="96" src="/pics/gavatar/${id}.jpg">${name}'
+
+            function init(){
+                f2e_list.forEach(function(item){
+                    var person = item.name,
+                    node = document.createElement('div')
+                    node.className = 'f2e ' + item.id
+                    $(node).html(person_tmpl.replace('${id}', item.id)
+                        .replace('${name}', item.name))
+                        body.append(node)
+                })
+            }
+            init()
+
             var doc = win.document,
                 nav_elms = $('.nav-items li a', doc),
                 demon_home = demon({
