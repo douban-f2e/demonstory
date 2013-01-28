@@ -264,7 +264,7 @@ define([
 
                             wait(200 + 100).done(function() {
 
-                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 1500, 1);
+                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 1500, 11);
 
                                 wait(1500 + 200).done(function() {
 
@@ -380,7 +380,7 @@ define([
 
                     }).follow().done(function() {
 
-                        tgnn.speak('见自己，见产品，见众生。可以留，其他人还有意见吗？', 2000, 12);
+                        tgnn.speak('见自己，见产品，见众生。可以留，其他人还有意见吗？', 2000, 2);
                         return wait(2000 + 800);
 
                     });
@@ -425,12 +425,13 @@ define([
 
                 }).follow().done(function() {
                     normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    normalDemon.speak('嘤嘤嘤嘤', 1500, 6);
                     return wait(3000 + 200);
 
                 }).follow().done(function() {
-                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 5000);
+                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 3000);
                     //TODO: 广告音频
-                    wait(3000).done(function() {
+                    wait(2000).done(function() {
 
                         chaoge.speak('负分，滚粗啊！', 1500, 10);
                         lu13.speak('负分，滚粗啊！', 1500, 10);
@@ -443,14 +444,15 @@ define([
                     return wait(5000 + 800);
 
                 }).follow().done(function() {
-                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 5000);
-                    wait(3000).done(function() {
+                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 3000);
+                    wait(1000).done(function() {
+                        proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
+                        adDemon.speak('灰溜溜的逃走', 3000, 3);
+                        adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                        return wait(5000 + 200);
+                    }).follow().done(function() {
                         proDemon.speak('更纯洁的音质，无广告的体验', 1500, 10);
                         return wait(1500 + 200);
-                    }).follow().done(function() {
-                        adDemon.speak('灰溜溜的逃走', 1000, 3);
-                        adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                        return wait(4000 + 200);
                     }).follow().done(function() {
                         chaoge.speak('赞，高端大气上档次！', 1500, 10);
                         lu13.speak('赞，高端大气上档次！', 1500, 10);
@@ -459,7 +461,7 @@ define([
                         yingzi.speak('赞，高端大气上档次！', 1500, 10);
                     });
 
-                    return wait(8000 + 200);
+                    return wait(9500 + 200);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     return wait(3000 + 200);
