@@ -356,23 +356,34 @@ define([
 
                 wait(2500 + 200).done(function() {
 
-                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
-                    return wait(5000 + 200);
-                }).follow().done(function() {
-                    lu13.speak('骚！', 2000, 18);
-                    return wait(2000 + 800);
-                }).follow().done(function() {
-                    yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 2000, 18);
-                    return wait(2000 + 800);
-                }).follow().done(function() {
-                    su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 2000, 18);
-                    return wait(2000 + 800);
-                }).follow().done(function() {
-                    chaoge.speak('hold住就是胜利', 2000, 18);
-                    return wait(2000 + 800);
-                }).follow().done(function() {
-                    tgnn.speak('见自己，见产品，见众生。可以留，其他人还有意见吗？', 2000, 18);
-                    return wait(2000 + 800);
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
+                    wait(3000).done(function() {
+
+                        lu13.speak('骚！', 2000, 12);
+                        return wait(2000 + 800);
+
+                    }).follow().done(function() {
+
+                        yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 2000, 12);
+                        return wait(2000 + 800);
+
+                    }).follow().done(function() {
+
+                        su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 2000, 12);
+                        return wait(2000 + 800);
+
+                    }).follow().done(function() {
+
+                        chaoge.speak('hold住就是胜利', 2000, 12);
+                        return wait(2000 + 800);
+
+                    }).follow().done(function() {
+
+                        tgnn.speak('见自己，见产品，见众生。可以留，其他人还有意见吗？', 2000, 12);
+                        return wait(2000 + 800);
+
+                    });
+                    return wait(15000 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     sectionPromise.fire();
