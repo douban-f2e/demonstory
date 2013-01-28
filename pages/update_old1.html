@@ -1,0 +1,3506 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://frodo.douban.com:9010/update/ -->
+<html lang="zh-CN" class="ua-mac ua-webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>
+      友邻广播
+    </title>
+
+
+
+
+    <link href="./update_old1_files/_init_.css" rel="stylesheet" type="text/css">
+    <link href="./update_old1_files/_m_index.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./update_old1_files/jquery.min.js" ></script>
+    <script type="text/javascript" src="./update_old1_files/hotkeys.js" ></script><script type="text/javascript" src="./update_old1_files/douban.js" ></script><script type="text/javascript" src="./update_old1_files/_all.js" ></script><script>_head_start = new Date();</script>
+    <script src="./update_old1_files/_init_.js" data-cfg-corelib="./update_old1_files/jquery.min.js"></script>
+
+    <style type="text/css">
+      /* 首页－我说 */
+      #db-isay { position:relative; padding:0; margin:2px 0 2em; overflow:hidden; *zoom:1; }
+      #db-isay .item { margin-bottom: 5px; position: relative; z-index: 0; }
+      #db-isay .item .drag-tips { display: none; }
+      #db-isay .item.drag > textarea { border-color: transparent; }
+      #db-isay .item.drag .drag-tips { display: block; position: absolute; top: 0; left: 0; background: #fff; width: 582px; height: 53px; line-height: 53px; font-size: 16px; text-align: center; border: 4px dashed #ccc; color: #999; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+      #db-isay .drag .drag-tips.over { background: #eee; color: #666; }
+      #db-isay:after { content:'\0020';clear:both;display:block; }
+      #db-isay label { position:absolute;margin:4px 0 0 6px;font-size:14px;color:#aaa;pointer-events: none;cursor:text; }
+      #db-isay #isay-label { margin: 6px 0 0 9px; }
+      #db-isay textarea {
+        background: transparent;
+        width: 556px; padding: 7px 25px 7px 7px; _margin-top: -1px;
+        height:16px; overflow:hidden; vertical-align:bottom;
+        border:1px solid #d7d7d7;
+        border-radius:1px; -moz-border-radius:1px;
+        font-family:tahoma;
+        line-height: 1.3;
+        -webkit-transition: all 0.1s;
+      }
+      #db-isay.active textarea { border-color: #ccc; height:45px;
+        border-radius: 2px 2px 0 0; -moz-border-radius: 2px 2px 0 0;
+      }
+
+      #db-isay .btn { float:none;width:auto;margin-right:0;text-align:right; }
+      #db-isay .bn-flat { vertical-align:middle; }
+      #db-isay .bn-flat input { font-size:14px; overflow:visible; line-height:2.2; height:2.1em;
+        _line-height:1; _height:1em; _padding-top:0.6em; _padding-bottom: 0.3em; }
+      #db-isay .bn-flat input:focus { background: #e0e0e0; }
+      #db-isay.isay-disable .btn .bn-flat input { border-color:#b9b9b9 !important;background:#f0f0f0 !important;color:#999 !important;cursor:text; }
+      #db-isay.isay-disable .btn .bn-flat:hover { border-color:#b9b9b9; text-shadow: none; }
+
+      #db-isay .bd { color:#999; }
+      #db-isay .msg { float:right;position:relative;line-height:2; }
+      #db-isay .field .error, #db-isay .waiting { line-height:27px; }
+
+      #isay-counter { display:inline-block;*display:inline;zoom:1;padding-right:10px;vertical-align:middle;color:#666;font-weight: 600;font-size:16px; }
+      #isay-counter strong { color:#F92D09; }
+
+      #db-isay .field { display:none; position:relative; background:#f4f4f4; margin: -5px 0 5px;
+        _margin-top: -7px;
+        padding:8px; padding:5px 8px; border: 1px solid #ccc; border-top: 0; }
+      #db-isay .field label { font-size: 12px; }
+      #db-isay .url { width:450px; margin-right: 5px; height:12px; padding:7px 4px 6px; line-height:12px; *padding:7px 4px 5px;*zoom:1;
+        border:1px solid #ccc; color:#999; border-radius:1px; -moz-border-radius: 1px; }
+
+      #db-isay .field .bn-flat input { font-size:12px; overflow:visible; }
+
+      #db-isay .field .hd { height:22px; margin:0; }
+      #db-isay .field .hd input { height: 12px; line-height: 12px; outline: 0; padding: 3px 3px; *padding:4px 3px 2px; border:1px solid #ccc; }
+      #db-isay .field .hd .field-title { background: transparent; height:16px; line-height:16px; padding: 2px 0; border:0; color:#666; }
+      #db-isay .editable { color:#333; cursor:pointer; }
+      #db-isay .field .hd input.editable-over { background-color:#feff9f; }
+
+      #db-isay .field .active .url { border-color:#9cf; color:#333; box-shadow: 0 0 2px rgba(20,180,255,0.7); }
+      #db-isay .field .active .bn-flat { border-color:#ccc; }
+
+      #db-isay .bn-x { border:0; background: none; cursor:pointer;
+        color: #ccc; font: 400 14px/0.9 tahoma; line-height: 0.9; position: absolute; right: 8px; top: 5px; }
+      #db-isay .bn-x:hover, #db-isay .bn-x:active,
+      #db-isay .bn-x:visited { color: #bec3c3; background: transparent; }
+      #db-isay .isay-close { _top: 7px; }
+
+      #db-isay .ico { background: url(http://www.douban.com/pics/isay-icos.gif) no-repeat 0 0; display: inline-block;
+        font-family: stheiti, tahoma, simsun, sans-serif;
+        height: 20px; width: 18px; margin-right: 12px;
+        text-indent: 999em; overflow: hidden; line-height: 20px; color: #888;
+      }
+      #db-isay .ico-pic { background-position: 0 -20px; }
+      #db-isay .ico-topic { background-position: -1px -41px; }
+      #db-isay .btn { display:none; }
+      #db-isay.active .btn,
+      #db-isay.acting .field { display:block; }
+
+      #db-isay .tipmsg,
+      #db-isay .bn-submit,
+      #db-isay .isay-close { display: none; }
+      #db-isay.active .tipmsg,
+      #db-isay.active .bn-submit,
+      #db-isay.active .isay-close { display: inline-block; }
+
+      #db-isay .btn-group { position: absolute; top: 6px; right: 0; white-spacing:nowrap; font-size:0; }
+      #db-isay .btn-group * { font-size:12px; }
+      #db-isay.active .btn-group { position: relative; float: left; margin-top: -30px; margin-bottom: 10px; }
+      #db-isay.active .btn-group .ico { width: auto; text-indent: 0; padding-left: 20px; margin-right: 15px; }
+      #db-isay.active .btn-group .ico-pic { padding-left: 21px; }
+      #db-isay.active .btn-group .ico-topic { padding-left: 16px; margin-left: -5px; }
+
+      #db-isay .waiting { color:#999; }
+      #db-isay .waiting { background: url(http://www.douban.com/pics/loading.gif) no-repeat 0 5px; padding-left:22px; }
+
+      .abs-out { position: absolute; left: -9999px; top: -9999px; }
+
+      .msg-wait { background: url(http://www.douban.com/pics/loading.gif) no-repeat 0 5px; padding-left:22px; }
+
+      /*#db-isay .bn-close { position:absolute;right:10px;top:15px;color:#999;padding:0 2px;line-height:1.2; }*/
+      /*#db-isay .bn-close:hover { background: #aaa; color: #fff; }*/
+
+      #isay-upload { position: absolute; width: 21px; height:22px; padding:0; overflow: hidden;
+        right:38px; top:-1px; opacity:0; }
+      #isay-upload input { cursor:pointer; position:absolute; height:22px; right:0; margin:0;
+        filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); }
+      #db-isay.active #isay-upload { right: 64px; width:48px; }
+      /* 真心讨厌奇技淫巧啊 但是面对IE6你没办法 */
+      /*#db-isay.upload-fail #isay-upload { top: -40px; right: 28px; }*/
+
+      .mention-highlighter {
+        margin: 0;
+        position: absolute; z-index: 0; top: 0; left: 1px; overflow: hidden;
+        background: #fff; white-space: pre-wrap; word-wrap: break-word;
+        color: #fff;
+        width: 556px; padding: 7px 25px 0 7px;
+        height:16px; overflow:hidden; vertical-align:bottom;
+        font-family: tahoma;
+        line-height: 1.3;
+        border-radius: 2px 2px 0 0; -moz-border-radius: 2px 2px 0 0;
+      }
+      .active .mention-highlighter { height: auto; }
+      .mention-highlighter code {
+        font-family: tahoma;
+        line-height: 1.3;
+        background-color: #d2e1f3;
+        color: #d2e1f3;
+        display: inline-block;
+        padding: 1px;
+        margin: 0 -1px -2px;
+        /*margin-right: -5px;*/
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px
+      }
+      .ua-ie8 .mention-highlighter code {
+        padding: 0;
+        margin: 0;
+      }
+
+
+
+      .status-item { color: #333 }
+      .status-item .mod { margin: 0; padding-bottom: 12px; position: relative; }
+      .status-item .hd { float: left; margin: 3px 20px 0 0; width: 48px; height: 48px }
+      .status-item .bd { border-bottom: 1px solid #eee; overflow: hidden; padding-bottom: 14px; zoom: 1; _width: 517px }
+      .status-item .bd .text { margin: 0 0 5px 0; font-size:13px;  word-wrap: break-word;  }
+
+      .status-item blockquote { margin: 5px 0 5px 25px; padding: 0 0 0 15px; background: url(http://www.douban.com/pics/quotel.gif) no-repeat left 4px; width: 375px; _width: 365px }
+      .status-item blockquote p { display: inline; background: url(http://www.douban.com/pics/quoter.gif) no-repeat right bottom; padding: 0 15px 0 0; word-wrap: break-word; *zoom: 1 }
+      .status-item blockquote p img { vertical-align: bottom }
+      .status-item .attachments { overflow: hidden; zoom: 1; _line-height: 0 } 
+      .status-item .photo-set { max-width:128px; max-height:128px;}
+      .status-item .attachments div,
+      .status-item .attachments h6,
+      .status-item .attachments p { line-height: 1.62 } 
+      .status-item .description { margin: 0; color: #aaa }
+      .status-item .actions { margin: 5px 0; color: #aaa }
+      .status-item .actions a.btn { color: #7094b7 }
+      .status-item .actions a.btn:hover { background: #7094b7; color: #fff }
+      .status-item .actions a.btn-unlike, 
+      .status-item .actions a.btn-unreshare { color: #999 }
+      .status-item .actions a.btn-unlike:hover, 
+      .status-item .actions a.btn-unreshare:hover { background: #999; color: #fff }
+      .status-item .description,
+      .status-item .attachments,
+      .status-item .actions,
+      .status-item .others { padding-left: 24px }
+      .status-item .attachments .description { padding-left: 0; word-wrap: break-word } 
+      .status-item .big:hover { cursor: url(http://www.douban.com/pics/icon/big.cur),auto } 
+      .status-item .small:hover { cursor: url(http://www.douban.com/pics/icon/small.cur),auto } 
+      .status-item .upload-pic-wrapper:hover { background: none } 
+      .status-item .others { display: none }
+      .status-item .comments { position: relative; left: 0; top: 0; overflow: hidden; *zoom : 1 }
+      .status-item .comments-items { _line-height: 0; }
+      .status-item .comments-items p { margin: 3px 0; color: #666; overflow: hidden; zoom:1; word-wrap: break-word; line-height: 1.62 }
+      .status-item .comments-items .mover { background: #f2f2f2 }
+      .status-item .comments-items p em { float: left; width: 80%; font-style: normal }
+      .status-item .comments .comment-text { width: 330px }
+      .status-item .comments .add-more-comments, .comment-posted input { display: none }
+      .status-item .comment-posted .add-more-comments { display: inline; }
+      .status-item .comments-items .btn-del { float: right; color: #aaa }
+      .status-item .comments-items .btn-del:hover { color: #bbb; background: none }
+      .status-item .likers { padding: 0; color: #aaa }
+      .status-item .likers em { max-width: 300px; float: left; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow: hidden; zoom: 1; font-style: normal ;_width:expression((documentElement.clientWidth >300) ? "300px" : "auto" );}
+      .status-item .created_at a { color: #999 }
+      .status-item .created_at a:hover { background: #999; color: #fff }
+      .status-item .reshared_by { background: url(http://www.douban.com/pics/icon/reshared-icon.gif) no-repeat left center; padding: 0 0 0 18px; color: #66a366 }
+
+      .status-current .bd { border-color:#bfddb7; }
+
+      .video-player { position: relative; left:0; top:0; zoom:1 }
+      .video-player img { width: 130px; height: 97px; border: 0 none }
+      .video-player .video-overlay {width: 130px;height: 97px;position: absolute;top: 0;left: 0;  background: url(http://www.douban.com/pics/video_overlay.png); cursor: pointer }
+      .video-player .video-overlay:hover { background-position: 0 -97px }
+      * html .video-player .video-overlay{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.douban.com/pics/video_overlay_ie6.png');}
+
+      .video-player .video-object { display: none }
+
+      /*------- Layout 1 -------*/
+      .layout-1 .attachments { display: inline }
+      .layout-1 .media img { float: right; margin-left: 12px; max-height: 100px; max-width: 100px; _width:expression((documentElement.clientWidth >100) ? "100px" : "auto" );}
+
+      /*------- Layout 2 -------*/
+      .layout-None blockquote,
+      .layout-2 blockquote { width: auto }
+
+      /*------- Layout 3 -------*/
+      .layout-3 .album,
+      .layout-3 .media,
+      .layout-None .media { float: left; margin: 0 10px 10px 0; background: none; padding: 0 }
+      .layout-3 .album { height: 100px; width: 100px; line-height: 100px; vertical-align: middle; text-align: center; background: url(http://www.douban.com/pics/albumback_s.gif) 1px 1px no-repeat; padding: 5px 8px 8px 5px; } 
+      .layout-3 .album img  { max-height: 100px; max-width: 100px; _width:expression((documentElement.clientWidth >100) ? "100px" : "auto" ) }
+      .layout-3 blockquote { clear: both }
+
+      /*------- Layout 4 -------*/
+      .layout-4 .media { float: left; margin: 0 14px 0 0 }
+
+      .combined-statuses { margin: 0 0 10px 63px; padding: 0 0 8px 0; border-bottom: 1px solid #eee }
+
+      .comments .mention-highlighter { top: 2px; width: 300px; padding: 2px 0 }
+
+      /*------- allstar -------*/
+      .status-item .allstar50,
+      .status-item .allstar50,
+      .status-item .allstar45,
+      .status-item .allstar40,
+      .status-item .allstar35,
+      .status-item .allstar30,
+      .status-item .allstar25,
+      .status-item .allstar20,
+      .status-item .allstar15,
+      .status-item .allstar10,
+      .status-item .allstar05{margin-left:5px;}
+
+
+      #statuses { position: relative }
+      #statuses .tips-overly { top: 45px }
+      .tips-overly { 
+        position: absolute; 
+        z-index: 99;
+        width: 320px;
+        top: 0;
+        left: 0;
+        background: #fff;
+        border: 1px solid #bfddb7
+      }
+
+      .tips-overly .tips-bd { padding:12px 15px;color:#333;line-height:1.62; }
+      .tips-overly h2 { margin-bottom:6px;font-size:12px;font-weight:800;color:#333; }
+      .tips-overly p { margin:0 0 12px 0; }
+      .tips-overly .lnk-bn { display:inline-block;*display:inline;zoom:1;padding:2px 8px;line-height:1.4; font-size: 12px }
+      .tips-overly a.lnk-bn:link,
+      .tips-overly a.lnk-bn:visited { color:#fff; background-color:#4aac66; font-size: 12px }
+      .tips-overly a.lnk-bn:hover,
+      .tips-overly a.lnk-bn:active { color: #fff;background-color:#4dc36f; font-size: 12px }
+
+      .back-old { padding-bottom: 5px; text-align: right; margin-top: -20px; zoom:1; _margin-top: 0 }
+      .back-old .lnk-back-old:link { color: #bbb }
+      .back-old .lnk-back-old:hover { background: #bbb; color: #fff }
+
+      /* ie7 filter后面的rules失效, 应该是引号造成的所以应该加转义 */ 
+      .tips-overly .tips-hd { 
+        position: absolute; 
+        top: -6px; top:-8px\9; left:8px;
+        background:#fff;width:10px;height:10px;overflow:hidden;line-height:10em;border-left:1px solid #bfddb7;border-top:1px solid #bfddb7;
+        zoom: 1;
+        -webkit-transform: rotate(45deg);  
+        -moz-transform: rotate(45deg);  
+        -o-transform: rotate(45deg);  
+        transform: rotate(45deg);  
+        filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.707, M12=-0.707, M21=0.707, M22=0.707, sizingMethod=\'auto expand\');
+      }
+    </style>
+
+    <style type="text/css">
+      .suggest-overlay {
+        position: absolute; z-index: 10001; width: auto; background: #fff; border: 1px solid #c5c7d2;
+        -moz-border-radius : 3px;
+        -webkit-border-radius : 3px;
+        border-radius: 3px 
+      }
+      .suggest-overlay .bd {
+        min-width: 220px; 
+        line-height: 1; background: #fafafa; color: #b3b3b3; padding: 5px;
+        -moz-border-radius : 3px;
+        -webkit-border-radius : 3px;
+        border-radius: 3px 
+      }
+      .suggest-overlay ul { color: #333; padding: 3px 0; min-width: 214px }
+      .suggest-overlay li { margin: 0; padding: 0; }
+      .suggest-overlay li b { font-weight: bold }
+      .suggest-overlay li span { color: #999 }
+      .suggest-overlay img { margin-right: 5px; width: 20px; height: 20px; vertical-align: middle }
+      .suggest-overlay li.on {
+        background: #e9f0f8
+      }
+      .suggest-overlay li a {
+        display: block;
+        padding: 3px 7px;
+        color: #333;
+      }
+      .suggest-overlay li a:hover,
+      .suggest-overlay li a:focus,
+      .suggest-overlay li a:active {
+        outline: none;
+        color: #333;
+        background: none;
+        background: #e9f0f8
+      }
+
+
+      #guide-recommend {
+        position: relative;
+        overflow: hidden;
+        zoom: 1;
+        margin-bottom: 50px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #ddd;
+      }
+      #guide-recommend p {
+        margin: 0;
+      }
+      #guide-recommend .bn-close {
+        position: absolute;
+        line-height: 1 !important;
+        top: 8px;
+        right: 10px;
+        font-size: 14px;
+      }
+      #guide-recommend .hd {
+        padding: 6px 10px;
+        margin-bottom: 30px;
+        background: #f8f8f8;
+      }
+      #guide-recommend .bd {
+        margin: 0 0 30px -50px;
+        font-size: 0;
+      }
+      #guide-recommend .rec-item {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        width: 160px;
+        margin-left: 50px;
+        overflow: hidden;
+        zoom: 1;
+        font-size: 12px;
+      }
+      #guide-recommend .rec-item .text {
+        overflow: hidden;
+        zoom: 1;
+        line-height: 1.2;
+        color: #777;
+      }
+      #guide-recommend .rec-item .text a {
+        font-size: 12px;
+      }
+      #guide-recommend .rec-item .text p {
+        margin-top: 6px;
+      }
+      #guide-recommend .rec-item .pic {
+        float: left;
+        margin-right: 8px;
+      }
+      #guide-recommend .rec-item .intro {
+        clear: both;
+        padding-top: 18px;
+        margin-bottom: 16px;
+        color: #999;
+        min-height: 3.4em;
+        _min-height: 3.4em;
+      }
+      #guide-recommend .rec-item .lnk-item-remove {
+        margin-left: 10px;
+      }
+      #guide-recommend .people-rec-item {
+        position: relative;
+        display: block;
+        width: auto;
+        margin-bottom: 24px;
+      }
+      #guide-recommend .people-rec-item .pic {
+        float: none;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        vertical-align: middle;
+      }
+      #guide-recommend .people-rec-item .intro {
+        display: none;
+      }
+      #guide-recommend .people-rec-item .text {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        width: 60%;
+        vertical-align: middle;
+      }
+      #guide-recommend .people-rec-item .actions {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        width: 90px;
+        text-align: center;
+      }
+      #guide-recommend .people-rec-item p {
+        margin-top: 4px;
+        color: #999;
+        vertical-align: baseline;
+      }
+      #guide-recommend .people-rec-item .user-followed {
+        padding-left: 15px;
+        color: #666;
+        background: url(http://www.douban.com/pics/icon-ok.png) no-repeat left;
+      }
+      #guide-recommend .group-rec-item {
+        font-size: 0;
+      }
+      #guide-recommend .group-rec-item .pic {
+        float: none;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        vertical-align: middle;
+        width: 48px;
+      }
+      #guide-recommend .group-rec-item .text {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        vertical-align: middle;
+        width: 102px;
+        font-size: 12px;
+      }
+      #guide-recommend .group-rec-item .text p {
+        margin-top: 4px;
+      }
+      #guide-recommend .group-rec-item .rec-title:active,
+      #guide-recommend .group-rec-item .rec-title:hover,
+      #guide-recommend .group-rec-item .rec-title:link,
+      #guide-recommend .group-rec-item .rec-title:visited {
+        font-size: 13px;
+        color: #000;
+        background: transparent;
+      }
+      #guide-recommend .group-rec-item .rec-title:hover {
+        text-decoration: underline;
+      }
+      #guide-recommend .group-rec-item .intro {
+        font-size: 12px;
+      }
+      #guide-recommend .group-rec-item .actions {
+        font-size: 12px;
+      }
+      #guide-recommend .site-rec-item {
+        text-align: center;
+      }
+      #guide-recommend .site-rec-item .pic {
+        float: none;
+        height: 75px;
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        font-size: 0;
+      }
+      #guide-recommend .site-rec-item .intro {
+        padding-top: 10px;
+        margin-bottom: 20px;
+      }
+      #guide-recommend .site-rec-item .lnk-item-remove {
+        margin: 10px 0 0;
+      }
+      #guide-recommend .site-rec-item .btn {
+        display: block;
+        margin-bottom: 30px;
+        line-height: 30px;
+        color: #666;
+      }
+      #guide-recommend .site-rec-item .rec-title:active,
+      #guide-recommend .site-rec-item .rec-title:hover,
+      #guide-recommend .site-rec-item .rec-title:link,
+      #guide-recommend .site-rec-item .rec-title:visited {
+        font-size: 13px;
+        color: #000;
+        background: transparent;
+      }
+      #guide-recommend .site-rec-item .rec-title:hover {
+        text-decoration: underline;
+      }
+      #guide-recommend .bn-std1 {
+        vertical-align: middle;
+      }
+      #guide-recommend .a-btn-add:active, #guide-recommend .a-btn-add:hover,
+      #guide-recommend .a-btn-add:link,
+      #guide-recommend .a-btn-add:visited {
+        padding: 2px 22px 2px 10px;
+        background: url(http://www.douban.com/pics/icon-add.png) no-repeat scroll 63px center #ffe6ce;
+        color: #584e46;
+        border: 1px solid #d6b79d;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      .lnk-follow, .lnk-followed {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #d9d9d9 #ccc #c9c9c9;
+        overflow: hidden;
+        vertical-align: middle;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+      .lnk-follow {
+        border: 1px solid #0baf57;
+        padding: 0 25px 0 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 13px;
+        background: url(http://www.douban.com/pics/site/sp_all_4.png) repeat-x 0 -851px\9;
+        background-color: transparent !important;
+        *vertical-align: baseline;
+      }
+      .lnk-follow:link, .lnk-follow:visited {
+        color: #fff;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0,
+        #2cc677), color-stop(1, #1eb964));
+        background: -moz-linear-gradient(-90deg, #2cc677, #1eb964);
+      }
+      .lnk-follow:hover {
+        color: #fff;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0,
+        #2abd71), color-stop(1, #1db05e));
+        background: -moz-linear-gradient(-90deg, #1db05e, #1db05e);
+        background: url(http://www.douban.com/pics/site/sp_all_4.png) repeat-x 0 -885px\9;
+      }
+      .lnk-follow:active {
+        color: #fff;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0,
+        #13b863), color-stop(1, #0baf58));
+        background: -moz-linear-gradient(-90deg, #13b863, #0baf58);
+        background: url(http://www.douban.com/pics/site/sp_all_4.png) repeat-x 0 -919px\9;
+      }
+      @media all and (min-width:0px) {
+        a.lnk-follow:hover, a.lnk-follow:link, a.lnk-follow:visited {
+          background: url(http://www.douban.com/pics/site/sp_all_4.png) repeat-x 0 -851px;
+        }
+      }
+      @media all and (min-width:0px) {
+        a.lnk-follow:hover {
+          background-position: 0 -885px;
+        }
+      }
+      @media all and (min-width:0px) {
+        a.lnk-follow:active {
+          background-position: 0 -919px;
+        }
+      }
+      .lnk-followed, a.lnk-followed:active, a.lnk-followed:hover {
+        padding: 0 10px 0 30px;
+        line-height: 25px;
+        overflow: hidden;
+        color: #666;
+        font-size: 13px;
+        border-color: #dfdfdf;
+        background: #f2f2f2 url(http://www.douban.com/pics/site/sp_all_4.png) 10px -958px no-repeat;
+      }
+      #dialog .bd {
+        padding: 5px 10px 10px;
+      }
+      #dialog .submit-button {
+        margin-top: 5px;
+        text-align: right;
+      }
+      .tips-overly {
+        position: absolute;
+        z-index: 99;
+        width: 320px;
+        top: 0;
+        left: 0;
+        background: #fff;
+        border: 1px solid #bfddb7;
+      }
+      .tips-overly .tips-bd {
+        padding: 12px 15px;
+        color: #333;
+        line-height: 1.62;
+      }
+      .tips-overly h2 {
+        margin-bottom: 6px;
+        font-size: 12px;
+        font-weight: 800;
+        color: #333;
+      }
+      .tips-overly p {
+        margin: 0 0 12px 0;
+      }
+      .tips-overly .lnk-bn {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        padding: 2px 8px;
+        line-height: 1.4;
+        font-size: 12px;
+      }
+      .tips-overly a.lnk-bn:link, .tips-overly a.lnk-bn:visited {
+        color: #fff;
+        background-color: #4aac66;
+        font-size: 12px;
+      }
+      .tips-overly a.lnk-bn:active, .tips-overly a.lnk-bn:hover {
+        color: #fff;
+        background-color: #4dc36f;
+        font-size: 12px;
+      }
+      .back-old {
+        padding-bottom: 5px;
+        text-align: right;
+        margin-top: -20px;
+        zoom: 1;
+        _margin-top: 0;
+      }
+      .back-old .lnk-back-old:link {
+        color: #bbb;
+      }
+      .back-old .lnk-back-old:hover {
+        background: #bbb;
+        color: #fff;
+      }
+      .tips-overly .tips-hd {
+        position: absolute;
+        top: -6px;
+        top: -8px\9;
+        left: 8px;
+        background: #fff;
+        width: 10px;
+        height: 10px;
+        overflow: hidden;
+        line-height: 10em;
+        border-left: 1px solid #bfddb7;
+        border-top: 1px solid #bfddb7;
+        zoom: 1;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.707, M12=-0.707,
+        M21=0.707, M22=0.707, sizingMethod=\'auto expand\');
+      }
+      .site-nav-items li {
+        position: relative;
+      }
+      .site-nav-items .tips-overly {
+        top: 35px;
+      }
+
+
+      .ui-inline-loading i { 
+        position: relative;
+        margin-right: 2px;
+        line-height: .5ex;
+        font-size: 18px;
+        font-style: normal;
+        -webkit-animation: loading_dot_fade 0.5s step-end infinite alternate;
+        -moz-animation: loading_dot_fade 0.5s step-end infinite alternate;
+        -ms-animation: loading_dot_fade 0.5s step-end infinite alternate;
+        -o-animation: loading_dot_fade 0.5s step-end infinite alternate;
+        animation: loading_dot_fade 0.5s step-end infinite alternate;
+      }
+      .ui-inline-loading i:nth-child(2) {
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        -ms-animation-delay: 0.2s;
+        -o-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+      }
+      .ui-inline-loading i:nth-child(3) {
+        -webkit-animation-delay: 0.4s;
+        -moz-animation-delay: 0.4s;
+        -ms-animation-delay: 0.4s;
+        -o-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+      }
+      @-webkit-keyframes loading_dot_fade {
+        0%   { 
+          color: inherit;
+        }
+        50% { 
+          color: transparent;
+        }
+      }
+      @-moz-keyframes loading_dot_fade {
+        0%   { 
+          color: inherit;
+        }
+        50% { 
+          color: transparent;
+        }
+      }
+      @-o-keyframes loading_dot_fade {
+        0%   { 
+          color: inherit;
+        }
+        50% { 
+          color: transparent;
+        }
+      }
+      @-ms-keyframes loading_dot_fade {
+        0%   { 
+          color: inherit;
+        }
+        50% { 
+          color: transparent;
+        }
+      }
+      @keyframes loading_dot_fade {
+        0%   { 
+          color: inherit;
+        }
+        50% { 
+          color: transparent;
+        }
+      }
+
+      .loading { color:#999; }
+
+      .app-ads { margin: 30px 0 }
+
+      .notify-mod { margin:0 0 20px;padding:12px 20px;clear:both;overflow:hidden;line-height:1.2;font-size:14px;background:#f2f7f6;border-radius:4px; }
+    </style>
+
+        <link media="all" rel="stylesheet" href="./update_old1_files/new_nav.css" type="text/css" />
+
+    <link rel="shortcut icon" href="http://frodo.douban.com:9010/favicon.ico" type="image/x-icon">
+    <script src="./update_old1_files/isay.js"></script><style type="text/css" id="css-db-pay-tip">#db-pay-tips { position:absolute;top:104px;right:0;z-index:10; }#db-pay-tips .bd { width:auto;border:1px solid #e9dab1;background-color:#fffce0;padding:5px 20px;color:#754d30; }#db-pay-tips .a_get_doudou { -webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px; }#db-pay-tips a.a_get_doudou:link,#db-pay-tips a.a_get_doudou:visited, #db-pay-tips a.a_get_doudou:hover, #db-pay-tips a.a_get_doudou:active { display:inline-block;*display:inline;zoom:1;color:#666;line-height:1.4;border:1px solid #ddd;background-color:#f9f9f9;padding:0 5px;margin:0 1em 0 5px; } #db-pay-tips .success-info { color:#999;background-color:#f4f4f4;padding:6px 30px;border:none; } #db-pay-tips .success-info span { color:#666;margin-right:10px; }</style></head>
+  <body>
+
+    <script type="text/javascript">var _body_start = new Date();</script>
+
+
+
+
+
+
+    <div id="header_wrapper">
+      <div class="top-nav">
+        <div class="bd">
+
+
+
+
+
+
+
+          <div class="top-nav-info">
+            <a href="http://frodo.douban.com:9010/doumail/">豆邮<em>(1)</em></a>
+            <a target="_blank" href="http://frodo.douban.com:9010/accounts/">哈了米的帐号</a>
+            <a href="http://frodo.douban.com:9010/accounts/logout?ck=mB0N">退出</a>
+          </div>
+
+
+          <div class="top-nav-items">
+            <ul>
+
+
+
+              <li class="on">
+              <a href="http://frodo.douban.com:9010/">豆瓣社区</a>
+              </li>
+
+
+
+              <li>
+              <a href="http://book.frodo.douban.com:9010/">豆瓣读书</a>
+              </li>
+
+
+
+              <li>
+              <a href="http://movie.frodo.douban.com:9010/">豆瓣电影</a>
+              </li>
+
+
+
+              <li>
+              <a href="http://music.frodo.douban.com:9010/">豆瓣音乐</a>
+              </li>
+
+
+
+              <li>
+              <a href="http://frodo.douban.com:9010/location/">豆瓣同城</a>
+              </li>
+
+
+
+
+
+              <li>
+              <a href="http://frodo.douban.fm:9010/" target="_blank">豆瓣FM</a>
+              </li>
+
+
+              <li class="top-nav-more">
+              <div class="top-nav-more-items">
+                <a href="http://frodo.douban.com:9010/update/#more" class="more">更多 <span class="arrow">&nbsp;</span>&nbsp;</a>
+                <ul>
+
+                  <li><a href="http://9.frodo.douban.com:9010/" target="_blank">九点</a></li>
+
+                  <li><a href="http://alphatown.frodo.douban.com:9010/" target="_blank">阿尔法城</a></li>
+
+                  <li><a href="http://frodo.douban.com:9010/mobile/" target="_blank">移动应用</a></li>
+                </ul>
+              </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="header">
+
+
+
+
+
+
+
+
+        <div id="db-nav-main" class="site-nav">
+          <div class="site-nav-logo">
+            <a href="http://frodo.douban.com:9010/"><img src="./update_old1_files/lg_main_a10.png" alt="豆瓣"></a>
+          </div>
+          <div class="bd">
+            <div class="nav-srh">
+              <form name="ssform" method="get" action="http://frodo.douban.com:9010/search">
+                <div class="inp">
+                  <span><input id="search_text" placeholder="成员、小组、音乐人、主办方" name="search_text" type="text" title="" size="22" maxlength="60" value="" style="color: rgb(212, 212, 212);"></span>
+                  <span><input class="bn-srh" type="submit" value="搜索"></span>
+                </div>
+              </form>
+
+            </div>
+            <div class="site-nav-items nav-logged-in">
+              <ul>
+                <li><a href="http://frodo.douban.com:9010/">首页</a></li>
+                <li><a href="http://frodo.douban.com:9010/mine/">我的豆瓣</a></li>
+                <li>
+                <a href="http://frodo.douban.com:9010/group/">我的小组</a>
+                </li>
+                <li><a href="http://frodo.douban.com:9010/site/">我的小站</a></li>
+                <li style="position:relative;"><a href="http://frodo.douban.com:9010/tribe/">部落</a><img style="top:6px;left:2.2em;position:absolute;" src="./update_old1_files/new_menu.gif"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ext"></div>
+        </div>
+      </div>
+    </div>
+
+
+      <div id="content">
+
+        <h1>我关注的广播</h1>
+
+        <div class="grid-16-8 clearfix">
+
+
+          <div class="article">
+
+
+            <div id="statuses">
+
+
+
+
+              <div id="db-isay" class="mod isay isay-disable">
+                <form name="mbform" method="post" action="./update_old1_files/update_old1.html"><div style="display:none;"><input type="hidden" name="ck" value="mB0N"></div>
+                  <p class="mention-highlighter"></p>
+                  <div class="item">
+                    <label id="isay-label" for="isay-cont">说点什么吧...</label>
+                    <textarea data-minheight="45" tabindex="1" id="isay-cont" name="comment" rows="1"></textarea>
+                  </div>
+                  <div id="isay-act-field"></div>
+                  <div class="btn">
+                    <span id="isay-counter"></span>
+                    <span class="bn-submit bn-flat"><input id="isay-submit" tabindex="1" type="submit" value="我说"></span>
+                  </div>
+                </form>
+                <div class="btn-group">
+                  <form charset="utf-8" id="isay-upload" data-action="pic" action="http://frodo.douban.com:9010/j/upload" enctype="multipart/form-data" method="post"><div style="display:none;"><input type="hidden" name="ck" value="mB0N"></div>
+                    <input id="isay-upload-inp" tabindex="2" autocomplete="off" data-action="pic" name="image" title="上传照片" type="file">
+                  </form>
+                  <a href="javascript:void(0);" tabindex="1" data-action="share" class="ico ico-link" title="推荐网址">推荐网址</a>
+                  <a href="javascript:void(0);" tabindex="-1" data-action="pic" class="ico ico-pic" title="上传照片">照片</a>
+                  <a href="javascript:void(0);" tabindex="2" data-action="topic" class="ico ico-topic" title="添加话题">话题</a>
+                </div>
+              </div>
+              <script id="tmpl-isay-act-field" type="text/template">
+                <div class="field">
+                  {hd}
+                  <div class="bd">{bd}</div>
+                  <a href="javascript:void(0);" class="bn-x isay-cancel">×</a>
+                </div>
+              </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <script>
+                Do(function(){/* BEGIN @import /js/lib/link_handle.js */
+                var linkHandle = function(selector, handle) {
+                $(document).delegate(selector, 'click', function(e){
+                e.preventDefault();
+                handle.call(this, e, $(this));
+                });
+                };
+                /* END @import /js/lib/link_handle.js */
+
+                var TMPL_LOADING = '<span class="ui-inline-loading">请稍候<i>.</i><i>.</i><i>.</i></span>';
+
+                var processing = function(el, isStart) {
+                var loading = el.parent().find('.ui-inline-loading');
+                if (isStart) {
+                if (loading.length === 0) {
+                loading = $(TMPL_LOADING).insertBefore(el);
+                }
+                loading.show();
+                el.hide();
+                } else {
+                loading.hide();
+                el.show();
+                }
+                };
+
+                linkHandle(
+                '#guide-recommend .lnk-item-refresh',
+                function(e, el) {
+                var ids = [];
+                $('#guide-recommend').find('.rec-item').each(function(){
+                ids.push($(this).data('id'));
+                });
+                processing(el, true);
+                $.post_withck(
+                '/j/accounts/reg_guide/rec',
+                {
+                kind: this.href.split('#')[1],
+                last_ids: ids.join(',')
+                },
+                function(res) {
+                if (res.r === 0) {
+                $('#guide-recommend').find('.bd').html(res.content);
+                }
+                processing(el, false);
+                },
+                'json'
+                );
+                });
+
+                linkHandle(
+                '#guide-recommend .lnk-close',
+                function(e, el) {
+                $.post_withck(
+                '/j/accounts/reg_guide/mute_tip',
+                {
+                kind: this.href.split('#')[1]
+                },
+                function(res) {
+                if (res.r === 0) {
+                self.location.replace(res.redir);
+                }
+                },
+                'json'
+                );
+                });
+
+                //加关注
+                linkHandle(
+                '#guide-recommend .add_contact',
+                function(e, el) {
+                processing(el, true);
+                $.post_withck(
+                '/j/contact/addcontact',
+                {
+                people: this.href.split('#')[1]
+                },
+                function(res) {
+                processing(el, false);
+                if (res.result) {
+                el.replaceWith('<span class="user-followed">已关注</span>')
+                }
+                },
+                'json'
+                );
+                });
+
+                // 喜欢小站
+                linkHandle(
+                '#guide-recommend .lnk-site-follow',
+                function(e, el) {
+                processing(el, true);
+                var url = '/j/site/' + this.href.split('#')[1];
+                $.post_withck(
+                url + '/like',
+                function(res) {
+                processing(el, false);
+                $.get(url + '/pop_like_form',
+                function(res){
+                show_dialog('<div class="rectitle"><span class="m">我喜欢这个小站</span></div><div class="bd">' + res + '</div>', 300);
+                $('#follow_submit').click(function (e) {
+                e.preventDefault();
+                if($('#is_follow').attr('checked') == true){
+                url += '/follow';
+                }
+                else{
+                url += '/unfollow';
+                }
+                $.post_withck(
+                url,
+                function (o) {
+                el.replaceWith('<span class="site-followed">我喜欢这个小站</span>');
+                var o = {movie_coupon: '1001', pid: '123'};
+                /* TODO:电影小站优惠券领取
+                if (o.movie_coupon && o.pid){
+                get_movie_coupon(o.movie_coupon, o.pid, "已喜欢小站");
+                }
+                */
+                }
+                );
+                close_dialog();
+                });
+                });
+                },
+                'json'
+                );
+                });
+
+                //获赠电影优惠券
+                function get_movie_coupon (coupon_id, pid, title){
+                var url = 'movie/j/coupon_info?coupon_id=' + coupon_id;
+                $.get(url, function(res){
+                show_dialog('<div class="rectitle"><span class="m">'+ title +'</span></div><div class="bd">' + res + '</div>', 300);
+                $('a#btn-giveup', o.node).bind('click', function(){
+                $('div.dui-dialog').remove();
+                return false;
+                });
+                $('a#btn-accept', o.node).bind('click', function(e){
+                e.preventDefault();
+                $.post_withck('/ticket/coupon/'+coupon_id+'/accept?pid='+pid, {}, function(){
+                $('div.dui-dialog').remove();
+                });
+                return false;
+                });
+                });
+                }
+
+                // 加入小组
+                linkHandle(
+                '#guide-recommend .handle-join-group',
+                function(e, el) {
+                processing(el, true);
+                $.post_withck(
+                '/j/group/' + this.href.split('#')[1] + '/join',
+                function(res) {
+                processing(el, false);
+                if (res.result) {
+                el.replaceWith('<span class="user-followed">已加入该小组</span>')
+                }
+                },
+                'json'
+                );
+                });
+
+                });
+              </script>
+
+
+
+
+
+
+
+
+
+              <div id="streams" class="stream-items">
+  
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087343072" data-action="4" data-target-type="site" data-object-kind="1011" data-object-id="18181566">
+    <div class="mod" data-status-id="1087343072">
+      
+      <div class="hd">
+        <a href="http://site.douban.com/trojanhouse/" onclick="moreurl(this,{from: 'nmbp-1087343072', action: '4', target_type: 'site', object_kind: '1011'})" title="木马剧场"><img src="./update_old1_files/d4f35e7a9923335.jpg" alt="木马剧场"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+
+          
+<p class="text">
+    <a href="http://site.douban.com/trojanhouse/" onclick="moreurl(this,{from: 'nmbp-1087343072', action: '4', target_type: 'site', object_kind: '1011'})">木马剧场</a>
+        发起了一个活动 <a href="http://www.douban.com/event/18181566/" target="_blank" onclick="moreurl(this,{from:'nmb-1087343072', action:'4', target_type:'site', object_kind:'1011'})">《戏王之王》“北京故事”优秀小剧场剧目贺岁展演。</a>
+</p>
+
+
+                  <div class="description">开始时间：2013-02-20 19:30 / 地点：北京 朝阳区 百子湾路32号苹果社区22艺术院街 木马剧场 / 参加人数：1</div>
+          
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:34:28"><a href="http://site.douban.com/trojanhouse/status/1087343072/">刚刚</a></span>
+  &nbsp;&nbsp;
+  <a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://site.douban.com/trojanhouse/status/1087343072/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087342242" data-action="0" data-target-type="rec" data-object-kind="1026" data-object-id="85064127">
+    <div class="mod" data-status-id="1087342242">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/ecvip/" onclick="moreurl(this,{from: 'nmbp-1087342242', action: '0', target_type: 'rec', object_kind: '1026'})" title="oxygen"><img src="./update_old1_files/u1629487-24.jpg" alt="oxygen"></a>
+      </div>
+      
+      <div class="bd layout-3"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/ecvip/" onclick="moreurl(this,{from: 'nmbp-1087342242', action: '0', target_type: 'rec', object_kind: '1026'})">oxygen</a>
+        推荐蜜丝鹿的相册 <a href="http://www.douban.com/photos/album/85064127/" onclick="moreurl(this,{from:'nmb-1087342242', action:'0', target_type:'rec', object_kind:'1026'})">爱拍树</a>
+</p>
+
+          
+    
+            <div class="attachments">
+            
+                  
+                  <a href="http://dou.bz/4fW8WF" class="album media" target="" onclick="moreurl(this,{from: 'nmb-1087342242', action: '0', target_type: 'rec', object_kind: '1026'})"><img class="" src="./update_old1_files/3nPlcl.jpg"></a>
+                  <p class="description">整理相册，发现我怎么这么爱拍树啊。</p>
+            </div>
+
+          
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:33:05"><a href="http://www.douban.com/people/ecvip/status/1087342242/">1分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/ecvip/status/1087342242/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/ecvip/status/1087342242/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/ecvip/status/1087342242/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/ecvip/status/1087342242/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087341092" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523962135">
+    <div class="mod" data-status-id="1087341092">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/joearde/" onclick="moreurl(this,{from: 'nmbp-1087341092', action: '1', target_type: 'sns', object_kind: '1018'})" title="阿德"><img src="./update_old1_files/u1015534-32.jpg" alt="阿德"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/joearde/" onclick="moreurl(this,{from: 'nmbp-1087341092', action: '1', target_type: 'sns', object_kind: '1018'})">阿德</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>排除各种信息干扰集中火力解决了几个to do，整个人都滑爽多了！</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:31:09"><a href="http://www.douban.com/people/joearde/status/1087341092/">3分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/joearde/status/1087341092/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/joearde/status/1087341092/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/joearde/status/1087341092/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/joearde/status/1087341092/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087341002" data-action="" data-target-type="" data-object-kind="" data-object-id="None">
+    <div class="mod" data-status-id="1087341002">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/passluo/" onclick="moreurl(this,{from: 'nmbp-1087341002', action: '', target_type: '', object_kind: ''})" title="Pass"><img src="./update_old1_files/u43841857-8.jpg" alt="Pass"></a>
+      </div>
+      
+      <div class="bd layout-None"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/passluo/" onclick="moreurl(this,{from: 'nmbp-1087341002', action: '', target_type: '', object_kind: ''})">Pass</a>
+        说：
+</p>
+
+          
+    
+
+          
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:31:01"><a href="http://www.douban.com/people/passluo/status/1087341002/">3分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/passluo/status/1087341002/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/passluo/status/1087341002/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/passluo/status/1087341002/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/passluo/status/1087341002/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087337971" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523961580">
+    <div class="mod" data-status-id="1087337971">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/paulhandle/" onclick="moreurl(this,{from: 'nmbp-1087337971', action: '1', target_type: 'sns', object_kind: '1018'})" title="paulhandle"><img src="./update_old1_files/u1388273-7.jpg" alt="paulhandle"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/paulhandle/" onclick="moreurl(this,{from: 'nmbp-1087337971', action: '1', target_type: 'sns', object_kind: '1018'})">paulhandle</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>地瓜叫法。</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          <a href="http://www.douban.com/people/paulhandle/status/1087337971/" class="upload-pic-wrapper"><img src="./update_old1_files/df36ac616fc6581.jpg" class="upload-pic big" onclick="moreurl(this,{from: 'nmb-1087337971', action: '1', target_type: 'sns', object_kind: '1018'})" data-median-src="http://img3.douban.com/view/status/median/public/df36ac616fc6581.jpg" data-raw-src="http://img3.douban.com/view/status/raw/public/df36ac616fc6581.jpg" style="opacity: 1; width: auto; height: auto;"></a>
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:26:15"><a href="http://www.douban.com/people/paulhandle/status/1087337971/">8分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/paulhandle/status/1087337971/" class="btn btn-action-reply" data-action-type="hideComments">隐藏回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/paulhandle/status/1087337971/" class="btn btn-key-like  btn-unlike" data-action-type="unlike">已赞</a>
+
+    <span class="count like-count" data-count="3">(3)</span>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/paulhandle/status/1087337971/" class="btn btn-key-reshare btn-unreshare" data-action-type="unreshare" data-reshare-id="1087338771">已转播</a>
+
+</div>
+
+        <div class="others" style="display: block;"><div class="likers"><em><span>皮耶德•康迪</span>、<span>深浅</span>、<span>农田五组小贱草</span></em> <span>赞</span></div>
+          <div class="comments">
+              <div class="comments-items"><p>
+  <em>
+    长知识了。。 - <a data-avatar="" class="commenter" href="http://www.douban.com/people/jyyjcc/">农田五组小贱草</a>
+    <a href="" data-cid="153583173" data-sid="1087337971" class="btn btn-del" data-action-type="deleteComment">&gt;删除</a>
+  </em>
+</p><p>
+  <em>
+    湖北叫的“苕”。 - <a data-avatar="" class="commenter" href="http://www.douban.com/people/bianxiaowei/">青城山下卞小维</a>
+  </em>
+</p><p>
+  <em>
+    天津也管马铃薯叫土豆 - <a data-avatar="" class="commenter" href="http://www.douban.com/people/deafwolf/">皮耶德•康迪</a>
+  </em>
+</p></div>
+              <form method="post" action="http://www.douban.com/people/paulhandle/status/1087337971/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087336910" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523961418">
+    <div class="mod" data-status-id="1087336910">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/satoru/" onclick="moreurl(this,{from: 'nmbp-1087336910', action: '1', target_type: 'sns', object_kind: '1018'})" title="satoru’"><img src="./update_old1_files/u2311945-179.jpg" alt="satoru’"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/satoru/" onclick="moreurl(this,{from: 'nmbp-1087336910', action: '1', target_type: 'sns', object_kind: '1018'})">satoru’</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>no, the line is not a "invisible" one ...</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          <a href="http://www.douban.com/people/satoru/status/1087336910/" class="upload-pic-wrapper"><img src="./update_old1_files/fcd7802d222ef64.jpg" class="upload-pic big" onclick="moreurl(this,{from: 'nmb-1087336910', action: '1', target_type: 'sns', object_kind: '1018'})" data-median-src="http://img3.douban.com/view/status/median/public/fcd7802d222ef64.jpg" data-raw-src="http://img3.douban.com/view/status/raw/public/fcd7802d222ef64.jpg"></a>
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:24:34"><a href="http://www.douban.com/people/satoru/status/1087336910/">10分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/satoru/status/1087336910/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/satoru/status/1087336910/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+    <span class="count like-count" data-count="2">(2)</span>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/satoru/status/1087336910/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/satoru/status/1087336910/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087334510" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523961071">
+    <div class="mod" data-status-id="1087334510">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/Rlog/" onclick="moreurl(this,{from: 'nmbp-1087334510', action: '1', target_type: 'sns', object_kind: '1018'})" title="Robin"><img src="./update_old1_files/u1296124-83.jpg" alt="Robin"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/Rlog/" onclick="moreurl(this,{from: 'nmbp-1087334510', action: '1', target_type: 'sns', object_kind: '1018'})">Robin</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>FX 这玩意把我快坑死了, 点两个按钮都没用, 除非kill进程!</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          <a href="http://www.douban.com/people/Rlog/status/1087334510/" class="upload-pic-wrapper"><img src="./update_old1_files/585039e656276d2.jpg" class="upload-pic big" onclick="moreurl(this,{from: 'nmb-1087334510', action: '1', target_type: 'sns', object_kind: '1018'})" data-median-src="http://img3.douban.com/view/status/median/public/585039e656276d2.jpg" data-raw-src="http://img3.douban.com/view/status/raw/public/585039e656276d2.jpg" style="opacity: 1; width: auto; height: auto;"></a>
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:20:34"><a href="http://www.douban.com/people/Rlog/status/1087334510/">14分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/Rlog/status/1087334510/" class="btn btn-action-reply" data-action-type="showComments">1回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/Rlog/status/1087334510/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/Rlog/status/1087334510/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/Rlog/status/1087334510/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087333974" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523960983">
+    <div class="mod" data-status-id="1087333974">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/bluekee/" onclick="moreurl(this,{from: 'nmbp-1087333974', action: '1', target_type: 'sns', object_kind: '1018'})" title="已注销"><img src="./update_old1_files/u4488046-2.jpg" alt="已注销"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/bluekee/" onclick="moreurl(this,{from: 'nmbp-1087333974', action: '1', target_type: 'sns', object_kind: '1018'})">已注销</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>Dark Message</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:19:45"><a href="http://www.douban.com/people/bluekee/status/1087333974/">15分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/bluekee/status/1087333974/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/bluekee/status/1087333974/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/bluekee/status/1087333974/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/bluekee/status/1087333974/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087330888" data-action="4" data-target-type="site" data-object-kind="1011" data-object-id="18164701">
+    <div class="mod" data-status-id="1087330888">
+      
+      <div class="hd">
+        <a href="http://site.douban.com/bingmasi/" onclick="moreurl(this,{from: 'nmbp-1087330888', action: '4', target_type: 'site', object_kind: '1011'})" title="兵马司"><img src="./update_old1_files/34a9def417a5996.jpg" alt="兵马司"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+
+          
+<p class="text">
+    <a href="http://site.douban.com/bingmasi/" onclick="moreurl(this,{from: 'nmbp-1087330888', action: '4', target_type: 'site', object_kind: '1011'})">兵马司</a>
+        发起了一个活动 <a href="http://www.douban.com/event/18164701/" target="_blank" onclick="moreurl(this,{from:'nmb-1087330888', action:'4', target_type:'site', object_kind:'1011'})">MOHAWK FUND Vol.1 过失 牙龈出血 Bedstars </a>
+</p>
+
+
+                  <div class="description">开始时间：2013-01-26 20:30 / 地点：北京 西城区 XP俱乐部 (地安门十字路口，西南角) / 参加人数：35</div>
+          
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:14:44"><a href="http://site.douban.com/bingmasi/status/1087330888/">20分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://site.douban.com/bingmasi/status/1087330888/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://site.douban.com/bingmasi/status/1087330888/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://site.douban.com/bingmasi/status/1087330888/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://site.douban.com/bingmasi/status/1087330888/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087330853" data-action="4" data-target-type="sns" data-object-kind="2012" data-object-id="121821">
+    <div class="mod" data-status-id="1087330853">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/passluo/" onclick="moreurl(this,{from: 'nmbp-1087330853', action: '4', target_type: 'sns', object_kind: '2012'})" title="Pass"><img src="./update_old1_files/u43841857-8.jpg" alt="Pass"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+            <a href="http://site.douban.com/121821/" class="media" target="" onclick="moreurl(this,{from: 'nmb-1087330853', action: '4', target_type: 'sns', object_kind: '2012'})"><img src="./update_old1_files/2dqYBX.jpg"></a>
+
+          
+<p class="text">
+    <a href="http://www.douban.com/people/passluo/" onclick="moreurl(this,{from: 'nmbp-1087330853', action: '4', target_type: 'sns', object_kind: '2012'})">Pass</a>
+        关注 <a href="http://site.douban.com/121821/" onclick="moreurl(this,{from:'nmb-1087330853', action:'4', target_type:'sns', object_kind:'2012'})">神秘学</a>
+</p>
+
+
+                  <div class="description">只是单纯的对神学史学资料感兴趣。神秘学不是历史学，也不是物理学，神秘学很哲学，也影响过科学。</div>
+          
+
+
+
+        
+<div class="actions">
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/passluo/status/1087330853/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087330216" data-action="3" data-target-type="book" data-object-kind="1001" data-object-id="21267727">
+    <div class="mod" data-status-id="1087330216">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/huangxiaoxie/" onclick="moreurl(this,{from: 'nmbp-1087330216', action: '3', target_type: 'book', object_kind: '1001'})" title="黄小邪"><img src="./update_old1_files/u1614291-2.jpg" alt="黄小邪"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+            <a href="http://book.douban.com/subject/21267727/" class="media" target="" onclick="moreurl(this,{from: 'nmb-1087330216', action: '3', target_type: 'book', object_kind: '1001'})"><img src="./update_old1_files/4qODWJ.jpg"></a>
+
+          
+<p class="text">
+    <a href="http://www.douban.com/people/huangxiaoxie/" onclick="moreurl(this,{from: 'nmbp-1087330216', action: '3', target_type: 'book', object_kind: '1001'})">黄小邪</a>
+        读过 <a href="http://book.douban.com/subject/21267727/" onclick="moreurl(this,{from:'nmb-1087330216', action:'3', target_type:'book', object_kind:'1001'})">何非光 圖文資料彙編</a> <span class="allstar40"></span>
+</p>
+
+
+                  <div class="description">黄仁编著 / 台北国家电影资料馆</div>
+          
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:13:38"><a href="http://www.douban.com/people/huangxiaoxie/status/1087330216/">21分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/huangxiaoxie/status/1087330216/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/huangxiaoxie/status/1087330216/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/huangxiaoxie/status/1087330216/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/huangxiaoxie/status/1087330216/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087328901" data-action="5" data-target-type="sns" data-object-kind="1005" data-object-id="38960012">
+    <div class="mod" data-status-id="1087328901">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/coolwaterhouse/" onclick="moreurl(this,{from: 'nmbp-1087328901', action: '5', target_type: 'sns', object_kind: '1005'})" title="水落千涧"><img src="./update_old1_files/u1090165-2.jpg" alt="水落千涧"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+          
+
+<a href="http://www.douban.com/people/38960012/" class="media" onclick="moreurl(this,{from: 'nmb-1087328901', action: '5', target_type: 'sns', object_kind: '1005'})"><img src="./update_old1_files/u38960012-32.jpg"></a>
+
+
+          
+<p class="text">
+    <a href="http://www.douban.com/people/coolwaterhouse/" onclick="moreurl(this,{from: 'nmbp-1087328901', action: '5', target_type: 'sns', object_kind: '1005'})">水落千涧</a>
+        关注 <a href="http://www.douban.com/people/38960012/" onclick="moreurl(this,{from:'nmb-1087328901', action:'5', target_type:'sns', object_kind:'1005'})">温婉</a>
+</p>
+
+
+                  <div class="description">我觉得自己在人生阅历上很老成，可在性格上还是很年轻的，像个小女孩。      —舒淇</div>
+          
+
+
+
+        
+<div class="actions">
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/coolwaterhouse/status/1087328901/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087328698" data-action="3" data-target-type="movie" data-object-kind="1002" data-object-id="2363876">
+    <div class="mod" data-status-id="1087328698">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/Mr.tao/" onclick="moreurl(this,{from: 'nmbp-1087328698', action: '3', target_type: 'movie', object_kind: '1002'})" title="Mr.Táo"><img src="./update_old1_files/u1278717-37.jpg" alt="Mr.Táo"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+            <a href="http://movie.douban.com/subject/2363876/" class="media" target="" onclick="moreurl(this,{from: 'nmb-1087328698', action: '3', target_type: 'movie', object_kind: '1002'})"><img src="./update_old1_files/4wCl6n.jpg"></a>
+
+          
+<p class="text">
+    <a href="http://www.douban.com/people/Mr.tao/" onclick="moreurl(this,{from: 'nmbp-1087328698', action: '3', target_type: 'movie', object_kind: '1002'})">Mr.Táo</a>
+        看过 <a href="http://movie.douban.com/subject/2363876/" onclick="moreurl(this,{from:'nmb-1087328698', action:'3', target_type:'movie', object_kind:'1002'})">007：大破天幕杀机 Skyfall (2012)</a><span class="allstar40"></span>
+</p>
+
+
+                  <div class="description">导演 萨姆·门德斯 主演 丹尼尔·克雷格 / 拉尔夫·费因斯 / 英国 / 美国 / 7.1分(33937评价)</div>
+          
+<blockquote>
+  <p>金发碧眼中最好的一部。萨姆 门德斯没有让人失望。巴登的反派和英国病人的new m都是亮点。上海的高楼的打斗很有点致敬过去的味道，很写意。</p>
+</blockquote>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:11:13"><a href="http://www.douban.com/people/Mr.tao/status/1087328698/">23分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/Mr.tao/status/1087328698/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/Mr.tao/status/1087328698/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/Mr.tao/status/1087328698/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/Mr.tao/status/1087328698/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087327937" data-action="" data-target-type="" data-object-kind="" data-object-id="None">
+    <div class="mod" data-status-id="1087327937">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/commit/" onclick="moreurl(this,{from: 'nmbp-1087327937', action: '', target_type: '', object_kind: ''})" title="赵小宝突然"><img src="./update_old1_files/u3741741-40.jpg" alt="赵小宝突然"></a>
+      </div>
+      
+      <div class="bd layout-None"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/commit/" onclick="moreurl(this,{from: 'nmbp-1087327937', action: '', target_type: '', object_kind: ''})">赵小宝突然</a>
+        说：
+</p>
+
+          
+    
+
+          
+<blockquote>
+  <p>Mr Q <a href="http://dou.bz/0C7JTm" target="_blank">http://dou.bz/0C7JTm</a></p>
+</blockquote>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:10:02"><a href="http://www.douban.com/people/commit/status/1087327937/">24分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/commit/status/1087327937/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/commit/status/1087327937/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/commit/status/1087327937/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/commit/status/1087327937/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087326167" data-action="" data-target-type="" data-object-kind="" data-object-id="None">
+    <div class="mod" data-status-id="1087326167">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/williamlong/" onclick="moreurl(this,{from: 'nmbp-1087326167', action: '', target_type: '', object_kind: ''})" title="月光博客"><img src="./update_old1_files/u1095157-5.jpg" alt="月光博客"></a>
+      </div>
+      
+      <div class="bd layout-None"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/williamlong/" onclick="moreurl(this,{from: 'nmbp-1087326167', action: '', target_type: '', object_kind: ''})">月光博客</a>
+        说：
+</p>
+
+          
+    
+
+          
+<blockquote>
+  <p>Github好像解封了，我这里测试，对其的关键字屏蔽已经取消，DNS污染应该也取消了，不过DNS解析有24小时的缓存，因此可能到明天才能确认DNS解析是否恢复正常。</p>
+</blockquote>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:07:16"><a href="http://www.douban.com/people/williamlong/status/1087326167/">27分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/williamlong/status/1087326167/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/williamlong/status/1087326167/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+    <span class="count like-count" data-count="2">(2)</span>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/williamlong/status/1087326167/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+  <span class="reshared_by">由paulhandle转播</span>
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/paulhandle/status/1087326766/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087326352" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523959834">
+    <div class="mod" data-status-id="1087326352">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})" title="农田五组小贱草"><img src="./update_old1_files/u1248454-58.jpg" alt="农田五组小贱草"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})">农田五组小贱草</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>整天从傻逼那儿找智商优越感，有意思吗？</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">27分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+
+
+  &nbsp;&nbsp;<a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply-delete" data-action-type="deleteStatus">删除</a>
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/jyyjcc/status/1087326352/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087324080" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523959455">
+    <div class="mod" data-status-id="1087324080">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/fatiaochengzi19/" onclick="moreurl(this,{from: 'nmbp-1087324080', action: '1', target_type: 'sns', object_kind: '1018'})" title="发条橙子™"><img src="./update_old1_files/u2834533-52.jpg" alt="发条橙子™"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/fatiaochengzi19/" onclick="moreurl(this,{from: 'nmbp-1087324080', action: '1', target_type: 'sns', object_kind: '1018'})">发条橙子™</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>半年后再听D664泪流满面</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:04:09"><a href="http://www.douban.com/people/fatiaochengzi19/status/1087324080/">30分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/fatiaochengzi19/status/1087324080/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/fatiaochengzi19/status/1087324080/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/fatiaochengzi19/status/1087324080/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/fatiaochengzi19/status/1087324080/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087300827" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523955558">
+    <div class="mod" data-status-id="1087300827">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/way060/" onclick="moreurl(this,{from: 'nmbp-1087300827', action: '1', target_type: 'sns', object_kind: '1018'})" title="W-A-Y"><img src="./update_old1_files/u3017273-6.jpg" alt="W-A-Y"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/way060/" onclick="moreurl(this,{from: 'nmbp-1087300827', action: '1', target_type: 'sns', object_kind: '1018'})">W-A-Y</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>周立波吐槽苍井空，说她一个电影下来的台词还不到140个字。网友立即吐槽：“周立波演AV，片长不超过140秒。</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 14:25:34"><a href="http://www.douban.com/people/way060/status/1087300827/">1小时前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/way060/status/1087300827/" class="btn btn-action-reply" data-action-type="showComments">7回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/way060/status/1087300827/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+    <span class="count like-count" data-count="31">(31)</span>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/way060/status/1087300827/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+  <span class="reshared_by">由waits转播</span>
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/munchhausens/status/1087323752/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087322512" data-action="1" data-target-type="book" data-object-kind="1001" data-object-id="12011617">
+    <div class="mod" data-status-id="1087322512">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/wenzel/" onclick="moreurl(this,{from: 'nmbp-1087322512', action: '1', target_type: 'book', object_kind: '1001'})" title="文泽尔"><img src="./update_old1_files/u1781395-88.jpg" alt="文泽尔"></a>
+      </div>
+      
+      <div class="bd layout-1"> 
+
+          
+    
+            <a href="http://book.douban.com/subject/12011617/" class="media" target="" onclick="moreurl(this,{from: 'nmb-1087322512', action: '1', target_type: 'book', object_kind: '1001'})"><img src="./update_old1_files/0MbH7t.jpg"></a>
+
+          
+<p class="text">
+    <a href="http://www.douban.com/people/wenzel/" onclick="moreurl(this,{from: 'nmbp-1087322512', action: '1', target_type: 'book', object_kind: '1001'})">文泽尔</a>
+        想读 <a href="http://book.douban.com/subject/12011617/" onclick="moreurl(this,{from:'nmb-1087322512', action:'1', target_type:'book', object_kind:'1001'})">观音</a>
+</p>
+
+
+                  <div class="description">菩萨中国化的演变 / 于君方 / 商务印书馆</div>
+          
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:01:42"><a href="http://www.douban.com/people/wenzel/status/1087322512/">33分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/wenzel/status/1087322512/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/wenzel/status/1087322512/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/wenzel/status/1087322512/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/wenzel/status/1087322512/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+
+  <div class="status-item" style="" data-sid="1087321858" data-action="1" data-target-type="sns" data-object-kind="1018" data-object-id="523959103">
+    <div class="mod" data-status-id="1087321858">
+      
+      <div class="hd">
+        <a href="http://www.douban.com/people/mimooyu/" onclick="moreurl(this,{from: 'nmbp-1087321858', action: '1', target_type: 'sns', object_kind: '1018'})" title="夏小胖"><img src="./update_old1_files/u2697350-10.jpg" alt="夏小胖"></a>
+      </div>
+      
+      <div class="bd layout-2"> 
+          
+<p class="text">
+    <a href="http://www.douban.com/people/mimooyu/" onclick="moreurl(this,{from: 'nmbp-1087321858', action: '1', target_type: 'sns', object_kind: '1018'})">夏小胖</a>
+        说：
+</p>
+
+          
+<blockquote>
+  <p>最近什么星水逆，求解！！</p>
+</blockquote>
+
+          
+    
+          <div class="attachments">
+          </div>
+
+
+
+        
+<div class="actions">
+  
+  <span class="created_at" title="2013-01-23 15:00:41"><a href="http://www.douban.com/people/mimooyu/status/1087321858/">34分钟前</a></span>
+  &nbsp;&nbsp;
+  <a href="http://www.douban.com/people/mimooyu/status/1087321858/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/mimooyu/status/1087321858/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+
+
+    &nbsp;&nbsp;<a href="http://www.douban.com/people/mimooyu/status/1087321858/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+</div>
+
+        <div class="others">
+          <div class="comments">
+              <div class="comments-items"></div>
+              <form method="post" action="http://www.douban.com/people/mimooyu/status/1087321858/" class="comment-form"><div style="display:none;"><input type="hidden" name="ck" value="O7DX"></div>
+                  <input type="text" name="text" class="comment-text" data-type="status-comment">
+                  <input type="submit" value="发表回应" data-type="status-comment">
+                  <a href="javascript:void(0);" class="add-more-comments">继续回应</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+</div>
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+          <div class="aside">
+
+            <div id="lnk-hui" style="display:none;" class="back-old"><a href="" class="lnk-sw-new">&gt;回旧版</a></div>
+
+
+
+
+            <div class="notify-mod">
+              <a href="http://frodo.douban.com:9010/subject/explore">发现喜欢的东西</a>
+            </div>
+
+
+
+
+
+
+            <div id="noti" class="mod">
+                <h2>请求和提醒 &nbsp; ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;
+                  </h2><div class="infobox">
+                  <div class="ex1"><span></span></div>
+                  <div class="bd"><div class="pl"><div class="pl"><a href="http://frodo.douban.com:9010/contacts/rlist">有&nbsp;1个人关注你
+                  </a></div><div class="ul" style="margin-top:2px;margin-bottom:2px"></div><div class="pl">你有&nbsp;<a href="http://frodo.douban.com:9010/notification/">3个提醒</a></div></div></div>
+                  <div class="ex2"><span></span></div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div id="friend">
+
+              <h2>
+                我关注的人
+                &nbsp;·&nbsp;·&nbsp;·
+                <span class="pl">&nbsp;(
+                  <a href="http://frodo.douban.com:9010/contacts/list">全部2</a>&nbsp;·&nbsp;<a href="http://frodo.douban.com:9010/contacts/list?tag=1">朋友0</a>
+                  ) </span>
+              </h2>
+
+              <dl class="obu"><dt><a href="http://frodo.douban.com:9010/people/test2/" class="nbg"><img src="./update_old1_files/user_normal.jpg" class="m_sub_img" alt="test2"></a></dt>
+                <dd><a href="http://frodo.douban.com:9010/people/test2/">test2</a></dd></dl><dl class="obu"><dt><a href="http://frodo.douban.com:9010/people/test3/" class="nbg"><img src="./update_old1_files/user_normal.jpg" class="m_sub_img" alt="test3"></a></dt>
+                <dd><a href="http://frodo.douban.com:9010/people/test3/">test3</a></dd></dl><br clear="all">
+
+
+              <p>
+                <a href="http://frodo.douban.com:9010/people/test1/contact_site">&gt; 我关注广播的小站</a>
+              </p>
+
+              <p><a href="http://frodo.douban.com:9010/contacts/rlist">&gt; 我被20人关注</a></p>
+
+            </div>
+
+            <p class="pl"><a href="http://frodo.douban.com:9010/people/test1/statuses">&gt;&nbsp;我的广播</a></p>
+
+            <!-- douban app begin -->
+            <!-- douban app end -->
+
+
+          </div>
+          <div class="extra">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div id="footer">
+
+        <span id="icp" class="fleft gray-link">
+          © 2005－2012 douban.com, all rights reserved
+        </span>
+
+        <span class="fright">
+          <a href="http://frodo.douban.com:9010/about">关于豆瓣</a>
+          · <a href="http://frodo.douban.com:9010/jobs">在豆瓣工作</a>
+          · <a href="http://frodo.douban.com:9010/about?topic=contactus">联系我们</a>
+          · <a href="http://frodo.douban.com:9010/about?policy=disclaimer">免责声明</a>
+
+          · <a href="http://frodo.douban.com:9010/help/">帮助中心</a>
+          · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+          · <a href="http://frodo.douban.com:9010/mobile/">移动应用</a>
+          · <a href="http://frodo.douban.com:9010/partner/">豆瓣广告</a>
+        </span>
+
+
+      </div>
+
+    
+
+
+
+    <script type="text/javascript">
+
+
+      Do(function(){
+      var more = $('.top-nav-more a.more').click(function(e){
+      e.preventDefault();
+      var el = $(e.currentTarget), p = el.parent();
+      p.toggleClass('on');
+      return false;
+      });
+      $('body').click(function(){
+      more.parent().removeClass('on');
+      });
+      });
+
+      Do(function(){
+      var t = $('#search_text');
+      $("form[name=ssform]").submit(function(){
+      if(t.val()==="成员、小组、音乐人、主办方") return false;
+      })
+      })
+
+      Do(function(){
+      $('#db-nav-main .guide .lnk-close').click(function(e) {
+      e.preventDefault();
+      $.post_withck('/j/accounts/hidetip',{kind:5,show_to_all:'Y'}, function(){});
+      $(this).closest('.tips-overly').fadeOut(300);
+      });
+      });
+
+      var tagsug_src = "./update_old1_files/lib/tagsug.js";
+      /* BEGIN @import /js/lib/simple_loader.js */
+      // a very simple asynchronous js loader
+      // @author: ktmud
+      window.Do = window.Do || function(fn) {
+      typeof fn == 'function' && setTimeout(fn, 0);
+      };
+      Do.add_js = function add_js(src) {
+      var x = document.createElement('script');
+      x.src = src;
+      document.getElementsByTagName('head')[0].appendChild(x);
+      };
+      Do.add_css = function add_css(src, cb) {
+      var x = document.createElement('link');
+      x.rel = 'stylesheet';
+      x.href = src;
+      document.getElementsByTagName('head')[0].appendChild(x);
+      };
+      Do.check_js = function check_js(indicator, callback) {
+      var indicator_ret = indicator();
+      if (indicator_ret) {
+      callback(indicator_ret);
+      } else {
+      setTimeout(function() {
+      check_js(indicator, callback);
+      }, 33);
+      }
+      };
+      /* END @import /js/lib/simple_loader.js */
+
+      Do(function(){
+      var t = $('#inp-query,#search_text');
+      t.one('focus', function() {
+      Do.add_js(tagsug_src);
+      Do.check_js(function() {
+      return $.fn.tagsug && window.Mustache;
+      }, function() {
+      t.tagsug({
+      max: 8,
+      useUid: true,
+      tips: '@某人，直达其个人主页'
+      });
+      var tagsug_api = t._tagsug_api[0];
+      tagsug_api.on('choose', function(e, uid) {
+      window.location = '/people/' + uid + '/';
+      });
+      t.tagsug({
+      wordLimit: 30,
+      url: '',
+      max: null,
+      haltLink: false,
+      customData: {
+      cls: 'sug-quick-search',
+      items: [
+      {
+      name_cn: '图书',
+      url: 'http://book.douban.com/subject_search?cat=1003&search_text='
+      },
+      {
+      name_cn: '电影',
+      url: 'http://movie.douban.com/subject_search?cat=1002&search_text='
+      },
+      {
+      name_cn: '音乐',
+      url: 'http://movie.douban.com/subject_search?cat=1001&search_text='
+      },
+      {
+      name_cn: '同城活动',
+      url: 'http://www.douban.com/event/search?search_text='
+      }
+      ]
+      },
+      listTmpl: '<ul class="{{cls}}">{{#items}}<li><a href="{{url}}{{q}}">搜索 <b>{{q}}</b> 的{{name_cn}}</a></li>{{/items}}</ul>',
+      leadChar: '%',
+      tips: null
+      });
+      });
+      });
+      });
+
+
+      Do(function () {
+      function add_js(src) {
+      var js = document.createElement('script');
+      js.src = src;
+      document.getElementsByTagName('head')[0].appendChild(js);
+      }
+      add_js("./update_old1_files/sns/widgets/isay.js");
+      var thelabel = $('#isay-label');
+      var thetextarea = $('#isay-cont');
+      var root = $('#db-isay');
+
+      function check(elem) {
+      if (Do.ISay) {
+      Do.ISay.init(elem);
+      thelabel.html('说点什么吧...');
+      if (!$.fn.tagsug) add_js("./update_old1_files/lib/tagsug.js");
+      } else {
+      setTimeout(function() {
+      check(elem);
+      }, 80);
+      }
+      }
+
+      function initDragAndDrop() {
+      if (Do.ISay) {
+      Do.ISay.initials.dargAndDrop(thetextarea);
+      } else {
+      setTimeout(initDragAndDrop, 80);
+      }
+      }
+
+      function init_isay(e) {
+      init_isay = null;
+      if (!Do.ISay) {
+      thelabel.html('正在初始化...');
+      }
+      var elem = e.target;
+      if (elem.tagName.toUpperCase() == 'INPUT') {
+      // for upload file..
+      setTimeout(function() {
+      check(elem);
+      }, 100);
+      return;
+      }
+      thetextarea.focus();
+      check(elem);
+      if (elem.tagName.toUpperCase() == 'A') e.preventDefault();
+      e.stopPropagation();
+      }
+
+      // to prevent trigger more than one time
+      function handleEvent(e) {
+      init_isay && init_isay(e);
+      }
+
+      setTimeout(function() {
+      if (thetextarea.val()) thelabel.hide();
+      }, 50);
+
+      $('#isay-upload-inp').one('change', handleEvent);
+      thetextarea.one('focus dragenter', handleEvent);
+      initDragAndDrop();
+      root.one('click', handleEvent);
+      if (location.search) {
+      var params = location.search.substring(1).split('&');
+      var topic;
+      for ( var i = 0 ; i < params.length; i++ ) {
+      var _m = params[i].split('=');
+      if (_m[0] === 'topic') {
+      topic = decodeURIComponent(_m[1]);
+      }
+      }
+
+      if (topic) {
+      thetextarea.val('#' + topic + '# ');
+      var el = thetextarea[0];
+      if (el.setSelectionRange) {
+      el.focus();
+      el.setSelectionRange(el.value.length, el.value.length)
+      } else {
+      range = el.createTextRange();
+      range.collapse(false);
+      range.select();
+      }
+      }
+      }
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- vagrant-->
+
+
+
+
+
+    <script>
+      Do(function(){
+
+      var docRoot = $('html');
+      if (!docRoot.hasClass('ua-webkit')) {
+      return;
+      }
+
+      var doc = $(document);
+      var previewContainer = $('#x-dev-preview');
+
+      var previewMobileSite = function(e) {
+      e.preventDefault();
+      var bn = $(this);
+      previewContainer.toggleClass('dev-preview-open');
+      setTimeout(function() {
+      docRoot.toggleClass('dev-viewmode-open');
+      }, 400);
+      if (previewContainer.hasClass('dev-preview-open')) {
+      var url = self.location.href;
+      previewContainer.find('iframe').attr('src', url.indexOf('?') < 0 ? url + '?' + '&preview_mobile_page=1' : url + '&preview_mobile_page=1');
+      }
+      };
+
+      doc.delegate('.bn-preview-mobile', 'click', previewMobileSite);
+
+      });
+    </script>
+
+    <script id="tmpl-new-nav" type="text/tmpl">
+      <div style="height:0;overflow:hidden;">
+        <div id="db-global-nav" class="global-nav">
+          <div class="bd">
+
+
+
+
+
+
+
+            <div class="top-nav-info">
+              <span class="perf-metric"><!-- _performtips_ --></span>
+
+              <ul>
+                <li><a href="http://www.douban.com/doumail/">豆邮</a></li>
+                <li class="nav-user-account">
+                <a target="_blank" href="http://www.douban.com/accounts/" class="bn-more"><span>哈乐米的帐号</span><span class="arrow"></span></a>
+                <div class="more-items">
+                  <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr><td><a href="http://www.douban.com/people/hello_me/">我的豆瓣</a></td></tr>
+                      <tr><td><a target="_blank" href="http://www.douban.com/accounts/">我的帐号</a></td></tr>
+                      <tr><td><a href="http://www.douban.com/accounts/logout?ck=sE8U">退出</a></td></tr>
+                  </tbody></table>
+                </div>
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="top-nav-reminder">
+              <a href="http://www.douban.com/notification/" class="lnk-remind">提醒
+                <span id="reminder-num" class="num hide"><span>4</span><i></i></span>
+              </a>
+              <div class="more-items">
+                <div class="bd">
+                  <p style="display:none;" class="no-new-notis">最近没有收到新提醒...</p>
+                  <ul>
+
+
+
+
+                    <li>
+                    <div id="reply_notify_400338962" class="item-req">
+                      <div class="content">
+                        你有 <a href="http://movie.douban.com/notifications">3条</a> 电影提醒
+                      </div>
+                    </div>
+                    </li>
+
+
+                    <li>
+                    <div class="content"> 
+                      <a href="http://www.douban.com/people/modada/">小然</a> 邀请你参加 
+                      <a href="http://www.douban.com/online/11445449/">亮出你的Pro身份来！</a> 线上活动
+                    </div>
+                    </li>
+
+                  </ul>
+                </div>
+                <div class="ft">
+                  <a href="http://www.douban.com/notification/">查看全部提醒
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="global-nav-items">
+              <ul>
+
+
+                <li class="on">
+                <a href="http://www.douban.com/">豆瓣</a>
+                </li>
+
+
+                <li>
+                <a href="http://book.douban.com/"><span class="verbose">豆瓣</span>读书</a>
+                </li>
+
+
+                <li>
+                <a href="http://movie.douban.com/"><span class="verbose">豆瓣</span>电影</a>
+                </li>
+
+
+                <li>
+                <a href="http://music.douban.com/"><span class="verbose">豆瓣</span>音乐</a>
+                </li>
+
+
+                <li>
+                <a href="http://www.douban.com/location/"><span class="verbose">豆瓣</span>同城</a>
+                </li>
+
+
+                <li>
+                <a href="http://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank"><span class="verbose">豆瓣</span>阅读</a>
+                </li>
+
+
+                <li>
+                <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+                </li>
+
+                <li>
+                <a href="#more" class="bn-more"><span>更多</span></a>
+                <div class="more-items">
+                  <table cellpadding="0" cellspacing="0">
+
+                    <tbody><tr><td><a href="http://9.douban.com" target="_blank">九点</a></td></tr>
+
+                      <tr><td><a href="http://alphatown.com" target="_blank">阿尔法城</a></td></tr>
+
+                      <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                  </tbody></table>
+                </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="db-nav-sns" class="nav">
+          <div class="nav-wrap">
+            <div class="nav-primary">
+
+              <div class="nav-search">
+                <form action="http://www.douban.com/search" method="get">
+                  <fieldset>
+                    <legend>搜索：</legend>
+                    <label for="inp-query">书籍、电影、音乐、小组、小站、成员</label>
+                    <div class="inp"><input id="inp-query" name="q" size="22" title="搜索书、电影、音乐、小组、小站、成员" maxlength="60" value=""></div>
+                    <div class="inp-btn"><input type="submit" value="搜索"></div>
+                  </fieldset>
+                </form>
+              </div>
+
+              <div class="nav-logo">
+                <a href="http://www.douban.com">豆瓣社区</a>
+              </div>
+
+              <div class="nav-items nav-items1">
+                <ul>
+                  <li><a href="http://www.douban.com/">首页</a></li>
+                  <li><a href="http://www.douban.com/mine/">友邻广播</a></li>
+                  <li><a href="http://www.douban.com/mine/">我的豆瓣</a></li>
+                  <li><a href="http://www.douban.com/group/">小组</a></li>
+                  <li id="lnk-xiaozhan"><a href="http://www.douban.com/group/">小站</a></li>
+                  <li id="lnk-faxian" style="display:none;" ><a href="http://www.douban.com/explore/">浏览发现</a></li>
+                  <li id="lnk-zhoubian" style="display:none;" ><a href="http://www.douban.com/neighborhood/">周边生活</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script id="tmpl-streams" type="text/tmpl">
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})" title="农田五组小贱草"><img src="./update_old1_files/u1248454-58.jpg" alt="农田五组小贱草"></a>
+          </div>
+
+          <div class="bd layout-2"> 
+
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})">愤怒的超哥</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>卧槽！！豆瓣又改版了！！</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">10秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              <span class="count like-count">(1)</span>
+
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})" title="农田五组小贱草"><img src="./update_old1_files/u1748326-23.jpg" alt="农田五组小贱草"></a>
+          </div>
+
+          <div class="bd layout-2"> 
+
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})">我曾养过一些诗</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>居然学Google！太让人失望了！！</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">10秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})" title="农田五组小贱草"><img src="./update_old1_files/u38960012-32.jpg" alt="农田五组小贱草"></a>
+          </div>
+
+          <div class="bd layout-2"> 
+
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})">见雪知春</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>啊！！我的眼睛！！</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">5秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})" title="农田五组小贱草"><img src="./update_old1_files/u38960012-32.jpg" alt="农田五组小贱草"></a>
+          </div>
+
+          <div class="bd layout-2"> 
+
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})">见雪知春</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>豆娘你肿么了！豆娘！！</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">5秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})" title="农田五组小贱草"><img src="./update_old1_files/u1654246-231.jpg" alt="农田五组小贱草"></a>
+          </div>
+          <div class="bd layout-2"> 
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/" onclick="moreurl(this,{from: 'nmbp-1087326352', action: '1', target_type: 'sns', object_kind: '1018'})">Alchain先生</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>这些人都在想些啥？</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">1秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/"><img src="./update_old1_files/u1.jpg" alt="农田五组小贱草"></a>
+          </div>
+          <div class="bd layout-2"> 
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/">Estelle</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>額，快下班了，豆瓣又改版了？這個偷偷動手腳壞毛病啊，總是改不掉
+              </p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">1秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/"><img src="./update_old1_files/u2.jpg" alt="农田五组小贱草"></a>
+          </div>
+          <div class="bd layout-2"> 
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/">小怪兽</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>豆瓣是不是有病啊！！！！就这么几个功能 ，成天改版！一会在左边一会在右边！一会换个色，一会改个字号的！！！！有用吗？？？？？有用嘛！！！！脑抽吧！！！！！</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">1秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/"><img src="./update_old1_files/u3.jpg" alt="农田五组小贱草"></a>
+          </div>
+          <div class="bd layout-2"> 
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/">k</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>豆瓣每天都在改版，真是业界良心
+              </p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">1秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/"><img src="./update_old1_files/u4.jpg" alt="农田五组小贱草"></a>
+          </div>
+          <div class="bd layout-2"> 
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/">呵呵后</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>又又又又又又又改版了啊！！！！！</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">1秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="status-item">
+        <div class="mod" data-status-id="1087326352">
+          <div class="hd">
+            <a href="http://www.douban.com/people/jyyjcc/"><img src="./update_old1_files/u6.jpg" alt="农田五组小贱草"></a>
+          </div>
+          <div class="bd layout-2"> 
+            <p class="text">
+              <a href="http://www.douban.com/people/jyyjcc/">没力气再做作业</a>
+              说：
+            </p>
+
+            <blockquote>
+              <p>一觉醒来，豆娘又变身了~~~</p>
+            </blockquote>
+            <div class="actions">
+
+              <span class="created_at" title="2013-01-23 15:07:34"><a href="http://www.douban.com/people/jyyjcc/status/1087326352/">1秒前</a></span>
+              &nbsp;&nbsp;
+              <a href="http://www.douban.com/people/jyyjcc/status/1087326352/" class="btn btn-action-reply" data-action-type="showComments">回应</a>
+
+              &nbsp;&nbsp;<a href="http://www.douban.com/people/whshang/status/1088677547/" class="btn btn-key-like  btn-like" data-action-type="like">赞</a>
+              &nbsp;&nbsp;<a href="http://site.douban.com/trojanhouse/status/1087343072/" class="btn btn-key-reshare btn-reshare" data-action-type="reshare">转播</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <div id="cursor" class="cursor"></div>
+</body></html>
