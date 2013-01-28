@@ -36,6 +36,9 @@ require([
     }, {
         stage: 'pages/facebook.html',
         script: '../chapter/facebook'
+    }, {
+        stage: 'pages/end/guess.html',
+        script: '../chapter/end'
     }];
 
     var observer = event();
