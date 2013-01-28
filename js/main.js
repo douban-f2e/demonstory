@@ -25,10 +25,7 @@ require([
         easing: easingLib
     });
 
-    var story = [{
-        stage: 'pages/f2e.html',
-        script: '../chapter/f2e'
-    }, {
+var story = [{
         stage: 'pages/index.html',
         style: '../dist/css/chapter/intro.css',
         script: '../chapter/intro'
@@ -43,6 +40,10 @@ require([
       stage: 'pages/update_old1.html',
       script: '../chapter/chaos.js',
       style: '../dist/css/chapter/chaos.css'
+    }, {
+      stage: 'pages/f2e.html',
+      script: '../chapter/f23.js',
+      style: '../dist/css/chapter/f2e.css'
     }, {
         stage: 'pages/end/guess.html',
         script: '../chapter/end'
