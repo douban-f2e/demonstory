@@ -450,7 +450,7 @@ define([
                     }).follow().done(function() {
                         adDemon.speak('灰溜溜的逃走', 1000, 3);
                         adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                        return wait(5000 + 200);
+                        return wait(4000 + 200);
                     }).follow().done(function() {
                         chaoge.speak('赞，高端大气上档次！', 1500, 10);
                         lu13.speak('赞，高端大气上档次！', 1500, 10);
@@ -459,7 +459,7 @@ define([
                         yingzi.speak('赞，高端大气上档次！', 1500, 10);
                     });
 
-                    return wait(7000 + 200);
+                    return wait(8000 + 200);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     return wait(3000 + 200);
