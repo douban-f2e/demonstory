@@ -35,6 +35,7 @@ var story = [{
         script: '../chapter/guess'
     }, {
         stage: 'pages/facebook.html',
+        style: '../dist/css/chapter/facebook.css',
         script: '../chapter/facebook'
     }, {
         stage: 'pages/update_old1.html',

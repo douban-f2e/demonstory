@@ -4,7 +4,8 @@ define([
 , 'eventmaster'
 , 'movie/util'
 , 'movie/demon'
-], function(_, $, event, util, demon){
+, 'movie/spotlight'
+], function(_, $, event, util, demon, spotlight){
 
   var wait = util.wait
     , DESC = ""
@@ -26,6 +27,18 @@ define([
           })
         , demonWang
         , demonBtn
+        , splCover = spotlight({
+            target: demonCover.me
+          , size : {
+              width: 300
+            , height: 300
+            }
+          , offset: {
+              top: 20
+            }
+          }, doc)
+
+      splCover.startFollowing()
 
       wait(1000).done(function() {
         util.showDemon(demonCover)
