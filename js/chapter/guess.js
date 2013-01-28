@@ -19,6 +19,7 @@ define([
             { name: '影子', id: 'yingzi' },
             { name: 'su37', id: 'su37' },
             { name: '超哥', id: 'chaoge' },
+            { name: '老卡', id: 'laoka' },
             { name: 'tgnn', id: 'tgnn' }
         ];
 
@@ -225,7 +226,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('接下来是芙蓉镇应支书～～', 2000, 8);
+                piggyDemon.speak('接下来是芙蓉镇影支书～～', 2000, 8);
 
                 wait(2000 + 200).done(function() {
 
@@ -584,7 +585,75 @@ define([
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
 
-                return wait(0);
+                var sectionDemon = sectionDemons[4],
+                    tgnn = judges['tgnn'].demon,
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
+
+                piggyDemon.speak('欢迎下一位选手', 1500, 12);
+
+                wait(1500 + 200).done(function() {
+
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 2000);
+
+                    return wait(1500 + 400);
+
+                }).follow().done(function(){
+
+                    sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',2500,6)
+
+                    return wait(2500 + 200);
+
+                }).follow().done(function() {
+
+                    lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 2000, 12);
+
+                    wait(2000).done(function(){
+
+                        yingzi.speak('赶出去！！！', 1000, 12);
+                        tgnn.speak('赶出去！！！', 1000, 12);
+                        su37.speak('赶出去！！！', 1000, 12);
+
+                        wait(1000 + 200).done(function(){
+                            chaoge.speak('额。。。。。。', 1000, 12);
+                        });
+
+                    });
+
+                    return wait(2000 + 2000 + 300);
+
+                }).follow().done(function() {
+
+                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',2500,6)
+
+                    wait(2000).done(function(){
+                        sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 2000, 'easeIn');
+                    });
+
+                    return wait(3000 + 300);
+
+                }).follow().done(function() {
+
+                    piggyDemon.speak('好吧，有后台我们惹不起~~', 1500, 9);
+                    lu13.speak('。。。。。。',900,12)
+                    su37.speak('。。。。。。',900,12)
+                    chaoge.speak('。。。。。。',900,12)
+                    yingzi.speak('。。。。。。',900,12)
+                    tgnn.speak('。。。。。。',900,12)
+
+                    return wait( 1500 + 300 );
+
+                }).follow().done(function() {
+
+                    // section end
+                    sectionPromise.fire();
+
+                });
+
+                return sectionPromise;
 
             })
             /* end fo section#4 */
@@ -600,7 +669,101 @@ define([
             /* section#6 拖黑 by zhaoguo */
             .follow().done(function() {
 
-                return wait(0);
+                var sectionDemon = sectionDemons[6],
+                    tgnn = judges['tgnn'].demon,
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    laoka = judges['laoka'].demon,
+                    sectionPromise = new event.Promise();
+
+                piggyDemon.speak('下一位看起来很有文化的样子嘛，欢迎~', 1500, 9);
+
+                wait(1500 + 200).done(function() {
+
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 2000);
+
+                    return wait(1500 + 400);
+
+                }).follow().done(function(){
+
+                    sectionDemon.speak('一个人的粗话，却有可能是另一个人的抒情诗。这是表达的尊严。', 1500 , 6);
+
+                    wait(1500 + 100).done(function(){
+
+                        sectionDemon.speak('喂，人民，服务。', 1500 , 6);
+
+                        wait(1500 + 100).done(function(){
+                            sectionDemon.speak('这年头泡妞，空手不可能套白狼了，空手只能套白眼狼。', 1500 , 6);
+                        })
+
+                    })
+
+                    return wait(1500 + 1500 + 1500 + 400);
+
+                }).follow().done(function(){
+
+                    laoka.walk([ 300, -180 ], 1200);
+                    laoka.rotateHand('right', '-90deg', 300);
+
+                    wait(1500).done(function(){
+                        laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 2000, 3);
+                    })
+
+                    return wait( 1500 + 1500 + 400);
+
+                }).follow().done(function(){
+
+                    lu13.walk([1000,-200],1200);
+                    lu13.speak('撤！！！',800,12)
+
+                    su37.walk([-300,-2000],2000);
+                    su37.speak('靠！！！',800,12)
+
+                    chaoge.walk([-2000,-100],1200);
+                    chaoge.speak('额。。。。。',800,12)
+
+                    yingzi.walk([-2100,50],1200);
+                    yingzi.speak('匿了',800,12)
+
+                    tgnn.walk([2000,-200],1200);
+                    tgnn.speak('撤！！！',800,12)
+
+                    sectionDemon.walk([1000,-200],1200);
+                    lu13.speak('又有砸场的？？？',800,12)
+
+                    wait(1000).done(function(){
+
+                        piggyDemon.speak('不要丢下我啊~~~~', 500, 11);
+                        piggyDemon.walk([-400,0],1000);
+
+                        wait(1200).done(function(){
+                            piggyDemon.walk([2000,0],1500);
+                            piggyDemon.speak('救命~~~~~', 500, 9);
+                        });
+
+                    });
+
+                    return wait(3000)
+
+                }).follow().done(function(){
+
+                    laoka.walk([400,-50],2000);
+                    wait(2000 + 200).done(function(){
+                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',2500);
+                    })
+
+                    return wait(2000 + 2500 + 200);
+
+                }).follow().done(function() {
+
+                    // section end
+                    sectionPromise.fire();
+
+                });
+
+                return sectionPromise;
 
             })
             /* end fo section#6 */
