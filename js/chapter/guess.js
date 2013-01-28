@@ -342,15 +342,122 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
-                return wait(0);
+                var sectionDemon = sectionDemons[1],
+                    tgnn = judges['tgnn'].demon,
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
+                piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 1500, 12);
+
+                sectionDemon.me.css('top', '140px');
+
+                wait(2500 + 200).done(function() {
+
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+                    return wait(5000 + 200);
+                }).follow().done(function() {
+                    lu13.speak('骚！', 2000, 18);
+                    return wait(2000 + 800);
+                }).follow().done(function() {
+                    yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 2000, 18);
+                    return wait(2000 + 800);
+                }).follow().done(function() {
+                    su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 2000, 18);
+                    return wait(2000 + 800);
+                }).follow().done(function() {
+                    chaoge.speak('hold住就是胜利', 2000, 18);
+                    return wait(2000 + 800);
+                }).follow().done(function() {
+                    tgnn.speak('见自己，见产品，见众生。可以留，其他人还有意见吗？', 2000, 18);
+                    return wait(2000 + 800);
+                }).follow().done(function() {
+                    sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    sectionPromise.fire();
+                });
+
+                return sectionPromise;
             })
             /* end fo section#1 */
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+                var proDemon = sectionDemons['fm-pro'],
+                    normalDemon = sectionDemons['fm-normal'],
+                    adDemon = sectionDemons['fm-ad'],
+                    tgnn = judges['tgnn'].demon,
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
-                return wait(0);
+                piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 2500, 12);
+
+                wait(1500 + 200).done(function() {
+                    normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 5000);
+                    // TODO: 音乐音频
+
+                    wait(3000).done(function() {
+
+                        chaoge.speak('才 64k，还不如广告音质好！', 1500, 10);
+                        lu13.speak('才 64k，还不如广告音质好！', 1500, 10);
+                        su37.speak('才 64k，还不如广告音质好！', 1500, 10);
+                        tgnn.speak('才 64k，还不如广告音质好！', 1500, 10);
+                        yingzi.speak('才 64k，还不如广告音质好！', 1500, 10);
+
+                    });
+                    return wait(5000 + 800);
+
+                }).follow().done(function() {
+                    normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    return wait(3000 + 200);
+
+                }).follow().done(function() {
+                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 5000);
+                    //TODO: 广告音频
+                    wait(3000).done(function() {
+
+                        chaoge.speak('负分，滚粗啊！', 1500, 10);
+                        lu13.speak('负分，滚粗啊！', 1500, 10);
+                        su37.speak('负分，滚粗啊！', 1500, 10);
+                        tgnn.speak('负分，滚粗啊！', 1500, 10);
+                        yingzi.speak('负分，滚粗啊！', 1500, 10);
+
+                    });
+
+                    return wait(5000 + 800);
+
+                }).follow().done(function() {
+                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 5000);
+                    wait(3000).done(function() {
+                        proDemon.speak('更纯洁的音质，无广告的体验', 1500, 10);
+                        return wait(1500 + 200);
+                    }).follow().done(function() {
+                        adDemon.speak('灰溜溜的逃走', 1000, 10);
+                        adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                        return wait(5000 + 200);
+                    }).follow().done(function() {
+                        chaoge.speak('赞，高端大气上档次！', 1500, 10);
+                        lu13.speak('赞，高端大气上档次！', 1500, 10);
+                        su37.speak('赞，高端大气上档次！', 1500, 10);
+                        tgnn.speak('赞，高端大气上档次！', 1500, 10);
+                        yingzi.speak('赞，高端大气上档次！', 1500, 10);
+                    });
+
+                    return wait(7000 + 200);
+                }).follow().done(function() {
+                    proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    return wait(3000 + 200);
+
+                }).follow().done(function() {
+                    // section end
+                    sectionPromise.fire();
+
+                });
+                return sectionPromise;
 
             })
             /* end fo section#2 */
@@ -449,7 +556,7 @@ define([
 
                         action.actor(mouse[0], {
                             top: '170px',
-                            left: '490px',
+                            left: '490px'
                         }, 500, 'easeOut');
 
                         return wait(500 + 200);
@@ -640,7 +747,7 @@ define([
                     for (; i < shiningTimes; i++) {
 
                         var fn = (function(count) {
-                            if (count % 2 == 0) {
+                            if (count % 2 === 0) {
                                 return function() {
                                     ahbeiLike.attr('style', '');
                                 };
@@ -700,7 +807,7 @@ define([
 
                 return wait(0);
 
-            })
+            });
             /* end fo section#6 */
 
         },
