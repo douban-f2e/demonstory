@@ -448,7 +448,7 @@ define([
                         proDemon.speak('更纯洁的音质，无广告的体验', 1500, 10);
                         return wait(1500 + 200);
                     }).follow().done(function() {
-                        adDemon.speak('灰溜溜的逃走', 1000, 10);
+                        adDemon.speak('灰溜溜的逃走', 1000, 3);
                         adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                         return wait(5000 + 200);
                     }).follow().done(function() {
@@ -717,7 +717,7 @@ define([
 
                 }).follow().done(function(){
 
-                    sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',2500,6)
+                        sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',2500,6);
 
                     return wait(2500 + 200);
 
@@ -741,7 +741,7 @@ define([
 
                 }).follow().done(function() {
 
-                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',2500,6)
+                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',2500,6);
 
                     wait(2000).done(function(){
                         sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 2000, 'easeIn');
@@ -752,11 +752,11 @@ define([
                 }).follow().done(function() {
 
                     piggyDemon.speak('好吧，有后台我们惹不起~~', 1500, 9);
-                    lu13.speak('。。。。。。',900,12)
-                    su37.speak('。。。。。。',900,12)
-                    chaoge.speak('。。。。。。',900,12)
-                    yingzi.speak('。。。。。。',900,12)
-                    tgnn.speak('。。。。。。',900,12)
+                    lu13.speak('。。。。。。',900,12);
+                    su37.speak('。。。。。。',900,12);
+                    chaoge.speak('。。。。。。',900,12);
+                    yingzi.speak('。。。。。。',900,12);
+                    tgnn.speak('。。。。。。',900,12);
 
                     return wait( 1500 + 300 );
 
@@ -912,9 +912,9 @@ define([
 
                         wait(1500 + 100).done(function(){
                             sectionDemon.speak('这年头泡妞，空手不可能套白狼了，空手只能套白眼狼。', 1500 , 6);
-                        })
+                        });
 
-                    })
+                    });
 
                     return wait(1500 + 1500 + 1500 + 400);
 
@@ -925,29 +925,29 @@ define([
 
                     wait(1500).done(function(){
                         laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 2000, 3);
-                    })
+                    });
 
                     return wait( 1500 + 1500 + 400);
 
                 }).follow().done(function(){
 
                     lu13.walk([1000,-200],1200);
-                    lu13.speak('撤！！！',800,12)
+                    lu13.speak('撤！！！',800,12);
 
                     su37.walk([-300,-2000],2000);
-                    su37.speak('靠！！！',800,12)
+                    su37.speak('靠！！！',800,12);
 
                     chaoge.walk([-2000,-100],1200);
-                    chaoge.speak('额。。。。。',800,12)
+                    chaoge.speak('额。。。。。',800,12);
 
                     yingzi.walk([-2100,50],1200);
-                    yingzi.speak('匿了',800,12)
+                    yingzi.speak('匿了',800,12);
 
                     tgnn.walk([2000,-200],1200);
-                    tgnn.speak('撤！！！',800,12)
+                    tgnn.speak('撤！！！',800,12);
 
                     sectionDemon.walk([1000,-200],1200);
-                    lu13.speak('又有砸场的？？？',800,12)
+                    lu13.speak('又有砸场的？？？',800,12);
 
                     wait(1000).done(function(){
 
@@ -961,14 +961,14 @@ define([
 
                     });
 
-                    return wait(3000)
+                    return wait(3000);
 
                 }).follow().done(function(){
 
                     laoka.walk([400,-50],2000);
                     wait(2000 + 200).done(function(){
                         laoka.speak('哼哼，这下知道首页是谁的了吧！！！',2500);
-                    })
+                    });
 
                     return wait(2000 + 2500 + 200);
 
