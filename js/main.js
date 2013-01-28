@@ -30,13 +30,20 @@ require([
         style: '../dist/css/chapter/intro.css',
         script: '../chapter/intro'
     }, {
+        stage: 'pages/update.html',
+        style: '../dist/css/chapter/guess.css',
+        script: '../chapter/guess'
+    }, {
         stage: 'pages/facebook.html',
         script: '../chapter/facebook'
     }, {
+        stage: 'pages/end/guess.html',
+        script: '../chapter/end'
+    }/*, {
         stage: 'pages/index.html',
         style: '../dist/css/chapter/sample.css',
         script: '../chapter/sample'
-    }];
+    }*/];
 
     var observer = event();
 

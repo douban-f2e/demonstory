@@ -1,0 +1,2338 @@
+<html lang="zh-CN" class="ua-mac ua-webkit"><head>
+<meta charset="UTF-8">
+<meta content="提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。" name="description">
+<title>豆瓣</title>
+<script>
+white_site_list = /.*/;
+</script>
+<script>
+window.Douban=window.Douban||{};var Do=function(){Do.actions.push([].slice.call(arguments))};Do.ready=function(){Do.actions.push([].slice.call(arguments))};Do.add=Do.define=function(a,b){Do.mods[a]=b};Do.global=function(){Do.global.mods=Array.prototype.concat(Do.global.mods,[].slice.call(arguments))};Do.global.mods=[];Do.mods={};Do.actions=[];function set_cookie(g,f,d,e){var b=new Date(),a,c;b.setTime(b.getTime()+((f||30)*24*60*60*1000));a="; expires="+b.toGMTString();for(c in g){document.cookie=c+"="+g[c]+a+"; domain="+(d||"douban.com")+"; path="+(e||"/")}}function get_cookie(b){var e=b+"=",a=document.cookie.split(";"),d,f;for(d=0;d<a.length;d++){f=a[d];while(f.charAt(0)==" "){f=f.substring(1,f.length)}if(f.indexOf(e)===0){return f.substring(e.length,f.length).replace(/\"/g,"")}}return null}Douban.init_show_login=function(a){Do("dialog",function(){var b="/j/misc/login_form";dui.Dialog({title:"登录",url:b,width:/device-mobile/i.test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:350,cache:true,callback:function(c,d){d.node.addClass("dialog-login");d.node.find("h2").css("display","none");d.node.find(".hd h3").replaceWith(d.node.find(".bd h3"));d.node.find("form").css({border:"none",width:"auto",padding:"0"});d.update()}}).open()})};Do(function(){$.ajax_withck=function(a){if(a.type=="POST"){a.data=$.extend(a.data||{},{ck:get_cookie("ck")})}return $.ajax(a)};$.postJSON_withck=function(a,b,c){$.post_withck(a,b,c,"json")};$.post_withck=function(a,c,d,b){if($.isFunction(c)){b=d;d=c;c={}}return $.ajax({type:"POST",url:a,data:$.extend(c,{ck:get_cookie("ck")}),success:d,dataType:b||"text"})};$("html").click(function(c){var a=$(c.target),b=a.attr("class");if(!b){return}$(b.match(/a_(\w+)/gi)).each($.proxy(function(d,f){var e=Douban[f.replace(/^a_/,"init_")];if(typeof e==="function"){c.preventDefault();e.call(this,c)}},a[0]))})});
+    Do.add('dialog', {path: 'http://img3.douban.com/js/ui/packed_dialog8321689615.js', type: 'js', requires: ['http://img3.douban.com/css/ui/packed_dialog4563741467.css']});
+    Do.global('guess_all_files/packed_base6505908882.js', 'dialog');
+
+</script>
+<link rel="stylesheet" href="guess_all_files/packed__init_6312190557.css">
+
+<link rel="stylesheet" href="guess_all_files/357d3622e5735188.css">
+
+
+<!-- hack nav -->
+<style>
+  body, html {
+    width: 100%;
+    height: 100%;
+  }
+  .perf-metric {
+    display:none;
+  }
+  .hackword { 
+    display:none;
+  }
+</style>
+
+</head>
+
+<body>
+
+
+
+
+  <!--
+  <iframe id="hack-old-nav" style="margin-bottom:30px;" src="old_nav/old_nav.html" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
+  -->
+  <div id="hack-old-nav" style="background:url(guess_all_files/old_nav.png) no-repeat center -1px;height:130px;width:100%;"></div>
+
+
+
+<div id="hack-new-nav" style="display:none;">
+
+<div id="db-global-nav" class="global-nav global-nav-a">
+  <div class="bd">
+<div class="top-nav-info">
+    <span class="perf-metric"><a href="/?&amp;app_server=kili&amp;profile=shire#profile_log"><span style="color:red"> 474 ms </span></a></span>
+    
+     <ul>
+       <li><a href="http://www.douban.com/doumail/" id="hack-doumail">豆邮<em>(1)</em></a></li>
+       <li class="nav-user-account">
+       <a target="_blank" href="http://www.douban.com/accounts/" class="bn-more"><span>kejun的帐号</span><span class="arrow"></span></a>
+       <div class="more-items">
+      <table cellpadding="0" cellspacing="0">
+            <tbody><tr><td><a href="http://www.douban.com/people/listenpro/">我的豆瓣</a></td></tr>
+            <tr><td><a target="_blank" href="http://www.douban.com/accounts/">我的帐号</a></td></tr>
+            <tr><td><a href="http://www.douban.com/accounts/logout?ck=P7Qs">退出</a></td></tr>
+         </tbody></table>
+       </div>
+       </li>
+     </ul>
+</div>
+
+
+    <div class="top-nav-reminder">
+        <a href="http://www.douban.com/notification/" class="lnk-remind">提醒
+          <span class="num" id="hack-reminder" style="display:none;"><span>99</span><i></i></span>
+        </a>
+    <div class="more-items">
+      <div class="bd">
+          <p style="display:none;" class="no-new-notis">最近没有收到新提醒...</p>
+        <ul>
+          
+  
+        
+            
+            <li>
+        <div class="content"> 
+            <a href="http://site.douban.com/station/">豆瓣汽车站</a> 邀请你参加 
+            <a href="http://www.douban.com/online/11458374/">敢不敢说说你曾经为你的梦想做过多少“傻”事~</a> 线上活动
+        </div>
+    </li>
+        
+            
+            <li>
+        <div class="content">
+        <a href="http://site.douban.com/todayart/">今日美术馆</a> 邀请你参加 
+        <a href="http://www.douban.com/event/18177885/">今日艺术院线 / "扮演的真实"电影展映会</a>
+        </div>
+    </li>
+        
+            
+            <li>
+        <div class="content">
+        <a href="http://site.douban.com/mengjinghui/">孟京辉戏剧工作室</a> 邀请你参加 
+        <a href="http://www.douban.com/event/18145516/">一个无政府主义者的意外死亡</a>
+        </div>
+    </li>
+        
+            
+            <li>
+        <div class="content">
+        <a href="http://site.douban.com/mengjinghui/">孟京辉戏剧工作室</a> 邀请你参加 
+        <a href="http://www.douban.com/event/18173615/">孟京辉话剧【活着】2013全国巡演</a>
+        </div>
+    </li>
+        
+            
+            <li>
+        <div class="content">
+        <a href="http://site.douban.com/mengjinghui/">孟京辉戏剧工作室</a> 邀请你参加 
+        <a href="http://www.douban.com/event/18173615/">孟京辉话剧【活着】2013全国巡演</a>
+        </div>
+    </li>
+        
+        </ul>
+      </div>
+      <div class="ft">
+        <a href="http://www.douban.com/notification/">查看全部提醒
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="on">
+            <a href="http://www.douban.com/">豆瓣</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://book.douban.com/"><span class="hackword">豆瓣</span>读书</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://movie.douban.com/"><span class="hackword">豆瓣</span>电影</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://music.douban.com/"><span class="hackword">豆瓣</span>音乐</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://www.douban.com/location/"><span class="hackword">豆瓣</span>同城</a>
+            </li>
+          
+            
+            <li id="hack-nav-group" style="display:none;">
+              <a href="http://www.douban.com/group/">小组</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank"><span class="hackword">豆瓣</span>阅读</a>
+            </li>
+          
+            
+            <li>
+              <a href="http://douban.fm/" target="_blank">豆瓣FM</a>
+            </li>
+          
+            <li>
+              <a href="#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tbody><tr><td><a href="http://9.douban.com" target="_blank">九点</a></td></tr>
+                    
+                    <tr><td><a href="http://alphatown.com" target="_blank">阿尔法城</a></td></tr>
+                    
+                    <tr><td><a href="http://www.douban.com/mobile/" target="_blank">移动应用</a></td></tr>
+                </tbody></table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+   
+    
+
+
+
+
+
+
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+
+    <div class="nav-search">
+      <form action="http://www.douban.com/search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">书籍、电影、音乐、小组、小站、成员</label>
+          <div class="inp"><input id="inp-query" name="q" size="22" title="搜索书、电影、音乐、小组、小站、成员" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="nav-logo">
+      <a href="http://www.douban.com">豆瓣社区</a>
+    </div>
+
+    <div class="nav-items" id="hack-nav-items">
+     <ul>
+      <li><a href="http://www.douban.com/">首页</a></li>
+          <li><a href="http://www.douban.com/update/">友邻广播</a></li>
+          <li><a href="http://www.douban.com/mine/">我的豆瓣</a></li>
+          <li><a href="http://www.douban.com/explore/">小组</a></li>
+      <li><a href="http://www.douban.com/neighborhood/">小站</a></li>
+     </ul>
+     </div>
+
+  </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+<div id="wrapper">
+
+
+<div id="bd">
+   <div class="main">
+   <h1 id="hack-title">欢迎，无聊的小T</h1>
+
+
+<div class="guess3-setting">
+    <div class="hd">
+      <a href="#" class="a_guess_setting a_guess_setting_active">首页设置</a>
+    </div>
+    <div class="bd">
+    <i class="arrow"></i>
+    <form method="post"><div style="display:none;"><input type="hidden" name="ck" value="U9Ly"/></div>
+        <fieldset>
+        <div class="frm-bd">
+            <legend>首页有豆瓣的精选热点内容。你还希望多看点什么？</legend>
+            <input name="close_tips" value="1" type="hidden" />
+            <div class="item">
+                <label for="setting-hot-108"><input type="checkbox" name="hot" value="108" id="setting-hot-108"><b>相册</b> 成员的主题照片集</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-101"><input type="checkbox" name="hot" value="101" id="setting-hot-101"><b>读书</b> 最近流行的书刊</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-102"><input type="checkbox" name="hot" value="102" id="setting-hot-102"><b>电影</b> 最近流行的影视剧</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-103"><input type="checkbox" name="hot" value="103" id="setting-hot-103"><b>音乐</b> 最近流行的专辑</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-104"><input type="checkbox" name="hot" value="104" id="setting-hot-104"><b>同城活动</b> 值得出门的好活动</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-107"><input type="checkbox" name="hot" value="107" id="setting-hot-107"><b>日记</b> 成员写下的经历和想法</label>
+            </div>
+            <div class="item">
+                <label for="setting-hot-109"><input type="checkbox" name="hot" value="109" id="setting-hot-109"><b>线上活动</b> 大家一起办主题图片展</label>
+            </div>
+            </div>
+            <div class="frm-ft">
+            <div class="btn">
+                <input type="submit" class="btn-submit" value="保存">
+                <a href="#" class="lnk-close a_setting_close">收起</a>
+            </div>
+            <p>你“喜欢”的越多，首页就越符合你口味。</p>
+            </div>
+        </fieldset>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+var PERSONAL_GUESS_TIP = '11';
+</script>
+
+<div id="hack-guess3-list-target" class="guess3-list"></div>
+
+
+<div id="hack-guess3-list" class="guess3-list" style="display:none;">
+
+
+
+
+
+
+    
+    
+
+<div class="guess-item album-item" id="1170308:1026:85064127|2013-01-23+14:30:48" unique_id="1026:85064127">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/85064127/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 85064127, channel: 308, engine: 3080101, pos: 1})">
+            <span class="pic1"><img src="guess_all_files/p1849963707.jpg" alt="爱拍树"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1849970809.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1849970761.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 85064127, channel: 308, engine: 3080101, pos: 1})" href="http://www.douban.com/photos/album/85064127/" target="_blank">爱拍树</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u36947192-15.jpg" width="16" height="16">
+                蜜丝鹿 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    oxygen喜欢的相册
+        &nbsp;|&nbsp;
+        2人喜欢  
+    <span class="pubtime">1小时前</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="85064127" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item" id="1170308:1015:259460488|2013-01-23+14:04:02" unique_id="1015:259460488">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 259460488, channel: 307, engine: 3070201, pos: 2})" href="http://www.douban.com/note/259460488/" target="_blank">正确的撸陌生猫狗的方法！</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u1244700-175.jpg" width="16" height="16">
+                Black_Kiviak 的日记
+        </div>
+
+            <div class="desc">
+            <p>刚刚看了那图，觉得可以写个方法。
+因为有的人，按到可爱的猫狗就冲过去不顾一切狂摸。有的害羞的猫狗会被吓到，有的凶狠的猫狗则会咬人。这些人，被咬了又在那哭哭啼啼说猫狗对自己不友好，殊不知是自己的动作吓到了猫狗。
+实际上不是看到猫狗就能摸啊！
+就和人一样，猫狗也有他们自己的性格，有的猫狗是很讨厌被陌生人摸的，要观察仔细才能下手。
+一般接近猫狗的得观察至少5秒钟来判断这是一个什么样的猫狗。
+我把猫狗分为四...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    苏不西·寂静星喜欢的日记
+        &nbsp;|&nbsp;
+        82人喜欢  
+    <span class="pubtime">2小时前</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="259460488" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item promotional-item" id="other:1002:2363876" unique_id="1002:2363876">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 2363876, channel: None, engine: None, pos: 3})" href="http://movie.douban.com/subject/2363876/" target="_blank"><img src="guess_all_files/s12620955.jpg" alt="007：大破天幕杀机"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 2363876, channel: None, engine: None, pos: 3})" href="http://movie.douban.com/subject/2363876/" target="_blank">007：大破天幕杀机</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.1</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">萨姆·门德斯 Sam Mendes</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">丹尼尔·克雷格 Daniel Craig / 拉尔夫·费因斯 Ralph Fiennes</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">动作 / 惊悚</span>
+                </li>
+            <li>票价：23元</li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>数月前军情六处一块记载了潜伏于全世界恐怖组织内部所有特工名单信息的硬盘丢失，而追索硬盘的行动也以失败告终。在此之后，行动主要负责人M...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点电影
+        &nbsp;|&nbsp;
+        40294人看过
+    <span class="pubtime">2小时前</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+          <span class="usr-btn"><a href="http://movie.douban.com/subject/2363876/cinema" target="_blank">在线购票</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item event-item" id="1170308:2001:11459867|2013-01-23+12:42:10" unique_id="2001:11459867">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11459867, channel: 309, engine: 3090101, pos: 4})" href="http://www.douban.com/online/11459867/" target="_blank">骚年，晒晒你正在用的耳机</a>
+    </div>
+        
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11459867, channel: 309, engine: 3090101, pos: 4})" href="http://www.douban.com/online/11459867/" class="guess-online-list" target="_blank">
+        <ul>
+        <li><img src="guess_all_files/p1850053807.jpg"></li>
+        <li><img src="guess_all_files/p1849848654.jpg"></li>
+        <li><img src="guess_all_files/p1849805651.jpg"></li>
+        <li><img src="guess_all_files/p1849783913.jpg"></li>
+        <li><img src="guess_all_files/p1849814187.jpg"></li>
+        <li><img src="guess_all_files/p1849850725.jpg"></li>
+        <li><img src="guess_all_files/p1849834898.jpg"></li>
+        <li><img src="guess_all_files/p1849808473.jpg"></li>
+        </ul>
+        </a>
+
+        <div class="from">
+                线上活动 / <b>233</b> 人参加
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    ruim喜欢的线上活动
+        &nbsp;|&nbsp;
+        16人喜欢  
+    <span class="pubtime">今天下午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+     <span class="usr-btn online-event-btn"><a href="#" data-online-id="11459867">要参加</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item event-item" id="1170308:2001:11459917|2013-01-23+11:26:55" unique_id="2001:11459917">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11459917, channel: 309, engine: 3090101, pos: 5})" href="http://www.douban.com/online/11459917/" target="_blank">用来“看”的唱片——风景篇</a>
+    </div>
+        
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11459917, channel: 309, engine: 3090101, pos: 5})" href="http://www.douban.com/online/11459917/" class="guess-online-list" target="_blank">
+        <ul>
+        </ul>
+        </a>
+
+        <div class="from">
+                线上活动 / <b>1</b> 人参加
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    长胡子的心脏喜欢的线上活动
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+     <span class="usr-btn online-event-btn"><a href="#" data-online-id="11459917">要参加</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="1170308:1026:27387778|2013-01-23+11:17:52" unique_id="1026:27387778">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/27387778/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 27387778, channel: 308, engine: 3080101, pos: 6})">
+            <span class="pic1"><img src="guess_all_files/p481872092.jpg" alt="橡皮章教程-刻制"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p481873373.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p481874835.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 27387778, channel: 308, engine: 3080101, pos: 6})" href="http://www.douban.com/photos/album/27387778/" target="_blank">橡皮章教程-刻制</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u1288763-44.jpg" width="16" height="16">
+                萝卜 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    Cooper喜欢的相册
+        &nbsp;|&nbsp;
+        1564人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="27387778" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    <div class="guess-item-fold">
+        <a href="#" class="lnk-item-fold-open a_guess_fold_open">展开Cooper的更多1个喜欢</a>
+            
+
+<div class="guess-item album-item" id="1170308:1026:38154514|2013-01-23+10:42:06" unique_id="1026:38154514">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/38154514/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 38154514, channel: 308, engine: 3080101, pos: 6})">
+            <span class="pic1"><img src="guess_all_files/p1547848211.jpg" alt="諸星人の大逆襲！"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1850063943.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1849906625.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 38154514, channel: 308, engine: 3080101, pos: 6})" href="http://www.douban.com/photos/album/38154514/" target="_blank">諸星人の大逆襲！</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u10548573-5745.jpg" width="16" height="16">
+                十一哥 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    Cooper喜欢的相册
+        &nbsp;|&nbsp;
+        12478人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="38154514" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+            
+    </div>
+    
+
+<div class="guess-item album-item" id="1170308:1026:41521500|2013-01-23+18:56:36" unique_id="1026:41521500">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/41521500/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 41521500, channel: 308, engine: 3080101, pos: 3})">
+            <span class="pic1"><img src="guess_all_files/p1844838251.jpg" alt="泥轰是个很可怕的国家"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1850282612.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1848951486.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 41521500, channel: 308, engine: 3080101, pos: 3})" href="http://www.douban.com/photos/album/41521500/" target="_blank">泥轰是个很可怕的国家</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u48737437-127.jpg" width="16" height="16">
+                贩美瞳の杜小明 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    JOJOORC/Z喜欢的相册
+        &nbsp;|&nbsp;
+        670人喜欢  
+    <span class="pubtime">2小时前</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="41521500" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>    
+
+<div class="guess-item" id="1170308:1015:194776016|2013-01-23+10:37:00" unique_id="1015:194776016">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 194776016, channel: 307, engine: 3070201, pos: 8})" href="http://www.douban.com/note/194776016/" target="_blank">外语学习历程（如何学会十门外语）</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u52613850-950.jpg" width="16" height="16">
+                茶爺 的日记
+        </div>
+
+            <div class="desc">
+            <p>如果现在要问我的兴趣爱好是什么，我肯定最先会说“学外语”。不知道为什么喜欢，仔细反思了下缘由也许有以下几点。第一点也许是因为一直有听不懂的经历。从小家里人对我就说普通话，过年时听亲戚们用上海话聊天我总是一头雾水，上小学以后还有很多词汇不知道什么意思。此外到我外婆家也是整天听直到现在都听不懂的福州话。正因为如此，我非常享受从听不懂到听懂的过程。第二点是因为我对文化的差异一直都有兴趣。
+于是从初二暑假点开阿木日语的...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    听临喜欢的日记
+        &nbsp;|&nbsp;
+        1478人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="194776016" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item" id="1170308:1015:254333283|2013-01-23+10:26:43" unique_id="1015:254333283">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 254333283, channel: 307, engine: 3070201, pos: 9})" href="http://www.douban.com/note/254333283/" target="_blank">招手工达人，运营网站产品，英文要好，全职。欢迎推荐～</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u1927006-4.jpg" width="16" height="16">
+                则名 的日记
+        </div>
+
+            <div class="desc">
+            <p>公司简介可以看这里http://www.douban.com/note/249889554/
+关于网站产品运营职位的要求：
+1.熟悉手工
+2.英文要好，可以书面交流。
+3.有运营网站产品经验优先，或你有过活动组织的经验。
+4.聪明，有上进心。
+5.男女不限，手工达人优先。
+关于我们团队，都是年轻人70后，80后，有帅哥有美女。我们是既有激情又具有丰富经验的团队，每日下午茶是吃货的欢乐时刻。
+欢迎大家推荐人才，有意者可以豆油联系哦:)</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    则名喜欢的日记
+        &nbsp;|&nbsp;
+        8人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="254333283" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1170308:1002:3771562|2013-01-23+10:23:55" unique_id="1002:3771562">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3771562, channel: 302, engine: 3020302, pos: 10})" href="http://movie.douban.com/subject/3771562/" target="_blank"><img src="guess_all_files/s9112663.jpg" alt="普罗米修斯"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3771562, channel: 302, engine: 3020302, pos: 10})" href="http://movie.douban.com/subject/3771562/" target="_blank">普罗米修斯</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.1</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">雷德利·斯科特 Ridley Scott</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">劳米·拉佩斯 Noomi Rapace / 查理兹·塞隆 Charlize Theron</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">动作 / 科幻</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>21世纪末，人类的科技水平已高度发达，克隆人技术和宇宙航行早已实现，不再是梦想。与此同时，许多科学家仍孜孜不倦追索着人类起源的秘密与真...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    Seven喜欢的电影
+        &nbsp;|&nbsp;
+        124839人看过
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3771562-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3771562-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item promotional-item" id="other:1052:393187" unique_id="1052:393187">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1052, tid: 393187, channel: None, engine: None, pos: 11})" href="http://book.douban.com/guess_redirect?item_id=393187" target="_blank"><img src="guess_all_files/393187.jpg?v=1355890608.0" alt="7天治愈拖延症"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1052, tid: 393187, channel: None, engine: None, pos: 11})" href="http://book.douban.com/guess_redirect?item_id=393187" target="_blank">7天治愈拖延症</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.0</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">丁小云</span>
+                </li>
+            <li>售价：5.00元</li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>为什么全球拖延症患者数以十亿计？如何治愈童年阴影型拖延症？如何治愈社交恐惧型拖延症？什么样的时间管理方法最管用？如何治愈上网成瘾型拖...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点阅读作品
+        &nbsp;|&nbsp;
+        11431人试读
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+          <span class="usr-btn"><a href="http://book.douban.com/guess_redirect?item_id=393187" target="_blank">在线阅读</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="1170308:1026:75631697|2013-01-23+09:55:24" unique_id="1026:75631697">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/75631697/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 75631697, channel: 308, engine: 3080101, pos: 12})">
+            <span class="pic1"><img src="guess_all_files/p1827581880.jpg" alt="我拍的 "><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1827581989.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1827582108.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 75631697, channel: 308, engine: 3080101, pos: 12})" href="http://www.douban.com/photos/album/75631697/" target="_blank">我拍的 </a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u46910002-170.jpg" width="16" height="16">
+                少女情怀总是诗 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    ruim喜欢的相册
+        &nbsp;|&nbsp;
+        1099人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="75631697" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item" id="1170308:1015:235924606|2013-01-23+07:10:23" unique_id="1015:235924606">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 235924606, channel: 307, engine: 3070201, pos: 13})" href="http://www.douban.com/note/235924606/" target="_blank">一、价格不合适。二、不合身</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u4555019-28.jpg" width="16" height="16">
+                鼹鼠的土豆 的日记
+        </div>
+
+            <div class="desc">
+            <p>因为准备婚礼的事，跟姑娘们交流比较多，其实我一直比较回避谈结婚的这件事，我怕人家觉得我仗着自己嫁出去了，在这炫耀。可是姑娘们非常爱找我聊这事，也许是经常当媒婆的经验，让她们觉得我比较热心吧！！！首先声明，我赞成经济独立，当排除经济原因以后，就只剩下，人了，人才是主要的原因。还是那句话，人只要没问题，车呀，房呀这些东西到了年纪都会有，钱能解决的问题，基本上都不是问题，但是人的问题，真的是个钱解决不了的问题，岁数多大...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    青城山下ruby姐喜欢的日记
+        &nbsp;|&nbsp;
+        2030人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="235924606" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    <div class="guess-item-fold">
+        <a href="#" class="lnk-item-fold-open a_guess_fold_open">展开青城山下ruby姐的更多3个喜欢</a>
+            
+
+<div class="guess-item album-item" id="1170308:1026:74689482|2013-01-23+07:06:18" unique_id="1026:74689482">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/74689482/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 74689482, channel: 308, engine: 3080101, pos: 13})">
+            <span class="pic1"><img src="guess_all_files/p1662228741.jpg" alt="千年老妖是如何炼成的 之 唇部篇"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1835602930.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1831702730.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 74689482, channel: 308, engine: 3080101, pos: 13})" href="http://www.douban.com/photos/album/74689482/" target="_blank">千年老妖是如何炼成的 之 唇部篇</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u56810987-36.jpg" width="16" height="16">
+                yemama 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    青城山下ruby姐喜欢的相册
+        &nbsp;|&nbsp;
+        12337人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="74689482" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+            
+            
+
+<div class="guess-item" id="1170308:1015:213340447|2013-01-23+07:03:08" unique_id="1015:213340447">
+
+  <div class="bd">
+      
+
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 213340447, channel: 307, engine: 3070201, pos: 13})" href="http://www.douban.com/note/213340447/" target="_blank">波斯公主</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u10798377-16.jpg" width="16" height="16">
+                峰哥何峰 的日记
+        </div>
+
+            <div class="desc">
+            <p>=== 大学时的一道数学题 ===
+我大学的专业是数学。有一次，教授给出了《波斯公主选驸马》题「1」，如下：
+波斯公主到了适婚年龄，要选驸马。候选男子100名，都是公主没有见过的。百人以随机顺序，从公主面前逐一经过。每当一位男子在公主面前经过时，公主要么选他为驸马，要么不选。如果选他，其余那些还没有登场的男子就都遣散回家，选驸马的活动也 over 了。如果不选，当下这名男子就离开，也就是 pass 掉此人，下一人登场。被pass 掉的，公主不可以...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    青城山下ruby姐喜欢的日记
+        &nbsp;|&nbsp;
+        1442人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1015" data-tid="213340447" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+            
+            
+
+<div class="guess-item album-item" id="1170308:1026:39147097|2013-01-23+06:36:36" unique_id="1026:39147097">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/39147097/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 39147097, channel: 308, engine: 3080101, pos: 13})">
+            <span class="pic1"><img src="guess_all_files/p1789202738.jpg" alt="没有束身衣的女人没有美好的性生活。"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1835793132.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1835698871.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 39147097, channel: 308, engine: 3080101, pos: 13})" href="http://www.douban.com/photos/album/39147097/" target="_blank">没有束身衣的女人没有美好的性生活。</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u3324036-100.jpg" width="16" height="16">
+                没钱买房费宝娣 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    青城山下ruby姐喜欢的相册
+        &nbsp;|&nbsp;
+        2426人喜欢  
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="39147097" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+            
+    </div>
+    
+    
+
+<div class="guess-item subject-item promotional-item" id="other:1052:298487" unique_id="1052:298487">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1052, tid: 298487, channel: None, engine: None, pos: 17})" href="http://book.douban.com/guess_redirect?item_id=298487" target="_blank"><img src="guess_all_files/298487.jpg?v=1350292308.0" alt="等我胖了再揍你"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1052, tid: 298487, channel: None, engine: None, pos: 17})" href="http://book.douban.com/guess_redirect?item_id=298487" target="_blank">等我胖了再揍你</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★☆☆</span> <b>7.4</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">作者：</span>
+                <span class="value">菜小龟</span>
+                </li>
+            <li>售价：0.99元</li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>包含作者菜小龟的十五首短诗以及漫画作者anusman为每首诗歌创作的漫画。是一部轻松有趣的诗歌&amp;绘本小册子。 1、一首诗取一个概括内容的标题，...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    热点阅读作品
+        &nbsp;|&nbsp;
+        8051人试读
+    <span class="pubtime">今天上午</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+          <span class="usr-btn"><a href="http://book.douban.com/guess_redirect?item_id=298487" target="_blank">在线阅读</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item album-item" id="1170308:1026:81954679|2013-01-22+23:39:45" unique_id="1026:81954679">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/81954679/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 81954679, channel: 308, engine: 3080101, pos: 18})">
+            <span class="pic1"><img src="guess_all_files/p1789252881.jpg" alt="每个女孩都有个婚纱梦"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1789256942.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1789256569.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 81954679, channel: 308, engine: 3080101, pos: 18})" href="http://www.douban.com/photos/album/81954679/" target="_blank">每个女孩都有个婚纱梦</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u66085104-3.jpg" width="16" height="16">
+                夏暮优 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    Miya喜欢的相册
+        &nbsp;|&nbsp;
+        6428人喜欢  
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="81954679" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1170308:1002:3073124|2013-01-22+23:37:13" unique_id="1002:3073124">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3073124, channel: 302, engine: 3020302, pos: 19})" href="http://movie.douban.com/subject/3073124/" target="_blank"><img src="guess_all_files/s4048415.jpg" alt="月球"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3073124, channel: 302, engine: 3020302, pos: 19})" href="http://movie.douban.com/subject/3073124/" target="_blank">月球</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.4</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">Duncan Jones</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">Sam Rockwell / Kevin Spacey</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">剧情 / 悬疑</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>未来世界，随着科技的飞速进步，地球的污染也越来越严重。为了遏制这种现状，一家名为月能工业有限公司的企业应运而生。该公司致力于月球能源...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    路要一个人走喜欢的电影
+        &nbsp;|&nbsp;
+        82774人看过
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3073124-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3073124-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+    
+    
+
+<div class="guess-item subject-item" id="1170308:1002:1295872|2013-01-22+22:30:50" unique_id="1002:1295872">
+
+  <div class="bd">
+      
+
+        <div class="pic">
+            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1295872, channel: 302, engine: 3020302, pos: 20})" href="http://movie.douban.com/subject/1295872/" target="_blank"><img src="guess_all_files/s4034010.jpg" alt="西北偏北"></a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1295872, channel: 302, engine: 3020302, pos: 20})" href="http://movie.douban.com/subject/1295872/" target="_blank">西北偏北</a>
+                
+                
+                <div class="rating">
+                    <span class="rating-stars">★★★★☆</span> <b>8.1</b>
+                </div>
+    </div>
+
+        
+        <div class="from">
+            <ul>
+                <li>
+                <span class="label">导演：</span>
+                <span class="value">Alfred Hitchcock</span>
+                </li>
+                <li>
+                <span class="label">主演：</span>
+                <span class="value">Cary Grant / Eva Marie Saint</span>
+                </li>
+                <li>
+                <span class="label">类型：</span>
+                <span class="value">动作 / 惊悚</span>
+                </li>
+            </ul>
+        </div>
+
+            <div class="desc">
+            <p>罗杰（加里·格兰特 Cary Grant 饰）是个平凡的广告商人，最近却莫名其妙的惹了一身的麻烦——他被别人错认成一名叫“凯普林”的人，还人灌醉...</p>
+            </div>
+    </div>
+
+      
+
+<div class="source">
+    长胡子的心脏喜欢的电影
+        &nbsp;|&nbsp;
+        25744人看过
+    <span class="pubtime">昨天</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+        
+                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-1295872-wish">想看</a></span>
+                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-1295872-collect">看过</a></span>
+  </div>
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="guess-item subject-item" id="1170308:1002:1299193|2013-01-22+22:21:15" unique_id="1002:1299193">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1299193, channel: 302, engine: 3020302, pos: 21})" href="http://movie.douban.com/subject/1299193/" target="_blank"><img src="guess_all_files/s2395086.jpg" alt="理智与情感"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1299193, channel: 302, engine: 3020302, pos: 21})" href="http://movie.douban.com/subject/1299193/" target="_blank">理智与情感</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.1</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">李安 Ang Lee</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">艾玛·汤普森 Emma Thompson / 凯特·温丝莱特 Kate Winslet</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 爱情</span>                </li>            </ul>        </div>            <div class="desc">            <p>老庄园主去世后，可怜的母女四人被长子逐出了庄园。靠着亲戚的帮助，她们在一处小小的农舍安顿下来。势力眼的长嫂未曾想到的是，她的弟弟爱德...</p>            </div>    </div>      <div class="source">    黑刀喜欢的电影        &nbsp;|&nbsp;        44796人看过    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-1299193-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-1299193-collect">看过</a></span>  </div></div><div class="guess-item subject-item" id="14343" unique_id="1001:20271923">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 20271923, channel: 106, engine: 1, pos: 22})" href="http://book.douban.com/subject/20271923/" target="_blank"><img src="guess_all_files/s24682670.jpg" alt="彼得·科恩木工基础"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 20271923, channel: 106, engine: 1, pos: 22})" href="http://book.douban.com/subject/20271923/" target="_blank">彼得·科恩木工基础</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.3</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">作者：</span>                <span class="value">彼得·科恩</span>                </li>                <li>                <span class="label">定价：</span>                <span class="value">49.80元</span>                </li>            </ul>        </div>            <div class="desc">            <p>《彼得•科恩木工基础》能帮助木工初学者从一开始就掌握正确的技术，而那些有经验的木工也能从中学到关键的、经典的家具制作技术，从而进一...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        4008人想读    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-20271923-wish">想读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20271923-do">在读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20271923-collect">读过</a></span>  </div></div><div class="guess-item album-item" id="1170308:1026:77974744|2013-01-22+18:00:06" unique_id="1026:77974744">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/77974744/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 77974744, channel: 308, engine: 3080101, pos: 23})">            <span class="pic1"><img src="guess_all_files/p1705962309.jpg" alt="推荐单品（有链接）"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1849916132.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1849910653.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 77974744, channel: 308, engine: 3080101, pos: 23})" href="http://www.douban.com/photos/album/77974744/" target="_blank">推荐单品（有链接）</a>    </div>        <div class="from">                <img src="guess_all_files/u1525124-421.jpg" width="16" height="16">                雷 托 的相册        </div>    </div>      <div class="source">    JOJOORC/Z喜欢的相册        &nbsp;|&nbsp;        305人喜欢      <span class="pubtime">昨天</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="77974744" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item promotional-item" id="other:1052:145557" unique_id="1052:145557">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1052, tid: 145557, channel: None, engine: None, pos: 24})" href="http://book.douban.com/guess_redirect?item_id=145557" target="_blank"><img src="guess_all_files/145557.jpg?v=1343891611.0" alt="灶火与炉床"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1052, tid: 145557, channel: None, engine: None, pos: 24})" href="http://book.douban.com/guess_redirect?item_id=145557" target="_blank">灶火与炉床</a>    </div>                <div class="from">            <ul>                <li>                <span class="label">作者：</span>                <span class="value">〔美〕威·福克纳 等</span>                </li>            <li>售价：1.99元</li>            </ul>        </div>            <div class="desc">            <p>《灶火与炉床》（The Fire and the Hearth）是美国作家威廉·福克纳（1897-1962）1942年出版的系列小说《去吧，摩西》中的一篇。该书共七篇，...</p>            </div>    </div>      <div class="source">    热点阅读作品        &nbsp;|&nbsp;        1157人试读    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">          <span class="usr-btn"><a href="http://book.douban.com/guess_redirect?item_id=145557" target="_blank">在线阅读</a></span>  </div></div><div class="guess-item event-item" id="1170308:1011:18165246|2013-01-22+17:54:34" unique_id="1011:18165246">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1011, tid: 18165246, channel: 304, engine: 3040101, pos: 25})" href="http://www.douban.com/event/18165246/" target="_blank"><img src="guess_all_files/78714f777069839.jpg" alt="Snapline  White+ 联合专场"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1011, tid: 18165246, channel: 304, engine: 3040101, pos: 25})" href="http://www.douban.com/event/18165246/" target="_blank">Snapline  White+ 联合专场</a>    </div>        <div class="from">        </div>                        <div class="desc">            <ul>                <li><span class="label">时间：</span><span class="value">03月02日</span></li>                <li><span class="label">地点：</span><span class="value">北京 东城区 安定门 五道营胡同53号School酒吧</span></li>                <li>                    票价：60元(门票)                </li>            </ul>            </div>    </div>      <div class="source">    马t喜欢的同城活动        &nbsp;|&nbsp;        222人关注    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">        <span class="usr-btn event-btn"><a href="#" data-interest="wish" data-id="18165246">感兴趣</a></span>        <span class="usr-btn event-btn"><a href="#" data-interest="do" data-id="18165246">要参加</a></span>  </div></div><div class="guess-item" id="1170308:1015:258852475|2013-01-22+17:38:21" unique_id="1015:258852475">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 258852475, channel: 307, engine: 3070201, pos: 26})" href="http://www.douban.com/note/258852475/" target="_blank">都给我有女神的外表爷们儿的心</a>    </div>        <div class="from">                <img src="guess_all_files/u65281554-13.jpg" width="16" height="16">                毒舌奶奶cc 的日记        </div>            <div class="desc">            <p>不管是逛豆瓣还是天涯，总是这么一群女人在叽歪：男友冷暴力咋办？我觉得他没那么爱我。男生是喜欢胖的还是瘦的啊？男人喜欢什么样的女人啊？男朋友嫌我不够高怎么办？婆婆真是极品！怀疑老公和女同事有奸情。今天bf在他ex人人上留言了。我老公年薪30万，你们的呢？好似他们生命的意义，就是取悦男人以及忧心是否会失宠，显摆自己的男人贬低别人的老公。她们用绳命爱她们的男人，却无法容忍男人身边的其他一切：包括男人的妈，男人的舅妈，...</p>            </div>    </div>      <div class="source">    青城山下ruby姐喜欢的日记        &nbsp;|&nbsp;        10140人喜欢      <span class="pubtime">昨天</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1015" data-tid="258852475" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item promotional-item" id="other:1002:10574622" unique_id="1002:10574622">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 10574622, channel: None, engine: None, pos: 27})" href="http://movie.douban.com/subject/10574622/" target="_blank"><img src="guess_all_files/s19836660.jpg" alt="人再囧途之泰囧"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 10574622, channel: None, engine: None, pos: 27})" href="http://movie.douban.com/subject/10574622/" target="_blank">人再囧途之泰囧</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.7</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">徐峥 Zheng Xu</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">徐峥 Zheng Xu / 王宝强 Baoqiang Wang</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">喜剧</span>                </li>            <li>票价：33元</li>            </ul>        </div>            <div class="desc">            <p>商业成功人士徐朗（徐峥 饰）用了五年时间发明了一种叫“油霸”的神奇产品——每次汽车加油只需加到三分之二，再滴入2滴“油霸”，油箱的汽油...</p>            </div>    </div>      <div class="source">    热点电影        &nbsp;|&nbsp;        269632人看过    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">          <span class="usr-btn"><a href="http://movie.douban.com/subject/10574622/cinema" target="_blank">在线购票</a></span>  </div></div><div class="guess-item album-item" id="1170308:1026:21288454|2013-01-22+13:59:37" unique_id="1026:21288454">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/21288454/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 21288454, channel: 308, engine: 3080101, pos: 28})">            <span class="pic1"><img src="guess_all_files/p436817610.jpg" alt="想要的生活怎么有1000种"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1849292186.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1849291782.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 21288454, channel: 308, engine: 3080101, pos: 28})" href="http://www.douban.com/photos/album/21288454/" target="_blank">想要的生活怎么有1000种</a>    </div>        <div class="from">                <img src="guess_all_files/u2366893-203.jpg" width="16" height="16">                陌聆 的相册        </div>    </div>      <div class="source">    Miya喜欢的相册        &nbsp;|&nbsp;        21654人喜欢      <span class="pubtime">昨天</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="21288454" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="1170308:1002:1291990|2013-01-22+13:43:52" unique_id="1002:1291990">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1291990, channel: 302, engine: 3020302, pos: 29})" href="http://movie.douban.com/subject/1291990/" target="_blank"><img src="guess_all_files/s1435592.jpg" alt="爱在日落黄昏时"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1291990, channel: 302, engine: 3020302, pos: 29})" href="http://movie.douban.com/subject/1291990/" target="_blank">爱在日落黄昏时</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.7</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">理查德·林克莱特 Richard Linklater</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">伊桑·霍克 Ethan Hawke / 朱莉·德尔佩 Julie Delpy</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 爱情</span>                </li>            </ul>        </div>            <div class="desc">            <p>九年前，杰西（伊桑·霍克 Ethan Hawke 饰）与席琳（朱莉·德尔佩 Julie Delpy 饰）在火车上不期而遇，怦然心动。在维也纳渡过疯狂而又浪漫的...</p>            </div>    </div>      <div class="source">    芙蓉镇上影志叔喜欢的电影        &nbsp;|&nbsp;        119849人看过    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-1291990-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-1291990-collect">看过</a></span>  </div></div><div class="guess-item" id="1170308:1015:259268859|2013-01-22+12:12:56" unique_id="1015:259268859">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 259268859, channel: 307, engine: 3070201, pos: 30})" href="http://www.douban.com/note/259268859/" target="_blank">世上万事，不过是一懒二拖三不读书</a>    </div>        <div class="from">                <img src="guess_all_files/u1887834-13.jpg" width="16" height="16">                张佳玮 的日记        </div>            <div class="desc">            <p>许多人觉得，古龙的风格很易学。因为一个普通读者读古龙，乍看之下，不会觉得他有金庸或梁羽生那么厚的功底——你可以轻松从金庸书里读出他喜欢《水浒》、熟稔《红楼》，他对希腊戏剧、莎士比亚、大仲马、《三言二拍》、《史记》、诗词歌赋等无数东西，都烂熟于心。而古龙，乍看只能说，这位对诗挺熟，尤其体现在人名儿上，比如白玉京，比如叶孤城。但稍微看看他的随笔或评述，就会发现，这厮对福楼拜、海明威、杰克伦敦这些19世纪到20世纪初的大人物，...</p>            </div>    </div>      <div class="source">    xyb喜欢的日记        &nbsp;|&nbsp;        4059人喜欢      <span class="pubtime">昨天</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1015" data-tid="259268859" href="">喜欢</a>      </span>  </div></div><div class="guess-item album-item" id="1170308:1026:84982218|2013-01-22+10:19:14" unique_id="1026:84982218">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/84982218/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84982218, channel: 308, engine: 3080101, pos: 31})">            <span class="pic1"><img src="guess_all_files/p1848730845.jpg" alt="小时候的橡皮君"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1848726483.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1848726526.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84982218, channel: 308, engine: 3080101, pos: 31})" href="http://www.douban.com/photos/album/84982218/" target="_blank">小时候的橡皮君</a>    </div>        <div class="from">                <img src="guess_all_files/u2580758-13.jpg" width="16" height="16">                pillow 的相册        </div>    </div>      <div class="source">    Bear喜欢的相册        &nbsp;|&nbsp;        8人喜欢      <span class="pubtime">昨天</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="84982218" href="">喜欢</a>      </span>  </div></div><div class="guess-item album-item" id="1170308:1026:84758688|2013-01-22+09:50:29" unique_id="1026:84758688">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/84758688/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84758688, channel: 308, engine: 3080101, pos: 32})">            <span class="pic1"><img src="guess_all_files/p1844556922.jpg" alt="懒人冬日福音大煮：电火锅版寿喜烧"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1844555090.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1844557252.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84758688, channel: 308, engine: 3080101, pos: 32})" href="http://www.douban.com/photos/album/84758688/" target="_blank">懒人冬日福音大煮：电火锅版寿喜烧</a>    </div>        <div class="from">                <img src="guess_all_files/u2164427-28.jpg" width="16" height="16">                yoyomygirl 的相册        </div>    </div>      <div class="source">    青城山下ruby姐喜欢的相册        &nbsp;|&nbsp;        6457人喜欢      <span class="pubtime">昨天</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="84758688" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14331" unique_id="1001:20482611">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 20482611, channel: 106, engine: 1, pos: 33})" href="http://book.douban.com/subject/20482611/" target="_blank"><img src="guess_all_files/s24611503.jpg" alt="幸福要回答"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 20482611, channel: 106, engine: 1, pos: 33})" href="http://book.douban.com/subject/20482611/" target="_blank">幸福要回答</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.0</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">作者：</span>                <span class="value">杨澜 朱冰</span>                </li>                <li>                <span class="label">定价：</span>                <span class="value">35.00元</span>                </li>            </ul>        </div>            <div class="desc">            <p>每一次提问中，都暗含着一个隐秘的世界；每一个回答中，都透露着耐人寻味的见识。杨澜数百次访问后的思考结晶，无私分享成就幸福的内心独白...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        1294人想读    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-20482611-wish">想读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20482611-do">在读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20482611-collect">读过</a></span>  </div></div><div class="guess-item subject-item" id="1170308:1002:4798707|2013-01-22+01:47:24" unique_id="1002:4798707">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 4798707, channel: 302, engine: 3020302, pos: 34})" href="http://movie.douban.com/subject/4798707/" target="_blank"><img src="guess_all_files/s24228185.jpg" alt="爱"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 4798707, channel: 302, engine: 3020302, pos: 34})" href="http://movie.douban.com/subject/4798707/" target="_blank">爱</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.5</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">迈克尔·哈内克 Michael Haneke</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">简-路易斯·特林提格南特 Jean-Louis Trintignant / 埃玛妞·丽娃 Emmanuelle Riva</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 爱情</span>                </li>            </ul>        </div>            <div class="desc">            <p>导演迈克尔·哈内克凭借本片再度勇夺金棕榈大奖。本片的两位老戏骨分别是威尼斯影后和戛纳柏林双料影帝。Anne（埃玛妞·丽娃 Emmanuelle Ri...</p>            </div>    </div>      <div class="source">    芙蓉镇上影志叔喜欢的电影        &nbsp;|&nbsp;        7760人看过    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-4798707-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-4798707-collect">看过</a></span>  </div></div><div class="guess-item subject-item" id="1170308:1002:4286017|2013-01-22+00:03:59" unique_id="1002:4286017">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 4286017, channel: 302, engine: 3020302, pos: 35})" href="http://movie.douban.com/subject/4286017/" target="_blank"><img src="guess_all_files/s4672723.jpg" alt="速度与激情5"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 4286017, channel: 302, engine: 3020302, pos: 35})" href="http://movie.douban.com/subject/4286017/" target="_blank">速度与激情5</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.3</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">林诣彬 Justin Lin</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">范·迪塞尔 Vin Diesel / 保罗·沃克 Paul Walker</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">动作 / 犯罪</span>                </li>            </ul>        </div>            <div class="desc">            <p>蛰伏2年之后，多米尼克（范•迪塞尔 Vin Diesel饰）与布莱恩（保罗•沃克 Paul Walker 饰）再度联手把火车中的神秘豪车盗走，遭到了警察...</p>            </div>    </div>      <div class="source">    mockee喜欢的电影        &nbsp;|&nbsp;        150488人看过    <span class="pubtime">昨天</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-4286017-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-4286017-collect">看过</a></span>  </div></div><div class="guess-item subject-item" id="1170308:1002:6729183|2013-01-21+23:30:36" unique_id="1002:6729183">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 6729183, channel: 302, engine: 3020302, pos: 36})" href="http://movie.douban.com/subject/6729183/" target="_blank"><img src="guess_all_files/s6981767.jpg" alt="美国恐怖故事  第一季"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 6729183, channel: 302, engine: 3020302, pos: 36})" href="http://movie.douban.com/subject/6729183/" target="_blank">美国恐怖故事  第一季</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.6</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">瑞恩·墨菲 Ryan Murphy / 大卫·塞梅尔 David Semel</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">康妮·布里登 Connie Britton / 迪伦·麦克德莫特 Dylan McDermott</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 悬疑</span>                </li>            </ul>        </div>            <div class="desc">            <p>心理治疗师Ben（迪伦·麦克德莫特 Dylan McDermott 饰）因与女学生有染被妻子Vivien（康妮·布里登 Connie Britton 饰）发现，经协调决定带着...</p>            </div>    </div>      <div class="source">    放开那个西红柿喜欢的电影        &nbsp;|&nbsp;        14388人看过    <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-6729183-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-6729183-do">在看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-6729183-collect">看过</a></span>  </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="guess-item album-item" id="14325" unique_id="1026:50167520">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/50167520/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 50167520, channel: 106, engine: 1, pos: 37})">            <span class="pic1"><img src="guess_all_files/p1152155973.jpg" alt="关关雎鸠 在喝之粥"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1043605662.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1043606339.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 50167520, channel: 106, engine: 1, pos: 37})" href="http://www.douban.com/photos/album/50167520/" target="_blank">关关雎鸠 在喝之粥</a>    </div>        <div class="from">                <img src="guess_all_files/u4244809-18.jpg" width="16" height="16">                克思克行 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        12130人喜欢      <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="50167520" href="">喜欢</a>      </span>  </div></div>
+<div class="guess-item album-item" id="1170308:1026:41521500|2013-01-23+18:56:36" unique_id="1026:41521500">
+
+  <div class="bd">
+      
+
+        
+        <div class="pic">
+        <a href="http://www.douban.com/photos/album/41521500/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 41521500, channel: 308, engine: 3080101, pos: 3})">
+            <span class="pic1"><img src="guess_all_files/p1844838251.jpg" alt="泥轰是个很可怕的国家"><i></i></span>
+            <span class="pic2"><img src="guess_all_files/p1850282612.jpg"><i></i></span>
+            <span class="pic3"><img src="guess_all_files/p1848951486.jpg"><i></i></span>
+        </a>
+        </div>
+    <div class="content">
+    <div class="title">
+        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 41521500, channel: 308, engine: 3080101, pos: 3})" href="http://www.douban.com/photos/album/41521500/" target="_blank">泥轰是个很可怕的国家</a>
+    </div>
+
+        <div class="from">
+                <img src="guess_all_files/u48737437-127.jpg" width="16" height="16">
+                贩美瞳の杜小明 的相册
+        </div>
+
+    </div>
+
+      
+
+<div class="source">
+    JOJOORC/Z喜欢的相册
+        &nbsp;|&nbsp;
+        670人喜欢  
+    <span class="pubtime">2小时前</span>
+</div>
+
+  </div>
+
+  
+  
+  <div class="ft">
+      <span class="usr-btn fav-btn">
+          <a data-tkind="1026" data-tid="41521500" href="">喜欢</a>
+      </span>
+  </div>
+
+</div>
+
+<div class="guess-item event-item" id="1170308:2001:11458180|2013-01-21+17:06:28" unique_id="2001:11458180">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11458180, channel: 309, engine: 3090101, pos: 38})" href="http://www.douban.com/online/11458180/" target="_blank">用一张图证明你对007是真爱！ </a>    </div>                <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11458180, channel: 309, engine: 3090101, pos: 38})" href="http://www.douban.com/online/11458180/" class="guess-online-list" target="_blank">        <ul>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        <li><img src="guess_all_files/62037b5ajw1e1176p92bcg.gif"></li>        </ul>        </a>        <div class="from">                线上活动 / <b>208</b> 人参加        </div>    </div>      <div class="source">    xklxkl喜欢的线上活动        &nbsp;|&nbsp;        15人喜欢      <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">     <span class="usr-btn online-event-btn"><a href="#" data-online-id="11458180">要参加</a></span>  </div></div><div class="guess-item album-item" id="1170308:1026:83216493|2013-01-21+16:36:13" unique_id="1026:83216493">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/83216493/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 83216493, channel: 308, engine: 3080101, pos: 39})">            <span class="pic1"><img src="guess_all_files/p1835859055.jpg" alt="Home Office"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1849683739.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1849683723.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 83216493, channel: 308, engine: 3080101, pos: 39})" href="http://www.douban.com/photos/album/83216493/" target="_blank">Home Office</a>    </div>        <div class="from">                <img src="guess_all_files/u37109310-33.jpg" width="16" height="16">                我爱搜罗 的相册        </div>    </div>      <div class="source">    寂静之声喜欢的相册        &nbsp;|&nbsp;        4258人喜欢      <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="83216493" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="1170308:1002:1292328|2013-01-21+14:47:03" unique_id="1002:1292328">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1292328, channel: 302, engine: 3020302, pos: 40})" href="http://movie.douban.com/subject/1292328/" target="_blank"><img src="guess_all_files/s1413178.jpg" alt="东邪西毒"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 1292328, channel: 302, engine: 3020302, pos: 40})" href="http://movie.douban.com/subject/1292328/" target="_blank">东邪西毒</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.5</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">王家卫 Kar Wai Wong</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">张国荣 Leslie Cheung / 张曼玉 Maggie Cheung</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 动作</span>                </li>            </ul>        </div>            <div class="desc">            <p>在恋人（张曼玉）负气嫁给兄长的当晚，欧阳锋（张国荣）黯然离开白陀山，走进沙漠某个小镇，成为一名杀手中介人。他的朋友、风流剑客黄药师（...</p>            </div>    </div>      <div class="source">    随候鸟南飞喜欢的电影        &nbsp;|&nbsp;        206751人看过    <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-1292328-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-1292328-collect">看过</a></span>  </div></div><div class="guess-item album-item" id="1170308:1026:18250109|2013-01-21+14:11:20" unique_id="1026:18250109">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/18250109/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 18250109, channel: 308, engine: 3080101, pos: 41})">            <span class="pic1"><img src="guess_all_files/p1508732691.jpg" alt="穷人的甜品3号厅"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1848142617.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1821476958.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 18250109, channel: 308, engine: 3080101, pos: 41})" href="http://www.douban.com/photos/album/18250109/" target="_blank">穷人的甜品3号厅</a>    </div>        <div class="from">                <img src="guess_all_files/u2770526-54.jpg" width="16" height="16">                エン汤不圆エン 的相册        </div>    </div>      <div class="source">    JOJOORC/Z喜欢的相册        &nbsp;|&nbsp;        25人喜欢      <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="18250109" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="1170308:1002:6900092|2013-01-21+08:24:44" unique_id="1002:6900092">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 6900092, channel: 302, engine: 3020302, pos: 42})" href="http://movie.douban.com/subject/6900092/" target="_blank"><img src="guess_all_files/s8874089.jpg" alt="建筑学概论"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 6900092, channel: 302, engine: 3020302, pos: 42})" href="http://movie.douban.com/subject/6900092/" target="_blank">建筑学概论</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.3</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">李勇周 Yong-Joo Lee</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">李济勋 Je-hun Lee / 严泰雄 Tae-woong Eom</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">爱情</span>                </li>            </ul>        </div>            <div class="desc">            <p>胜民（严泰雄 饰）在一家建筑公司担任建筑设计师，某日接到一份新的房屋设计工程，委托人竟是自己学生时代的梦中情人瑞英（韩佳人 饰）。两人...</p>            </div>    </div>      <div class="source">    长胡子的心脏喜欢的电影        &nbsp;|&nbsp;        39998人看过    <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-6900092-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-6900092-collect">看过</a></span>  </div></div><div class="guess-item subject-item" id="1170308:1002:5322596|2013-01-21+00:54:55" unique_id="1002:5322596">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 5322596, channel: 302, engine: 3020302, pos: 43})" href="http://movie.douban.com/subject/5322596/" target="_blank"><img src="guess_all_files/s6920451.jpg" alt="超脱"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 5322596, channel: 302, engine: 3020302, pos: 43})" href="http://movie.douban.com/subject/5322596/" target="_blank">超脱</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.7</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">托尼·凯耶 Tony Kaye</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">艾德里安·布洛迪 Adrien Brody / 克里斯蒂娜·亨德里克斯 Christina Hendricks</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情</span>                </li>            </ul>        </div>            <div class="desc">            <p>亨利•巴赫特（艾德里安•布洛迪 Adrien Brody 饰）来到社区学校担任代课老师。学校因学生反叛、经营不善而濒临绝境，多丽丝（刘玉玲 饰...</p>            </div>    </div>      <div class="source">    小徐老师喜欢的电影        &nbsp;|&nbsp;        77238人看过    <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-5322596-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-5322596-collect">看过</a></span>  </div></div><div class="guess-item album-item" id="1170308:1026:65309018|2013-01-21+00:21:38" unique_id="1026:65309018">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/65309018/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 65309018, channel: 308, engine: 3080101, pos: 44})">            <span class="pic1"><img src="guess_all_files/p1791674358.jpg" alt="客居帝都"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1849287308.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1849286741.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 65309018, channel: 308, engine: 3080101, pos: 44})" href="http://www.douban.com/photos/album/65309018/" target="_blank">客居帝都</a>    </div>        <div class="from">                <img src="guess_all_files/u36635622-31.jpg" width="16" height="16">                Paradox 的相册        </div>    </div>      <div class="source">    Cooper喜欢的相册        &nbsp;|&nbsp;        7人喜欢      <span class="pubtime">1月21日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="65309018" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="1170308:1002:2028677|2013-01-20+23:58:20" unique_id="1002:2028677">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 2028677, channel: 302, engine: 3020302, pos: 45})" href="http://movie.douban.com/subject/2028677/" target="_blank"><img src="guess_all_files/s6972267.jpg" alt="雨果"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 2028677, channel: 302, engine: 3020302, pos: 45})" href="http://movie.douban.com/subject/2028677/" target="_blank">雨果</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.5</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">马丁·斯科塞斯 Martin Scorsese</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">阿沙·巴特菲尔德 Asa Butterfield / 科洛·莫瑞兹 Chloe Moretz</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 儿童</span>                </li>            </ul>        </div>            <div class="desc">            <p>小男孩雨果（阿沙·巴特菲尔德 Asa Butterfield 饰）天生机械控。他寄宿巴黎火车站钟楼，偶尔会去玩具店偷些零件，用来修补父亲（裘德·洛 Ju...</p>            </div>    </div>      <div class="source">    黑刀喜欢的电影        &nbsp;|&nbsp;        109834人看过    <span class="pubtime">1月20日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-2028677-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-2028677-collect">看过</a></span>  </div></div><div class="guess-item album-item" id="14306" unique_id="1026:62402544">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/62402544/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 62402544, channel: 106, engine: 1, pos: 46})">            <span class="pic1"><img src="guess_all_files/p1558872316.jpg" alt="我 /的 /手 /工 /书 /"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1845133740.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1845133776.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 62402544, channel: 106, engine: 1, pos: 46})" href="http://www.douban.com/photos/album/62402544/" target="_blank">我 /的 /手 /工 /书 /</a>    </div>        <div class="from">                <img src="guess_all_files/u51134827-26.jpg" width="16" height="16">                卜卜 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        7212人喜欢      <span class="pubtime">1月20日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="62402544" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14304" unique_id="1001:11442895">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 11442895, channel: 106, engine: 1, pos: 47})" href="http://book.douban.com/subject/11442895/" target="_blank"><img src="guess_all_files/s11106536.jpg" alt="永不抵达的列车"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 11442895, channel: 106, engine: 1, pos: 47})" href="http://book.douban.com/subject/11442895/" target="_blank">永不抵达的列车</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>9.1</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">作者：</span>                <span class="value">杜涌涛徐百柯</span>                </li>                <li>                <span class="label">定价：</span>                <span class="value">32.80元</span>                </li>            </ul>        </div>            <div class="desc">            <p>在一片纷乱喧嚣中，冰点仿佛一位笃定的观察者，将目光一次次投向大变革中那些普通的小人物，注视他们被时代裹挟的命运，诉说他们微小的愿望与...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        2380人想读    <span class="pubtime">1月20日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-11442895-wish">想读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-11442895-do">在读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-11442895-collect">读过</a></span>  </div></div><div class="guess-item" id="14279" unique_id="1015:255169550">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 255169550, channel: 106, engine: 1, pos: 48})" href="http://www.douban.com/note/255169550/" target="_blank">ARTLESSON Theory | 如何提高你的绘画和设计技巧</a>    </div>        <div class="from">                <img src="guess_all_files/u3198235-17.jpg" width="16" height="16">                GK 的日记        </div>            <div class="desc">            <p>引谢谢大家花时间，来看我写的一些总结。虽然不全面，但希望能给初学者，提供一点有用的信息。我发现很多爱好者喜欢画人，人体真的是很难的，因为人体，尤其是脸部，是由很多很多形体组成的，如何把他们安排在正确的位置上，给他们正确的调子（灰度），我个人认为才是所谓「画得像」的关键。而「画得像」仅仅是一个职业设计师生涯的开始。为了让大家大体了解并训练自己，达到进入这个行业的标准，我觉得把练习方法和练习内容...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        8801人喜欢      <span class="pubtime">1月19日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1015" data-tid="255169550" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14277" unique_id="1001:20256917">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 20256917, channel: 106, engine: 1, pos: 49})" href="http://book.douban.com/subject/20256917/" target="_blank"><img src="guess_all_files/s24231970.jpg" alt="我就要你好好的"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 20256917, channel: 106, engine: 1, pos: 49})" href="http://book.douban.com/subject/20256917/" target="_blank">我就要你好好的</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>9.1</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">作者：</span>                <span class="value">【英】乔乔·莫伊斯</span>                </li>                <li>                <span class="label">定价：</span>                <span class="value">32.00元</span>                </li>            </ul>        </div>            <div class="desc">            <p>你可以把生活变成故事但你想不到故事的结局露·克拉克知道很多事情。她知道从公共汽车站走回家有多少步。她知道她喜欢在“黄油面包”茶馆...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        3035人想读    <span class="pubtime">1月19日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-20256917-wish">想读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20256917-do">在读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20256917-collect">读过</a></span>  </div></div><div class="guess-item" id="14259" unique_id="1015:258557321">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 258557321, channel: 106, engine: 1, pos: 50})" href="http://www.douban.com/note/258557321/" target="_blank">宁肯与好人一起咽糟糠，也不能与坏人一起吃筵席（有补充）</a>    </div>        <div class="from">                <img src="guess_all_files/u4555019-28.jpg" width="16" height="16">                鼹鼠的土豆 的日记        </div>            <div class="desc">            <p>于1月20日补充：我写这篇文章的起因是我一个朋友跟他好哥们出去玩牌，一晚上输了一套房，关于北京的一套房子价值请百度一下。我在文章里面只是说要尽量跟好人一起玩，没有所谓巴结有钱人，融入有钱人圈子的意思。我不知道别人怎么会这么想。正文：这句话是很多年前一位大姐告诉我的，我以前很执着，或者说很固执，好吧！我那时很较劲。其实大姐当时还说了一句话，就是跟明白人打顿架，也不跟混蛋说句话。我估计当时大姐跟我说这些的潜台词是我再...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        7074人喜欢      <span class="pubtime">1月18日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1015" data-tid="258557321" href="">喜欢</a>      </span>  </div></div><div class="guess-item album-item" id="14257" unique_id="1026:84598362">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/84598362/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84598362, channel: 106, engine: 1, pos: 51})">            <span class="pic1"><img src="guess_all_files/p1843720048.jpg" alt="一些特别的书"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1843724148.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1843724168.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84598362, channel: 106, engine: 1, pos: 51})" href="http://www.douban.com/photos/album/84598362/" target="_blank">一些特别的书</a>    </div>        <div class="from">                <img src="guess_all_files/u66678399-9.jpg" width="16" height="16">                Conhot 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        9179人喜欢      <span class="pubtime">1月18日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="84598362" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14255" unique_id="1001:10955921">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 10955921, channel: 106, engine: 1, pos: 52})" href="http://book.douban.com/subject/10955921/" target="_blank"><img src="guess_all_files/s24589525.jpg" alt="骂观众"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1001, tid: 10955921, channel: 106, engine: 1, pos: 52})" href="http://book.douban.com/subject/10955921/" target="_blank">骂观众</a>                                                <div class="rating">                    <span class="rating-stars">★★★★★</span> <b>10.0</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">作者：</span>                <span class="value">(奥地利)彼得·汉德克</span>                </li>                <li>                <span class="label">定价：</span>                <span class="value">38.00元</span>                </li>            </ul>        </div>            <div class="desc">            <p>◎ 藐视观众 藐视剧场 的经典之作◎ 如入刑室，如坐针毡，欲怒不生，欲走不能◎ 孟京辉 史航 牟森 “愿效犬马之劳”的大师；维姆·文德斯最...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        1270人想读    <span class="pubtime">1月18日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-10955921-wish">想读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-10955921-do">在读</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-10955921-collect">读过</a></span>  </div></div><div class="guess-item album-item" id="14252" unique_id="1026:78243734">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/78243734/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 78243734, channel: 106, engine: 1, pos: 53})">            <span class="pic1"><img src="guess_all_files/p1827089188.jpg" alt="Jessica Gardner"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1841839193.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1841839156.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 78243734, channel: 106, engine: 1, pos: 53})" href="http://www.douban.com/photos/album/78243734/" target="_blank">Jessica Gardner</a>    </div>        <div class="from">                <img src="guess_all_files/u4599201-790.jpg" width="16" height="16">                蛇 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        12283人喜欢      <span class="pubtime">1月18日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="78243734" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14249" unique_id="1002:6753166">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 6753166, channel: 106, engine: 1, pos: 54})" href="http://movie.douban.com/subject/6753166/" target="_blank"><img src="guess_all_files/s24591129.jpg" alt="七个神经病"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 6753166, channel: 106, engine: 1, pos: 54})" href="http://movie.douban.com/subject/6753166/" target="_blank">七个神经病</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.9</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">马丁·麦克唐纳 Martin McDonagh</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">柯林·法瑞尔 Colin Farrell / 山姆·洛克威尔 Sam Rockwell</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">喜剧 / 犯罪</span>                </li>            </ul>        </div>            <div class="desc">            <p>Marty（柯林·法瑞尔 Colin Farrell 饰）是一个爱喝酒的电影编剧，他的好友Billy（山姆·洛克威尔 Sam Rockwell 饰）则和Hans（克里斯托弗·...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        6829人看过    <span class="pubtime">1月18日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-6753166-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-6753166-collect">看过</a></span>  </div></div><div class="guess-item subject-item" id="14192" unique_id="1002:3094909">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3094909, channel: 106, engine: 1, pos: 55})" href="http://movie.douban.com/subject/3094909/" target="_blank"><img src="guess_all_files/s11364841.jpg" alt="乌云背后的幸福线"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3094909, channel: 106, engine: 1, pos: 55})" href="http://movie.douban.com/subject/3094909/" target="_blank">乌云背后的幸福线</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.8</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">大卫·欧·拉塞尔 David O. Russell</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">布莱德利·库珀 Bradley Cooper / 詹妮弗·劳伦斯 Jennifer Lawrence</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 喜剧</span>                </li>            </ul>        </div>            <div class="desc">            <p>《乌云背后的幸福线》根据Matthew Quick的同名小说处女作改编。男主人公帕特（布莱德利·库珀 饰）是一个超级乐观的高中历史老师，他似乎总能...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        6989人看过    <span class="pubtime">1月17日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-3094909-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3094909-collect">看过</a></span>  </div></div><div class="guess-item album-item" id="14189" unique_id="1026:56325289">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/56325289/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 56325289, channel: 106, engine: 1, pos: 56})">            <span class="pic1"><img src="guess_all_files/p1540465842.jpg" alt="小雀雀和小鸡鸡"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1206648728.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1206649095.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 56325289, channel: 106, engine: 1, pos: 56})" href="http://www.douban.com/photos/album/56325289/" target="_blank">小雀雀和小鸡鸡</a>    </div>        <div class="from">                <img src="guess_all_files/u3961919-251.jpg" width="16" height="16">                已经结婚瑾朵朵 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        9378人喜欢      <span class="pubtime">1月17日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="56325289" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14182" unique_id="1002:20473389">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 20473389, channel: 106, engine: 1, pos: 57})" href="http://movie.douban.com/subject/20473389/" target="_blank"><img src="guess_all_files/s24525499.jpg" alt="坏未来"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 20473389, channel: 106, engine: 1, pos: 57})" href="http://movie.douban.com/subject/20473389/" target="_blank">坏未来</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.4</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">李阳 Yang Li</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">段博文 Bowen Duan / 冯文娟 Wenjuan Feng</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 动作</span>                </li>            </ul>        </div>            <div class="desc">            <p>孙白（段博文 饰）是一颗陨石降生在地球上，他的身体上有一个“好”“坏”装置，当他把旋钮调到“坏”模式时，他便成了赵寇，一个集结了残忍...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        13821人看过    <span class="pubtime">1月17日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-20473389-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-20473389-collect">看过</a></span>  </div></div><div class="guess-item event-item" id="14168" unique_id="2001:11407807">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11407807, channel: 106, engine: 1, pos: 58})" href="http://www.douban.com/online/11407807/" target="_blank">看看2012年你在支付宝上到底花了多少钱</a>    </div>                <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11407807, channel: 106, engine: 1, pos: 58})" href="http://www.douban.com/online/11407807/" class="guess-online-list" target="_blank">        <ul>        <li><img src="guess_all_files/p1843180502.jpg"></li>        <li><img src="guess_all_files/p1832217221.jpg"></li>        <li><img src="guess_all_files/p1847929163.jpg"></li>        <li><img src="guess_all_files/p1843146152.jpg"></li>        <li><img src="guess_all_files/p1817026803.jpg"></li>        <li><img src="guess_all_files/p1847132291.jpg"></li>        <li><img src="guess_all_files/p1847922356.jpg"></li>        <li><img src="guess_all_files/p1847163854.jpg"></li>        </ul>        </a>        <div class="from">                线上活动 / <b>7812</b> 人参加        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        205人喜欢      <span class="pubtime">1月16日</span></div>  </div>      <div class="ft">     <span class="usr-btn online-event-btn"><a href="#" data-online-id="11407807">要参加</a></span>  </div></div><div class="guess-item" id="14165" unique_id="1015:257705334">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 257705334, channel: 106, engine: 1, pos: 59})" href="http://www.douban.com/note/257705334/" target="_blank">非常困系列-那些销售教我的事</a>    </div>        <div class="from">                <img src="guess_all_files/u3903870-7.jpg" width="16" height="16">                leadenmouse 的日记        </div>            <div class="desc">            <p>我自己真心觉得我的哈佛《幸福课》学习笔记写的更好，推荐所有人去了解积极心理学。最近有些工作感悟且有时间，那就记录下来吧。怎么办，继续想办法，反正等死是不行的。短短几年外企职业生涯，把我塑造成了一个solution finder, 问题解决者，工作遇到问题不怕，想各种办法，竭尽全力解决它。曾经在饭局上听到几个销售笑谈，说这个销售总监他们也能做，工作进程询问一共就2个问题：1，合同什么时候签？2，项目款（钱）什么时候收回来？行了，下...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        7004人喜欢      <span class="pubtime">1月16日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1015" data-tid="257705334" href="">喜欢</a>      </span>  </div></div><div class="guess-item album-item" id="14163" unique_id="1026:84633451">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/84633451/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84633451, channel: 106, engine: 1, pos: 60})">            <span class="pic1"><img src="guess_all_files/p1841868673.jpg" alt="《我和我》"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1841868533.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1841868511.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 84633451, channel: 106, engine: 1, pos: 60})" href="http://www.douban.com/photos/album/84633451/" target="_blank">《我和我》</a>    </div>        <div class="from">                <img src="guess_all_files/u2595488-8.jpg" width="16" height="16">                wwwwwwwwwwwww 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        9712人喜欢      <span class="pubtime">1月16日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="84633451" href="">喜欢</a>      </span>  </div></div><div class="guess-item event-item" id="14143" unique_id="2001:11450875">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11450875, channel: 106, engine: 1, pos: 61})" href="http://www.douban.com/online/11450875/" target="_blank">寻找豆瓣电影票！晒“宗师”票根，赢限量原版明信片～</a>    </div>                <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11450875, channel: 106, engine: 1, pos: 61})" href="http://www.douban.com/online/11450875/" class="guess-online-list" target="_blank">        <ul>        <li><img src="guess_all_files/p1842600652.jpg"></li>        <li><img src="guess_all_files/p1842838797.jpg"></li>        <li><img src="guess_all_files/p1842816114.jpg"></li>        <li><img src="guess_all_files/p1842488556.jpg"></li>        <li><img src="guess_all_files/p1842804603.jpg"></li>        <li><img src="guess_all_files/p1842488548.jpg"></li>        <li><img src="guess_all_files/p1842959234.jpg"></li>        <li><img src="guess_all_files/p1843036319.jpg"></li>        </ul>        </a>        <div class="from">                线上活动 / <b>810</b> 人参加        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        47人喜欢      <span class="pubtime">1月16日</span></div>  </div>      <div class="ft">     <span class="usr-btn online-event-btn"><a href="#" data-online-id="11450875">要参加</a></span>  </div></div><div class="guess-item event-item" id="14131" unique_id="2001:11450373">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11450373, channel: 106, engine: 1, pos: 62})" href="http://www.douban.com/online/11450373/" target="_blank">找个同年同月同日生的孩子一起旅行吧</a>    </div>                <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 2001, tid: 11450373, channel: 106, engine: 1, pos: 62})" href="http://www.douban.com/online/11450373/" class="guess-online-list" target="_blank">        <ul>        <li><img src="guess_all_files/p1840699440.jpg"></li>        <li><img src="guess_all_files/p1841784921.jpg"></li>        <li><img src="guess_all_files/p1842415655.jpg"></li>        <li><img src="guess_all_files/p1843482344.jpg"></li>        <li><img src="guess_all_files/p1841051302.jpg"></li>        <li><img src="guess_all_files/p1840702495.jpg"></li>        <li><img src="guess_all_files/p1840694088.jpg"></li>        <li><img src="guess_all_files/p1840579875.jpg"></li>        </ul>        </a>        <div class="from">                线上活动 / <b>10961</b> 人参加        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        898人喜欢      <span class="pubtime">1月15日</span></div>  </div>      <div class="ft">     <span class="usr-btn online-event-btn"><a href="#" data-online-id="11450373">要参加</a></span>  </div></div><div class="guess-item" id="14125" unique_id="1015:257543620">  <div class="bd">          <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1015, tid: 257543620, channel: 106, engine: 1, pos: 63})" href="http://www.douban.com/note/257543620/" target="_blank">高质量的时间</a>    </div>        <div class="from">                <img src="guess_all_files/u30789450-5.jpg" width="16" height="16">                苏豆芽 的日记        </div>            <div class="desc">            <p>我发现，最近能让我开心的唯一一件事情，就是度过一段我自己谓之的“高质量的时间”。这段时间，可能是上午3个小时，吃完早点之后，就坐在吃早点的地方，看资料，脑袋里随时冒出一些想法，记录在本子上。一直到中午，继续在同一家店吃午饭。这段时间，也可能是，从地铁站出来，一路走到办公楼大概10分钟的路程里。脑袋和心忽然澄澈异常。“鬼上身”一般想到一个好故事，到办公室迫不及待的写下大概，晚上回家给老公讲。这段时间，更多是，忘记工作...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        3912人喜欢      <span class="pubtime">1月15日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1015" data-tid="257543620" href="">喜欢</a>      </span>  </div></div><div class="guess-item album-item" id="14123" unique_id="1026:63546698">  <div class="bd">                      <div class="pic">        <a href="http://www.douban.com/photos/album/63546698/" target="_blank" onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 63546698, channel: 106, engine: 1, pos: 64})">            <span class="pic1"><img src="guess_all_files/p1843241141.jpg" alt="本子。"><i></i></span>            <span class="pic2"><img src="guess_all_files/p1836710543.jpg"><i></i></span>            <span class="pic3"><img src="guess_all_files/p1817379101.jpg"><i></i></span>        </a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1026, tid: 63546698, channel: 106, engine: 1, pos: 64})" href="http://www.douban.com/photos/album/63546698/" target="_blank">本子。</a>    </div>        <div class="from">                <img src="guess_all_files/u47379426-85.jpg" width="16" height="16">                melons 的相册        </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        2605人喜欢      <span class="pubtime">1月15日</span></div>  </div>      <div class="ft">      <span class="usr-btn fav-btn">          <a data-tkind="1026" data-tid="63546698" href="">喜欢</a>      </span>  </div></div><div class="guess-item subject-item" id="14066" unique_id="1002:3269068">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3269068, channel: 106, engine: 1, pos: 65})" href="http://movie.douban.com/subject/3269068/" target="_blank"><img src="guess_all_files/s11353209.jpg" alt="怪物旅社"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3269068, channel: 106, engine: 1, pos: 65})" href="http://movie.douban.com/subject/3269068/" target="_blank">怪物旅社</a>                                                <div class="rating">                    <span class="rating-stars">★★★★☆</span> <b>8.0</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">格恩迪·塔塔科夫斯基 Genndy Tartakovsky</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">亚当·桑德勒 Adam Sandler / 凯文·詹姆斯 Kevin James</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">喜剧 / 动画</span>                </li>            </ul>        </div>            <div class="desc">            <p>在阴森恐怖令人谈之色变的幽灵森林深处，耸立着一幢巍峨庄严的古堡。这里的主人正是声名显赫的吸血鬼德古拉（亚当·桑德勒 Adam Sandler 配音...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        13084人看过    <span class="pubtime">1月13日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-3269068-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3269068-collect">看过</a></span>  </div></div><div class="guess-item subject-item" id="14030" unique_id="1002:3821067">  <div class="bd">              <div class="pic">            <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3821067, channel: 106, engine: 1, pos: 66})" href="http://movie.douban.com/subject/3821067/" target="_blank"><img src="guess_all_files/s24591423.jpg" alt="一代宗师"></a>        </div>    <div class="content">    <div class="title">        <a onclick="moreurl(this, {source: 'guess', version: 3, type: 1, kind: 1002, tid: 3821067, channel: 106, engine: 1, pos: 66})" href="http://movie.douban.com/subject/3821067/" target="_blank">一代宗师</a>                                                <div class="rating">                    <span class="rating-stars">★★★☆☆</span> <b>7.6</b>                </div>    </div>                <div class="from">            <ul>                <li>                <span class="label">导演：</span>                <span class="value">王家卫 Kar Wai Wong</span>                </li>                <li>                <span class="label">主演：</span>                <span class="value">梁朝伟 Tony Leung Chiu Wai / 章子怡 Ziyi Zhang</span>                </li>                <li>                <span class="label">类型：</span>                <span class="value">剧情 / 动作</span>                </li>            </ul>        </div>            <div class="desc">            <p>广东佛山人叶问（梁朝伟 饰），年少时家境优渥，师从咏春拳第三代传人陈华顺学习拳法，师傅“一条腰带一口气”的告诫，支持他走过兵荒马乱、...</p>            </div>    </div>      <div class="source">    精选热点        &nbsp;|&nbsp;        91198人看过    <span class="pubtime">1月12日</span></div>  </div>      <div class="ft">                          <span class="usr-btn subject-btn"><a href="#" name="pbtn-3821067-wish">想看</a></span>                  <span class="usr-btn subject-btn"><a href="#" name="pbtn-3821067-collect">看过</a></span>  </div></div><div class="guess-note guess-more" style="display: none;"><a href="#" class="a_guess_more">加载更多</a></div><div class="guess-note guess-nothing">没有更多内容</div></div>
+<input value="0" id="guess-hidden-value" style="display:none;">
+<textarea id="guess-hidden-cache" style="display:none;"></textarea>
+
+
+
+
+   </div>
+
+
+
+   <div class="side">
+       
+
+
+
+
+    
+
+
+
+<div id="hack-notify" class="notify-mod" style="display:none;">
+    <h2>发现更多有趣的内容:</h2> <a href="/subject/explore">喜欢的东西</a> / <a href="/app/">移动应用</a>
+</div>
+
+  
+
+
+
+
+  <div id="dale_homepage_login_top_right"></div>
+
+
+       
+<div class="mod" id="db-online-events">
+    <div class="hd">
+            <span class="func">
+                <a class="bn-create" href="http://www.douban.com/online/create"><span>创建线上活动</span></a>
+            </span>
+        
+    <h2>
+        线上活动
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/online/?g=d">更多</a>
+                ) </span>
+    </h2>
+
+    </div>
+    <div class="bd">
+       <ul id="hack-online-event-target" class="clearbox"></ul>
+        
+        
+<ul id="hack-online-event" class="clearbox" style="display:none;">
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11451670/">一张图、一句话证明你还在坚持梦想！</a>
+            </div>
+            <div class="desc">
+                时间：1月15日 - 2月5日
+                <br><span class="num">2233人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11450798/">新的一年，你学会做饭了么，晒晒自己的拿手菜吧</a>
+            </div>
+            <div class="desc">
+                时间：1月14日 - 2月13日
+                <br><span class="num">387人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11450373/">找个同年同月同日生的孩子一起旅行吧</a>
+            </div>
+            <div class="desc">
+                时间：1月13日 - 2月28日
+                <br><span class="num">10956人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11450733/">大家一起来翻包吧！哟吧扎黑</a>
+            </div>
+            <div class="desc">
+                时间：1月14日 - 2月28日
+                <br><span class="num">230人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11446574/">找个同年同月同日的人一起旅行吧~</a>
+            </div>
+            <div class="desc">
+                时间：1月9日 - 3月31日
+                <br><span class="num">15499人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11458180/">用一张图证明你对007是真爱！ </a>
+            </div>
+            <div class="desc">
+                时间：1月21日 - 2月28日
+                <br><span class="num">207人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11445089/">交流最近想入手的小物❤秀秀你置办的年货吧</a>
+            </div>
+            <div class="desc">
+                时间：1月8日 - 1月31日
+                <br><span class="num">3245人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+            <div class="title">
+                <a href="http://www.douban.com/online/11447708/">大家说说自己的一个书房梦吧</a>
+            </div>
+            <div class="desc">
+                时间：1月10日 - 2月9日
+                <br><span class="num">1901人参加</span>
+            </div>
+        </li>
+        <li class="block clearfix">
+          <div id="dale_homepage_online_activity_promo_1"></div>
+        </li>
+        <li class="block clearfix">
+          <div id="dale_homepage_online_activity_promo_2"></div>
+        </li>
+</ul>
+
+        
+    </div>
+</div>
+
+       <div class="mod">
+           
+
+<div id="db-sites">
+    <div class="hd">
+        
+    <h2>
+        发现小组
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(
+                    <a href="http://www.douban.com/group/explore">更多</a>
+                ) </span>
+    </h2>
+
+    </div>
+    <div class="bd">
+        <div id="hack-group-target" class="content"></div>
+        <div id="hack-group" class="content" style="display:none;">
+
+            
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/70021/">
+                    <img src="guess_all_files/g70021-1.jpg" alt="午饭吃什么" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/70021/">午饭吃什么</a></h3>
+                7552成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/wuhan/">
+                    <img src="guess_all_files/g10261-1.jpg" alt="武汉豆瓣" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/wuhan/">武汉豆瓣</a></h3>
+                58095成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/23983/">
+                    <img src="guess_all_files/g23983-1.jpg" alt="吃喝玩乐在西安" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/23983/">吃喝玩乐在西安</a></h3>
+                8101成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/susanmiller/">
+                    <img src="guess_all_files/g134798-1.jpg" alt="SUSAN MILLER" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/susanmiller/">SUSAN MILLER</a></h3>
+                72855成员
+            </div>
+        </div>
+
+            
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/33112/">
+                    <img src="guess_all_files/g33112-1.jpg" alt="我的暗恋唱成这首歌、" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/33112/">我的暗恋唱成这首歌、</a></h3>
+                13018成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/170177/">
+                    <img src="guess_all_files/g170177-25.jpg" alt="这辈子一定要做几件疯狂的事" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/170177/">这辈子一定要做几件疯...</a></h3>
+                37904成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/ooooo/">
+                    <img src="guess_all_files/g57362-16.jpg" alt="用「哦」回复就是冷暴力！" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/ooooo/">用「哦」回复就是冷暴力！</a></h3>
+                6529成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/nihonggo/">
+                    <img src="guess_all_files/g288751-1.jpg" alt="用日语写日记" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/nihonggo/">用日语写日记</a></h3>
+                2015成员
+            </div>
+        </div>
+
+
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/Baudrillard/">
+                    <img src="guess_all_files/g16154-1.jpg" alt="鲍德里亚/布希亞（Jean Baudrillard）" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/Baudrillard/">鲍德里亚/布希亞（Jean...</a></h3>
+                2140成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/bulaoge/">
+                    <img src="guess_all_files/g14138-1.jpg" alt="不老歌豆瓣" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/bulaoge/">不老歌豆瓣</a></h3>
+                6626成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/348758/">
+                    <img src="guess_all_files/g348758-2.jpg" alt="MBTI中心站" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/348758/">MBTI中心站</a></h3>
+                1905成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/NJU/">
+                    <img src="guess_all_files/g11698-1.jpg" alt="南京大学" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/NJU/">南京大学</a></h3>
+                6679成员
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/48631/">
+                    <img src="guess_all_files/g48631-1.jpg" alt="佛教美术" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/48631/">佛教美术</a></h3>
+                2774成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/nooneinurworld/">
+                    <img src="guess_all_files/g130144-4.jpg" alt="大龄顽童提前退休学前班" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/nooneinurworld/">大龄顽童提前退休学前班</a></h3>
+                5320成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/snooker/">
+                    <img src="guess_all_files/g120319-1.jpg" alt="武汉台球俱乐部" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/snooker/">武汉台球俱乐部</a></h3>
+                941成员
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <a href="http://www.douban.com/group/bjhuwai/">
+                    <img src="guess_all_files/g228959-2.jpg" alt="北京户外摄影（墙根网俱乐部）" width="48" height="48">
+                </a>
+            </div>
+            <div class="info">
+                <h3><a href="http://www.douban.com/group/bjhuwai/">北京户外摄影（墙根网...</a></h3>
+                789成员
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+       </div>
+       
+
+
+
+
+
+<div id="hack-cast" class="mod" style="display:none;">
+           
+
+<div id="db-sites">
+    <div class="hd">
+        
+    <h2>
+      演员表
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+    </h2>
+
+    </div>
+    <div class="bd">
+        <div class="content">
+            
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1137591-9.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>Dexter.Yy</h3>第1幕 监督</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u2679913-10.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>Clyde.L </h3>第2幕 监督</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u3612380-10.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>浩天.Howtin</h3>第2幕 监督</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1949819-15.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>BeiYuu</h3>第2幕 监督</div>
+        </div>
+
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1019357-11.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>糖伴番茄米高没</h3>第2幕 监督</div>
+        </div>
+
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1105902-19.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>少年们的小辰光</h3>第3幕 监督</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1219643-28.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>mockee</h3>第3、4幕 监督</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1170308-32.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>kejun</h3>片尾监督</div>
+        </div>
+
+        
+        
+        
+
+        </div>
+    </div>
+</div>
+
+       <p style="margin:12em 0 8em;font-size:18px;text-align:center;">
+       豆瓣前端工务精英私人会所<br>出品
+       </p>
+       </div>
+
+
+
+<div class="mobile-app-entrance block5 app-main">
+
+    <a class="entrance-link first-link" href="http://www.douban.com/mobile/">
+        <span class="app-icon icon-main"></span>
+        <span class="main-title">豆瓣移动应用</span>
+        <span class="sub-title">点击下载</span>
+    </a>
+</div>
+
+   </div>
+</div>
+
+
+<div id="ft">
+
+
+
+<span id="icp" class="fleft gray-link">
+    © 2005－2013 douban.com, all rights reserved
+  <br>
+  <a href="http://www.miibeian.gov.cn/">京ICP证090015号</a>&nbsp;&nbsp;京ICP备11027288号&nbsp;&nbsp;网络视听许可证<a href="http://www.douban.com/about?topic=licence" target="_blank">0110418</a>号&nbsp;&nbsp;文网文[2009]267号&nbsp;<img src="guess_all_files/biaoshi.gif" align="absmiddle"><br> 京公网安备110105000728&nbsp;&nbsp;新出网证(京)字129号
+</span>
+
+<span class="fright">
+    <a href="http://www.douban.com/about">关于豆瓣</a>
+    · <a href="http://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="http://www.douban.com/help/">帮助中心</a>
+    · <a href="http://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="http://www.douban.com/mobile/">移动应用</a>
+    · <a href="http://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+</div>
+</div>
+
+<div class="back-to-top" style="left: 704px; position: fixed; display: none; bottom: 0px;">
+<a href="#" style="top: 40px;">↑回顶部</a>
+</div>
+
+<script src="guess_all_files/packed__init_7701316160.js" data-cfg-corelib="guess_all_files/packed_jquery.min6301986802.js"></script>
+<script type="text/javascript" src="guess_all_files/ee54ae583bd7046.js"></script>
+
+<!-- kili-->
+
+<!-- douban ad begin -->
+
+<div id="dui-dialog0" class="dui-dialog" style="display:none; top: 213px; left: 50%; margin-left:-300px; width: 600px;">       <span class="dui-dialog-shd" style="width: 600px;"></span>        <div class="dui-dialog-content">          <a href="#" class="j_close_dialog dui-dialog-close" style="display: block;">X</a>         <div class="hd" style="display: none;"><h3>提示</h3></div>          <div class="bd" style="height: auto; overflow: visible;"><div><div class="indentpop1 clearfix">
+        <form action="/j/subject/4051753/interest" method="POST" class="j a_interest_form movie-sns"><div style="display:none;"><input type="hidden" name="ck" value="ViKq"></div>
+    <input type="hidden" name="interest" value="collect">
+        <div class="interest-form-hd"><span class="gact rr"><a href="javascript:;" onclick="close_dialog()">x</a></span><h2>添加收藏：我看过这部电影</h2></div><div class="interest-rating"><span class="j a_stars"><span class="rate_stars" style="">给个评价吧?(可选):
+    <span id="rating"><span id="stars">
+    <img src="http://www.douban.com/pics/nst.gif" id="star1"><img src="http://www.douban.com/pics/nst.gif" id="star2"><img src="http://www.douban.com/pics/nst.gif" id="star3"><img src="http://www.douban.com/pics/nst.gif" id="star4"><img src="http://www.douban.com/pics/nst.gif" id="star5"></span><span id="rateword" class="pl"></span>
+    <input id="n_rating" type="hidden" value="" name="rating"></span></span></span></div><div class="tags-switch"><a id="showtags" rel="高级(标签和短评) ▼" href="javascript:void(0)">缩起 ▲</a></div><input id="foldcollect" name="foldcollect" value="F" type="hidden">
+    <ul id="advtags" class="interest_form">
+    
+        <li>标签(多个标签用空格分隔): </li>
+        <li><input name="tags" type="text" class="inp-tags"></li>
+        <li id="mytags" class="clearfix"><dl><dt>我的标签:</dt><dd><span class="tagbtn gract">电影</span> &nbsp; <span class="tagbtn gract">纪录片</span> &nbsp; <span class="tagbtn gract">音乐</span> &nbsp; <span class="tagbtn gract">动画片</span> &nbsp; <span class="tagbtn gract">台湾</span> &nbsp; <span class="tagbtn gract">宫崎骏</span> &nbsp; </dd></dl></li><li id="populartags" class="clearfix"><dl><dt>常用标签:</dt><dd><span class="tagbtn gract">福尔摩斯</span> &nbsp; <span class="tagbtn gract">美国</span> &nbsp; <span class="tagbtn gract">悬疑</span> &nbsp; <span class="tagbtn gract">侦探</span> &nbsp; <span class="tagbtn gract">RobertDowneyJr</span> &nbsp; <span class="tagbtn gract">JudeLaw</span> &nbsp; <span class="tagbtn gract">美国电影</span> &nbsp; <span class="tagbtn gract">2011</span> &nbsp; <span class="tagbtn gract">犯罪</span> &nbsp; <span class="tagbtn gract">电影</span> &nbsp; </dd></dl></li>
+        <li class="comment-label"><span id="left_n" class="num">140</span>简短评论:</li>
+        <li><textarea name="comment" class="comment" id="comment" maxlength="140" rows="3"></textarea>
+     </li>
+        <li class="private">
+          <input id="inp-private" name="private" type="checkbox"><label class="pl" for="inp-private">仅自己可见</label>
+        </li>
+        <li><div id="error" class="errnotnull"></div></li>
+    </ul>
+    
+    <div class="interest-form-ft" id="submits">
+    
+       <span class="bn-flat"><input type="submit" value="保存" name="save"></span>
+    </div>
+    </form>
+    </div>
+    </div></div>        </div>      </div>
+
+
+
+<audio src="song_for_guess.mp3" id="bg-audio" ></audio>
+
+
+
+
+
+<script>
+Do(function() {
+
+var bgm = document.querySelector('#bg-audio');
+
+var section_1 = function() {
+
+  bgm.play();
+
+  var setting = $('.guess3-setting');
+  var num = 0;
+  setTimeout(function _do() {
+    if (num > 6) {
+      setting.find('.btn-submit').css('background-color', '#4FCA6C');
+      setTimeout(function() {
+        setting.find('.a_guess_setting').trigger('click');
+        section_2();
+        section_3();
+        section_4();
+      }, 300);
+      return;
+    }
+    setting.find('.checkbox').eq(num).addClass('checkbox-checked');
+    num ++;
+    setTimeout(_do, 500);
+  }, 500);
+};
+
+var section_2 = function() {
+
+bgm.currentTime = 15.6;
+
+var loops = 600;
+
+autoCarry($('#hack-online-event'), $('#hack-online-event-target'), 'li', 5, loops, 
+function(n) {
+  if (n === (loops / 2.5)|0) {
+    bgm.currentTime = 142;
+  } else if (n === 146) {
+    bgm.currentTime = 208;
+  } else if (n === 2) {
+    setTimeout(function(){
+      $('body').css({'webkitTransform':'translate3d(200px,400px,0) scale(2)'})
+    }, 1000);
+    setTimeout(function(){
+      $('body').css({'webkitTransform':'translate3d(0,0,0) scale(1)'})
+    }, 3000);
+    setTimeout(function(){
+      section_12();
+    }, 6000);
+  }
+});
+
+autoCarry($('#hack-guess3-list'), $('#hack-guess3-list-target'), '.guess-item', 5, loops);
+
+autoCarry($('#hack-group'), $('#hack-group-target'), '.item', 5, loops);
+
+};
+
+var section_3 = function() {
+   var node = $('#hack-notify');
+   var words = [
+  ' <a href="">加入你的部落</a>',
+  ' <a href="">发现更多喜欢的东西</a>',
+  ' <a href="">发现你的周边生活</a>',
+  '<h2>发现更多有趣的内容:</h2> <a href="/subject/explore">喜欢的东西</a> / <a href="/app/">移动应用</a>',
+   ];
+   var show = function() {
+      node.show().html(words[0]);
+   };
+   var hide = function() {
+      node.hide();
+   };
+   var show_word1 = function() {
+      node.show().html(words[1]);
+   };
+   var show_word2 = function() {
+      node.show().html(words[2]);
+   };
+   var show_word3 = function() {
+      node.show().html(words[3]);
+   };
+   setTimeout(show, 2000); 
+   setTimeout(hide, 4000); 
+   setTimeout(show_word1, 4000); 
+   setTimeout(hide, 8000); 
+   setTimeout(show_word2, 10000); 
+   setTimeout(hide, 14000); 
+   setTimeout(show_word3, 20000); 
+};
+
+var section_4 = function() {
+   var node = $('#hack-title');
+   var words = [
+  '欢迎，改变世界的文艺青年',
+  '欢迎，熊猫饼饼爬山坡',
+  '欢迎，少年们的小辰光',
+  '欢迎，农田五组小贱草',
+  '欢迎，糖伴番茄米高没',
+  '欢迎，[已注销]',
+   ];
+   var show_word1 = function() {
+      node.html(words[0]);
+   };
+   var show_word2 = function() {
+      node.html(words[1]);
+   };
+   var show_word3 = function() {
+      node.html(words[2]);
+   };
+   var show_word4 = function() {
+      node.html(words[3]);
+   };
+   var show_word5 = function() {
+      node.html(words[4]);
+   };
+   var show_word6 = function() {
+      node.html(words[5]);
+   };
+   setTimeout(show_word1, 4000); 
+   setTimeout(show_word2, 10000); 
+   setTimeout(show_word3, 16000); 
+   setTimeout(show_word4, 20000); 
+   setTimeout(show_word5, 24000); 
+   setTimeout(show_word6, 40000); 
+};
+
+var section_5 = function() {
+  var reminder = $('#hack-reminder').show();
+  $('body').css({
+     'webkitTransition': 'all 1s',
+     'webkitTransform': 'translate3d(-100%, 100%, 0) scale(3)'
+  });
+  setTimeout(function() {
+    reminder.parent().trigger('click');
+  }, 1000);
+  setTimeout(function() {
+    reminder.parent().trigger('click');
+  }, 2000);
+  setTimeout(function() {
+    $('body').css({
+       'webkitTransform': 'translate3d(0, 0, 0) scale(1)'
+    });
+    section_7();
+  }, 3000);
+  var timer = setInterval(function() {
+    var n = (reminder.find('span').text()|0) + 1;
+
+    if (n === 200) {
+      clearInterval(timer);
+      reminder.remove();
+    }
+    reminder.find('span').text(n);
+    $('#hack-doumail').find('em').html('(' + (parseInt($('#hack-doumail').find('em').text().match(/\d+/)[0], 10) + 1) + ')');
+  }, 100);
+};
+
+var section_6 = function() {
+   $('#hack-old-nav').css({
+     'height': '0',
+     'margin': '0',
+     'overflow': 'hidden',
+     'webkitTransition': 'all 1s',
+   }); 
+   $('#hack-new-nav').fadeIn(1000); 
+
+};
+
+var section_7 = function() {
+
+  var nav_str_1 = [
+  '<ul>'
+  ,'    <li><a href="http://www.douban.com/">首页</a></li>'
+   ,'       <li><a href="http://www.douban.com/update/">友邻广播</a></li>'
+   ,'       <li><a href="http://www.douban.com/mine/">我的豆瓣</a></li>'
+   ,'       <li><a href="http://www.douban.com/explore/">小组</a></li>'
+   ,'   <li><a href="http://www.douban.com/neighborhood/">小站</a></li>'
+   ,'  </ul>'
+  ].join('');
+
+  var nav_str_2 = [
+  '<ul>'
+  ,'    <li><a href="http://www.douban.com/">首页</a></li>'
+   ,'       <li><a href="http://www.douban.com/update/">友邻广播</a></li>'
+   ,'       <li><a href="http://www.douban.com/mine/">我的豆瓣</a></li>'
+   ,'       <li><a href="http://www.douban.com/explore/">浏览发现</a></li>'
+   ,'   <li><a href="http://www.douban.com/neighborhood/">周边生活</a></li>'
+   ,'  </ul>'
+  ].join('');
+
+  setTimeout(function() {
+    $('#hack-nav-items').html(nav_str_2);
+    $('#hack-nav-group').show();
+    $('.hackword').hide();
+    clearInterval(timer);
+  $('body').css({
+     'webkitTransform': 'translate3d(0, 0, 0) scale(1)'
+  });
+  }, 8000);
+
+  setTimeout(function() {
+  return;
+  $('body').css({
+     'webkitTransform': 'translate3d(-100%, 600px, 0) scale(2)'
+  });
+  }, 3000);
+
+  var timer = setInterval(function() {
+    $('.hackword').toggle();
+  }, 300);
+
+};
+
+var section_8 = function() {
+  $('#dui-dialog0').show();
+  setTimeout(function() {
+    $('#dui-dialog0').hide();
+  }, 500);
+};
+
+var section_9 = function() {
+  var iframe = $('<iframe src="update.html" width="100%" height="100%" frameborder="0" scrolling="no" style="display:none;position:fixed;top:0;left:0;"></iframe>').appendTo('body');
+   setTimeout(function() {
+    iframe.show();
+   }, 2000);
+   setTimeout(function() {
+    iframe.remove();
+   }, 13000);
+};
+
+var section_10 = function() {
+  var iframe = $('<iframe src="error.html" width="100%" height="100%" frameborder="0" scrolling="no" style="position:fixed;top:0;left:0;background:#fff;"></iframe>').appendTo('body');
+   setTimeout(function() {
+     iframe.remove();
+   }, 500);
+};
+
+var section_11 = function() {
+  var iframe = $('<iframe src="group.html" width="100%" height="100%" frameborder="0" scrolling="no" style="display:none;position:fixed;top:0;left:0;"></iframe>').appendTo('body');
+   setTimeout(function() {
+    iframe.show();
+   }, 2000);
+   setTimeout(function() {
+    iframe.remove();
+   }, 3000);
+};
+
+
+var section_12 = function() {
+$('body').css({'webkitTransform':'translate3d(-50%, 0, 0) scale(2)',
+ webkitTransition: 'all .5s'
+}).scrollTop(1200);
+var cast = $('#hack-cast').show();
+var t = 0;
+var timer = setInterval(function() {
+  t = t - 100;
+  console.log(Math.abs(t));
+  if (Math.abs(t) === 1600) {
+    clearInterval(timer);
+    return;
+  }
+  $('body').css('margin-top', t);
+}, 1000);
+};
+
+
+setTimeout(function() {
+  setTimeout(section_9, 20000);
+  setTimeout(section_10, 34000);
+  setTimeout(section_11, 36000);
+  setTimeout(section_10, 44000);
+  setTimeout(section_6, 10000);
+  setTimeout(section_8, 6000);
+  setTimeout(section_8, 8000);
+  setTimeout(section_5, 15000);
+  //setTimeout(section_8, 20000);
+  //setTimeout(section_8, 24000);
+  //setTimeout(section_8, 28000);
+  section_1();
+}, 1000);
+
+
+function autoCarry(from, to, selector, keep_num, loop, cb) {
+  var count = loop || 100;
+  var index = 0;
+  var nods = from.find(selector);
+  var nods_count = nods.length;
+
+  setTimeout(function _add() {
+    if (!count) {
+      return;
+    }
+
+     cb && cb(count);
+
+    nods.eq(index).clone().prependTo(to);
+    index = index > nods_count ? 0 : index + 1;
+    if (to.find(selector).length > keep_num) {
+       to.find(selector).last().remove();
+    }
+
+    setTimeout(_add, 100 / (1 + 99/count));
+    count --;
+  }, 500);
+}
+
+});
+</script>
+
+ 
+<!-- douban ad end -->
+
+<object data="guess_all_files/packed__all295341955.js" width="0" height="0"></object><object data="guess_all_files/packed_douban927101842.js" width="0" height="0"></object></body></html>
