@@ -12,7 +12,7 @@ define([
     , jump_count = 0
     , sfx = {}
 
-  for (var i = 1; i < 25; i++) {
+  for (var i = 1; i < 30; i++) {
     sfx['r' + i] = 'f2e/r' + i + '.m4a'
   }
 
@@ -369,7 +369,7 @@ define([
       }).follow().done(function() {
         return demonRobot.walk([100, -30], 500, 'easeOut')
       }).follow().done(function() {
-        return demonRobot.speak('说了这么多，我们再来听听长工心目中的前端。', 3000, 6)
+        return demonRobot.speak('说了这么多，我们再来听听长工心目中的前端。', 4000, 6, sfx.r25)
       }).follow().done(function() {
         return demonRobot.walk([250, -130], 600, 'easeOut')
       })
@@ -439,14 +439,16 @@ define([
       .follow().done(function(){
         return demonRobot.walk([-250, 130], 600, 'easeOut')
       }).follow().done(function(){
-        return demonRobot.speak('网络世界中，前端的身影无处不在，它们见证了时代的变迁，你我生活的改变...', 6000, 6)
+        return demonRobot.speak('网络世界中，前端的身影无处不在，它们见证了时代的变迁，你我生活的改变...', 7000, 6, sfx.r26)
       }).follow().done(function(){
-        return demonRobot.speak('好了，虽然呢还没跟您聊够。但是节目时长有限，咱们今天只能先聊到这儿了。', 6000, 6)
+        return demonRobot.speak('好了，虽然呢还没跟您聊够。但是节目时长有限，咱们今天只能先聊到这儿了。', 7000, 6, sfx.r27)
       }).follow().done(function(){
-        return demonRobot.speak('如果您对前端这个行当还是意犹未尽，没关系，咱们年会结束后找个僻静的地方继续聊聊前端的人生理想。', 6000, 6)
+        return demonRobot.speak('如果您对前端这个行当还是意犹未尽，没关系，咱们年会结束后找个僻静的地方继续前端的人生理想。', 9000, 6, sfx.r28)
       }).follow().done(function(){
         demonRobot.rotateHand('right', '-130deg', 200)
-        return demonRobot.speak('2013 新年快乐！回见了您呐。', 2000, 6)
+        return demonRobot.speak('回见了您呐！', 2000, 6, sfx.r29)
+      }).follow().done(function(){
+        demonRobot.walk([-2000, 0], 500)
       })
 
       return promise
