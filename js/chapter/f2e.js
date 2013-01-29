@@ -39,6 +39,8 @@ define([
         , imgDiors = $('#diors', doc)
         , imgReception = $('#reception', doc)
         , imgCraftsman = $('#craftsman', doc)
+        , imgCtba = $('#ctba', doc)
+        , vote = $('#vote', doc)
 
       wait(1000).done(function() {
         util.showDemon(demonRobot)
@@ -48,7 +50,7 @@ define([
       }).follow().done(function() {
         demonRobot.rotateHand('left', '130deg', 300);
         demonRobot.rotateHand('right', '-130deg', 300);
-        return demonRobot.speak('大家好，欢迎收看这一期的《这里是豆瓣》，我是阿罗', 3000, 3)
+        return demonRobot.speak('大家好，欢迎收看这一期的《这里是豆瓣》，我是主持人阿罗', 3000, 3)
       }).follow().done(function() {
         demonRobot.rotateHand('left', '30deg', 300);
         demonRobot.rotateHand('right', '-30deg', 300);
@@ -86,10 +88,10 @@ define([
       }).follow().done(function() {
         return demonRobot.speak('没错', 1000, 2)
       }).follow().done(function() {
-        demonRobot.rotateHand('right', '-110deg', 300);
+        demonRobot.rotateHand('right', '-80deg', 150);
         return demonRobot.speak('今天我们就来说道说道', 1500, 3)
       }).follow().done(function() {
-        demonRobot.rotateHand('right', '-130deg', 300);
+        demonRobot.rotateHand('right', '-130deg', 150);
         demonRobot.speak('前端！', 3000, 2)
         return wait(3000)
       }).follow().done(function() {
@@ -134,7 +136,7 @@ define([
         demonRobot.rotateLeg('right', '0deg', 300)
         demonRobot.rotateEye('90deg', 0)
         demonRobot.moveEye(0.6, 200)
-        return demonRobot.walk([45, 240], 1000, 'easeOut')
+        return demonRobot.walk([45, 240], 500, 'easeOut')
       }).follow().done(function() {
         return demonRobot.speak('咪咪～乖～', 1500, 0)
       }).follow().done(function() {
@@ -143,7 +145,7 @@ define([
         imgReception.hide()
         demonRobot.rotateEye('0deg', 0)
         demonRobot.moveEye(0, 200)
-        return demonRobot.walk([130, -245], 1000, 'easeOut')
+        return demonRobot.walk([130, -245], 600, 'easeOut')
       }).follow().done(function() {
         return demonRobot.rotateHand('right', '-180deg', 300)
       }).follow().done(function() {
@@ -155,11 +157,69 @@ define([
         demonRobot.rotateHand('right', '-30deg', 300)
         return demonRobot.walk([-80, 0], 1000, 'easeOut')
       }).follow().done(function() {
-        return demonRobot.speak('早在驴宗年间，并没有多少人提及前端开发这个词儿。', 4000, 6)
+        return demonRobot.speak('不过，早在驴宗年间，并没有多少人提及前端开发这个词儿。', 4000, 6)
       }).follow().done(function() {
         return demonRobot.speak('大家所熟知的更多是叫做网页制作，特平易近人一词儿，一听就是个民间手艺活儿。', 6000, 6)
       }).follow().done(function() {
+        return demonRobot.walk([-220, 0], 1000, 'easeOut')
+      }).follow().done(function() {
         return fadeIn(imgCraftsman[0])
+      }).follow().done(function() {
+        return wait(1000)
+      }).follow().done(function() {
+        return demonRobot.walk([0, 220], 100, 'easeOut')
+      }).follow().done(function() {
+        demonRobot.rotateHand('left', '120deg', 300)
+        demonRobot.rotateHand('right', '-100deg', 300)
+        demonRobot.rotateLeg('left', '90deg', 200)
+        demonRobot.rotateLeg('right', '-90deg', 200)
+        demonRobot.moveEye(0.6, 200)
+        return wait(1000)
+      }).follow().done(function() {
+        return demonRobot.speak('大爷～您幸福吗？', 2000, 0)
+      }).follow().done(function() {
+        var action = choreo().play()
+        return action.actor(imgCraftsman[0], {
+          'margin-left': '2000px'
+        }, 500, 'easeOut')
+      }).follow().done(function() {
+        return wait(500)
+      }).follow().done(function() {
+        imgCraftsman.hide()
+        return wait(500 + 1000)
+      }).follow().done(function() {
+        return demonRobot.squintEye(1500)
+      }).follow().done(function() {
+        demonRobot.rotateHand('left', '80deg', 300)
+        demonRobot.rotateHand('right', '-80deg', 300)
+        return demonRobot.walk([-150, 0], 500, 'easeOut')
+      }).follow().done(function() {
+        return wait(500 + 600)
+      }).follow().done(function() {
+        demonRobot.speak('不过您可别小瞧了这些手艺人，他们中间很多都曾是风光一时的个人站长。', 5000, 2)
+        return fadeIn(imgCtba[0])
+      }).follow().done(function() {
+        return wait(5000+1000)
+      }).follow().done(function() {
+        demonRobot.rotateHand('left', '40deg', 300)
+        demonRobot.rotateHand('right', '-50deg', 300)
+        demonRobot.rotateLeg('left', '0deg', 300)
+        demonRobot.rotateLeg('right', '0deg', 300)
+        return demonRobot.walk([50, -150], 500, 'easeOut')
+      }).follow().done(function() {
+        return fadeOut(imgCtba[0])
+      }).follow().done(function() {
+        return wait(500)
+      }).follow().done(function() {
+        imgCtba.hide()
+        return fadeIn(vote[0])
+      }).follow().done(function() {
+        var action = choreo().play()
+        return action.actor(vote[0], {
+          'margin-top': '50px'
+        }, 600, 'easeOut')
+      }).follow().done(function() {
+        return demonRobot.walk([360, 50], 500, 'easeOut')
       })
 
       return promise

@@ -26,6 +26,10 @@ require([
     });
 
 var story = [{
+        stage: 'pages/f2e.html',
+        script: '../chapter/f2e.js',
+        style: '../dist/css/chapter/f2e.css'
+    }, {
         stage: 'pages/index.html',
         style: '../dist/css/chapter/intro.css',
         script: '../chapter/intro'
