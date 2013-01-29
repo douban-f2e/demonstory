@@ -15,7 +15,7 @@ define([
 
         JUDGE_LIST = [
             { name: '卢十三', id: 'lu13' },
-            { name: '影子', id: 'yingzi' },
+            { name: '田佳芝', id: 'yingzi' },
             { name: 'su37', id: 'su37' },
             { name: '超哥', id: 'chaoge' },
             { name: '老卡', id: 'laoka' }
@@ -434,7 +434,7 @@ define([
                     normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
                     normalDemon.sound(sfx['fm/fm_normal'], 10000, 100);
 
-                    wait(13000).done(function() {
+                    wait(10000).done(function() {
 
                         chaoge.speak('才 64k，还不如广告音质好！', 5000, 10);
                         lu13.speak('才 64k，还不如广告音质好！', 5000, 10, sfx['lu13/section-2']);
@@ -442,7 +442,7 @@ define([
                         yingzi.speak('才 64k，还不如广告音质好！', 5000, 10);
 
                     });
-                    return wait(18000 + 800);
+                    return wait(15000 + 800);
 
                 }).follow().done(function() {
                     normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
@@ -452,12 +452,10 @@ define([
                 }).follow().done(function() {
                     adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
                     adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
-                    wait(8000).done(function() {
+                    wait(4000).done(function() {
 
-                        chaoge.speak('负分，滚粗啊！', 1500, 10);
-                        lu13.speak('负分，滚粗啊！', 1500, 10);
-                        su37.speak('负分，滚粗啊！', 1500, 10);
-                        yingzi.speak('负分，滚粗啊！', 1500, 10);
+                        lu13.speak('说广告你还真来啊！', 1500, 10);
+                        su37.speak('说广告你还真来啊！', 1500, 10);
 
                     });
 
@@ -466,22 +464,26 @@ define([
                 }).follow().done(function() {
                     proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
                     proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
-                    wait(5000).done(function() {
+                    wait(3000).done(function() {
                         proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
-                        adDemon.speak('灰溜溜的逃走', 3000, 3);
+                        adDemon.speak('灰溜溜地逃走', 1500, 0);
                         adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                        return wait(15000 + 200);
+                        return wait(5000 + 200);
                     }).follow().done(function() {
-                        proDemon.speak('更纯洁的音质，无广告的体验', 1500, 10);
-                        return wait(1500 + 200);
+                        proDemon.speak('更纯洁的音质，无广告的体验', 3500, 10);
+                        chaoge.speak('如此纯净的声音！', 3500, 10);
+                        lu13.speak('比刚才好多了', 3500, 10);
+                        su37.speak('多亏我的Monster耳机！', 3500, 10);
+
+                        return wait(12000);
                     }).follow().done(function() {
-                        chaoge.speak('赞，高端大气上档次！', 3500, 10);
-                        lu13.speak('赞，高端大气上档次！', 3500, 10, sfx['lu13/section-2-1']);
-                        su37.speak('赞，高端大气上档次！', 3500, 10);
-                        yingzi.speak('赞，高端大气上档次！', 3500, 10);
+                        chaoge.speak('高端大气上档次，通过！', 3500, 10);
+                        lu13.speak('高端大气上档次，通过！', 3500, 10, sfx['lu13/section-2-1']);
+                        su37.speak('高端大气上档次，通过！', 3500, 10);
+                        yingzi.speak('高端大气上档次，通过！', 3500, 10);
                     });
 
-                    return wait(25500 + 200);
+                    return wait(25000);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     return wait(3000 + 200);
