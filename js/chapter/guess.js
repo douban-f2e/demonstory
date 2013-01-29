@@ -436,10 +436,10 @@ define([
 
                     wait(10000).done(function() {
 
-                        chaoge.speak('才 64k，还不如广告音质好！', 5000, 10);
-                        lu13.speak('才 64k，还不如广告音质好！', 5000, 10, sfx['lu13/section-2']);
-                        su37.speak('才 64k，还不如广告音质好！', 5000, 10);
-                        yingzi.speak('才 64k，还不如广告音质好！', 5000, 10);
+                        chaoge.speak('才 64k，还不如广告音质好，不通过！', 5000, 9);
+                        lu13.speak('才 64k，还不如广告音质好，不通过！', 5000, 3, sfx['lu13/section-2']);
+                        su37.speak('才 64k，还不如广告音质好，不通过！', 5000, 11);
+                        yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
 
                     });
                     return wait(15000 + 800);
@@ -454,8 +454,8 @@ define([
                     adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
                     wait(4000).done(function() {
 
-                        lu13.speak('说广告你还真来啊！', 1500, 10);
-                        su37.speak('说广告你还真来啊！', 1500, 10);
+                        lu13.speak('说广告你还真来啊……', 1500, 10);
+                        su37.speak('说广告你还真来啊……', 1500, 10);
 
                     });
 
@@ -466,7 +466,7 @@ define([
                     proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
                     wait(3000).done(function() {
                         proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
-                        adDemon.speak('灰溜溜地逃走', 1500, 0);
+                        adDemon.speak('灰溜溜地逃走', 1500, 5);
                         adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                         return wait(5000 + 200);
                     }).follow().done(function() {
@@ -477,10 +477,10 @@ define([
 
                         return wait(12000);
                     }).follow().done(function() {
-                        chaoge.speak('高端大气上档次，通过！', 3500, 10);
-                        lu13.speak('高端大气上档次，通过！', 3500, 10, sfx['lu13/section-2-1']);
-                        su37.speak('高端大气上档次，通过！', 3500, 10);
-                        yingzi.speak('高端大气上档次，通过！', 3500, 10);
+                        chaoge.speak('高端大气上档次，通过！', 3500, 9);
+                        lu13.speak('高端大气上档次，通过！', 3500, 3, sfx['lu13/section-2-1']);
+                        su37.speak('高端大气上档次，通过！', 3500, 11);
+                        yingzi.speak('高端大气上档次，通过！', 3500, 0);
                     });
 
                     return wait(25000);
