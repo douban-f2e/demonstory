@@ -54,6 +54,7 @@ define([
 
         sfx: {
             intro: '/media/guess/intro.mp3',
+            exiting: '/media/guess/exiting.mp3',
             'piggy/intro': '/media/guess/piggy/1.m4a',
             'piggy/intro-lu13': '/media/guess/piggy/2lu13.m4a',
             'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.m4a',
@@ -367,6 +368,7 @@ define([
             })
 
             /* section#1 一代宗师 by lifei */
+            /*
             .follow().done(function() {
 
                 // return wait(0);
@@ -417,6 +419,7 @@ define([
             /* end fo section#1 */
 
             /* section#2 FM by lifei */
+            /*
             .follow().done(function() {
 
                 var proDemon = sectionDemons['fm-pro'],
@@ -499,6 +502,7 @@ define([
             /* end fo section#2 */
 
             /* section#3 相册 by gonghao */
+            /*
             .follow().done(function() {
 
                 // return wait(0);
@@ -714,6 +718,7 @@ define([
             /* end fo section#3 */
 
             /* section#4 猫 by zhaoguo */
+            /*
             .follow().done(function() {
 
                 // return wait(0);
@@ -789,6 +794,7 @@ define([
             /* end fo section#4 */
 
             /* section#5 阿北 by gonghao */
+            /*
             .follow().done(function() {
 
                 // return wait(0);
@@ -927,6 +933,7 @@ define([
 
                 }).follow().done(function(){
 
+                    laoka.sound(sfx['exiting'], 10000, 100);
                     laoka.walk([ 300, -180 ], 1200);
                     laoka.rotateHand('right', '-90deg', 300);
 
