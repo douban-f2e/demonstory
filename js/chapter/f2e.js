@@ -29,6 +29,11 @@ define([
         f2es,
         jump_count = 0;
 
+
+    function hide(el) {
+      el.remove()
+    }
+
     return {
         announce: function(screen){
             return screen('导航链接的诞生', DESC, 1000);
@@ -75,15 +80,21 @@ define([
 
             wrapper = $('.wrapper', win.document)
             var baseLeft = wrapper[0].offsetLeft + 200
+              , baseRight = wrapper.width() + baseLeft - 500
 
             var kejun = f2es.kejun.demon
-              , yy = f2es.yy.demon;
+              , yy = f2es.yy.demon
+              , cmonday = f2es.cmonday.demon
+              , bingbing = f2es.bingbing.demon
+              , gonghao = f2es.gonghao.demon
+              , seechaos = f2es.seechaos.demon
+
             wait(400)
             .done(function(){
                 return kejun.walk([ baseLeft, 200 ], 1);
             }).follow()
             .done(function(){
-                return kejun.walk([ 200, 200 ], 3000);
+                return kejun.walk([ 10, 200 ], 2000);
             }).follow()
             .done(function(){
                 return kejun.speak('要说前端开发是什么， 那得花开两朵，各自一枝', 5000, 3)
@@ -92,14 +103,44 @@ define([
                 return wait(300)
             }).follow()
             .done(function(){
-                return yy.walk([ baseLeft, 200 ], 1);
+                return cmonday.walk([ baseLeft, 200 ], 1);
             }).follow()
             .done(function(){
-                return yy.walk([ 400, 0 ], 3000);
+                return cmonday.walk([ 500, 1 ], 1000);
             }).follow()
             .done(function(){
-                yy.speak('原闻其详', 5000, 9)
+                cmonday.rotateHand('left', '150deg', 400)
+                return cmonday.speak('曾经我的座右铭是做一个兼容ie6的男人，现在我的座右铭是做一个兼容手机浏览器的好男人', 5000, 9)
+            }).follow().done(function(){
+                hide(kejun.me)
+                bingbing.rotateHand('left', '-150deg', 400)
+                bingbing.rotateHand('right', '-150deg', 400)
+                return bingbing.walk([ baseLeft, 400 ] , 1)
+            }).follow().done(function(){
+                return bingbing.speak(' 不会佛陀绣谱好意思说自己是前端吗？', 3000, 3)
+            }).follow().done(function(){
+                bingbing.rotateHand('left', '150deg', 400)
+                return bingbing.rotateHand('right', '150deg', 400)
+            }).follow().done(function(){
+                return wait(500)
+            }).follow().done(function(){
+                hide(cmonday.me)
+                return seechaos.walk([baseRight - 50, 200], 1)
+            }).follow().done(function(){
+                bingbing.walk([-2000, 1], 500)
+                return seechaos.walk([-50, 100], 1000)
+            }).follow().done(function(){
+                return seechaos.jump(100, 20, 800)
+            }).follow().done(function(){
+                return seechaos.jump(100, 20, 800)
+            }).follow().done(function(){
+                seechaos.rotateHand('left', '150deg', 400)
+                return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到…… ', 3000, 9)
+            }).follow().done(function(){
+            }).follow().done(function(){
+            }).follow().done(function(){
             })
+
             return promise;
         },
 
