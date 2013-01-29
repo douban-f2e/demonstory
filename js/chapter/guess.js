@@ -53,9 +53,13 @@ define([
 
     return {
 
-        announce: function(screen) {
+        sfx: {
+            intro: 'guess/intro.mp3'
+        },
 
-            return screen('“中国好条目”——我要上豆瓣猜', DESC, 1000);
+        announce: function(screen, sfx) {
+
+            return screen('“中国好条目”——我要上豆瓣猜', DESC, 1000, sfx.intro);
 
         },
 
