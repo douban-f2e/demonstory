@@ -269,7 +269,7 @@ define([
                     }, 400);
                 }, 400 + duration);
                 if (src) {
-                    self.sound(src, duration, vol);
+                    self.sound(src, duration, vol || 100);
                 }
             }, 10);
             return promise;

@@ -244,15 +244,19 @@ define([
         });
         return wait(6000);
       }).follow().done(function() {
-        screen.reset();
+        console.info("log: ", 2); // log
+        return screen.reset();
+      //}).follow().done(function() {
+        //console.info("log: ", 3); // log
+        //return wait(50000);
+        //var link_hui = $('#lnk-hui', doc);
+        //return wait(0);
       }).follow().done(function() {
-        return wait(50000);
-        var link_hui = $('#lnk-hui', doc);
-        return wait(0);
+        console.info("log: ", 4); // log
+        return wait(6000);
       }).follow().done(function() {
-        return wait(50000);
-      }).follow().done(function() {
-        //promise.fire();
+        console.info("log: ", 1); // log
+        promise.resolve();
       });
 
       return promise;
