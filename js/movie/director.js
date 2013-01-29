@@ -46,15 +46,19 @@ define([
 
                 var sfx_queue = [],
                     sfx_lib = {};
-                Object.keys(script.sfx).forEach(function(name){
-                    var promise = new event.Promise();
-                    var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
-                    sound.load();
-                    sound.bindOnce('canplay', promise.pipe.resolve);
-                    sfx_queue.push(promise);
-                }, script.sfx);
+                if (script.sfx) {
+                    Object.keys(script.sfx).forEach(function(name){
+                        var promise = new event.Promise();
+                        var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
+                        sound.load();
+                        sound.bindOnce('canplay', promise.pipe.resolve);
+                        sfx_queue.push(promise);
+                    }, script.sfx);
+                }
 
-                event.when.apply(event, sfx_queue).done(function(){
+                (sfx_queue.length 
+                    ? event.when.apply(event, sfx_queue) 
+                    : new event.Promise().resolve()).done(function(){
 
                     return script.announce(screen, sfx_lib);
 
@@ -118,10 +122,12 @@ define([
         } else {
             sound = src;
         }
-        if (vol) {
-            sound.setVolume(vol);
+        if (sound) {
+            if (vol) {
+                sound.setVolume(vol);
+            }
+            sound.play();
         }
-        sound.play();
         observer.when('ready', 'announceEnd').then(function(){
             box.removeClass('active');
             setTimeout(function(){
@@ -129,7 +135,7 @@ define([
             }, 500);
         });
         setTimeout(function(){
-            if (!sound.isEnded()) {
+            if (sound && !sound.isEnded()) {
                 sound.pause();
             }
             observer.fire('announceEnd');

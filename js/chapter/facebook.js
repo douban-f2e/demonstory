@@ -195,6 +195,8 @@ define([
       }).follow().done(function() {
         demonWang.speak('赞！', 1000, 10)
         return demonCover.speak('赞！', 1000, 3)
+      }).follow().done(function() {
+          promise.fire()
       })
       return promise
     }
