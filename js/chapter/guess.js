@@ -55,7 +55,9 @@ define([
 
         sfx: {
             intro: 'guess/intro.mp3',
+            'piggy/chaoge': 'guess/piggy/intro.m4a',
             'piggy/intro': 'guess/piggy/1.m4a',
+            'piggy/push': 'guess/piggy/goawsy.mp3',
             'piggy/intro-lu13': 'guess/piggy/2lu13.m4a',
             'piggy/intro-yingzi': 'guess/piggy/3yingzi.m4a',
             'piggy/intro-su37': 'guess/piggy/4su37.m4a',
@@ -99,7 +101,7 @@ define([
 
         announce: function(screen, sfx) {
 
-            return screen('“中国好条目”——我要上豆瓣猜', DESC, 1000, sfx.intro);
+            return screen('“豆瓣好条目”——我要上首页', DESC, 1000, sfx.intro);
 
         },
 
@@ -147,19 +149,20 @@ define([
 
                 piggyDemon.rotateHand('left', '130deg', 300);
 
-                piggyDemon.speak('大家好，我是今天“我要上豆瓣猜”的主持人，猪头小秘书！', 2000, 9, sfx['piggy/intro']);
+                piggyDemon.speak('大家好，我是今天“我要上首页”的主持人，猪头小秘书！', 12000, 9, sfx['piggy/intro']);
 
                 piggyDemon.rotateHand('right', '-130deg', 500);
 
-                return wait(2000 + 300);
+                return wait(6000 + 300);
 
             }).follow().done(function() {
 
                 piggyDemon.rotateHand('left', '170deg', 200);
 
-                piggyDemon.speak('旧的不去，新的不来，今儿我们启用全新的大舞台！', 2000, 9, sfx['piggy/intro']);
+                piggyDemon.speak('旧的不去，新的不来，今儿我们启用全新的大舞台！', 4000, 9);
+                piggyDemon.sound(sfx['piggy/push'],2000,100);
 
-                return wait(2000 + 200);
+                return wait(6000 + 200);
 
             }).follow().done(function() {
 
