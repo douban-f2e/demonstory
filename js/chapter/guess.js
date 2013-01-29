@@ -438,7 +438,7 @@ define([
 
                         chaoge.speak('才 64k，还不如广告音质好，不通过！', 5000, 9);
                         lu13.speak('才 64k，还不如广告音质好，不通过！', 5000, 3, sfx['lu13/section-2']);
-                        su37.speak('才 64k，还不如广告音质好，不通过！', 5000, 11);
+                        su37.speak('才 64k，还不如广告音质好，不通过！', 5000, 10);
                         yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
 
                     });
@@ -471,15 +471,15 @@ define([
                         return wait(5000 + 200);
                     }).follow().done(function() {
                         proDemon.speak('更纯洁的音质，无广告的体验', 3500, 10);
-                        chaoge.speak('如此纯净的声音！', 3500, 10);
-                        lu13.speak('比刚才好多了', 3500, 10);
-                        su37.speak('多亏我的Monster耳机！', 3500, 10);
+                        chaoge.speak('如此纯净的声音！', 3500, 9);
+                        lu13.speak('比刚才好多了', 3500, 3);
+                        su37.speak('多亏我的Monster耳机！', 3500, 0);
 
                         return wait(12000);
                     }).follow().done(function() {
                         chaoge.speak('高端大气上档次，通过！', 3500, 9);
                         lu13.speak('高端大气上档次，通过！', 3500, 3, sfx['lu13/section-2-1']);
-                        su37.speak('高端大气上档次，通过！', 3500, 11);
+                        su37.speak('高端大气上档次，通过！', 3500, 10);
                         yingzi.speak('高端大气上档次，通过！', 3500, 0);
                     });
 
