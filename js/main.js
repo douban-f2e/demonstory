@@ -10,6 +10,11 @@ define('jquery', ['dollar'], function($){
     return $;
 });
 
+define('buzz-src', 'buzz.js');
+define('buzz', ['buzz-src'], function(){
+    return window.buzz;
+});
+
 require([
     'mo/lang',
     'dollar',
@@ -59,6 +64,8 @@ var story = [{
     director.init({
         observer: observer,
         story: story,
+        imageRoot: 'pics/',
+        mediaRoot: 'media/',
         stageStyle: '../dist/css/stage.css'
     });
 

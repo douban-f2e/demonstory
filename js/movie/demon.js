@@ -4,8 +4,9 @@ define([
     'dollar',
     'eventmaster',
     'choreo',
+    'buzz',
     'moui/bubble'
-], function(_, $, event, choreo, bubble){
+], function(_, $, event, choreo, buzz, bubble){
 
     function Demon(opt){
         var win = this.window = opt.window || window,
@@ -240,7 +241,7 @@ define([
             });
         },
 
-        speak: function(text, duration, clock){
+        speak: function(text, duration, clock, src, vol){
             var self = this,
                 promise = new event.Promise();
             clearTimeout(self._wordsTimer);
@@ -250,20 +251,48 @@ define([
                     window: self.window
                 });
             }
+            if (self._words.opened) {
+                self._words.speakPromise.fire();
+            }
+            self._words.speakPromise = promise;
             self._words.set({
                 content: text,
                 clock: clock
-            });
+            }).update();
             self._wordsTimer = setTimeout(function(){
-                self._words.show().update();
+                self._words.show();
                 self._wordsTimer = setTimeout(function(){
                     self._words.hide();
                     self._wordsTimer = setTimeout(function(){
                         self._words.destroy();
                         promise.fire();
                     }, 400);
-                }, duration);
+                }, 400 + duration);
+                if (src) {
+                    self.sound(src, duration, vol);
+                }
             }, 10);
+            return promise;
+        },
+
+        sound: function(src, duration, vol){
+            var sound,
+                promise = new event.Promise();
+            if (typeof src === 'string' || Array.isArray(src)) {
+                sound = new buzz.sound(src);
+            } else {
+                sound = src;
+            }
+            if (vol) {
+                sound.setVolume(vol);
+            }
+            sound.play();
+            setTimeout(function(){
+                if (!sound.isEnded()) {
+                    sound.pause();
+                }
+                promise.fire();
+            }, duration);
             return promise;
         },
 

@@ -15,11 +15,15 @@ define([
 
     return {
 
-        announce: function(screen){
-            return screen('首页', DESC, 5000);
+        sfx: {
+            walking: 'walking.mp3'
         },
 
-        main: function(win, promise){
+        announce: function(screen, sfx){
+            return screen('首页', DESC, 5000, sfx.walking);
+        },
+
+        main: function(win, promise, sfx, root){
             var doc = win.document,
                 nav_elms = $('.nav-items li a', doc),
                 demon_update = demon({
@@ -41,7 +45,7 @@ define([
             demon_update.showBody();
             wait(400 + 1000).done(function(){
 
-                demon_update.speak('要有光！', 2000, 6);
+                demon_update.speak('要有光！', 2000, 6, sfx.walking);
                 return wait(1300);
 
             }).follow().done(function(){
@@ -107,7 +111,7 @@ define([
 
             }).follow().done(function(){
 
-                demon_update.speak('不好意思，入戏太深了……', 1400, 6);
+                demon_update.speak('不好意思，入戏太深了……', 1000, 6);
                 return demon_update.squintEye(1400);
 
             }).follow().done(function(){

@@ -32,6 +32,11 @@ module.exports = function(grunt) {
                         file: {
                             '/choreo.js': '/js/mod/'
                         }
+                    },
+                    'jaysalvat/buzz': {
+                        file: {
+                            '/buzz.js': '/js/mod/'
+                        }
                     }
                 }
             }

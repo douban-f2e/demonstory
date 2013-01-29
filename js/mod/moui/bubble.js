@@ -32,6 +32,7 @@ define('moui/bubble', [
             if (opt.clock !== undefined) {
                 this._config.clock = opt.clock;
             }
+            return this;
         },
 
         setAlign: function(target, clock){
@@ -60,14 +61,17 @@ define('moui/bubble', [
                     .addClass(['center', 'bottom', 'top'][align] + '-align');
             }
             stick(this._config.target, this._node[0], clock);
+            return this;
         },
 
         setContent: function(text){
             this._content.html(text);
+            return this;
         },
 
         update: function(){
             this.setAlign(this._config.target, this._config.clock);
+            return this;
         },
 
         show: function(){
