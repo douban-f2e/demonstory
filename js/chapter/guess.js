@@ -5,8 +5,9 @@ define([
     'eventmaster',
     'choreo',
     'movie/util',
+    'movie/camera',
     'movie/demon'
-], function(_, $, event, choreo, util, demon) {
+], function(_, $, event, choreo, util, camera, demon) {
 
     var wait = util.wait,
 
@@ -60,6 +61,7 @@ define([
 
         main: function(win, promise) {
             var doc = win.document,
+                screen = camera(win),
                 piggy = $('#host-piggy', doc),
                 piggyPromise = new event.Promise(),
                 piggyDemon,
@@ -345,7 +347,7 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[1],
                     tgnn = judges['tgnn'].demon,
@@ -401,7 +403,7 @@ define([
             /* section#2 FM by lifei */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
@@ -486,7 +488,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     tgnn = judges['tgnn'].demon,
@@ -554,12 +556,14 @@ define([
 
                     }).follow().done(function() {
 
-                        var action = choreo().play();
-
-                        action.actor(doc.body, {
-                            translateY: '1640px',
-                            scale: 2
-                        }, 800, 'easeOut');
+                        screen.pan({
+                            elem: $('.pic', sectionDemon.me),
+                            zoom: 2,
+                            offset: {
+                                top: -60
+                            },
+                            duration: 800
+                        });
 
                         return wait(800 + 200);
 
@@ -640,12 +644,7 @@ define([
 
                     }).follow().done(function() {
 
-                        var action = choreo().play();
-
-                        action.actor(doc.body, {
-                            translateY: '0',
-                            scale: 1
-                        }, 500, 'easeIn');
+                        screen.reset(500);
 
                         return wait(500 + 200);
 
@@ -708,7 +707,7 @@ define([
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
 
-                return wait(0);
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[4],
                     tgnn = judges['tgnn'].demon,
@@ -816,13 +815,11 @@ define([
 
                 }).follow().done(function() {
 
-                    var action = choreo().play();
-
-                    action.actor(doc.body, {
-                        scale: 2.6,
-                        translateX: '370px',
-                        translateY: '2300px'
-                    }, 800, 'easeOut');
+                    screen.pan({
+                        elem: $('.ahbei-like', sectionDemon.me),
+                        zoom: 2.6,
+                        duration: 800
+                    });
 
                     return wait(800 + 200);
 
@@ -842,27 +839,21 @@ define([
                                 return function() {
                                     ahbeiLike.attr('style', '');
                                 };
-                            } else {
-                                return function() {
-                                    ahbeiLike.css('color', 'red');
-                                };
                             }
+
+                            return function() {
+                                ahbeiLike.css('color', 'red');
+                            };
                         })(i);
 
-                        wait(shiningDuration * i).done(fn);
+                        wait((shiningDuration + 1) * i).done(fn);
                     }
 
-                    return wait(shiningDuration * shiningTimes + 300);
+                    return wait((shiningDuration + 1) * shiningTimes + 300);
 
                 }).follow().done(function() {
 
-                    var action = choreo().play();
-
-                    action.actor(doc.body, {
-                        scale: 1,
-                        translateX: '0',
-                        translateY: '0'
-                    }, 800, 'easeIn');
+                    screen.reset(800);
 
                     return wait(800 + 200);
 
@@ -895,6 +886,8 @@ define([
 
             /* section#6 拖黑 by zhaoguo */
             .follow().done(function() {
+
+                // return wait(0);
 
                 var sectionDemon = sectionDemons[6],
                     tgnn = judges['tgnn'].demon,
@@ -992,8 +985,13 @@ define([
 
                 return sectionPromise;
 
-            });
+            })
             /* end fo section#6 */
+
+            // the end
+            .follow().done(function() {
+                promise.fire();
+            });
 
             piggyPromise.fire();
 
