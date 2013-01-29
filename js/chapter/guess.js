@@ -91,7 +91,10 @@ define([
             'mao/section-4-1': 'guess/mao/1.m4a',
             'mao/section-4-2': 'guess/mao/2xiachang.m4a',
             'ka/section-6-1': 'guess/ka/1.m4a',
-            'ka/section-6-2': 'guess/ka/2.m4a'
+            'ka/section-6-2': 'guess/ka/2.m4a',
+            'fm/fm_normal': 'guess/fm/fm_normal.mp3',
+            'fm/fm_ad': 'guess/fm/fm_ad.mp3',
+            'fm/fm_pro': 'guess/fm/fm_pro.mp3'
         },
 
         announce: function(screen, sfx) {
@@ -459,10 +462,10 @@ define([
                 piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 2500, 12, sfx['piggy/section-2']);
 
                 wait(1500 + 200).done(function() {
-                    normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 5000);
-                    // TODO: 音乐音频
+                    normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
+                    normalDemon.sound(sfx['fm/fm_normal']);
 
-                    wait(3000).done(function() {
+                    wait(13000).done(function() {
 
                         chaoge.speak('才 64k，还不如广告音质好！', 1500, 10);
                         lu13.speak('才 64k，还不如广告音质好！', 1500, 10, sfx['lu13/section-2']);
@@ -471,7 +474,7 @@ define([
                         yingzi.speak('才 64k，还不如广告音质好！', 1500, 10);
 
                     });
-                    return wait(5000 + 800);
+                    return wait(15000 + 800);
 
                 }).follow().done(function() {
                     normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
@@ -479,9 +482,9 @@ define([
                     return wait(3000 + 200);
 
                 }).follow().done(function() {
-                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 3000);
-                    //TODO: 广告音频
-                    wait(2000).done(function() {
+                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
+                    adDemon.sound(sfx['fm/fm_ad']);
+                    wait(6000).done(function() {
 
                         chaoge.speak('负分，滚粗啊！', 1500, 10);
                         lu13.speak('负分，滚粗啊！', 1500, 10);
@@ -491,11 +494,12 @@ define([
 
                     });
 
-                    return wait(5000 + 800);
+                    return wait(13000 + 800);
 
                 }).follow().done(function() {
-                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 3000);
-                    wait(1000).done(function() {
+                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
+                    proDemon.sound(sfx['fm/fm_pro']);
+                    wait(10000).done(function() {
                         proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
                         adDemon.speak('灰溜溜的逃走', 3000, 3);
                         adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
@@ -511,7 +515,7 @@ define([
                         yingzi.speak('赞，高端大气上档次！', 1500, 10);
                     });
 
-                    return wait(9500 + 200);
+                    return wait(29500 + 200);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     return wait(3000 + 200);
