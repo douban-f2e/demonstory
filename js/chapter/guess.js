@@ -993,7 +993,10 @@ define([
                 promise.fire();
             });
 
+            // ready for start
             piggyPromise.fire();
+
+            return promise;
 
         },
 
