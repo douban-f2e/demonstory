@@ -9,8 +9,21 @@ define([
     var wait = util.wait,
         DESC = "豆瓣前端的故事",
         f2e_list = [
-            { name: 'Kejun', id: 'kejun' },
-            { name: 'Dexter.yy', id: 'yy' }
+            { name: 'Kejun', id: 'kejun' }
+           ,{ name: '龚浩', id: 'gonghao' }
+           ,{ name: '小明', id: 'dai' }
+           ,{ name: '石头', id: 'mockee' }
+           ,{ name: '大光', id: 'cmonday' }
+           ,{ name: '杨青', id: 'yangqing' }
+           ,{ name: '糖拌西红柿', id: 'migao' }
+           ,{ name: 'Robin', id: 'rob' }
+           ,{ name: 'Huwei', id: 'huwei' }
+           ,{ name: 'Dexter.yy', id: 'yy' }
+           ,{ name: '李飞', id: 'lifei' }
+           ,{ name: 'Ryan', id: 'ryan' }
+           ,{ name: '超哥', id: 'seechaos' }
+           ,{ name: '北玉', id: 'beiyuu' }
+           ,{ name: '饼饼', id: 'bingbing' }
         ],
         wrapper,
         f2es,
@@ -40,7 +53,7 @@ define([
                     node.css({
                         position: 'absolute',
                         top: '0px',
-                        left: '0px'
+                        left: '-200px'
                     })
 
                     var demonItem = demon({
@@ -61,18 +74,31 @@ define([
             f2es = initF2es()
 
             wrapper = $('.wrapper', win.document)
-            var baseLeft = wrapper[0].offsetLeft
+            var baseLeft = wrapper[0].offsetLeft + 200
 
             var kejun = f2es.kejun.demon
               , yy = f2es.yy.demon;
-            wait(400).done(function(){
-                return kejun.walk([ baseLeft, 200 ], 3000);
-            }).follow().done(function(){
+            wait(400)
+            .done(function(){
+                return kejun.walk([ baseLeft, 200 ], 1);
+            }).follow()
+            .done(function(){
+                return kejun.walk([ 200, 200 ], 3000);
+            }).follow()
+            .done(function(){
                 return kejun.speak('要说前端开发是什么， 那得花开两朵，各自一枝', 5000, 3)
-            }).follow().done(function(){
+            }).follow()
+            .done(function(){
                 return wait(300)
-            }).follow().done(function(){
-                yy.speak('要说前端开发是什么， 那得花开两朵，各自一枝', 5000, 3)
+            }).follow()
+            .done(function(){
+                return yy.walk([ baseLeft, 200 ], 1);
+            }).follow()
+            .done(function(){
+                return yy.walk([ 400, 0 ], 3000);
+            }).follow()
+            .done(function(){
+                yy.speak('原闻其详', 5000, 9)
             })
             return promise;
         },
