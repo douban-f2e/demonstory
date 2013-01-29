@@ -374,22 +374,19 @@ define([
         return demonRobot.walk([250, -130], 600, 'easeOut')
       })
 
-
       // teamMemberShowAction {
       .done(function(){
-        var offset = 150
-          , left = baseLeft - 150
+        var offset = 200
+          , left = baseLeft - 250
           , height = 500
 
         cmonday.walk([ left + offset, height ], 1);
         seechaos.walk([ left, height ], 1);
-        gonghao.walk([ left + offset*2, height ], 1);
-        return bingbing.walk([ left + offset*3, height ], 1);
+        return bingbing.walk([ left + offset*2, height ], 1);
       }).follow().done(function(){
-        cmonday.walk([ 200, 1 ], 1900);
-        gonghao.walk([ 200, 1 ], 1900);
-        bingbing.walk([ 200, 1 ], 1900);
-        return seechaos.walk([ 200, 1 ], 2000);
+        cmonday.walk([ 300, 1 ], 2000);
+        bingbing.walk([ 300, 1 ], 2000);
+        return seechaos.walk([ 300, 1 ], 2000);
       }).follow().done(function(){
         return wait(2000)
       }).follow().done(function(){
@@ -403,26 +400,17 @@ define([
       }).follow().done(function(){
         return bingbing.speak('辰老师您说的不全', 3000, 1)
       }).follow().done(function(){
-        return bingbing.speak('不会佛陀绣谱好意思说自己是前端吗？', 4000, 9)
+        return bingbing.speak('不会佛陀绣谱好意思说自己是前端吗？', 3000, 9)
       }).follow().done(function(){
         cmonday.walk([-100, -40], 2000)
         bingbing.walk([50, 1], 300)
-        return gonghao.walk([-230, -250], 2000)
-      }).follow().done(function(){
-        return wait(200)
-      }).follow().done(function(){
-        return gonghao.speak('....', 2000, 12)
-      }).follow().done(function(){
-        return gonghao.speak('前端开发？前台端茶送水的，这还需要开发么？？', 3000, 3)
-      }).follow().done(function(){
-        gonghao.walk([150, 0], 1000)
         return seechaos.jump(20, 20, 400)
       }).follow().done(function(){
         return seechaos.jump(20, 20, 400)
       }).follow().done(function(){
         return seechaos.speak('其实呢', 1000 , 9)
       }).follow().done(function(){
-        return seechaos.walk([40, -100], 2000)
+        return seechaos.walk([40, -100], 1000)
       }).follow().done(function(){
         seechaos.rotateHand('right', '-120deg', 400)
         return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到……', 4000, 3)
