@@ -54,47 +54,47 @@ define([
     return {
 
         sfx: {
-            intro: 'guess/intro.mp3',
-            'piggy/intro': 'guess/piggy/1.m4a',
-            'piggy/intro-lu13': 'guess/piggy/2lu13.m4a',
-            'piggy/intro-yingzi': 'guess/piggy/3yingzi.m4a',
-            'piggy/intro-su37': 'guess/piggy/4su37.m4a',
-            'piggy/intro-chaoge': 'guess/piggy/5chaoge.m4a',
-            'piggy/intro-tgnn': 'guess/piggy/6tgnn.m4a',
-            'piggy/section-1': 'guess/piggy/7yidaizongshi.m4a',
-            'piggy/section-2': 'guess/piggy/8normal-fm.m4a',
-            'piggy/section-3': 'guess/piggy/9xiangce.m4a',
-            'piggy/section-4': 'guess/piggy/10xiayiwei.m4a',
-            'piggy/section-4-1': 'guess/piggy/11houtai.m4a',
-            'piggy/section-5': 'guess/piggy/12riji.m4a',
-            'piggy/section-6': 'guess/piggy/13lichengpeng.m4a',
-            'piggy/end': 'guess/piggy/14run.m4a',
-            'lu13/intro': 'guess/lu13/1.m4a',
-            'lu13/intro-1': 'guess/lu13/2he1.m4a',
-            'lu13/section-1': 'guess/lu13/3zongshi.m4a',
-            'lu13/section-2': 'guess/lu13/4he-fm.m4a',
-            'lu13/section-2-1': 'guess/lu13/5he-pro-fm.m4a',
-            'lu13/section-4': 'guess/lu13/6mao.m4a',
-            'lu13/section-5': 'guess/lu13/8he-riji.m4a',
-            'yingzi/intro': 'guess/yingzi/1.m4a',
-            'yingzi/section-1': 'guess/yingzi/2zongshi.m4a',
-            'yingzi/section-3': 'guess/yingzi/3xiangce.m4a',
-            'yingzi/section-4': 'guess/yingzi/4he-mao.m4a',
-            'su37/intro': 'guess/su37/1.m4a',
-            'su37/intro-1': 'guess/su37/2.m4a',
-            'su37/section-1': 'guess/su37/3zongshi.m4a',
-            'su37/section-2': 'guess/su37/4fm-ad.m4a',
-            'su37/section-3': 'guess/su37/5xiangce.m4a',
-            'su37/section-3-1': 'guess/su37/5xiangce-2.m4a',
-            'su37/section-5': 'guess/su37/6riji.m4a',
-            'su37/section-6': 'guess/su37/7paolu.m4a',
-            'mao/section-4-1': 'guess/mao/1.m4a',
-            'mao/section-4-2': 'guess/mao/2xiachang.m4a',
-            'ka/section-6-1': 'guess/ka/1.m4a',
-            'ka/section-6-2': 'guess/ka/2.m4a',
-            'fm/fm_normal': 'guess/fm/fm_normal.mp3',
-            'fm/fm_ad': 'guess/fm/fm_ad.mp3',
-            'fm/fm_pro': 'guess/fm/fm_pro.mp3'
+            intro: '/media/guess/intro.mp3',
+            'piggy/intro': '/media/guess/piggy/1.m4a',
+            'piggy/intro-lu13': '/media/guess/piggy/2lu13.m4a',
+            'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.m4a',
+            'piggy/intro-su37': '/media/guess/piggy/4su37.m4a',
+            'piggy/intro-chaoge': '/media/guess/piggy/5chaoge.m4a',
+            'piggy/intro-tgnn': '/media/guess/piggy/6tgnn.m4a',
+            'piggy/section-1': '/media/guess/piggy/7yidaizongshi.m4a',
+            'piggy/section-2': '/media/guess/piggy/8normal-fm.m4a',
+            'piggy/section-3': '/media/guess/piggy/9xiangce.m4a',
+            'piggy/section-4': '/media/guess/piggy/10xiayiwei.m4a',
+            'piggy/section-4-1': '/media/guess/piggy/11houtai.m4a',
+            'piggy/section-5': '/media/guess/piggy/12riji.m4a',
+            'piggy/section-6': '/media/guess/piggy/13lichengpeng.m4a',
+            'piggy/end': '/media/guess/piggy/14run.m4a',
+            'lu13/intro': '/media/guess/lu13/1.m4a',
+            'lu13/intro-1': '/media/guess/lu13/2he1.m4a',
+            'lu13/section-1': '/media/guess/lu13/3zongshi.m4a',
+            'lu13/section-2': '/media/guess/lu13/4he-fm.m4a',
+            'lu13/section-2-1': '/media/guess/lu13/5he-pro-fm.m4a',
+            'lu13/section-4': '/media/guess/lu13/6mao.m4a',
+            'lu13/section-5': '/media/guess/lu13/8he-riji.m4a',
+            'yingzi/intro': '/media/guess/yingzi/1.m4a',
+            'yingzi/section-1': '/media/guess/yingzi/2zongshi.m4a',
+            'yingzi/section-3': '/media/guess/yingzi/3xiangce.m4a',
+            'yingzi/section-4': '/media/guess/yingzi/4he-mao.m4a',
+            'su37/intro': '/media/guess/su37/1.m4a',
+            'su37/intro-1': '/media/guess/su37/2.m4a',
+            'su37/section-1': '/media/guess/su37/3zongshi.m4a',
+            'su37/section-2': '/media/guess/su37/4fm-ad.m4a',
+            'su37/section-3': '/media/guess/su37/5xiangce.m4a',
+            'su37/section-3-1': '/media/guess/su37/5xiangce-2.m4a',
+            'su37/section-5': '/media/guess/su37/6riji.m4a',
+            'su37/section-6': '/media/guess/su37/7paolu.m4a',
+            'mao/section-4-1': '/media/guess/mao/1.m4a',
+            'mao/section-4-2': '/media/guess/mao/2xiachang.m4a',
+            'ka/section-6-1': '/media/guess/ka/1.m4a',
+            'ka/section-6-2': '/media/guess/ka/2.m4a',
+            'fm/fm_normal': '/media/guess/fm/fm_normal.mp3',
+            'fm/fm_ad': '/media/guess/fm/fm_ad.mp3',
+            'fm/fm_pro': '/media/guess/fm/fm_pro.mp3'
         },
 
         announce: function(screen, sfx) {
@@ -401,27 +401,27 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 1500, 12, sfx['piggy/section-1']);
+                piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 5000, 12, sfx['piggy/section-1']);
 
                 sectionDemon.me.css('top', '140px');
 
-                wait(2500 + 200).done(function() {
+                wait(5000 + 200).done(function() {
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
                     wait(3000).done(function() {
 
-                        lu13.speak('骚！', 2000, 12, sfx['lu13/intro-1']);
-                        return wait(2000 + 800);
+                        lu13.speak('骚！', 3000, 12, sfx['lu13/intro-1']);
+                        return wait(3000 + 800);
 
                     }).follow().done(function() {
 
-                        yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 2000, 12, sfx['yingzi/section-1']);
-                        return wait(2000 + 800);
+                        yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 9000, 12, sfx['yingzi/section-1']);
+                        return wait(9000 + 800);
 
                     }).follow().done(function() {
 
-                        su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 2000, 12, sfx['su37/section-1']);
-                        return wait(2000 + 800);
+                        su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 14000, 12, sfx['su37/section-1']);
+                        return wait(14000 + 800);
 
                     }).follow().done(function() {
 
@@ -434,7 +434,7 @@ define([
                         return wait(2000 + 800);
 
                     });
-                    return wait(15000 + 200);
+                    return wait(3000 + 3800 + 9800 + 14800 + 2800 + 2800 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     sectionPromise.fire();
@@ -459,22 +459,22 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 2500, 12, sfx['piggy/section-2']);
+                piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 4000, 12, sfx['piggy/section-2']);
 
-                wait(1500 + 200).done(function() {
+                wait(4000 + 200).done(function() {
                     normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
-                    normalDemon.sound(sfx['fm/fm_normal']);
+                    normalDemon.sound(sfx['fm/fm_normal'], 20000, 100);
 
                     wait(13000).done(function() {
 
-                        chaoge.speak('才 64k，还不如广告音质好！', 1500, 10);
-                        lu13.speak('才 64k，还不如广告音质好！', 1500, 10, sfx['lu13/section-2']);
-                        su37.speak('才 64k，还不如广告音质好！', 1500, 10);
-                        tgnn.speak('才 64k，还不如广告音质好！', 1500, 10);
-                        yingzi.speak('才 64k，还不如广告音质好！', 1500, 10);
+                        chaoge.speak('才 64k，还不如广告音质好！', 5000, 10);
+                        lu13.speak('才 64k，还不如广告音质好！', 5000, 10, sfx['lu13/section-2']);
+                        su37.speak('才 64k，还不如广告音质好！', 5000, 10);
+                        tgnn.speak('才 64k，还不如广告音质好！', 5000, 10);
+                        yingzi.speak('才 64k，还不如广告音质好！', 5000, 10);
 
                     });
-                    return wait(15000 + 800);
+                    return wait(18000 + 800);
 
                 }).follow().done(function() {
                     normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
@@ -483,7 +483,7 @@ define([
 
                 }).follow().done(function() {
                     adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
-                    adDemon.sound(sfx['fm/fm_ad']);
+                    adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
                     wait(6000).done(function() {
 
                         chaoge.speak('负分，滚粗啊！', 1500, 10);
@@ -498,7 +498,7 @@ define([
 
                 }).follow().done(function() {
                     proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
-                    proDemon.sound(sfx['fm/fm_pro']);
+                    proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
                     wait(10000).done(function() {
                         proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
                         adDemon.speak('灰溜溜的逃走', 3000, 3);
@@ -508,11 +508,11 @@ define([
                         proDemon.speak('更纯洁的音质，无广告的体验', 1500, 10);
                         return wait(1500 + 200);
                     }).follow().done(function() {
-                        chaoge.speak('赞，高端大气上档次！', 1500, 10);
-                        lu13.speak('赞，高端大气上档次！', 1500, 10, sfx['lu13/section-2-1']);
-                        su37.speak('赞，高端大气上档次！', 1500, 10);
-                        tgnn.speak('赞，高端大气上档次！', 1500, 10);
-                        yingzi.speak('赞，高端大气上档次！', 1500, 10);
+                        chaoge.speak('赞，高端大气上档次！', 3500, 10);
+                        lu13.speak('赞，高端大气上档次！', 3500, 10, sfx['lu13/section-2-1']);
+                        su37.speak('赞，高端大气上档次！', 3500, 10);
+                        tgnn.speak('赞，高端大气上档次！', 3500, 10);
+                        yingzi.speak('赞，高端大气上档次！', 3500, 10);
                     });
 
                     return wait(29500 + 200);
