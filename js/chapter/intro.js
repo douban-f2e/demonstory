@@ -20,12 +20,38 @@ define([
         },
 
         announce: function(screen, sfx){
-            return screen('首页', DESC, 5000, sfx.walking);
+            return screen('首页', DESC, 500, sfx.walking);
         },
 
         main: function(win, promise, sfx, root){
             var doc = win.document,
                 nav_elms = $('.nav-items li a', doc),
+                topbar_elms = $('.global-nav-items ul li a', doc),
+                demon_book = demon({
+                    origin: topbar_elms[1],
+                    className: 'demon-book', 
+                    window: win
+                }),
+                demon_movie = demon({
+                    origin: topbar_elms[2],
+                    className: 'demon-movie', 
+                    window: win
+                }),
+                demon_music = demon({
+                    origin: topbar_elms[3],
+                    className: 'demon-music', 
+                    window: win
+                }),
+                demon_read = demon({
+                    origin: topbar_elms[6],
+                    className: 'demon-read', 
+                    window: win
+                }),
+                demon_group = demon({
+                    origin: topbar_elms[5],
+                    className: 'demon-group', 
+                    window: win
+                }),
                 demon_update = demon({
                     origin: nav_elms[1], 
                     className: 'demon-update', 
@@ -39,6 +65,16 @@ define([
                 demon_home = demon({
                     origin: nav_elms[0], 
                     className: 'demon-home', 
+                    window: win
+                }),
+                demon_hood = demon({
+                    origin: nav_elms[4], 
+                    className: 'demon-hood', 
+                    window: win
+                }),
+                demon_dongxi = demon({
+                    origin: $('.notify-mod', doc)[0], 
+                    className: 'demon-dongxi', 
                     window: win
                 });
 
@@ -118,14 +154,6 @@ define([
 
                 return util.showDemon(demon_suit);
 
-            //}).follow().done(function(){
-
-                //return demon_suit.walk([-200, 50], 1000);
-
-            //}).follow().done(function(){
-
-                //return demon_suit.walk([150, 0], 700);
-
             }).follow().done(function(){
 
                 demon_suit.rotateEye('-90deg', 0);
@@ -162,11 +190,13 @@ define([
 
             }).follow().done(function(){
 
+                demon_update.rotateHand('left', '0deg', 400);
+                demon_update.rotateHand('right', '60deg', 400);
                 return wait(500);
 
             }).follow().done(function(){
 
-                return demon_update.speak('你知不知道我是谁？', 1500, 6);
+                return demon_update.speak('知不知道我是谁？', 1500, 6);
 
             }).follow().done(function(){
 
@@ -183,6 +213,8 @@ define([
 
             }).follow().done(function(){
 
+                demon_update.rotateHand('left', '50deg', 400);
+                demon_update.rotateHand('right', '-50deg', 400);
                 return demon_update.moveEye(0, 200);
 
             }).follow().done(function(){
@@ -242,70 +274,21 @@ define([
 
                 return wait(300);
 
-            }).follow().done(function(){
-
-                return demon_update.speak('用户骂他瞎折腾，反被他去掉“回旧版”', 3000, 6);
-
-            }).follow().done(function(){
-
-                return wait(300);
-
-            }).follow().done(function(){
-
-                return demon_update.speak('强奸了一百遍啊', 700, 6);
-
-            }).follow().done(function(){
-
-                demon_update.speak('一百遍！……', 600, 6);
-                return wait(200);
-
-            }).follow().done(function(){
-
-                demon_update.rotateEye('90deg', 0);
-                demon_update.moveEye(-0.8, 400);
-                return demon_update.rotateHand('right', '90deg', 400);
-
-            }).follow().done(function(){
-
-                //var fn = arguments.callee;
-
-                //demon_home.rotateHand('left', '60deg', 200).done(function(){
-                    //return demon_home.rotateHand('left', '150deg', 200);
-                //}).follow().done(function(){
-                    //return demon_home.rotateHand('left', '60deg', 200);
-                //}).follow().done(function(){
-                    //return demon_home.rotateHand('left', '150deg', 200);
-                //});
-
-                //demon_home.rotateHand('right', '-30deg', 200).done(function(){
-                    //return demon_home.rotateHand('right', '-50deg', 200);
-                //}).follow().done(function(){
-                    //return demon_home.rotateHand('right', '-30deg', 200);
-                //}).follow().done(function(){
-                    //return demon_home.rotateHand('right', '-50deg', 200);
-                //});
-
-                //demon_home.rotateEye('-30deg', 400).done(function(){
-                    //demon_home.rotateEye('-160deg', 400);
-                //});
-
-                //return demon_home.jump(40, [], 805).done(function(){
-                    //if (jump_count++ < 2) {
-                        //return fn();
-                    //} else {
-                        //jump_count = 0;
-                        //return wait(200);
-                    //}
-                //}).follow();
-
             //}).follow().done(function(){
+
+                //demon_update.rotateEye('90deg', 0);
+                //demon_update.moveEye(-0.8, 400);
+                //return demon_update.rotateHand('right', '90deg', 400);
+
+            }).follow().done(function(){
 
                 util.showDemon(demon_home);
                 return wait(400);
 
             }).follow().done(function(){
 
-                return demon_update.rotateEye('-360deg', 400);
+                demon_update.moveEye(-0.8, 400);
+                return demon_update.rotateEye('0deg', 400);
 
             }).follow().done(function(){
 
@@ -332,7 +315,222 @@ define([
 
             }).follow().done(function(){
 
-                return wait(3000);
+                return wait(500);
+
+            }).follow().done(function(){
+
+                return demon_home.speak('阿广哥，不要总怨别人', 1000, 6);
+
+            }).follow().done(function(){
+
+                return wait(500);
+
+            }).follow().done(function(){
+
+                return demon_home.speak('要怪就怪你对新用户太不友好，还把老用户的视野局限在小圈子里，首页换成我，才能让更多的优质内容暴露给更多的用户……', 4000, 6);
+
+            }).follow().done(function(){
+
+                return util.showDemon(demon_read);
+
+            }).follow().done(function(){
+
+                demon_home.moveEye(0.6, 0);
+                demon_home.rotateEye('180deg', 400);
+
+                return demon_read.speak('口桀口桀口桀！', 600, 6);
+
+            }).follow().done(function(){
+
+                return demon_read.jump(40, [0, 53], 800);
+
+            }).follow().done(function(){
+
+                return demon_read.speak('谈论『优质内容』，怎能少了我大豆瓣阅读呢。', 1200, 6);
+
+            }).follow().done(function(){
+
+                demon_read.moveEye(0.8, 200);
+
+                return demon_read.walk([100, 0], 1000, 'linear');
+
+            }).follow().done(function(){
+
+                return demon_read.speak('我说广哥啊，年纪大了不能老是打打杀杀，首页这种位置，放心交给我们年轻人罢', 2500, 6);
+
+            }).follow().done(function(){
+
+                demon_update.rotateHand('left', '20deg', 400);
+                demon_update.rotateHand('right', '-20deg', 400);
+
+                demon_update.squintEye(1400).done(function(){
+                    demon_update.moveEye(0.8, 0);
+                    demon_update.rotateEye('180deg', 0);
+                });
+                demon_update.speak('小阅阅，一边玩去', 1000, 5);
+
+                return util.showDemon(demon_group);
+
+            }).follow().done(function(){
+
+                demon_read.moveEye(0.6, 0);
+                demon_read.rotateEye('180deg', 400).done(function(){
+                    demon_read.walk([120, 0], 1000, 'easeIn');
+                });
+
+                return demon_group.jump(40, [100, 53], 1000);
+
+            }).follow().done(function(){
+
+                return wait(1000);
+
+            }).follow().done(function(){
+
+                return demon_group.speak('彭任飞说像我这样的老牌社区产品才应该是首页！', 2000, 7);
+
+            }).follow().done(function(){
+
+                demon_read.squintEye(1400).done(function(){
+                    demon_read.moveEye(0.8, 0);
+                    demon_read.rotateEye('180deg', 0);
+                });
+                demon_read.speak('囧', 1000, 3);
+
+                demon_home.squintEye(1400).done(function(){
+                    demon_home.moveEye(0.8, 0);
+                    demon_home.rotateEye('180deg', 0);
+                });
+                return demon_home.speak('你不是最近刚加入『黑又硬』了吗', 1000, 5);
+
+            }).follow().done(function(){
+
+                util.showDemon(demon_book).done(function(){
+                    demon_book.move([0, 53], 400);
+                });
+
+                wait(200).done(function(){
+                    return util.showDemon(demon_movie);
+                }).follow().done(function(){
+                    demon_movie.move([0, 53], 400);
+                }).follow().done(function(){
+                    return demon_movie.walk([30, 0], 400);
+                });
+
+                return wait(500).done(function(){
+                    return util.showDemon(demon_music);
+                }).follow().done(function(){
+                    demon_update.speak('啊这难道是！', 1000, 7);
+                    return demon_music.move([0, 53], 400);
+                }).follow().done(function(){
+                    return demon_music.walk([40, 0], 400);
+                });
+
+            }).follow().done(function(){
+
+                return wait(600);
+
+            }).follow().done(function(){
+
+                return demon_read.speak('……传说中的三忍！', 1000, 6);
+
+            }).follow().done(function(){
+
+                return util.showDemon(demon_dongxi).done(function(){
+
+                    var fn = arguments.callee;
+
+                    demon_dongxi.rotateHand('left', '60deg', 200).done(function(){
+                        return demon_dongxi.rotateHand('left', '150deg', 200);
+                    }).follow().done(function(){
+                        return demon_dongxi.rotateHand('left', '60deg', 200);
+                    }).follow().done(function(){
+                        return demon_dongxi.rotateHand('left', '150deg', 200);
+                    });
+
+                    demon_dongxi.rotateHand('right', '-30deg', 200).done(function(){
+                        return demon_dongxi.rotateHand('right', '-50deg', 200);
+                    }).follow().done(function(){
+                        return demon_dongxi.rotateHand('right', '-30deg', 200);
+                    }).follow().done(function(){
+                        return demon_dongxi.rotateHand('right', '-50deg', 200);
+                    });
+
+                    demon_dongxi.rotateEye('-30deg', 400).done(function(){
+                        demon_dongxi.rotateEye('-160deg', 400);
+                    });
+
+                    return demon_dongxi.jump(40, [], 805).done(function(){
+                        if (jump_count++ < 10) {
+                            return fn();
+                        } else {
+                            jump_count = 0;
+                            return wait(200);
+                        }
+                    }).follow();
+
+                });
+
+            }).follow().done(function(){
+
+                demon_update.rotateEye('40deg', 400);
+                demon_home.rotateEye('20deg', 400);
+                demon_read.rotateEye('20deg', 400);
+                demon_group.moveEye(0.8, 0);
+                demon_group.rotateEye('0deg', 400);
+                return demon_suit.rotateEye('0deg', 400);
+
+            }).follow().done(function(){
+
+                demon_suit.walk([-100, 0], 1000);
+
+                return demon_read.speak('这胖子是谁？', 1000, 7);
+
+            }).follow().done(function(){
+
+                return demon_home.speak('『移动』的『东西』，阿北新宠，师承tgm。', 2000, 5);
+
+            }).follow().done(function(){
+
+                return util.showDemon(demon_hood);
+
+            }).follow().done(function(){
+
+                demon_update.rotateEye('-10deg', 200);
+                demon_update.walk([-20, 0], 400);
+
+                demon_read.rotateEye('-10deg', 200);
+                return demon_read.speak('是不是人有点多了……', 1200, 7);
+
+            }).follow().done(function(){
+
+                demon_home.rotateEye('-10deg', 200);
+                return demon_home.speak('这是『MVP』艾里克罗的产品，颇具天资，有很强的『外部性』', 2000, 5);
+
+            }).follow().done(function(){
+
+                demon_update.moveEye(0, 0);
+                return demon_update.speak('看来……今天有一场苦战…………', 2000, 5);
+
+            }).follow().done(function(){
+
+                return demon_suit.speak('午睡没指望了', 2000, 9);
+
+            }).follow().done(function(){
+
+                return wait(500);
+
+            }).follow().done(function(){
+
+                demon_home.walk([100, 0], 800);
+                demon_read.walk([70, 0], 800);
+                demon_hood.walk([-40, 0], 800);
+                demon_group.walk([240, 0], 800);
+                demon_book.walk([440, 0], 800);
+                demon_movie.walk([440, 0], 800);
+                demon_music.walk([440, 0], 800);
+                demon_dongxi.walk([-200, -80], 800);
+
+                return wait(500);
 
             }).follow().done(function(){
 
@@ -348,7 +546,5 @@ define([
         }
 
     };
-
-    
 
 });
