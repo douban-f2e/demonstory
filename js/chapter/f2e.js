@@ -50,6 +50,8 @@ define([
         , imgReception = $('#reception', doc)
         , imgCraftsman = $('#craftsman', doc)
         , imgCtba = $('#ctba', doc)
+        , imgCode = $('#code', doc)
+        , imgAlphatown = $('#alphatown', doc)
         , vote = $('#vote', doc)
 
       demonRobot.sound(sfx.bgm, 200000, 80)
@@ -139,7 +141,7 @@ define([
       }).follow().done(function() {
         demonRobot.rotateHand('left', '30deg', 200)
         demonRobot.rotateHand('right', '-30deg', 200)
-        return demonRobot.walk([200, -150], 5000, 'easeOut')
+        return demonRobot.walk([200, -150], 500, 'easeOut')
       }).follow().done(function() {
         return fadeIn(imgReception[0])
       }).follow().done(function() {
@@ -167,10 +169,15 @@ define([
       }).follow().done(function() {
         return demonRobot.rotateHand('right', '-180deg', 300)
       }).follow().done(function() {
+        fadeIn(imgCode[0])
         return demonRobot.speak(
           '其实前端与其他码农的基本工作无异，都是将需求人肉变成机器语言。'
         , 6000, 7, sfx.r14)
       }).follow().done(function() {
+        return fadeOut(imgCode[0])
+      }).follow().done(function() {
+        imgCode.hide()
+        fadeIn(imgAlphatown[0])
         return demonRobot.speak(
           '区别在于，前端代码会蜕变为优雅易用的界面服务于最终用户。'
         , 6000, 7, sfx.r15)
@@ -179,6 +186,7 @@ define([
         demonRobot.rotateHand('right', '-30deg', 300)
         return demonRobot.walk([-80, 0], 1000, 'easeOut')
       }).follow().done(function() {
+        imgAlphatown.hide()
         return demonRobot.speak(
           '不过，早在驴宗年间，并没有多少人提及前端开发这个词儿。'
         , 5000, 6, sfx.r16)
