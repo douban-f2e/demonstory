@@ -53,11 +53,11 @@ var story = [{
     }, {
         stage: 'pages/end/guess.html',
         script: '../chapter/end'
-    }/*, {
+    }, {
         stage: 'pages/index.html',
         style: '../dist/css/chapter/sample.css',
         script: '../chapter/sample'
-    }*/];
+    }];
 
     var observer = event();
 
