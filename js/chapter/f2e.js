@@ -91,18 +91,6 @@ define([
 
             wait(400)
             .done(function(){
-                return kejun.walk([ baseLeft, 300 ], 1);
-            }).follow()
-            .done(function(){
-                return kejun.walk([ 10, 200 ], 1500);
-            }).follow()
-            .done(function(){
-                return kejun.speak('要说前端开发是什么， 那得花开两朵，各自一枝', 5000, 3)
-            }).follow()
-            .done(function(){
-                return wait(300)
-            }).follow()
-            .done(function(){
                 return cmonday.walk([ baseLeft + 300, 200 ], 1);
             }).follow().done(function(){
                 return cmonday.rotateHand('left', '120deg', 400)
@@ -112,19 +100,19 @@ define([
                 cmonday.rotateHand('left', '150deg', 400)
                 return cmonday.speak('曾经我的座右铭是做一个兼容ie6的男人，现在我的座右铭是做一个兼容手机浏览器的好男人', 5000, 9)
             }).follow().done(function(){
-                hide(kejun.me)
-                bingbing.rotateHand('left', '-150deg', 400)
-                bingbing.rotateHand('right', '-150deg', 400)
                 return bingbing.walk([ baseLeft, 400 ] , 1)
             }).follow().done(function(){
+                bingbing.rotateHand('left', '-150deg', 400)
+                bingbing.rotateHand('right', '-150deg', 400)
                 return bingbing.speak(' 不会佛陀绣谱好意思说自己是前端吗？', 3000, 3)
             }).follow().done(function(){
                 bingbing.rotateHand('left', '150deg', 400)
                 return bingbing.rotateHand('right', '150deg', 400)
             }).follow().done(function(){
-                return wait(500)
+                return bingbing.walk([-200, 1], 1000)
             }).follow().done(function(){
                 hide(cmonday.me)
+                hide(bingbing.me)
                 return seechaos.walk([baseRight - 50, 200], 1)
             }).follow().done(function(){
                 bingbing.walk([-2000, 1], 1000)
