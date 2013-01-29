@@ -77,8 +77,10 @@ var story = [{
         director.next();
     });
 
-    //observer.bind('end', function(){
+    observer.bind('end', function(){
         //director.next();
-    //});
+    });
+
+    //director.next();
 
 });

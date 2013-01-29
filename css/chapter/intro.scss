@@ -30,6 +30,10 @@
   @extend %nav-link;
 }
 
+.demon-hood.demon {
+  @extend %nav-link;
+}
+
 .demon-suit {
   margin-top: -32px;
   padding:0;
@@ -39,4 +43,35 @@
     width: 80px;
   }
 
+}
+
+a.demon-read {
+  color: #d5d5d5;
+  padding: 5px 12px;
+  border:0;
+
+  &.waken {
+    background:#343632;
+  }
+
+}
+
+a.demon-group {
+  @extend a.demon-read;
+}
+a.demon-book {
+  @extend a.demon-read;
+}
+a.demon-movie {
+  @extend a.demon-read;
+}
+a.demon-music {
+  @extend a.demon-read;
+}
+
+.demon-dongxi {
+  width:205px;
+  border:0;
+  padding:18px 20px;
+  overflow:visible;
 }
