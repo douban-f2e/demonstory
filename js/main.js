@@ -62,9 +62,9 @@ var story = [{
         stageStyle: '../dist/css/stage.css'
     });
 
-    // key().up(['space', 'right'], function(){
+    key().up(['space', 'right'], function(){
         director.next();
-    // });
+    });
 
     //observer.bind('end', function(){
         //director.next();

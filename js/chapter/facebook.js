@@ -46,6 +46,7 @@ define([
           }
         , offset: {
             top: 20
+          , left: 20
           }
         }, doc)
         return wait(200 + 2000)
@@ -149,17 +150,18 @@ define([
       }).follow().done(function() {
         return demonCover.speak('你所在的所谓 Facebook 正是拆分后的大社区。', 3000, 2)
       }).follow().done(function() {
-        return demonCover.speak('当然还有你不知道的...', 2000, 3)
+        return demonCover.speak('不仅如此...', 2000, 3)
       }).follow().done(function() {
         return demonWang.speak('别磨叽！', 1000, 10)
       }).follow().done(function() {
-        return demonCover.speak('twitter 其实是友邻广播。', 2000, 2)
+        return demonCover.speak('推特其实也不存在，人们所知的推特只是友邻广播的一个分支版本。', 2900, 2)
       }).follow().done(function() {
         return demonCover.speak('豆瓣FM 后来成了潘多拉。', 2000, 3)
       }).follow().done(function() {
         return demonCover.speak('最近被封的 github 的正是 Code 项目的延续...', 3000, 2)
       }).follow().done(function() {
-        return demonCover.speak('这些拆分后的小公司大都成了各自领域的标杆，从而激起了整个互联网的进取之心', 5000, 3)
+        splCenter.light.addClass('fadeOut')
+        return demonCover.speak('这些拆分后的小公司大都成了各自领域的标杆，从而激起了整个互联网的进取之心', 4500, 3)
       }).follow().done(function() {
         return demonCover.speak('这才是驴宗王的初衷啊... ', 3000, 3)
       }).follow().done(function() {
@@ -174,7 +176,7 @@ define([
       }).follow().done(function() {
         return demonCover.speak('呵呵，就知道你小子会喜欢', 2000, 3)
       }).follow().done(function() {
-        demonWang.walk([-250, -50], 600, 'easeOut')
+        demonWang.walk([-240, -130], 600, 'easeOut')
         return wait(500)
       }).follow().done(function() {
         return demonWang.speak('愿闻其详！', 1500, 10)
