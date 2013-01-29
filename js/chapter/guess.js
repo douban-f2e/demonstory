@@ -18,8 +18,7 @@ define([
             { name: '影子', id: 'yingzi' },
             { name: 'su37', id: 'su37' },
             { name: '超哥', id: 'chaoge' },
-            { name: '老卡', id: 'laoka' },
-            { name: 'tgnn', id: 'tgnn' }
+            { name: '老卡', id: 'laoka' }
         ];
 
     function initJudges(win) {
@@ -60,7 +59,6 @@ define([
             'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.m4a',
             'piggy/intro-su37': '/media/guess/piggy/4su37.m4a',
             'piggy/intro-chaoge': '/media/guess/piggy/5chaoge.m4a',
-            'piggy/intro-tgnn': '/media/guess/piggy/6tgnn.m4a',
             'piggy/section-1': '/media/guess/piggy/7yidaizongshi.m4a',
             'piggy/section-2': '/media/guess/piggy/8normal-fm.m4a',
             'piggy/section-3': '/media/guess/piggy/9xiangce.m4a',
@@ -366,26 +364,6 @@ define([
 
                 return wait(1600 + 1700 + 2000 + 200);
 
-            }).follow().done(function() {
-
-                piggyDemon.speak('最后一位评委老湿就是我们可爱的tgnn！！', 1400, 8, sfx['piggy/intro-tgnn']);
-
-                wait(1400 + 200).done(function() {
-
-                    var tgnn = judges['tgnn'].demon;
-
-                    tgnn.walk([ 260, -10 ], 1000);
-
-                    wait(1000 + 200).done(function() {
-
-                        tgnn.speak('理财投资褥羊毛，电器产品都知道，你们虽然too森破，照样能说一大套。', 2000, 2);
-
-                    });
-
-                });
-
-                return wait(1600 + 1200 + 2000 + 200);
-
             })
 
             /* section#1 一代宗师 by lifei */
@@ -394,7 +372,6 @@ define([
                 // return wait(0);
 
                 var sectionDemon = sectionDemons[1],
-                    tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
@@ -410,8 +387,8 @@ define([
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
                     wait(3000).done(function() {
 
-                        lu13.speak('骚！', 3000, 12, sfx['lu13/intro-1']);
-                        return wait(3000 + 800);
+                        lu13.speak('骚！', 1200, 12, sfx['lu13/intro-1']);
+                        return wait(1200 + 800);
 
                     }).follow().done(function() {
 
@@ -428,13 +405,8 @@ define([
                         chaoge.speak('hold住就是胜利', 2000, 12);
                         return wait(2000 + 800);
 
-                    }).follow().done(function() {
-
-                        tgnn.speak('见自己，见产品，见众生。可以留，其他人还有意见吗？', 2000, 2);
-                        return wait(2000 + 800);
-
                     });
-                    return wait(3000 + 3800 + 9800 + 14800 + 2800 + 2800 + 200);
+                    return wait(3000 + 2000 + 9800 + 14800 + 2800 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     sectionPromise.fire();
@@ -447,12 +419,9 @@ define([
             /* section#2 FM by lifei */
             .follow().done(function() {
 
-                // return wait(0);
-
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
                     adDemon = sectionDemons['fm-ad'],
-                    tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
@@ -463,14 +432,13 @@ define([
 
                 wait(4000 + 200).done(function() {
                     normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
-                    normalDemon.sound(sfx['fm/fm_normal'], 20000, 100);
+                    normalDemon.sound(sfx['fm/fm_normal'], 10000, 100);
 
                     wait(13000).done(function() {
 
                         chaoge.speak('才 64k，还不如广告音质好！', 5000, 10);
                         lu13.speak('才 64k，还不如广告音质好！', 5000, 10, sfx['lu13/section-2']);
                         su37.speak('才 64k，还不如广告音质好！', 5000, 10);
-                        tgnn.speak('才 64k，还不如广告音质好！', 5000, 10);
                         yingzi.speak('才 64k，还不如广告音质好！', 5000, 10);
 
                     });
@@ -484,26 +452,25 @@ define([
                 }).follow().done(function() {
                     adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
                     adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
-                    wait(6000).done(function() {
+                    wait(8000).done(function() {
 
                         chaoge.speak('负分，滚粗啊！', 1500, 10);
                         lu13.speak('负分，滚粗啊！', 1500, 10);
                         su37.speak('负分，滚粗啊！', 1500, 10);
-                        tgnn.speak('负分，滚粗啊！', 1500, 10);
                         yingzi.speak('负分，滚粗啊！', 1500, 10);
 
                     });
 
-                    return wait(13000 + 800);
+                    return wait(10000 + 800);
 
                 }).follow().done(function() {
                     proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
                     proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
-                    wait(10000).done(function() {
+                    wait(5000).done(function() {
                         proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
                         adDemon.speak('灰溜溜的逃走', 3000, 3);
                         adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                        return wait(5000 + 200);
+                        return wait(15000 + 200);
                     }).follow().done(function() {
                         proDemon.speak('更纯洁的音质，无广告的体验', 1500, 10);
                         return wait(1500 + 200);
@@ -511,11 +478,10 @@ define([
                         chaoge.speak('赞，高端大气上档次！', 3500, 10);
                         lu13.speak('赞，高端大气上档次！', 3500, 10, sfx['lu13/section-2-1']);
                         su37.speak('赞，高端大气上档次！', 3500, 10);
-                        tgnn.speak('赞，高端大气上档次！', 3500, 10);
                         yingzi.speak('赞，高端大气上档次！', 3500, 10);
                     });
 
-                    return wait(29500 + 200);
+                    return wait(25500 + 200);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     return wait(3000 + 200);
@@ -536,7 +502,6 @@ define([
                 // return wait(0);
 
                 var sectionDemon = sectionDemons[3],
-                    tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
@@ -550,8 +515,6 @@ define([
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
 
                     wait(1000).done(function() {
-
-                        tgnn.speak('想：这个。。。还算有点儿意思嘛。。。', 1000, 12);
 
                         su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12, sfx['su37/section-3']);
 
@@ -723,7 +686,6 @@ define([
                         yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
                         su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12, sfx['su37/section-3-1']);
                         chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
-                        tgnn.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
 
                         return wait(2000 + 200);
 
@@ -755,7 +717,6 @@ define([
                 // return wait(0);
 
                 var sectionDemon = sectionDemons[4],
-                    tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
@@ -783,7 +744,6 @@ define([
                     wait(2000).done(function(){
 
                         yingzi.speak('赶出去！！！', 1000, 12, sfx['lu13/section-4']);
-                        tgnn.speak('赶出去！！！', 1000, 12);
                         su37.speak('赶出去！！！', 1000, 12);
 
                         wait(1000 + 200).done(function(){
@@ -811,7 +771,6 @@ define([
                     su37.speak('。。。。。。',900,12);
                     chaoge.speak('。。。。。。',900,12);
                     yingzi.speak('。。。。。。',900,12);
-                    tgnn.speak('。。。。。。',900,12);
 
                     return wait( 1500 + 300 );
 
@@ -833,7 +792,6 @@ define([
                 // return wait(0);
 
                 var sectionDemon = sectionDemons[5],
-                    tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
@@ -908,7 +866,6 @@ define([
                     yingzi.speak('通过！！！', 2000, 11);
                     su37.speak('通过！！！', 2000, 12);
                     chaoge.speak('通过！！！', 2000, 12);
-                    tgnn.speak('通过！！！', 2000, 12);
 
                     return wait(2000 + 200);
 
@@ -935,7 +892,6 @@ define([
                 // return wait(0);
 
                 var sectionDemon = sectionDemons[6],
-                    tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
@@ -991,9 +947,6 @@ define([
 
                     yingzi.walk([-2100,50],1200);
                     yingzi.speak('匿了',800,12);
-
-                    tgnn.walk([2000,-200],1200);
-                    tgnn.speak('撤！！！',800,12);
 
                     sectionDemon.walk([1000,-200],1200);
                     lu13.speak('又有砸场的？？？',800,12);
