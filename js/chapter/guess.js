@@ -54,7 +54,44 @@ define([
     return {
 
         sfx: {
-            intro: 'guess/intro.mp3'
+            intro: 'guess/intro.mp3',
+            'piggy/intro': 'guess/piggy/1.m4a',
+            'piggy/intro-lu13': 'guess/piggy/2lu13.m4a',
+            'piggy/intro-yingzi': 'guess/piggy/3yingzi.m4a',
+            'piggy/intro-su37': 'guess/piggy/4su37.m4a',
+            'piggy/intro-chaoge': 'guess/piggy/5chaoge.m4a',
+            'piggy/intro-tgnn': 'guess/piggy/6tgnn.m4a',
+            'piggy/section-1': 'guess/piggy/7yidaizongshi.m4a',
+            'piggy/section-2': 'guess/piggy/8normal-fm.m4a',
+            'piggy/section-3': 'guess/piggy/9xiangce.m4a',
+            'piggy/section-4': 'guess/piggy/10xiayiwei.m4a',
+            'piggy/section-4-1': 'guess/piggy/11houtai.m4a',
+            'piggy/section-5': 'guess/piggy/12riji.m4a',
+            'piggy/section-6': 'guess/piggy/13lichengpeng.m4a',
+            'piggy/end': 'guess/piggy/14run.m4a',
+            'lu13/intro': 'guess/lu13/1.m4a',
+            'lu13/intro-1': 'guess/lu13/2he1.m4a',
+            'lu13/section-1': 'guess/lu13/3zongshi.m4a',
+            'lu13/section-2': 'guess/lu13/4he-fm.m4a',
+            'lu13/section-2-1': 'guess/lu13/5he-pro-fm.m4a',
+            'lu13/section-4': 'guess/lu13/6mao.m4a',
+            'lu13/section-5': 'guess/lu13/8he-riji.m4a',
+            'yingzi/intro': 'guess/yingzi/1.m4a',
+            'yingzi/section-1': 'guess/yingzi/2zongshi.m4a',
+            'yingzi/section-3': 'guess/yingzi/3xiangce.m4a',
+            'yingzi/section-4': 'guess/yingzi/4he-mao.m4a',
+            'su37/intro': 'guess/su37/1.m4a',
+            'su37/intro-1': 'guess/su37/2.m4a',
+            'su37/section-1': 'guess/su37/3zongshi.m4a',
+            'su37/section-2': 'guess/su37/4fm-ad.m4a',
+            'su37/section-3': 'guess/su37/5xiangce.m4a',
+            'su37/section-3-1': 'guess/su37/5xiangce-2.m4a',
+            'su37/section-5': 'guess/su37/6riji.m4a',
+            'su37/section-6': 'guess/su37/7paolu.m4a',
+            'mao/section-4-1': 'guess/mao/1.m4a',
+            'mao/section-4-2': 'guess/mao/2xiachang.m4a',
+            'ka/section-6-1': 'guess/ka/1.m4a',
+            'ka/section-6-2': 'guess/ka/2.m4a'
         },
 
         announce: function(screen, sfx) {
@@ -63,7 +100,7 @@ define([
 
         },
 
-        main: function(win, promise) {
+        main: function(win, promise, sfx) {
             var doc = win.document,
                 screen = camera(win),
                 piggy = $('#host-piggy', doc),
@@ -107,7 +144,7 @@ define([
 
                 piggyDemon.rotateHand('left', '130deg', 300);
 
-                piggyDemon.speak('大家好，我是今天“我要上豆瓣猜”的主持人，猪头小秘书！', 2000, 9);
+                piggyDemon.speak('大家好，我是今天“我要上豆瓣猜”的主持人，猪头小秘书！', 2000, 9, sfx['piggy/intro']);
 
                 piggyDemon.rotateHand('right', '-130deg', 500);
 
@@ -117,7 +154,7 @@ define([
 
                 piggyDemon.rotateHand('left', '170deg', 200);
 
-                piggyDemon.speak('旧的不去，新的不来，今儿我们启用全新的大舞台！', 2000, 9);
+                piggyDemon.speak('旧的不去，新的不来，今儿我们启用全新的大舞台！', 2000, 9, sfx['piggy/intro']);
 
                 return wait(2000 + 200);
 
@@ -189,7 +226,7 @@ define([
 
                 wait(1200 + 500).done(function() {
 
-                    piggyDemon.speak('接下来，我们隆重邀请敬爱的评委们，大家鼓掌～～～～', 1000, 12);
+                    piggyDemon.speak('来到现场的评委有～', 1000, 12, sfx['piggy/intro-lu13']);
 
                 });
 
@@ -197,7 +234,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('第一位是兆维卢十三老湿，大家欢迎～', 800, 6);
+                piggyDemon.speak('第一位是兆维卢十三老湿，大家欢迎～', 800, 6, sfx['piggy/intro-lu13']);
 
                 wait(700).done(function() {
 
@@ -215,7 +252,7 @@ define([
 
                         wait(600).done(function() {
 
-                            lu13.speak('我是一名工程师，我喜欢用trello，所以我女朋友踹了我。', 2500, 12);
+                            lu13.speak('我是一名工程师，我喜欢用trello，所以我女朋友踹了我。', 2500, 12, sfx['lu13/intro']);
 
                             wait(2500 + 200).done(function() {
 
@@ -234,7 +271,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('接下来是芙蓉镇影支书～～', 2000, 8);
+                piggyDemon.speak('接下来是芙蓉镇影支书～～', 2000, 8, sfx['piggy/intro-yingzi']);
 
                 wait(2000 + 200).done(function() {
 
@@ -244,7 +281,7 @@ define([
 
                     wait(3000 + 200).done(function() {
 
-                        yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 2500, 10);
+                        yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 2500, 10, sfx['yingzi/intro']);
 
                     });
 
@@ -254,7 +291,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('下一位是根本就没有 su37 ？？！！', 2000, 8);
+                piggyDemon.speak('下一位是根本就没有 su37 ？？！！', 2000, 8, sfx['piggy/intro-su37']);
 
                 wait(2000 + 200).done(function() {
 
@@ -264,7 +301,7 @@ define([
 
                     wait(2600 + 200).done(function() {
 
-                        su37.speak('为了方便大家记忆，从今年开始，以后每年我都是37岁，今后大家再也不用计算我多少岁啦，是不是好轻松的感觉！举手之劳，方便别人，方便自己，低碳环保，利国利民。', 4000, 12);
+                        su37.speak('为了方便大家记忆，从今年开始，以后每年我都是37岁，今后大家再也不用计算我多少岁啦，是不是好轻松的感觉！举手之劳，方便别人，方便自己，低碳环保，利国利民。', 4000, 12, sfx['su37/intro']);
 
                         wait(5000 + 20).done(function() {
 
@@ -272,14 +309,14 @@ define([
 
                             wait(200 + 100).done(function() {
 
-                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 1500, 11);
+                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 1500, 11, sfx['su37/intro-1']);
 
                                 wait(1500 + 200).done(function() {
 
                                     var lu13 = judges['lu13'].demon,
                                         yingzi = judges['yingzi'].demon;
 
-                                    lu13.speak('不行啊？！', 1000, 12);
+                                    lu13.speak('不行啊？！', 1000, 12, sfx['lu13/intro-1']);
 
                                     wait(300).done(function() {
 
@@ -308,7 +345,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('接下来是酒仙桥超哥！！', 1400, 8);
+                piggyDemon.speak('接下来是酒仙桥超哥！！', 1400, 8, sfx['piggy/intro-chaoge']);
 
                 wait(1400 + 200).done(function() {
 
@@ -328,7 +365,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('最后一位评委老湿就是我们可爱的tgnn！！', 1400, 8);
+                piggyDemon.speak('最后一位评委老湿就是我们可爱的tgnn！！', 1400, 8, sfx['piggy/intro-tgnn']);
 
                 wait(1400 + 200).done(function() {
 
@@ -361,7 +398,7 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 1500, 12);
+                piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 1500, 12, sfx['piggy/section-1']);
 
                 sectionDemon.me.css('top', '140px');
 
@@ -370,17 +407,17 @@ define([
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
                     wait(3000).done(function() {
 
-                        lu13.speak('骚！', 2000, 12);
+                        lu13.speak('骚！', 2000, 12, sfx['lu13/intro-1']);
                         return wait(2000 + 800);
 
                     }).follow().done(function() {
 
-                        yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 2000, 12);
+                        yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 2000, 12, sfx['yingzi/section-1']);
                         return wait(2000 + 800);
 
                     }).follow().done(function() {
 
-                        su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 2000, 12);
+                        su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 2000, 12, sfx['su37/section-1']);
                         return wait(2000 + 800);
 
                     }).follow().done(function() {
@@ -419,7 +456,7 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 2500, 12);
+                piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 2500, 12, sfx['piggy/section-2']);
 
                 wait(1500 + 200).done(function() {
                     normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 5000);
@@ -428,7 +465,7 @@ define([
                     wait(3000).done(function() {
 
                         chaoge.speak('才 64k，还不如广告音质好！', 1500, 10);
-                        lu13.speak('才 64k，还不如广告音质好！', 1500, 10);
+                        lu13.speak('才 64k，还不如广告音质好！', 1500, 10, sfx['lu13/section-2']);
                         su37.speak('才 64k，还不如广告音质好！', 1500, 10);
                         tgnn.speak('才 64k，还不如广告音质好！', 1500, 10);
                         yingzi.speak('才 64k，还不如广告音质好！', 1500, 10);
@@ -468,7 +505,7 @@ define([
                         return wait(1500 + 200);
                     }).follow().done(function() {
                         chaoge.speak('赞，高端大气上档次！', 1500, 10);
-                        lu13.speak('赞，高端大气上档次！', 1500, 10);
+                        lu13.speak('赞，高端大气上档次！', 1500, 10, sfx['lu13/section-2-1']);
                         su37.speak('赞，高端大气上档次！', 1500, 10);
                         tgnn.speak('赞，高端大气上档次！', 1500, 10);
                         yingzi.speak('赞，高端大气上档次！', 1500, 10);
@@ -502,7 +539,7 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12);
+                piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12, sfx['piggy/section-3']);
 
                 wait(1500 + 200).done(function() {
 
@@ -512,7 +549,7 @@ define([
 
                         tgnn.speak('想：这个。。。还算有点儿意思嘛。。。', 1000, 12);
 
-                        su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12);
+                        su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12, sfx['su37/section-3']);
 
                         return wait(1000 + 800);
 
@@ -526,7 +563,7 @@ define([
 
                         yingzi.speak('想：嗯，给力！', 500, 10);
 
-                        lu13.speak('想：大爱X大呀！', 600, 12);
+                        lu13.speak('想：大爱X大呀！', 600, 12, sfx['lu13/section-3']);
 
                         return wait(800 + 200);
 
@@ -680,7 +717,7 @@ define([
 
                         lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
                         yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
-                        su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12, sfx['su37/section-3-1']);
                         chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
                         tgnn.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
 
@@ -721,7 +758,7 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('欢迎下一位选手', 1500, 12);
+                piggyDemon.speak('欢迎下一位选手', 1500, 12, sfx['piggy/section-4']);
 
                 wait(1500 + 200).done(function() {
 
@@ -731,17 +768,17 @@ define([
 
                 }).follow().done(function(){
 
-                        sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',2500,6);
+                        sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',2500,6, sfx['mao/section-4-1']);
 
                     return wait(2500 + 200);
 
                 }).follow().done(function() {
 
-                    lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 2000, 12);
+                    lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 2000, 12, sfx['lu13/section-4']);
 
                     wait(2000).done(function(){
 
-                        yingzi.speak('赶出去！！！', 1000, 12);
+                        yingzi.speak('赶出去！！！', 1000, 12, sfx['lu13/section-4']);
                         tgnn.speak('赶出去！！！', 1000, 12);
                         su37.speak('赶出去！！！', 1000, 12);
 
@@ -755,7 +792,7 @@ define([
 
                 }).follow().done(function() {
 
-                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',2500,6);
+                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',2500,6, sfx['mao/section-4-2']);
 
                     wait(2000).done(function(){
                         sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 2000, 'easeIn');
@@ -765,7 +802,7 @@ define([
 
                 }).follow().done(function() {
 
-                    piggyDemon.speak('好吧，有后台我们惹不起~~', 1500, 9);
+                    piggyDemon.speak('好吧，有后台我们惹不起~~', 1500, 9, sfx['piggy/section-4-1']);
                     lu13.speak('。。。。。。',900,12);
                     su37.speak('。。。。。。',900,12);
                     chaoge.speak('。。。。。。',900,12);
@@ -799,7 +836,7 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 2500, 12);
+                piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 2500, 12, sfx['piggy/section-5']);
 
                 sectionDemon.me.css('top', '140px');
 
@@ -810,7 +847,7 @@ define([
                     wait(3000).done(function() {
 
                         chaoge.speak('想：月『精』日记又出现了！', 1500, 10);
-                        su37.speak('想：月『精』日记又出现了！', 1500, 12);
+                        su37.speak('想：月『精』日记又出现了！', 1500, 12, sfx['su37/section-5']);
                         lu13.speak('想：月『精』日记又出现了！', 1500, 12);
 
                     });
@@ -863,7 +900,7 @@ define([
 
                 }).follow().done(function() {
 
-                    lu13.speak('通过！！！', 2000, 1);
+                    lu13.speak('通过！！！', 2000, 1, sfx['lu13/section-5']);
                     yingzi.speak('通过！！！', 2000, 11);
                     su37.speak('通过！！！', 2000, 12);
                     chaoge.speak('通过！！！', 2000, 12);
@@ -902,7 +939,7 @@ define([
                     laoka = judges['laoka'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('下一位看起来很有文化的样子嘛，欢迎~', 1500, 9);
+                piggyDemon.speak('下一位看起来很有文化的样子嘛，欢迎~', 1500, 9, sfx['piggy/section-6']);
 
                 wait(1500 + 200).done(function() {
 
@@ -932,7 +969,7 @@ define([
                     laoka.rotateHand('right', '-90deg', 300);
 
                     wait(1500).done(function(){
-                        laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 2000, 3);
+                        laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 2000, 3, sfx['ka/section-6-1']);
                     });
 
                     return wait( 1500 + 1500 + 400);
@@ -943,7 +980,7 @@ define([
                     lu13.speak('撤！！！',800,12);
 
                     su37.walk([-300,-2000],2000);
-                    su37.speak('靠！！！',800,12);
+                    su37.speak('靠！！！',800,12, sfx['su37/section-6']);
 
                     chaoge.walk([-2000,-100],1200);
                     chaoge.speak('额。。。。。',800,12);
@@ -959,7 +996,7 @@ define([
 
                     wait(1000).done(function(){
 
-                        piggyDemon.speak('不要丢下我啊~~~~', 500, 11);
+                        piggyDemon.speak('不要丢下我啊~~~~', 500, 11, sfx['piggy/end']);
                         piggyDemon.walk([-400,0],1000);
 
                         wait(1200).done(function(){
@@ -975,7 +1012,7 @@ define([
 
                     laoka.walk([400,-50],2000);
                     wait(2000 + 200).done(function(){
-                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',2500);
+                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',2500, sfx['ka/section-6-2']);
                     });
 
                     return wait(2000 + 2500 + 200);

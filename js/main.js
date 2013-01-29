@@ -30,11 +30,11 @@ require([
         easing: easingLib
     });
 
-var story = [{
+var story = [/*{
         stage: 'pages/index.html',
         style: '../dist/css/chapter/intro.css',
         script: '../chapter/intro'
-    }, {
+    }, */{
         stage: 'pages/update.html',
         style: '../dist/css/chapter/guess.css',
         script: '../chapter/guess'
@@ -64,8 +64,6 @@ var story = [{
     director.init({
         observer: observer,
         story: story,
-        imageRoot: 'pics/',
-        mediaRoot: 'media/',
         stageStyle: '../dist/css/stage.css'
     });
 
