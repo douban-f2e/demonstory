@@ -21,52 +21,125 @@ define([
         , cover = $('.cover', doc)
         , wang = $('.wang', doc)
         , btn = $('.purchase', doc)
-        , demonCover = demon({
-            origin: cover[0]
-          , window: win
-          })
+        , headline = $('h1.article-title', doc)
+        , demonCover
         , demonWang
         , demonBtn
-        , splCover = spotlight({
-            target: demonCover.me
-          , size : {
-              width: 300
-            , height: 300
-            }
-          , offset: {
-              top: 20
-            }
-          }, doc)
+        , splCover
+        , splWang
+        , splHeadline
+        , splCenter
 
-      splCover.startFollowing()
+      // splCover.startFollowing()
 
-      wait(1000).done(function() {
-        util.showDemon(demonCover)
-        return wait(200 + 2000)
-      }).follow().done(function() {
-        return demonCover.speak('大家好，我是科幻作品“打造脸书”', 2000, 2)
-      }).follow().done(function() {
-        demonCover.speak('各位可能有所不知，大洋彼岸的 Facebook 曾是豆瓣的一部分...', 3000, 3)
-        return wait(600)
-      }).follow().done(function() {
+      wait(1000).done(function(){
         demonWang = demon({
           origin: wang[0]
         , window: win
         })
-        return util.showDemon(demonWang)
+        util.showDemon(demonWang)
+        splWang = spotlight({
+          target: demonWang.me
+        , size : {
+            width: 200
+          , height: 200
+          }
+        , offset: {
+            top: 20
+          }
+        }, doc)
+        return wait(200 + 2000)
+
       }).follow().done(function() {
-        demonWang.rotateEye('200deg', 400)
+        demonWang.speak('大家好，我是王H，是 facebook 的早期员工，我写的书《打造 facebook》最近在豆瓣阅读上架了，希望大家...', 3000, 9)
+        return wait(2400).done(function() {
+          demonWang.rotateEye('200deg', 400)
+          demonWang.moveEye(0.6, 200);
+        })
+
+      }).follow().done(function() {
+        splHeadline = spotlight({
+          target: headline
+        , size: { width: 350, height: 350}
+        , offset: { left: -70, top: 0}
+        }, doc)
+        return wait(1000 + 2000)
+
+      }).follow().done(function() {
+        return demonWang.speak('咦，这书名好像不太对...', 2300, 9)
+
+      }).follow().done(function() {
+        splHeadline.light.addClass('fadeOut')
+        demonWang.moveEye(0, 200);
+        demonWang.speak('不管了，咳，众所周知，脸书是当今互联网上最吊的公司了...', 4000, 9)
+        return wait(3000).done(function() {
+          demonCover = demon({
+            origin: cover[0]
+          , window: win
+          })
+          util.showDemon(demonCover)
+          splCover = spotlight({
+            target: demonCover.me
+          , size : {width: 300, height: 300}
+          , offset: {top: 20}
+          }, doc)
+        })
+
+      }).follow().done(function() {
         demonWang.moveEye(0.6, 200);
-        return demonWang.speak('简直一派胡言！', 1500, 9)
+        return demonCover.speak('放屁，你知道什么？', 2000, 2)
+
       }).follow().done(function() {
-        return demonWang.speak('我可是看着脸书一路走过来的！', 2000, 10)
+        return demonCover.speak('根本没有什么 facebook！什么脸书！', 2000, 2)
+
       }).follow().done(function() {
+        var fn = arguments.callee;
+        demonWang.rotateHand('left', '60deg', 200).done(function(){
+          return demonWang.rotateHand('left', '150deg', 200);
+        });
+        demonWang.rotateHand('right', '-60deg', 200).done(function(){
+          return demonWang.rotateHand('right', '-150deg', 200);
+        });
+        return demonWang.jump(40, [], 405).done(function(){
+          if (jump_count++ < 2) {
+            return fn();
+          } else {
+            jump_count = 0;
+            demonWang.rotateHand('right', '-30deg', 200);
+            demonWang.rotateHand('left', '30deg', 200);
+            return wait(200);
+          }
+        }).follow();
+
+      }).follow().done(function() {
+        return demonWang.speak('什么！简直是一派胡言！', 2000, 9)
+
+      }).follow().done(function() {
+        return demonWang.speak('我可是看着脸书一路走过来的！', 2000, 9)
+
+      }).follow().done(function() {
+        return demonCover.speak('唉，傻孩子...', 1500, 3)
+
+      }).follow().done(function() {
+        return demonCover.speak('既然已经回到了中国，有些事情该让你知道了。', 2500, 3)
+
+      }).follow().done(function() {
+        splCover.light.addClass('fadeOut')
+        splWang.light.addClass('fadeOut')
+        var win = $(window)
+        splCenter = spotlight({
+          target: {top: win.height()/2, left: win.width()/2}
+        , size: { width: 900, height: 900}
+        , offset: { left: -100, top: 60}
+        }, doc)
         return demonCover.walk([250, 50], 1000, 'easeOut')
+
       }).follow().done(function() {
-        return demonCover.speak('傻孩子，你先听我说', 2000, 3)
+        return demonCover.speak('根本就没有脸书。', 2000, 3)
+
       }).follow().done(function() {
-        demonCover.speak('其实早在04年，豆瓣就已经统领了大半个互联网。', 3000, 3)
-        return wait(4000 + 300)
+        return demonCover.speak('其实早在04年，豆瓣就已经统领了大半个互联网。', 3000, 3)
+
       }).follow().done(function() {
         return demonWang.walk([10, 50], 300, 'easeOut')
       }).follow().done(function() {
