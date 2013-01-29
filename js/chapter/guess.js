@@ -14,8 +14,8 @@ define([
         DESC = '本节目由豆瓣友邻广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣小组，豆瓣 FM及豆瓣更多赞助播出。豆瓣读书，带来雪姨与五点钟。豆瓣电影，让好电影来找你。豆瓣 FM，与好音乐不期而遇。上 fili, 与 502 也不期而遇。',
 
         JUDGE_LIST = [
-            { name: '田佳芝', id: 'yingzi' },
             { name: '卤十三', id: 'lu13' },
+            { name: '田佳芝', id: 'yingzi' },
             { name: 'su37', id: 'su37' },
             { name: '超哥', id: 'chaoge' },
             { name: '老卡', id: 'laoka' }
@@ -54,6 +54,7 @@ define([
 
         sfx: {
             intro: '/media/guess/intro.mp3',
+            exiting: '/media/guess/exiting.mp3',
             'piggy/chaoge': '/media/guess/piggy/intro.m4a',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
@@ -945,6 +946,7 @@ define([
 
                 }).follow().done(function(){
 
+                    sectionDemon.sound(sfx['exiting'], 10000, 100);
                     laoka.walk([ 300, -180 ], 900);
                     laoka.rotateHand('right', '-90deg', 300);
                     laoka.sound(sfx['ka/section-6-1'],9000,100);
