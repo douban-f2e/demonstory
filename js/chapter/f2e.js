@@ -91,45 +91,55 @@ define([
 
             wait(400)
             .done(function(){
-                return cmonday.walk([ baseLeft + 300, 200 ], 1);
+                var offset = 150
+                  , left = baseLeft - 150
+                  , height = 500
+                cmonday.walk([ left + offset, height ], 1);
+                seechaos.walk([ left, height ], 1);
+                gonghao.walk([ left + offset*2, height ], 1);
+                return bingbing.walk([ left + offset*3, height ], 1);
             }).follow().done(function(){
-                return cmonday.rotateHand('left', '120deg', 400)
+                cmonday.walk([ 200, 1 ], 1900);
+                gonghao.walk([ 200, 1 ], 1900);
+                bingbing.walk([ 200, 1 ], 1900);
+                return seechaos.walk([ 200, 1 ], 2000);
             }).follow().done(function(){
-                return cmonday.walk([ 200, 1 ], 1000);
+                return wait(2000)
             }).follow().done(function(){
-                cmonday.rotateHand('left', '150deg', 400)
-                return cmonday.speak('曾经我的座右铭是做一个兼容ie6的男人，现在我的座右铭是做一个兼容手机浏览器的好男人', 5000, 9)
+                return cmonday.walk([-120, -250], 2000)
             }).follow().done(function(){
-                return bingbing.walk([ baseLeft, 400 ] , 1)
+                cmonday.rotateHand('right', '-120deg', 400)
+                return cmonday.speak('前端!就是能征服IE6的好小伙!!!', 3000, 3)
             }).follow().done(function(){
-                bingbing.rotateHand('left', '-150deg', 400)
-                bingbing.rotateHand('right', '-150deg', 400)
-                return bingbing.speak(' 不会佛陀绣谱好意思说自己是前端吗？', 3000, 3)
+                cmonday.rotateHand('right', '40deg', 400)
+                return bingbing.walk([1, -200], 1000)
             }).follow().done(function(){
-                bingbing.rotateHand('left', '150deg', 400)
-                return bingbing.rotateHand('right', '150deg', 400)
+                return bingbing.speak('辰老师您说的不全', 3000, 1)
             }).follow().done(function(){
-                return bingbing.walk([-200, 1], 1000)
+                return bingbing.speak('不会佛陀绣谱好意思说自己是前端吗？', 4000, 9)
             }).follow().done(function(){
-                hide(cmonday.me)
-                hide(bingbing.me)
-                return seechaos.walk([baseRight - 50, 200], 1)
+                cmonday.walk([-100, -40], 2000)
+                bingbing.walk([50, 1], 300)
+                return gonghao.walk([-230, -250], 2000)
             }).follow().done(function(){
-                bingbing.walk([-2000, 1], 1000)
-                return seechaos.walk([-50, 100], 2000)
+                return wait(200)
             }).follow().done(function(){
-                return seechaos.jump(100, 20, 800)
+                return gonghao.speak('....', 2000, 12)
             }).follow().done(function(){
-                return seechaos.jump(100, 20, 800)
+                return gonghao.speak('前端开发？前台端茶送水的，这还需要开发么？？', 3000, 3)
             }).follow().done(function(){
-                seechaos.rotateHand('left', '150deg', 400)
-                return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到…… ', 3000, 9)
+                gonghao.walk([150, 0], 1000)
+                return seechaos.jump(20, 20, 400)
             }).follow().done(function(){
-                return seechaos.walk([-2000, 1], 1000)
+                return seechaos.jump(20, 20, 400)
             }).follow().done(function(){
+                return seechaos.speak('其实呢', 1000 , 9)
             }).follow().done(function(){
+                return seechaos.walk([40, -100], 2000)
+            }).follow().done(function(){
+                seechaos.rotateHand('right', '-120deg', 400)
+                return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到……', 4000, 3)
             })
-
             return promise;
         },
 
