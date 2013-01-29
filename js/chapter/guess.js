@@ -22,10 +22,14 @@ define([
         ];
 
     function initJudges(win) {
-        var judges = {};
+        var doc = win.document,
+            judges = {},
+            materials = $('#materials', doc);
+
+        materials.show();
 
         JUDGE_LIST.forEach(function(item) {
-            var dom = $('#judge-' + item.id, $(win.document)),
+            var dom = $('#judge-' + item.id, doc),
                 demonItem = demon({
                     origin: dom,
                     className: 'demon-' + item.id,
@@ -40,6 +44,8 @@ define([
                 demon: demonItem
             };
         });
+
+        materials.hide();
 
         return judges;
     }
@@ -65,17 +71,21 @@ define([
 
             piggyPromise.done(function() {
 
+                materials.show();
+
                 piggy.css({
-                        position: 'fixed',
-                        top: ($(window).height() - 96) / 2 + 'px',
-                        right: -96 + 'px'
-                    });
+                    position: 'fixed',
+                    top: ($(window).height() - 96) / 2 + 'px',
+                    right: -96 + 'px'
+                });
 
                 piggyDemon = demon({
                     origin: piggy,
                     className: 'demon-piggy',
                     window: win
                 });
+
+                materials.hide();
 
                 piggyDemon.showBody().showHands().showLegs();
 
@@ -122,6 +132,8 @@ define([
                         .css('opacity', 0)
                         .html('');
 
+                    materials.show();
+
                     $('.wyssy-item-con', materials).each(function() {
                         var dom = $(this),
                             index = dom.data('section'),
@@ -145,6 +157,8 @@ define([
 
                         sectionDemons[index] = sectionDemon;
                     });
+
+                    materials.hide();
 
                     var action = choreo().play();
 
@@ -331,6 +345,8 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
+                return wait(0);
+
                 var sectionDemon = sectionDemons[1],
                     tgnn = judges['tgnn'].demon,
                     chaoge = judges['chaoge'].demon,
@@ -384,6 +400,9 @@ define([
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+
+                return wait(0);
+
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
                     adDemon = sectionDemons['fm-ad'],
@@ -467,7 +486,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                // return wait(0);
+                return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     tgnn = judges['tgnn'].demon,
@@ -688,6 +707,8 @@ define([
 
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
+
+                return wait(0);
 
                 var sectionDemon = sectionDemons[4],
                     tgnn = judges['tgnn'].demon,
