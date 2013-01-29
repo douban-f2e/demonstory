@@ -16,11 +16,12 @@ define([
     return {
 
         sfx: {
-            walking: 'walking.mp3'
+            odyssey: 'intro/2001spaceodyssey.mp3'
         },
 
         announce: function(screen, sfx){
-            return screen('首页', DESC, 5000, sfx.walking);
+            sfx.odyssey.setTime(17).play();
+            return screen('首页', DESC, 18000);
         },
 
         main: function(win, promise, sfx, root){
@@ -81,7 +82,7 @@ define([
             demon_update.showBody();
             wait(400 + 1000).done(function(){
 
-                demon_update.speak('要有光！', 2000, 6, sfx.walking);
+                demon_update.speak('要有光！', 2000, 6);
                 return wait(1300);
 
             }).follow().done(function(){
