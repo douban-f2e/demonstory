@@ -31,6 +31,10 @@ require([
     });
 
 var story = [{
+        stage: 'pages/update_old1.html',
+        script: '../chapter/chaos.js',
+        style: '../dist/css/chapter/chaos.css'
+    }, {
         stage: 'pages/index.html',
         style: '../dist/css/chapter/intro.css',
         script: '../chapter/intro'
@@ -42,10 +46,6 @@ var story = [{
         stage: 'pages/facebook.html',
         style: '../dist/css/chapter/facebook.css',
         script: '../chapter/facebook'
-    }, {
-        stage: 'pages/update_old1.html',
-        script: '../chapter/chaos.js',
-        style: '../dist/css/chapter/chaos.css'
     }, {
         stage: 'pages/f2e.html',
         script: '../chapter/f2e.js',

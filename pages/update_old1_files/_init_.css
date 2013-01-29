@@ -21,7 +21,7 @@ a{cursor:pointer}
 a:link { color: #37a; text-decoration: none; }
 a:visited { color: #669; text-decoration: none; }
 a:hover { color: #fff; text-decoration: none; background: #37a; }
-a:active { color: #fff; text-decoration: none; background: #f93; }
+a:active, a.active { color: #fff; text-decoration: none; background: #f93; }
 a img { border-width:0;vertical-align:middle; }
 body,td,th { font: 12px Arial, Helvetica, sans-serif; line-height: 1.62; }
 table { border-collapse:collapse; border: none; padding: 0; margin: 0; }
