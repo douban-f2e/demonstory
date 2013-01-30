@@ -76,6 +76,7 @@ define([
             'piggy/section-5': '/media/guess/piggy/12riji.mp3',
             'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
             'piggy/end': '/media/guess/piggy/14run.m4a',
+            'piggy/abei': '/media/guess/piggy/abei.mp3',
             'lu13/intro': '/media/guess/lu13/dajiu.m4a',
             'lu13/intro-1': '/media/guess/lu13/2he1.m4a',
             'lu13/section-1': '/media/guess/lu13/3zongshi.m4a',
@@ -392,6 +393,7 @@ define([
 
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
+                //return wait(0)
 
                 var sectionDemon = sectionDemons[1],
                     chaoge = judges['chaoge'].demon,
@@ -440,6 +442,7 @@ define([
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+                //return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
@@ -523,7 +526,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                // return wait(0);
+                //return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     chaoge = judges['chaoge'].demon,
@@ -755,7 +758,7 @@ define([
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
 
-                // return wait(0);
+                //return wait(0);
 
                 var sectionDemon = sectionDemons[4],
                     chaoge = judges['chaoge'].demon,
@@ -894,6 +897,7 @@ define([
 
                         wait((shiningDuration + 1) * i).done(fn);
                     }
+                    piggyDemon.sound(sfx['piggy/abei'],15000,100);
 
                     return wait((shiningDuration + 1) * shiningTimes + 300);
 
@@ -992,7 +996,7 @@ define([
                         laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 9000, 3);
                     });
 
-                    return wait( 1500 + 9000 + 400);
+                    return wait( 1500 + 7000 + 400);
 
                 }).follow().done(function(){
 
