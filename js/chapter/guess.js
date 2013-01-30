@@ -411,8 +411,8 @@ define([
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
                     wait(3000).done(function() {
 
-                        lu13.speak('骚！', 1200, 12, sfx['lu13/intro-1']);
-                        return wait(1200 + 800);
+                        lu13.speak('骚！', 1800, 12, sfx['lu13/section-1']);
+                        return wait(1800 + 800);
 
                     }).follow().done(function() {
 
