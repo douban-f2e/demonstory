@@ -269,7 +269,7 @@ define([
                     lu13.rotateHand('right', '-60deg');
                     lu13.rotateHand('left', '-66deg');
 
-                    lu13.walk([ 1040, -10 ], 2500);
+                    lu13.walk([ 890, -10 ], 2500);
 
                     wait(2500 + 300).done(function() {
 
@@ -305,7 +305,6 @@ define([
                     var yingzi = judges['yingzi'].demon;
 
                     yingzi.walk([ 900, -14 ], 1500);
-
                     wait(1500 + 200).done(function() {
 
                         yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 8000, 10, sfx['yingzi/intro']);
@@ -411,7 +410,7 @@ define([
                         return wait(14000);
 
                     });
-                    return wait(3000 + 2000 + 9800 + 14800 + 2800 + 6000 + 200);
+                    return wait(3000 + 2000 + 9800 + 14800 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     piggyDemon.sound(sfx['piggy/clap'],3000,100);
