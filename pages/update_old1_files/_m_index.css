@@ -23,11 +23,11 @@ body { margin-top:0; }
 .top-nav-items li .top-nav-more-items ul li a { display: inline-block; width: 100% }
 .top-nav-items li .on { border: 1px solid #ccc; background: #fff; padding: 0 3px }
 .top-nav-items li .on ul { display: block }
-.nav-srh { float:left;height:38px;padding-left:5px;background:url(/pics/nav/ui_ns_sbg4.png) no-repeat 0 0; }
-.nav-srh form { padding:0 1px 0 0;height:38px;*float:left;background:url(/pics/nav/ui_ns_sbg4.png) no-repeat 100% 0; }
+.nav-srh { float:left;height:38px;padding-left:5px;background:url(ui_ns_sbg4.png) no-repeat 0 0; }
+.nav-srh form { padding:0 1px 0 0;height:38px;*float:left;background:url(ui_ns_sbg4.png) no-repeat 100% 0; }
 .nav-srh input { float:left;width:300px;height:26px;line-height:26px;border:1px solid #a6d098;background:#fff;padding:0 2px;-webkit-appearance:none;-webkit-border-radius:0; }
 .nav-srh .inp { padding-top:5px;width:366px; }
-.nav-srh .bn-srh { width:54px;height:29px;font-size:13px;padding:1px 0 3px 3px;border:none;background:transparent url(/pics/nav/ui_ns_sbg4.png) no-repeat 0 -100px;cursor:pointer;letter-spacing:3px;text-align:center; }
+.nav-srh .bn-srh { width:54px;height:29px;font-size:13px;padding:1px 0 3px 3px;border:none;background:transparent url(ui_ns_sbg4.png) no-repeat 0 -100px;cursor:pointer;letter-spacing:3px;text-align:center; }
 .nav-srh .bn-srh { padding:2px 0 0 0\9; }
 
 label.inp-placeholder { position: absolute; left: 0; white-space: nowrap; margin-left: 9px; line-height: 1.4; *line-height: 1.2; color: #c6c6c6; cursor: text; -webkit-transition: color 0.2s; -moz-transition: color 0.2s; }
@@ -37,7 +37,7 @@ label.inp-active { color: #ddd; }
   width: 290px; height: 1.2em; line-height: 1.2;
   padding: 7px 6px; *padding: 10px 6px 6px;
   border: 1px solid #dcdcdc; border-radius: 3px; }
-.humble-form .bn-srh { background: transparent url(/pics/nav/ui_ns_sbg4.png) no-repeat -191px -102px;
+.humble-form .bn-srh { background: transparent url(ui_ns_sbg4.png) no-repeat -191px -102px;
   text-indent: -100px; border: 0; overflow: hidden; cursor: pointer;
   width: 23px; height: 23px; margin-left: -28px; }
 .humble-form label.inp-placeholder { margin-top: 7px; }
@@ -66,7 +66,7 @@ label.inp-active { color: #ddd; }
 .site-nav-items #online_guide { color: #6c6869; position:absolute; top: 37px; left: 180px; padding: 6px; width: 120px; line-height: 20px; border: 1px solid #9bc59b; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px }
 .site-nav-items #online_guide .arrowUp { z-index: 2; position: absolute; top: -12px; left: 95px; height: 0; width: 0; font-size: 0; line-height: 0; border-left: 6px dashed transparent; border-top: 6px dashed transparent; border-right: 6px dashed transparent; border-bottom: 6px solid #ffffff }
 .site-nav-items #online_guide .arrowUpBorder { position: absolute; top: -14px; left: 94px; height: 0; width: 0; font-size: 0; line-height: 0;  border-left: 7px dashed transparent; border-top: 7px dashed transparent; border-right: 7px dashed transparent; border-bottom: 7px solid #9bc59b }
-.site-nav-items li { float:left;display:inline;margin-right:14px;background:url(/pics/nav/ui_ns_sbg4.png) no-repeat 0 -140px; }
+.site-nav-items li { float:left;display:inline;margin-right:14px;background:url(ui_ns_sbg4.png) no-repeat 0 -140px; }
 .site-nav-items li a:link,
 .site-nav-items li a:hover,
 .site-nav-items li a:visited,
@@ -83,7 +83,7 @@ label.inp-active { color: #ddd; }
 .submenu { float:left;position:relative;width:45px;height:21px;border:1px solid #b6c9c1;border-left:none;margin:0 2px 0 -5px;background:#fff;padding:2px 0 1px 0; }
 .submenu .menu { position:absolute;width:85px;top:24px;right:-1px;background:#fff;border:1px solid #b6c9c1; }
 .submenu .selected { padding:0 0 0 5px;border-left:1px solid #b6c9c1;cursor:pointer; }
-.submenu .selected span { position:absolute;width:7px;height:5px;right:4px; top:10px;overflow:hidden;background:url(/pics/nav/ui_ns_sbg4.png) no-repeat -240px -124px; }
+.submenu .selected span { position:absolute;width:7px;height:5px;right:4px; top:10px;overflow:hidden;background:url(i_ns_sbg4.png) no-repeat -240px -124px; }
 .submenu .menu li { width:100%; }
 .submenu .menu a { display:block;padding:2px 10px; }
 .nav-srh .open span { background-position:-240px -100px; }
@@ -342,6 +342,7 @@ body {
   overflow-x: hidden;
 }
 body .status-item {
+  font-size: 13px;
   -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
   -ms-animation-duration: 0.5s;
@@ -355,7 +356,7 @@ body .status-item {
   height: 16px;
   position: absolute;
   z-index: 2000;
-  background: url(/pics/cursor.png) no-repeat 0 0;
+  background: url(cursor.png) no-repeat 0 0;
 }
 .cursor.inputing {
   background: none;
@@ -368,7 +369,7 @@ body .status-item {
   -webkit-animation-duration: 2s;
 }
 .cursor-hand {
-  background-image: url(/pics/cursor-hand.png);
+  background-image: url(cursor-hand.png);
 }
 @-webkit-keyframes border_flash {
 	0%, 50%, 100% {border-width: 1px;}	

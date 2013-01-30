@@ -19,7 +19,7 @@ define([
     },
 
     announce: function(screen, sfx){
-      return screen('改版风云', '关于豆瓣的改版，用户总是有很多很多话要说....', 3000);
+      return screen('改版风云', '', 3000);
     },
 
     main: function(win, promise, sfx, root){
@@ -78,11 +78,17 @@ define([
         });
 
         d_noti.showBody().showEyes();
-        return wait(900);
+        return wait(800);
+      }).follow().done(function() {
+        d_noti.squintEye();
+        return wait(200);
       }).follow().done(function() {
         d_noti.showHands().showLegs()
         return wait(1200);
       }).follow().done(function() {
+        d_noti.normalEye();
+        d_noti.moveEye(0.4, 300);
+        d_noti.rotateEye('-30deg', 500);
         // zoom to demon
         screen.pan({
           elem: d_noti.origin,
@@ -94,7 +100,12 @@ define([
         return wait(800);
       }).follow().done(function() {
         d_noti.waveHand('left', 20);
-        return wait(2540);
+        d_noti.rotateEye('-120deg', 500);
+        return wait(540);
+      }).follow().done(function() {
+        d_noti.rotateEye('-90deg', 500);
+        d_noti.moveEye(0.1, 500);
+        return wait(1500);
       }).follow().done(function() {
         // reset back
         screen.reset(240);
@@ -473,7 +484,6 @@ define([
         screen.reset(100);
         return wait(1000);
       }).follow().done(function() {
-
         $('#shuai', doc).removeClass('bounceIn').addClass('bounceOutDown');;
 
         o = stream_list.offset();
@@ -495,13 +505,17 @@ define([
             stream_list.prepend(item);
           }, n * 2000 - 1800);
         });
-        return wait(7000);
+        return wait(6500);
       }).follow().done(function() {
         screen.pan({
           elem: $('.status-item', stream_list)[0],
+          easing: 'easeOutBack',
           duration: 800
         });
         return wait(2500);
+      }).follow().done(function() {
+        screen.reset(4000);
+        return wait(800);
       }).follow().done(function() {
         promise.fire();
       });

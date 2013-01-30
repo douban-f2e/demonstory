@@ -457,6 +457,8 @@ define([
         return demonRobot.speak('回见了您呐！', 2000, 6, sfx.r29)
       }).follow().done(function(){
         demonRobot.walk([-2000, 0], 500)
+      }).follow().done(function(){
+        promise.fire()
       })
 
       return promise
