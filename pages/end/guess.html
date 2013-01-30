@@ -1920,6 +1920,11 @@ var PERSONAL_GUESS_TIP = '11';
 
 
         <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u48880025-20.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>熊猫饼饼爬山坡</h3>配音</div>
+        </div>
+
+        <div class="item">
             <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1019357-11.jpg" width="48" height="48"></a></div>
             <div class="info"><h3>糖伴番茄米高没</h3>脚本、配音</div>
         </div>
@@ -1944,7 +1949,7 @@ var PERSONAL_GUESS_TIP = '11';
 
         <div class="item">
             <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1219643-28.jpg" width="48" height="48"></a></div>
-            <div class="info"><h3>mockee</h3>脚本、配音</div>
+            <div class="info"><h3>mockee</h3>脚本</div>
         </div>
         </div>
     </div>
@@ -1962,6 +1967,16 @@ var PERSONAL_GUESS_TIP = '11';
         <div class="item">
             <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1425658-8.jpg" width="48" height="48"></a></div>
             <div class="info"><h3>雨忆</h3>脚本、配音</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u1248454-58.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>农田五组小贱草</h3>配音</div>
+        </div>
+
+        <div class="item">
+            <div class="pic"><a href="http://www.douban.com/group/70021/"><img src="guess_all_files/u48880025-20.jpg" width="48" height="48"></a></div>
+            <div class="info"><h3>熊猫饼饼爬山坡</h3>配音</div>
         </div>
 
         <div class="item">
@@ -2362,7 +2377,7 @@ var t = 0;
 
 var timer = setInterval(function() {
   t = t - 100;
-  if (Math.abs(t) === 3100) {
+  if (Math.abs(t) === 3600) {
     clearInterval(timer);
     return;
   }
@@ -2371,7 +2386,7 @@ var timer = setInterval(function() {
 };
 
 
-setTimeout(function() {
+this.xxxxx = function() {
   setTimeout(section_9, 20000);
   setTimeout(section_10, 34000);
   setTimeout(section_11, 36000);
@@ -2384,8 +2399,7 @@ setTimeout(function() {
   //setTimeout(section_8, 24000);
   //setTimeout(section_8, 28000);
   section_1();
-}, 1000);
-
+};
 
 function autoCarry(from, to, selector, keep_num, loop, cb) {
   var count = loop || 100;

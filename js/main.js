@@ -30,7 +30,7 @@ require([
         easing: easingLib
     });
 
-var story = [{
+    var story = [{
         stage: 'pages/index.html',
         style: '../dist/css/chapter/intro.css',
         script: '../chapter/intro'
