@@ -54,64 +54,64 @@ define([
     return {
 
         sfx: {
-            intro: '/media/guess/intro.mp3',
-            curtain: '/media/guess/curtain-long.mp3',
-            walking: '/media/guess/walking.mp3',
-            opening: '/media/guess/opening.mp3',
-            exiting: '/media/guess/exiting.mp3',
-            click: '/media/guess/click.mp3',
-            'piggy/intro': '/media/guess/piggy/1.mp3',
-            'piggy/mubu': '/media/guess/piggy/mubu.mp3',
-            'piggy/boo': '/media/guess/piggy/boo.mp3',
-            'piggy/clap': '/media/guess/piggy/clap.mp3',
-            'piggy/push': '/media/guess/piggy/goaway.mp3',
-            'piggy/intro-lu13': '/media/guess/piggy/2lu13.mp3',
-            'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.mp3',
-            'piggy/intro-su37': '/media/guess/piggy/4su37.mp3',
-            'piggy/police': '/media/guess/piggy/police.mp3',
-            'piggy/section-1': '/media/guess/piggy/7yidaizongshi.mp3',
-            'piggy/section-2': '/media/guess/piggy/8normal-fm.mp3',
-            'piggy/section-3': '/media/guess/piggy/9xiangce.mp3',
-            'piggy/section-4': '/media/guess/piggy/10xiayiwei.mp3',
-            'piggy/section-4-1': '/media/guess/piggy/11houtai.mp3',
-            'piggy/section-5': '/media/guess/piggy/12riji.mp3',
-            'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
-            'piggy/end': '/media/guess/piggy/14run.mp3',
-            'piggy/abei': '/media/guess/piggy/abei.mp3',
-            'piggy/zhangsheng': '/media/guess/piggy/zhangsheng.mp3',
-            'lu13/intro': '/media/guess/lu13/dajiu.mp3',
-            'lu13/intro-1': '/media/guess/lu13/2he1.mp3',
-            'lu13/section-1': '/media/guess/lu13/3zongshi.mp3',
-            'lu13/section-2': '/media/guess/lu13/4he-fm.mp3',
-            'lu13/section-2-1': '/media/guess/lu13/5he-pro-fm.mp3',
-            'lu13/section-4': '/media/guess/lu13/6mao.mp3',
-            'lu13/section-mao': '/media/guess/lu13/7he-mao.mp3',
-            'lu13/section-5': '/media/guess/lu13/8he-riji.mp3',
-            'yingzi/intro': '/media/guess/yingzi/1.mp3',
-            'yingzi/section-1': '/media/guess/yingzi/2zongshi.mp3',
-            'yingzi/section-3': '/media/guess/yingzi/3xiangce.mp3',
-            'yingzi/section-4': '/media/guess/yingzi/4he-mao.mp3',
-            'su37/intro': '/media/guess/su37/1.mp3',
-            'su37/intro-1': '/media/guess/su37/2.mp3',
-            'su37/section-1': '/media/guess/su37/3zongshi.mp3',
-            'su37/section-2': '/media/guess/su37/4fm-ad.mp3',
-            'su37/section-3': '/media/guess/su37/5xiangce.mp3',
-            'su37/section-3-1': '/media/guess/su37/5xiangce-2.mp3',
-            'su37/section-5': '/media/guess/su37/6riji.mp3',
-            'su37/section-6': '/media/guess/su37/7paolu.mp3',
-            'mao/section-4-1': '/media/guess/mao/1.mp3',
-            'mao/in': '/media/guess/mao/maoin.mp3',
-            'mao/section-4-2': '/media/guess/mao/2xiachang.mp3',
-            'ka/section-6-1': '/media/guess/ka/1.mp3',
-            'ka/section-6-2': '/media/guess/ka/2.mp3',
-            'fm/fm_normal': '/media/guess/fm/fm_normal.mp3',
-            'fm/fm_ad': '/media/guess/fm/fm_ad.mp3',
-            'fm/fm_pro': '/media/guess/fm/fm_pro.mp3',
-            'li/zuguo': '/media/guess/lichengpeng/zuguo.mp3',
-            'li/cuhua': '/media/guess/lichengpeng/cuhua.mp3',
-            'li/shengren': '/media/guess/lichengpeng/shengren.mp3',
-            'xiangce/bg': '/media/guess/xiangce/bg.mp3',
-            'yidai': '/media/guess/yidai.mp3'
+            intro: '../media/guess/intro.mp3',
+            curtain: '../media/guess/curtain-long.mp3',
+            walking: '../media/guess/walking.mp3',
+            opening: '../media/guess/opening.mp3',
+            exiting: '../media/guess/exiting.mp3',
+            click: '../media/guess/click.mp3',
+            'piggy/intro': '../media/guess/piggy/1.mp3',
+            'piggy/mubu': '../media/guess/piggy/mubu.mp3',
+            'piggy/boo': '../media/guess/piggy/boo.mp3',
+            'piggy/clap': '../media/guess/piggy/clap.mp3',
+            'piggy/push': '../media/guess/piggy/goaway.mp3',
+            'piggy/intro-lu13': '../media/guess/piggy/2lu13.mp3',
+            'piggy/intro-yingzi': '../media/guess/piggy/3yingzi.mp3',
+            'piggy/intro-su37': '../media/guess/piggy/4su37.mp3',
+            'piggy/police': '../media/guess/piggy/police.mp3',
+            'piggy/section-1': '../media/guess/piggy/7yidaizongshi.mp3',
+            'piggy/section-2': '../media/guess/piggy/8normal-fm.mp3',
+            'piggy/section-3': '../media/guess/piggy/9xiangce.mp3',
+            'piggy/section-4': '../media/guess/piggy/10xiayiwei.mp3',
+            'piggy/section-4-1': '../media/guess/piggy/11houtai.mp3',
+            'piggy/section-5': '../media/guess/piggy/12riji.mp3',
+            'piggy/section-6': '../media/guess/piggy/13lichengpeng.mp3',
+            'piggy/end': '../media/guess/piggy/14run.mp3',
+            'piggy/abei': '../media/guess/piggy/abei.mp3',
+            'piggy/zhangsheng': '../media/guess/piggy/zhangsheng.mp3',
+            'lu13/intro': '../media/guess/lu13/dajiu.mp3',
+            'lu13/intro-1': '../media/guess/lu13/2he1.mp3',
+            'lu13/section-1': '../media/guess/lu13/3zongshi.mp3',
+            'lu13/section-2': '../media/guess/lu13/4he-fm.mp3',
+            'lu13/section-2-1': '../media/guess/lu13/5he-pro-fm.mp3',
+            'lu13/section-4': '../media/guess/lu13/6mao.mp3',
+            'lu13/section-mao': '../media/guess/lu13/7he-mao.mp3',
+            'lu13/section-5': '../media/guess/lu13/8he-riji.mp3',
+            'yingzi/intro': '../media/guess/yingzi/1.mp3',
+            'yingzi/section-1': '../media/guess/yingzi/2zongshi.mp3',
+            'yingzi/section-3': '../media/guess/yingzi/3xiangce.mp3',
+            'yingzi/section-4': '../media/guess/yingzi/4he-mao.mp3',
+            'su37/intro': '../media/guess/su37/1.mp3',
+            'su37/intro-1': '../media/guess/su37/2.mp3',
+            'su37/section-1': '../media/guess/su37/3zongshi.mp3',
+            'su37/section-2': '../media/guess/su37/4fm-ad.mp3',
+            'su37/section-3': '../media/guess/su37/5xiangce.mp3',
+            'su37/section-3-1': '../media/guess/su37/5xiangce-2.mp3',
+            'su37/section-5': '../media/guess/su37/6riji.mp3',
+            'su37/section-6': '../media/guess/su37/7paolu.mp3',
+            'mao/section-4-1': '../media/guess/mao/1.mp3',
+            'mao/in': '../media/guess/mao/maoin.mp3',
+            'mao/section-4-2': '../media/guess/mao/2xiachang.mp3',
+            'ka/section-6-1': '../media/guess/ka/1.mp3',
+            'ka/section-6-2': '../media/guess/ka/2.mp3',
+            'fm/fm_normal': '../media/guess/fm/fm_normal.mp3',
+            'fm/fm_ad': '../media/guess/fm/fm_ad.mp3',
+            'fm/fm_pro': '../media/guess/fm/fm_pro.mp3',
+            'li/zuguo': '../media/guess/lichengpeng/zuguo.mp3',
+            'li/cuhua': '../media/guess/lichengpeng/cuhua.mp3',
+            'li/shengren': '../media/guess/lichengpeng/shengren.mp3',
+            'xiangce/bg': '../media/guess/xiangce/bg.mp3',
+            'yidai': '../media/guess/yidai.mp3'
         },
 
         announce: function(screen, sfx) {
@@ -304,7 +304,7 @@ define([
 
                     var yingzi = judges['yingzi'].demon;
 
-                    yingzi.walk([ 900, -14 ], 1500);
+                    yingzi.walk([ 750, -14 ], 1500);
                     wait(1500 + 200).done(function() {
 
                         yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 8000, 10, sfx['yingzi/intro']);
@@ -326,7 +326,7 @@ define([
 
                     var su37 = judges['su37'].demon;
 
-                    su37.walk([ 650, -12 ], 1000);
+                    su37.walk([ 500, -12 ], 1000);
 
                     wait(1300 + 200).done(function() {
 
@@ -832,11 +832,11 @@ define([
                     wait(1000).done(function() {
 
                         su37.speak('月『精』日记又出现了！', 4500, 12, sfx['su37/section-5']);
-                        lu13.speak('想：月『精』日记又出现了！', 2500, 12);
+                        lu13.speak('想：月『精』日记又出现了！', 4000, 12);
 
                     });
 
-                    return wait(2000 + 3500 + 200);
+                    return wait(7000 + 1000 + 4500 + 200);
 
                 }).follow().done(function() {
 
