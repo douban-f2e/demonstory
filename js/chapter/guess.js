@@ -304,7 +304,7 @@ define([
 
                     var yingzi = judges['yingzi'].demon;
 
-                    yingzi.walk([ 900, -14 ], 1500);
+                    yingzi.walk([ 750, -14 ], 1500);
                     wait(1500 + 200).done(function() {
 
                         yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 8000, 10, sfx['yingzi/intro']);
@@ -326,7 +326,7 @@ define([
 
                     var su37 = judges['su37'].demon;
 
-                    su37.walk([ 650, -12 ], 1000);
+                    su37.walk([ 500, -12 ], 1000);
 
                     wait(1300 + 200).done(function() {
 
@@ -833,11 +833,11 @@ define([
                     wait(1000).done(function() {
 
                         su37.speak('月『精』日记又出现了！', 4500, 12, sfx['su37/section-5']);
-                        lu13.speak('想：月『精』日记又出现了！', 2500, 12);
+                        lu13.speak('想：月『精』日记又出现了！', 4000, 12);
 
                     });
 
-                    return wait(2000 + 3500 + 200);
+                    return wait(7000 + 1000 + 4500 + 200);
 
                 }).follow().done(function() {
 
