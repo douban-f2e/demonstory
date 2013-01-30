@@ -390,7 +390,7 @@ define([
 
                     wait(1500 + 200).done(function() {
 
-                        chaoge.speak('我也不知道我为什么会出现在这里，要问就问编剧吧。虽然我也不知道编剧是谁', 8000, 12, sfx['chaoge/hello']);
+                        chaoge.speak('我也不知道我为什么会出现在这里，要问就问编剧吧。虽然我也不知道编剧是谁……', 8000, 12, sfx['chaoge/hello']);
 
                     });
 
@@ -438,7 +438,7 @@ define([
                     }).follow().done(function() {
 
                         chaoge.speak('要是用十块钱的电影票我就觉得还行，30块就不值啦..', 6000, 12, sfx['chaoge/section-1']);
-                        return wait(6000 + 800);
+                        return wait(6000 + 200);
 
                     });
                     return wait(3000 + 2000 + 9800 + 14800 + 2800 + 6000 + 200);
