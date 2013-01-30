@@ -99,9 +99,6 @@ define([
             'su37/section-3-1': '../media/guess/su37/5xiangce-2.mp3',
             'su37/section-5': '../media/guess/su37/6riji.mp3',
             'su37/section-6': '../media/guess/su37/7paolu.mp3',
-            'mao/section-4-1': '../media/guess/mao/1.mp3',
-            'mao/in': '../media/guess/mao/maoin.mp3',
-            'mao/section-4-2': '../media/guess/mao/2xiachang.mp3',
             'ka/section-6-1': '../media/guess/ka/1.mp3',
             'ka/section-6-2': '../media/guess/ka/2.mp3',
             'fm/fm_normal': '../media/guess/fm/fm_normal.mp3',
@@ -378,7 +375,7 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
                 //fucking debug
-                return wait(0)
+                //return wait(0)
 
                 var sectionDemon = sectionDemons[1],
                     su37 = judges['su37'].demon,
@@ -391,7 +388,7 @@ define([
                 sectionDemon.me.css('top', '140px');
 
                 wait(4000).done(function() {
-                    sectionDemon.sound(sfx['yidai'], 3000, 100);
+                    sectionDemon.sound(sfx['yidai'], 6000, 100);
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 2000);
                     wait(2000).done(function() {
@@ -410,7 +407,7 @@ define([
                         return wait(14000);
 
                     })
-                    return wait(3000 + 2000 + 9000 + 10500);
+                    return wait(3000 + 2000 + 9000 + 11500);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 1500, 'easeIn');
                     sectionPromise.fire();
@@ -446,7 +443,7 @@ define([
                         yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
 
                     });
-                    return wait(12000);
+                    return wait(10000);
 
                 }).follow().done(function() {
                     normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 2000, 'easeIn');
@@ -478,7 +475,7 @@ define([
                         lu13.speak('比刚才好多了', 3500, 3);
                         su37.speak('多亏我的Monster耳机！', 3500, 0);
 
-                        return wait(12000);
+                        return wait(10000);
                     }).follow().done(function() {
                         lu13.speak('高端大气上档次，通过！', 3500, 3, sfx['lu13/section-2-1']);
                         su37.speak('高端大气上档次，通过！', 3500, 10);
@@ -487,9 +484,9 @@ define([
 
                     return wait(20000);
                 }).follow().done(function() {
-                    proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 2000, 'easeIn');
                     piggyDemon.sound(sfx['piggy/clap'],3000,100);
-                    return wait(3000 + 200);
+                    return wait(2000);
 
                 }).follow().done(function() {
                     // section end
@@ -673,7 +670,7 @@ define([
                             saveAsDialog.remove();
                         });
 
-                        return wait(200 + 500);
+                        return wait(200 + 300);
 
                     }).follow().done(function() {
 
@@ -825,18 +822,18 @@ define([
 
                 sectionDemon.me.css('top', '140px');
 
-                wait(7000 + 200).done(function() {
+                wait(4000 + 200).done(function() {
 
-                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 1000);
 
-                    wait(1000).done(function() {
+                    wait(1500).done(function() {
 
                         su37.speak('月『精』日记又出现了！', 4500, 12, sfx['su37/section-5']);
                         lu13.speak('想：月『精』日记又出现了！', 4000, 12);
 
                     });
 
-                    return wait(7000 + 1000 + 4500 + 200);
+                    return wait(6000 + 200);
 
                 }).follow().done(function() {
 
@@ -921,7 +918,7 @@ define([
 
                 piggyDemon.speak('下一位看起来很有文化的样子嘛，欢迎~', 4000, 9, sfx['piggy/section-6']);
 
-                wait(4000 + 200).done(function() {
+                wait(2000 + 200).done(function() {
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 2000);
                     piggyDemon.sound(sfx['li/cuhua'], 6000, 70);
@@ -942,7 +939,7 @@ define([
 
                     });
 
-                    return wait(4000 + 4000 + 400);
+                    return wait(2000 + 4000 + 400);
 
                 }).follow().done(function(){
 
@@ -994,7 +991,7 @@ define([
 
                     laoka.walk([400,-50],2000);
                     laoka.sound(sfx['ka/section-6-2'],6000,100);
-                    piggyDemon.sound(sfx['piggy/police'],15000,100);
+                    piggyDemon.sound(sfx['piggy/police'],15000,65);
                     wait(2000 + 200).done(function(){
                         laoka.speak('哼哼，这下知道首页是谁的了吧！！！',4000, 6);
                     });
@@ -1014,7 +1011,7 @@ define([
                         });
                     });
 
-                    return wait(14000 + 200);
+                    return wait(12000);
 
                 }).follow().done(function() {
 
