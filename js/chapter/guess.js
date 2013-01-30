@@ -939,13 +939,11 @@ define([
                     yingzi.speak('通过！！！', 2000, 11);
                     su37.speak('通过！！！', 2000, 12);
 
+                    wait(1000).done(function(){
+                        chaoge.speak('过吧...', 1000, 12, sfx['chaoge/pass']);
+                    })
+
                     return wait(2000 + 200);
-
-                }).follow().done(function() {
-
-                    chaoge.speak('过吧...', 1000, 12, sfx['chaoge/pass']);
-
-                    return wait(1000 + 200);
 
                 }).follow().done(function() {
 
@@ -1060,7 +1058,7 @@ define([
                         laoka.walk([2400,-50],6000);
                     });
 
-                    wait(9000).done(function(){
+                    wait(8000).done(function(){
                         $('#wrapper',doc).append('<div id="end-form">\
                                 纯属虚构 如有雷同<br> \
                                 那是故意\
@@ -1072,7 +1070,7 @@ define([
                         });
                     });
 
-                    return wait(16000 + 200);
+                    return wait(14000 + 200);
 
                 }).follow().done(function() {
 
