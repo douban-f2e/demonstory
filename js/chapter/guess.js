@@ -76,6 +76,7 @@ define([
             'piggy/section-5': '/media/guess/piggy/12riji.mp3',
             'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
             'piggy/end': '/media/guess/piggy/14run.mp3',
+            'piggy/abei': '/media/guess/piggy/abei.mp3',
             'lu13/intro': '/media/guess/lu13/dajiu.mp3',
             'lu13/intro-1': '/media/guess/lu13/2he1.mp3',
             'lu13/section-1': '/media/guess/lu13/3zongshi.mp3',
@@ -392,6 +393,8 @@ define([
 
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
+                //fucking debug
+                //return wait(0)
 
                 var sectionDemon = sectionDemons[1],
                     chaoge = judges['chaoge'].demon,
@@ -409,8 +412,8 @@ define([
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
                     wait(3000).done(function() {
 
-                        lu13.speak('骚！', 1200, 12, sfx['lu13/intro-1']);
-                        return wait(1200 + 800);
+                        lu13.speak('骚！', 1800, 12, sfx['lu13/section-1']);
+                        return wait(1800 + 800);
 
                     }).follow().done(function() {
 
@@ -440,6 +443,8 @@ define([
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+                //fucking debug
+                //return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
@@ -522,6 +527,9 @@ define([
 
             /* section#3 相册 by gonghao */
             .follow().done(function() {
+
+                //fucking debug
+                //return wait(0);
 
                 var sectionDemon = sectionDemons[3],
                     chaoge = judges['chaoge'].demon,
@@ -768,6 +776,9 @@ define([
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
 
+                //fucking debug 
+                //return wait(0);
+
                 var sectionDemon = sectionDemons[4],
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
@@ -843,6 +854,9 @@ define([
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
 
+                //fucking debug
+                //return wait(0);
+
                 var sectionDemon = sectionDemons[5],
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
@@ -903,6 +917,7 @@ define([
 
                         wait((shiningDuration + 1) * i).done(fn);
                     }
+                    piggyDemon.sound(sfx['piggy/abei'],15000,100);
 
                     return wait((shiningDuration + 1) * shiningTimes + 300);
 
@@ -998,8 +1013,11 @@ define([
                     wait(1500).done(function(){
                         laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 9000, 3);
                     });
+                    wait(3500).done(function(){
+                        chaoge.walk([-300,0],8000);
+                    });
 
-                    return wait( 1500 + 9000 + 400);
+                    return wait( 1500 + 7000 + 400);
 
                 }).follow().done(function(){
 
@@ -1009,28 +1027,28 @@ define([
                     su37.walk([-300,-2000],2000);
                     su37.speak('靠！！！',2000,12, sfx['su37/section-6']);
 
-                    chaoge.walk([-2000,-100],1200);
-                    chaoge.speak('额。。。。。',800,12);
+                    chaoge.walk([-1000,-100],500);
 
                     yingzi.walk([-2100,50],1200);
                     yingzi.speak('匿了',800,12);
 
-                    sectionDemon.walk([1000,-200],1200);
+                    sectionDemon.walk([2000,-200],1200);
                     lu13.speak('又有砸场的？？？',800,12);
 
                     wait(1000).done(function(){
 
                         piggyDemon.speak('不要丢下我啊~~~~', 800, 11);
                         piggyDemon.walk([-400,0],1000);
+                        piggyDemon.sound(sfx['piggy/end'],2500,100);
 
                         wait(1000).done(function(){
                             piggyDemon.walk([2000,0],1500);
-                            piggyDemon.speak('救命~~~~~', 2500, 9 , sfx['piggy/end']);
+                            piggyDemon.speak('救命~~~~~', 800, 9);
                         });
 
                     });
 
-                    return wait(4000 + 500);
+                    return wait(2000 + 500);
 
                 }).follow().done(function(){
 
@@ -1040,8 +1058,21 @@ define([
                     wait(2000 + 200).done(function(){
                         laoka.speak('哼哼，这下知道首页是谁的了吧！！！',4000, 6);
                     });
-                    wait(6000+300).done(function(){
-                        laoka.walk([2400,-50],4000);
+                    wait(5000+300).done(function(){
+                        laoka.walk([2400,-50],6000);
+                    });
+
+                    wait(9000).done(function(){
+                        $('#wrapper',doc).append('<div id="end-form">\
+                                纯属虚构 如有雷同<br> \
+                                那是故意\
+                            </div>');
+                        $('#end-form',doc).css({
+                            'text-align':'center'
+                            ,'font-size':'40px'
+                            ,'margin-top':'200px'
+                            ,'opacity':'0'
+                        }).animate({opacity:1},'fast')
                     });
 
                     return wait(18000 + 200);
@@ -1053,7 +1084,7 @@ define([
 
                 });
 
-                return sectionPromise;
+                //return sectionPromise;
 
             })
             /* end fo section#6 */

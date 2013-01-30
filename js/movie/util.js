@@ -5,6 +5,8 @@ define([
     'eventmaster'
 ], function(_, $, event){
 
+    var PREVIEW_DURATION = 10;
+
     var util = {};
 
     util.wait = function(fn, duration){
@@ -13,6 +15,9 @@ define([
         } else {
             duration = fn;
         }
+        if (util.preview_mode) {
+            duration = PREVIEW_DURATION;
+        }
         var promise = new event.Promise();
         setTimeout(function(){
             promise.resolve();
@@ -20,21 +25,25 @@ define([
         return promise;
     };
 
-    util.showDemon = function(demon){
+    util.showDemon = function(demon, duration){
+        duration = duration || 400;
+        if (util.preview_mode) {
+            duration = PREVIEW_DURATION;
+        }
         return util.wait(function(){
             demon.showBody();
-        }, 400).done(function(){
+        }, duration).done(function(){
             return util.wait(function(){
                 demon.showEyes();
-            }, 400);
+            }, duration);
         }).follow().done(function(){
             return util.wait(function(){
                 demon.showLegs();
-            }, 400);
+            }, duration);
         }).follow().done(function(){
             return util.wait(function(){
                 demon.showHands();
-            }, 400);
+            }, duration);
         }).follow();
     };
 

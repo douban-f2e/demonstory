@@ -55,14 +55,11 @@ define([
                         sfx_queue.push(promise);
                     }, script.sfx);
                 }
+                if (!sfx_queue.length) {
+                    sfx_queue.push(new event.Promise().resolve());
+                }
 
-                (sfx_queue.length 
-                    ? event.when.apply(event, sfx_queue) 
-                    : new event.Promise().resolve()).done(function(){
-
-                    return script.announce(screen, sfx_lib);
-
-                }).follow().done(function(){
+                event.when.apply(event, sfx_queue).done(function(){
 
                     director.stage.bind('load', function(){
                         var win = this.contentWindow;
@@ -73,16 +70,20 @@ define([
                         }, 200);
                     }).attr('src', chapter.stage);
 
-                });
+                    return observer.promise('ready');
 
-                observer.when('ready', 'announceHidden').done(function(win){
+                }).follow().done(function(win){
 
-                    director.curtain.addClass('folded');
-                    setTimeout(function(){
-                        observer.fire('go', [win]);
-                    }, 1000);
+                    return script.announce(screen, sfx_lib).done(function(){
 
-                    return observer.promise('go');
+                        director.curtain.addClass('folded');
+                        setTimeout(function(){
+                            observer.fire('go', [win]);
+                        }, 1000);
+
+                        return observer.promise('go');
+
+                    }).follow();
 
                 }).follow().done(function(win){
 
@@ -128,19 +129,16 @@ define([
             }
             sound.play();
         }
-        observer.when('ready', 'announceEnd').then(function(){
-            box.removeClass('active');
-            setTimeout(function(){
-               observer.fire('announceHidden');
-            }, 500);
-        });
         setTimeout(function(){
             if (sound && !sound.isEnded()) {
                 sound.pause();
             }
-            observer.fire('announceEnd');
+            box.removeClass('active');
+            setTimeout(function(){
+               observer.fire('announceHidden');
+            }, 500);
         }, duration || 1000);
-        return observer.promise('announceEnd');
+        return observer.promise('announceHidden');
     }
 
     return director;
