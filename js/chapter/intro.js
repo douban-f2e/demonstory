@@ -52,7 +52,7 @@ define([
             if (!preview_mode) {
                 sfx.odyssey.play();
             }
-            return screen('2012', "", 
+            return screen('2012', 'War. War never changes...', 
                 preview_mode ? PREVIEW_DURATION : 19000);
         },
 

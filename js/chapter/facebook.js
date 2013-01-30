@@ -220,6 +220,7 @@ define([
         demonWang.speak('赞！', 1000, 10, sfx.c16)
         return demonCover.speak('赞！', 1000, 3, sfx.w9)
       }).follow().done(function() {
+          sfx.ending.pause()
           promise.fire()
       })
       return promise

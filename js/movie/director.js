@@ -8,7 +8,7 @@ define([
     'eventmaster'
 ], function(_, $, net, tpl, buzz, event){
 
-    var TPL_ANNOUNCE = '<h6>第{%= order %}幕</h6><h2>{%= title %}</h2><div class="desc">{%= desc %}</div>',
+    var TPL_ANNOUNCE = '<h6>{%= order %}</h6><h2>{%= title %}</h2><div class="desc">{%= desc %}</div>',
         
         CHN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
         DEFAULTS = {
@@ -113,7 +113,8 @@ define([
         var sound,
             box = director.curtain.find('.announce')
             .html(tpl.convertTpl(TPL_ANNOUNCE, {
-                order: CHN_NUM[director.currentChapter - 1],
+                order: director.currentChapter === director.story.length ? '尾声' 
+                    : ('第' + CHN_NUM[director.currentChapter - 1] + '章'),
                 title: title,
                 desc: desc
             }))
