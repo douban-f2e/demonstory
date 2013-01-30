@@ -827,11 +827,11 @@ define([
                     sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',8000,6, sfx['mao/section-4-2']);
 
                     wait(6500).done(function(){
-                        piggyDemon.sound(sfx['mao/in'],7000,70);
+                        chaoge.sound(sfx['mao/in'],8000,70);
                         sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
                     });
 
-                    return wait(8500 + 300);
+                    return wait(7000 + 300);
 
                 }).follow().done(function() {
 
@@ -879,7 +879,7 @@ define([
                     wait(1000).done(function() {
 
                         chaoge.speak('想：月『精』日记又出现了！', 2500, 10);
-                        su37.speak('月『精』日记又出现了！', 3500, 12, sfx['su37/section-5']);
+                        su37.speak('月『精』日记又出现了！', 4500, 12, sfx['su37/section-5']);
                         lu13.speak('想：月『精』日记又出现了！', 2500, 12);
 
                     });
@@ -1078,7 +1078,7 @@ define([
                         });
                     });
 
-                    return wait(18000 + 200);
+                    return wait(17000 + 200);
 
                 }).follow().done(function() {
 
@@ -1087,7 +1087,7 @@ define([
 
                 });
 
-                //return sectionPromise;
+                return sectionPromise;
 
             })
             /* end fo section#6 */
