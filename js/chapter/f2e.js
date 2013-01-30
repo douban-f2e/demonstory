@@ -13,10 +13,10 @@ define([
     , sfx = {}
 
   for (var i = 1; i < 30; i++) {
-    sfx['r' + i] = 'f2e/r' + i + '.m4a'
+    sfx['r' + i] = 'f2e/r' + i + '.mp3'
   }
 
-  sfx.opening =  'f2e/opening.m4a'
+  sfx.opening =  'f2e/opening.mp3'
   sfx.bgm = 'f2e/bg_pleasures.mp3'
 
   function fadeIn(element, duration) {
@@ -130,7 +130,7 @@ define([
       var baseLeft = wrapper[0].offsetLeft + 200
         , baseRight = wrapper.width() + baseLeft - 500
 
-      demonRobot.sound(sfx.bgm, 200000, 80)
+      demonRobot.sound(sfx.bgm, 200000, 90)
       wait(1000).done(function() {
         util.showDemon(demonRobot)
         return wait(200 + 2000)
