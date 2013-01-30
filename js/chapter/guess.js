@@ -33,8 +33,7 @@ define([
                 demonItem = demon({
                     origin: dom,
                     className: 'demon-' + item.id,
-                    window: win,
-                    walkSound: sfx['walking']
+                    window: win
                 });
 
             demonItem.showBody().showHands().showLegs();
@@ -152,8 +151,7 @@ define([
                 piggyDemon = demon({
                     origin: piggy,
                     className: 'demon-piggy',
-                    window: win,
-                    walkSound: sfx['walking']
+                    window: win
                 });
 
                 piggyDemon.sound(sfx['piggy/mubu'],5000,70);
@@ -222,8 +220,7 @@ define([
                         sectionDemon = demon({
                             origin: dom,
                             className: 'demon-section',
-                            window: win,
-                            walkSound: sfx['walking']
+                            window: win
                         });
 
                         sectionDemon.showBody().showHands().showLegs();
@@ -321,7 +318,7 @@ define([
                         yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 8000, 10, sfx['yingzi/intro']);
                         wait(7500).done(function(){
                             piggyDemon.sound(sfx['piggy/clap'],5000,100);
-                        })
+                        });
 
                     });
 
@@ -399,7 +396,7 @@ define([
                         chaoge.speak('我也不知道我为什么会出现在这里，要问就问编剧吧。虽然我也不知道编剧是谁', 8000, 12, sfx['chaoge/hello']);
                         wait(7500).done(function(){
                             piggyDemon.sound(sfx['piggy/clap'],2000,100);
-                        })
+                        });
 
                     });
 
@@ -1035,7 +1032,7 @@ define([
 
                     su37.walk([-300,-2000],2000);
                     su37.speak('靠！！！',2000,12);
-                    su37.sound(sfx['su37/section-6'],2000,100)
+                    su37.sound(sfx['su37/section-6'],2000,100);
 
                     chaoge.walk([-1000,-100],500);
 
