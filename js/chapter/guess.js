@@ -58,6 +58,7 @@ define([
             opening: '/media/guess/opening.mp3',
             exiting: '/media/guess/exiting.mp3',
             click: '/media/guess/click.mp3',
+            'piggy/chaoge': '/media/guess/curtain.mp3',
             'piggy/intro': '/media/guess/piggy/1.mp3',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
@@ -74,48 +75,48 @@ define([
             'piggy/section-4-1': '/media/guess/piggy/11houtai.mp3',
             'piggy/section-5': '/media/guess/piggy/12riji.mp3',
             'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
-            'piggy/end': '/media/guess/piggy/14run.m4a',
-            'lu13/intro': '/media/guess/lu13/dajiu.m4a',
-            'lu13/intro-1': '/media/guess/lu13/2he1.m4a',
-            'lu13/section-1': '/media/guess/lu13/3zongshi.m4a',
-            'lu13/section-2': '/media/guess/lu13/4he-fm.m4a',
-            'lu13/section-2-1': '/media/guess/lu13/5he-pro-fm.m4a',
-            'lu13/section-4': '/media/guess/lu13/6mao.m4a',
-            'lu13/section-mao': '/media/guess/lu13/7he-mao.m4a',
-            'lu13/section-5': '/media/guess/lu13/8he-riji.m4a',
-            'yingzi/intro': '/media/guess/yingzi/1.m4a',
-            'yingzi/section-1': '/media/guess/yingzi/2zongshi.m4a',
-            'yingzi/section-3': '/media/guess/yingzi/3xiangce.m4a',
-            'yingzi/section-4': '/media/guess/yingzi/4he-mao.m4a',
-            'su37/intro': '/media/guess/su37/1.m4a',
-            'su37/intro-1': '/media/guess/su37/2.m4a',
-            'su37/section-1': '/media/guess/su37/3zongshi.m4a',
-            'su37/section-2': '/media/guess/su37/4fm-ad.m4a',
+            'piggy/end': '/media/guess/piggy/14run.mp3',
+            'lu13/intro': '/media/guess/lu13/dajiu.mp3',
+            'lu13/intro-1': '/media/guess/lu13/2he1.mp3',
+            'lu13/section-1': '/media/guess/lu13/3zongshi.mp3',
+            'lu13/section-2': '/media/guess/lu13/4he-fm.mp3',
+            'lu13/section-2-1': '/media/guess/lu13/5he-pro-fm.mp3',
+            'lu13/section-4': '/media/guess/lu13/6mao.mp3',
+            'lu13/section-mao': '/media/guess/lu13/7he-mao.mp3',
+            'lu13/section-5': '/media/guess/lu13/8he-riji.mp3',
+            'yingzi/intro': '/media/guess/yingzi/1.mp3',
+            'yingzi/section-1': '/media/guess/yingzi/2zongshi.mp3',
+            'yingzi/section-3': '/media/guess/yingzi/3xiangce.mp3',
+            'yingzi/section-4': '/media/guess/yingzi/4he-mao.mp3',
+            'su37/intro': '/media/guess/su37/1.mp3',
+            'su37/intro-1': '/media/guess/su37/2.mp3',
+            'su37/section-1': '/media/guess/su37/3zongshi.mp3',
+            'su37/section-2': '/media/guess/su37/4fm-ad.mp3',
             'su37/section-3': '/media/guess/su37/5xiangce.mp3',
             'su37/section-3-1': '/media/guess/su37/5xiangce-2.mp3',
             'su37/section-5': '/media/guess/su37/6riji.mp3',
-            'su37/section-6': '/media/guess/su37/7paolu.m4a',
-            'chaoge/hello': '/media/guess/chaoge/hello.m4a',
-            'chaoge/section-1': '/media/guess/chaoge/section-1.m4a',
-            'chaoge/yummy': '/media/guess/chaoge/yummy.m4a',
-            'chaoge/pass': '/media/guess/chaoge/pass.m4a',
-            'mao/section-4-1': '/media/guess/mao/1.m4a',
+            'su37/section-6': '/media/guess/su37/7paolu.mp3',
+            'chaoge/hello': '/media/guess/chaoge/hello.mp3',
+            'chaoge/section-1': '/media/guess/chaoge/section-1.mp3',
+            'chaoge/yummy': '/media/guess/chaoge/yummy.mp3',
+            'chaoge/pass': '/media/guess/chaoge/pass.mp3',
+            'mao/section-4-1': '/media/guess/mao/1.mp3',
             'mao/in': '/media/guess/mao/maoin.mp3',
-            'mao/section-4-2': '/media/guess/mao/2xiachang.m4a',
+            'mao/section-4-2': '/media/guess/mao/2xiachang.mp3',
             'ka/section-6-1': '/media/guess/ka/1.mp3',
             'ka/section-6-2': '/media/guess/ka/2.mp3',
             'fm/fm_normal': '/media/guess/fm/fm_normal.mp3',
             'fm/fm_ad': '/media/guess/fm/fm_ad.mp3',
             'fm/fm_pro': '/media/guess/fm/fm_pro.mp3',
-            'li/zuguo': '/media/guess/lichengpeng/zuguo.m4a',
-            'li/cuhua': '/media/guess/lichengpeng/cuhua.m4a',
-            'li/shengren': '/media/guess/lichengpeng/shengren.m4a',
+            'li/zuguo': '/media/guess/lichengpeng/zuguo.mp3',
+            'li/cuhua': '/media/guess/lichengpeng/cuhua.mp3',
+            'li/shengren': '/media/guess/lichengpeng/shengren.mp3',
             'xiangce/bg': '/media/guess/xiangce/bg.mp3'
         },
 
         announce: function(screen, sfx) {
 
-            return screen('“豆瓣好条目”——我要上首页', DESC, 7000, sfx.curtain);
+            return screen('“豆瓣好条目”——我要上首页', DESC, 5500, sfx.curtain);
 
         },
 
@@ -385,7 +386,7 @@ define([
 
                 });
 
-                return wait(3000 + 1700 + 8000 + 200);
+                return wait(3200 + 1700 + 8000 + 200);
 
             })
 
@@ -543,7 +544,7 @@ define([
 
                         su37.speak('远了点儿，走近了爷仔细看看', 4500, 12, sfx['su37/section-3']);
 
-                        return wait(3000);
+                        return wait(4800);
 
                     }).follow().done(function() {
                         chaoge.speak('Hmm.. 看起来很美味的样子', 4500, 12, sfx['chaoge/yummy']);
