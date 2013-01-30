@@ -44,7 +44,7 @@ define([
                 demon: demonItem
             };
 
-            demonItem.preview_mode = true;
+            //demonItem.preview_mode = true;
         });
 
         materials.hide();
@@ -473,7 +473,7 @@ define([
                         yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
 
                     });
-                    return wait(15000 + 800);
+                    return wait(13000 + 800);
 
                 }).follow().done(function() {
                     normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
