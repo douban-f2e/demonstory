@@ -21,7 +21,7 @@ define([
             { name: '老卡', id: 'laoka' }
         ];
 
-    function initJudges(win) {
+    function initJudges(win, sfx) {
         var doc = win.document,
             judges = {},
             materials = $('#materials', doc);
@@ -33,7 +33,8 @@ define([
                 demonItem = demon({
                     origin: dom,
                     className: 'demon-' + item.id,
-                    window: win
+                    window: win,
+                    walkSound: sfx['walking']
                 });
 
             demonItem.showBody().showHands().showLegs();
@@ -57,6 +58,7 @@ define([
         sfx: {
             intro: '/media/guess/intro.mp3',
             curtain: '/media/guess/curtain-long.mp3',
+            walking: '/media/guess/walking.mp3',
             opening: '/media/guess/opening.mp3',
             exiting: '/media/guess/exiting.mp3',
             click: '/media/guess/click.mp3',
@@ -133,7 +135,7 @@ define([
                 piggyDemon,
                 materials = $('#materials', doc),
                 sectionDemons = {},
-                judges = initJudges(win),
+                judges = initJudges(win, sfx),
                 viewportWidth = win.innerWidth;
 
             piggyPromise.done(function() {
@@ -149,7 +151,8 @@ define([
                 piggyDemon = demon({
                     origin: piggy,
                     className: 'demon-piggy',
-                    window: win
+                    window: win,
+                    walkSound: sfx['walking']
                 });
 
                 piggyDemon.sound(sfx['piggy/mubu'],5000,70);
@@ -218,7 +221,8 @@ define([
                         sectionDemon = demon({
                             origin: dom,
                             className: 'demon-section',
-                            window: win
+                            window: win,
+                            walkSound: sfx['walking']
                         });
 
                         sectionDemon.showBody().showHands().showLegs();
