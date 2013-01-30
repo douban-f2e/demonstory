@@ -496,7 +496,7 @@ define([
 
                     });
 
-                    return wait(10000 + 800);
+                    return wait(7000 + 400);
 
                 }).follow().done(function() {
                     proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
@@ -942,14 +942,9 @@ define([
                     lu13.speak('通过！！！', 2000, 1, sfx['lu13/section-5']);
                     yingzi.speak('通过！！！', 2000, 11);
                     su37.speak('通过！！！', 2000, 12);
-
-                    return wait(2000 + 200);
-
-                }).follow().done(function() {
-
                     chaoge.speak('过吧...', 1000, 12, sfx['chaoge/pass']);
 
-                    return wait(1000 + 200);
+                    return wait(2000 + 200);
 
                 }).follow().done(function() {
 
@@ -1027,7 +1022,8 @@ define([
                     lu13.speak('撤！！！',800,12);
 
                     su37.walk([-300,-2000],2000);
-                    su37.speak('靠！！！',2000,12, sfx['su37/section-6']);
+                    su37.speak('靠！！！',2000,12);
+                    su37.sound(sfx['su37/section-6'],2000,100)
 
                     chaoge.walk([-1000,-100],500);
 
@@ -1036,12 +1032,12 @@ define([
 
                     sectionDemon.walk([2000,-200],1200);
                     lu13.speak('又有砸场的？？？',800,12);
+                    piggyDemon.sound(sfx['piggy/end'],2500,100);
 
                     wait(1000).done(function(){
 
                         piggyDemon.speak('不要丢下我啊~~~~', 800, 11);
                         piggyDemon.walk([-400,0],1000);
-                        piggyDemon.sound(sfx['piggy/end'],2500,100);
 
                         wait(1000).done(function(){
                             piggyDemon.walk([2000,0],1500);
@@ -1064,7 +1060,7 @@ define([
                         laoka.walk([2400,-50],6000);
                     });
 
-                    wait(9000).done(function(){
+                    wait(8000).done(function(){
                         $('#wrapper',doc).append('<div id="end-form">\
                                 纯属虚构 如有雷同<br> \
                                 那是故意\
@@ -1076,7 +1072,7 @@ define([
                         });
                     });
 
-                    return wait(16000 + 200);
+                    return wait(14000 + 200);
 
                 }).follow().done(function() {
 
