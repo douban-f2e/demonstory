@@ -269,7 +269,7 @@ define([
                     lu13.rotateHand('right', '-60deg');
                     lu13.rotateHand('left', '-66deg');
 
-                    lu13.walk([ 1040, -10 ], 2500);
+                    lu13.walk([ 890, -10 ], 2500);
 
                     wait(2500 + 300).done(function() {
 
@@ -304,7 +304,7 @@ define([
 
                     var yingzi = judges['yingzi'].demon;
 
-                    yingzi.walk([ 900, -14 ], 2500);
+                    yingzi.walk([ 750, -14 ], 2500);
 
                     wait(2500 + 200).done(function() {
 
@@ -327,7 +327,7 @@ define([
 
                     var su37 = judges['su37'].demon;
 
-                    su37.walk([ 650, -12 ], 2000);
+                    su37.walk([ 500, -12 ], 2000);
 
                     wait(2000 + 200).done(function() {
 
