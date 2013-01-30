@@ -79,6 +79,7 @@ define([
             'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
             'piggy/end': '/media/guess/piggy/14run.mp3',
             'piggy/abei': '/media/guess/piggy/abei.mp3',
+            'piggy/zhangsheng': '/media/guess/piggy/zhangsheng.mp3',
             'lu13/intro': '/media/guess/lu13/dajiu.mp3',
             'lu13/intro-1': '/media/guess/lu13/2he1.mp3',
             'lu13/section-1': '/media/guess/lu13/3zongshi.mp3',
@@ -264,6 +265,7 @@ define([
                 return wait(6200 + 400);
 
             }).follow().done(function() {
+                piggyDemon.sound(sfx['piggy/zhangsheng'],6000,100);
 
                 wait(700).done(function() {
 
