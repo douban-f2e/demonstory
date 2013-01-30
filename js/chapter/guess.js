@@ -166,7 +166,7 @@ define([
 
                 piggyDemon.walk([ -160, 0 ], 1200);
 
-                return wait(3200 + 200);
+                return wait(1200);
 
             }).follow().done(function() {
 
@@ -184,7 +184,7 @@ define([
 
                 piggyDemon.speak('旧的不去，新的不来，今儿我们启用全新的大舞台！', 4000, 9);
 
-                return wait(5500 + 200);
+                return wait(5000);
 
             }).follow().done(function() {
 
@@ -245,29 +245,29 @@ define([
                 });
 
 
-                return wait(1500 + 200);
+                return wait(1500);
 
             }).follow().done(function() {
 
                 piggyDemon.rotateHand('left', '20deg', 300, 'easeIn');
                 piggyDemon.rotateHand('right', '-20deg', 500, 'easeIn');
 
-                return wait(500 + 300);
+                return wait(500);
 
             }).follow().done(function() {
 
-                piggyDemon.walk([ -140, -100 ], 1200, 'easeInOut');
+                piggyDemon.walk([ -140, -100 ], 800, 'easeInOut');
 
-                wait(1200 + 500).done(function() {
+                wait(800).done(function() {
 
                     piggyDemon.speak('来到现场的评委，第一位是兆维卤十三老湿，大家欢迎～', 6000, 12, sfx['piggy/intro-lu13']);
 
                 });
 
-                return wait(6200 + 400);
+                return wait(5500);
 
             }).follow().done(function() {
-                piggyDemon.sound(sfx['piggy/zhangsheng'],6000,100);
+                piggyDemon.sound(sfx['piggy/zhangsheng'],5000,100);
 
                 wait(700).done(function() {
 
@@ -287,7 +287,7 @@ define([
 
                             lu13.speak('他大舅他二舅都是他舅，高桌子低板凳都是木头，我是你十三爷。', 8000, 12, sfx['lu13/intro']);
 
-                            wait(7000 + 200).done(function() {
+                            wait(7000).done(function() {
 
                                 lu13.rotateHand('left', '30deg', 300);
                                 lu13.rotateHand('right', '-32deg', 240);
@@ -307,13 +307,13 @@ define([
 
                 piggyDemon.speak('接下来是芙蓉镇田佳芝～～', 3000, 8, sfx['piggy/intro-yingzi']);
 
-                wait(3000 + 200).done(function() {
+                wait(2000 + 200).done(function() {
 
                     var yingzi = judges['yingzi'].demon;
 
-                    yingzi.walk([ 900, -14 ], 2500);
+                    yingzi.walk([ 900, -14 ], 1500);
 
-                    wait(2500 + 200).done(function() {
+                    wait(1500 + 200).done(function() {
 
                         yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 8000, 10, sfx['yingzi/intro']);
                         wait(7500).done(function(){
@@ -324,19 +324,19 @@ define([
 
                 });
 
-                return wait(3500 + 11000 + 200);
+                return wait(1500 + 10000);
 
             }).follow().done(function() {
 
                 piggyDemon.speak('下一位是根本就没有 su37 ？？！！', 3000, 8, sfx['piggy/intro-su37']);
 
-                wait(3000 + 200).done(function() {
+                wait(2000 + 200).done(function() {
 
                     var su37 = judges['su37'].demon;
 
-                    su37.walk([ 650, -12 ], 2000);
+                    su37.walk([ 650, -12 ], 1000);
 
-                    wait(2000 + 200).done(function() {
+                    wait(1300 + 200).done(function() {
 
                         su37.speak('为了方便大家记忆，从今年开始，以后每年我都是37岁，今后大家再也不用计算我多少岁啦，是不是好轻松的感觉！举手之劳，方便别人，方便自己，低碳环保，利国利民。', 14000, 12, sfx['su37/intro']);
 
@@ -379,7 +379,7 @@ define([
 
                 });
 
-                return wait(3000 + 2000 + 14000 + 8000 + 1000);
+                return wait(3000 + 2000 + 14000 + 5800);
 
             }).follow().done(function() {
 
@@ -422,11 +422,11 @@ define([
 
                 sectionDemon.me.css('top', '140px');
 
-                wait(5000 + 200).done(function() {
+                wait(4500).done(function() {
                     sectionDemon.sound(sfx['yidai'], 3000, 100);
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
-                    wait(3000).done(function() {
+                    wait(2500).done(function() {
 
                         lu13.speak('骚！', 1800, 12, sfx['lu13/section-1']);
                         return wait(1800 + 800);
@@ -439,7 +439,7 @@ define([
                     }).follow().done(function() {
 
                         su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 14000, 12, sfx['su37/section-1']);
-                        return wait(14000 + 800);
+                        return wait(14000);
 
                     }).follow().done(function() {
 
