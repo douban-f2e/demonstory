@@ -67,6 +67,7 @@ define([
             'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.mp3',
             'piggy/intro-su37': '/media/guess/piggy/4su37.mp3',
             'piggy/intro-chaoge': '/media/guess/piggy/5chaoge.mp3',
+            'piggy/police': '/media/guess/piggy/police.mp3',
             'piggy/section-1': '/media/guess/piggy/7yidaizongshi.mp3',
             'piggy/section-2': '/media/guess/piggy/8normal-fm.mp3',
             'piggy/section-3': '/media/guess/piggy/9xiangce.mp3',
@@ -276,9 +277,9 @@ define([
 
                         wait(600).done(function() {
 
-                            lu13.speak('他大舅他二舅都是他舅，高桌子低板凳都是木头，我是你十三爷。', 9000, 12, sfx['lu13/intro']);
+                            lu13.speak('他大舅他二舅都是他舅，高桌子低板凳都是木头，我是你十三爷。', 8000, 12, sfx['lu13/intro']);
 
-                            wait(8000 + 200).done(function() {
+                            wait(7000 + 200).done(function() {
 
                                 lu13.rotateHand('left', '30deg', 300);
                                 lu13.rotateHand('right', '-32deg', 240);
@@ -291,7 +292,7 @@ define([
 
                 });
 
-                return wait(800 + 3200 + 10000 + 300);
+                return wait(800 + 3200 + 8500 + 300);
 
             }).follow().done(function() {
 
@@ -335,7 +336,7 @@ define([
 
                                 su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 5000, 11, sfx['su37/intro-1']);
 
-                                wait(5000 + 200).done(function() {
+                                wait(4000 + 200).done(function() {
 
                                     var lu13 = judges['lu13'].demon,
                                         yingzi = judges['yingzi'].demon;
@@ -791,13 +792,13 @@ define([
                         yingzi.speak('赶出去！！！', 1500, 12, sfx['lu13/section-mao']);
                         su37.speak('赶出去！！！', 1500, 12);
 
-                        wait(2000 + 200).done(function(){
+                        wait(1000 + 200).done(function(){
                             chaoge.speak('额。。。。。。', 1000, 12);
                         });
 
                     });
 
-                    return wait(6000 + 3000 + 300);
+                    return wait(7500 + 300);
 
                 }).follow().done(function() {
 
@@ -808,7 +809,7 @@ define([
                         sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
                     });
 
-                    return wait(8000 +2000+ 300);
+                    return wait(8500 + 300);
 
                 }).follow().done(function() {
 
@@ -967,13 +968,22 @@ define([
 
                         sectionDemon.speak('我的祖国，从宪法意义上讲，我只不过是你地盘上的一个古人。', 7000 , 6 , sfx['li/zuguo']);
 
+                        lu13.speak('CA。。。。。',3100,12);
+                        su37.speak('装逼遭雷劈',4000,12);
+
                         wait(7000 + 100).done(function(){
+
+                            chaoge.speak('说得好！！',2200,12);
+
                             sectionDemon.speak('我从不是圣人，而是一名不断努力的罪人', 4000 , 6 , sfx['li/shengren']);
+
+                            yingzi.speak('Zzzzzz.....',5000,12);
+
                         });
 
                     });
 
-                    return wait(7000 + 7000 + 4000 + 400);
+                    return wait(7000 + 7000 + 2000 + 400);
 
                 }).follow().done(function(){
 
@@ -1022,11 +1032,16 @@ define([
                 }).follow().done(function(){
 
                     laoka.walk([400,-50],2000);
+                    laoka.sound(sfx['ka/section-6-2'],6000,100)
+                    piggyDemon.sound(sfx['piggy/police'],15000,100)
                     wait(2000 + 200).done(function(){
-                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',6000, 6, sfx['ka/section-6-2']);
+                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',4000, 6);
                     });
+                    wait(6000+300).done(function(){
+                        laoka.walk([2400,-50],4000);
+                    })
 
-                    return wait(8000 + 2500 + 200);
+                    return wait(18000 + 200);
 
                 }).follow().done(function() {
 
