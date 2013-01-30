@@ -19,7 +19,7 @@ define([
     },
 
     announce: function(screen, sfx){
-      return screen('改版风云', '关于豆瓣的改版，用户总是有很多很多话要说....', 3000);
+      return screen('改版风云', '', 3000);
     },
 
     main: function(win, promise, sfx, root){
