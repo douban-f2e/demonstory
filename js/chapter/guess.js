@@ -123,7 +123,6 @@ define([
                 judges = initJudges(win),
                 viewportWidth = win.innerWidth;
 
-
             piggyPromise.done(function() {
 
                 materials.show();
@@ -327,9 +326,9 @@ define([
 
                             wait(200 + 100).done(function() {
 
-                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 5000, 11, sfx['su37/intro-1']);
+                                su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 4000, 11, sfx['su37/intro-1']);
 
-                                wait(5000 + 200).done(function() {
+                                wait(4000).done(function() {
 
                                     var lu13 = judges['lu13'].demon,
                                         yingzi = judges['yingzi'].demon;
@@ -379,7 +378,7 @@ define([
 
                 });
 
-                return wait(1600 + 1700 + 2000 + 200);
+                return wait(3000 + 1700 + 2000 + 200);
 
             })
 
@@ -617,7 +616,7 @@ define([
                             sectionDemon.sound(sfx['click'], 1000, 100);
                         });
 
-                        return wait(500 + 200 + 1000 + 200);
+                        return wait(500 + 200 + 500);
 
                     }).follow().done(function() {
 
@@ -635,7 +634,12 @@ define([
                             opacity: 1
                         }, 300, 'easeIn');
 
-                        return wait(300 + 200);
+                        wait(300 + 200).done(function() {
+                            sfx['click'].setTime(0);
+                            sectionDemon.sound(sfx['click'], 1000, 100);
+                        });
+
+                        return wait(300 + 200 + 500);
 
                     }).follow().done(function() {
 
@@ -721,12 +725,12 @@ define([
 
                         $('#pause', doc).remove();
 
-                        lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
-                        yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
-                        su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12, sfx['su37/section-3-1']);
-                        chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 4000, 12);
+                        yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 4000, 11);
+                        su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 4000, 12, sfx['su37/section-3-1']);
+                        chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 4000, 12);
 
-                        return wait(2000 + 200);
+                        return wait(4000 + 200);
 
                     }).follow().done(function() {
 
