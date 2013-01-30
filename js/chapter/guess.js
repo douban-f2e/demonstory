@@ -1070,7 +1070,7 @@ define([
                         });
                     });
 
-                    return wait(17000 + 200);
+                    return wait(16000 + 200);
 
                 }).follow().done(function() {
 
