@@ -384,527 +384,527 @@ define([
             })
 
             /* section#1 一代宗师 by lifei */
-            //.follow().done(function() {
+            .follow().done(function() {
 
-                //// return wait(0);
+                // return wait(0);
 
-                //var sectionDemon = sectionDemons[1],
-                    //chaoge = judges['chaoge'].demon,
-                    //su37 = judges['su37'].demon,
-                    //yingzi = judges['yingzi'].demon,
-                    //lu13 = judges['lu13'].demon,
-                    //sectionPromise = new event.Promise();
+                var sectionDemon = sectionDemons[1],
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
-                //piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 5000, 12, sfx['piggy/section-1']);
+                piggyDemon.speak('欢迎第一位选手入场，饱受争议电影条目“一代宗师”！', 5000, 12, sfx['piggy/section-1']);
 
-                //sectionDemon.me.css('top', '140px');
+                sectionDemon.me.css('top', '140px');
 
-                //wait(5000 + 200).done(function() {
+                wait(5000 + 200).done(function() {
 
-                    //sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
-                    //wait(3000).done(function() {
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
+                    wait(3000).done(function() {
 
-                        //lu13.speak('骚！', 1200, 12, sfx['lu13/intro-1']);
-                        //return wait(1200 + 800);
+                        lu13.speak('骚！', 1200, 12, sfx['lu13/intro-1']);
+                        return wait(1200 + 800);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 9000, 12, sfx['yingzi/section-1']);
-                        //return wait(9000 + 800);
+                        yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 9000, 12, sfx['yingzi/section-1']);
+                        return wait(9000 + 800);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 14000, 12, sfx['su37/section-1']);
-                        //return wait(14000 + 800);
+                        su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 14000, 12, sfx['su37/section-1']);
+                        return wait(14000 + 800);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //chaoge.speak('hold住就是胜利', 2000, 12);
-                        //return wait(2000 + 800);
+                        chaoge.speak('hold住就是胜利', 2000, 12);
+                        return wait(2000 + 800);
 
-                    //});
-                    //return wait(3000 + 2000 + 9800 + 14800 + 2800 + 200);
-                //}).follow().done(function() {
-                    //sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                    //sectionPromise.fire();
-                //});
+                    });
+                    return wait(3000 + 2000 + 9800 + 14800 + 2800 + 200);
+                }).follow().done(function() {
+                    sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    sectionPromise.fire();
+                });
 
-                //return sectionPromise;
-            //})
-            //[> end fo section#1 <]
+                return sectionPromise;
+            })
+            /* end fo section#1 */
 
-            //[> section#2 FM by lifei <]
-            //.follow().done(function() {
+            /* section#2 FM by lifei */
+            .follow().done(function() {
 
-                //var proDemon = sectionDemons['fm-pro'],
-                    //normalDemon = sectionDemons['fm-normal'],
-                    //adDemon = sectionDemons['fm-ad'],
-                    //chaoge = judges['chaoge'].demon,
-                    //su37 = judges['su37'].demon,
-                    //yingzi = judges['yingzi'].demon,
-                    //lu13 = judges['lu13'].demon,
-                    //sectionPromise = new event.Promise();
+                var proDemon = sectionDemons['fm-pro'],
+                    normalDemon = sectionDemons['fm-normal'],
+                    adDemon = sectionDemons['fm-ad'],
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
-                //piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 4000, 12, sfx['piggy/section-2']);
+                piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 4000, 12, sfx['piggy/section-2']);
 
-                //wait(4000 + 200).done(function() {
-                    //normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
-                    //normalDemon.sound(sfx['fm/fm_normal'], 10000, 100);
+                wait(4000 + 200).done(function() {
+                    normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
+                    normalDemon.sound(sfx['fm/fm_normal'], 10000, 100);
 
-                    //wait(10000).done(function() {
+                    wait(10000).done(function() {
 
-                        //chaoge.speak('才 64k，还不如广告音质好，不通过！', 5000, 9);
-                        //lu13.speak('才 64k，还不如广告音质好，不通过！', 5000, 3, sfx['lu13/section-2']);
-                        //su37.speak('才 64k，还不如广告音质好，不通过！', 5000, 10);
-                        //yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
+                        chaoge.speak('才 64k，还不如广告音质好，不通过！', 5000, 9);
+                        lu13.speak('才 64k，还不如广告音质好，不通过！', 5000, 3, sfx['lu13/section-2']);
+                        su37.speak('才 64k，还不如广告音质好，不通过！', 5000, 10);
+                        yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
 
-                    //});
-                    //return wait(15000 + 800);
+                    });
+                    return wait(15000 + 800);
 
-                //}).follow().done(function() {
-                    //normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                    //normalDemon.speak('嘤嘤嘤嘤', 1500, 6);
-                    //return wait(3000 + 200);
+                }).follow().done(function() {
+                    normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    normalDemon.speak('嘤嘤嘤嘤', 1500, 6);
+                    return wait(3000 + 200);
 
-                //}).follow().done(function() {
-                    //adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
-                    //adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
-                    //wait(4000).done(function() {
+                }).follow().done(function() {
+                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
+                    adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
+                    wait(4000).done(function() {
 
-                        //lu13.speak('说广告你还真来啊……', 1500, 10);
-                        //su37.speak('说广告你还真来啊……', 1500, 10);
+                        lu13.speak('说广告你还真来啊……', 1500, 10);
+                        su37.speak('说广告你还真来啊……', 1500, 10);
 
-                    //});
+                    });
 
-                    //return wait(10000 + 800);
+                    return wait(10000 + 800);
 
-                //}).follow().done(function() {
-                    //proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
-                    //proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
-                    //wait(3000).done(function() {
-                        //proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
-                        //adDemon.speak('灰溜溜地逃走', 1500, 5);
-                        //adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                        //return wait(5000 + 200);
-                    //}).follow().done(function() {
-                        //proDemon.speak('更纯洁的音质，无广告的体验', 3500, 10);
-                        //chaoge.speak('如此纯净的声音！', 3500, 9);
-                        //lu13.speak('比刚才好多了', 3500, 3);
-                        //su37.speak('多亏我的Monster耳机！', 3500, 0);
+                }).follow().done(function() {
+                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
+                    proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
+                    wait(3000).done(function() {
+                        proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
+                        adDemon.speak('灰溜溜地逃走', 1500, 5);
+                        adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                        return wait(5000 + 200);
+                    }).follow().done(function() {
+                        proDemon.speak('更纯洁的音质，无广告的体验', 3500, 10);
+                        chaoge.speak('如此纯净的声音！', 3500, 9);
+                        lu13.speak('比刚才好多了', 3500, 3);
+                        su37.speak('多亏我的Monster耳机！', 3500, 0);
 
-                        //return wait(12000);
-                    //}).follow().done(function() {
-                        //chaoge.speak('高端大气上档次，通过！', 3500, 9);
-                        //lu13.speak('高端大气上档次，通过！', 3500, 3, sfx['lu13/section-2-1']);
-                        //su37.speak('高端大气上档次，通过！', 3500, 10);
-                        //yingzi.speak('高端大气上档次，通过！', 3500, 0);
-                    //});
+                        return wait(12000);
+                    }).follow().done(function() {
+                        chaoge.speak('高端大气上档次，通过！', 3500, 9);
+                        lu13.speak('高端大气上档次，通过！', 3500, 3, sfx['lu13/section-2-1']);
+                        su37.speak('高端大气上档次，通过！', 3500, 10);
+                        yingzi.speak('高端大气上档次，通过！', 3500, 0);
+                    });
 
-                    //return wait(25000);
-                //}).follow().done(function() {
-                    //proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                    //return wait(3000 + 200);
+                    return wait(25000);
+                }).follow().done(function() {
+                    proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    return wait(3000 + 200);
 
-                //}).follow().done(function() {
-                    //// section end
-                    //sectionPromise.fire();
+                }).follow().done(function() {
+                    // section end
+                    sectionPromise.fire();
 
-                //});
-                //return sectionPromise;
+                });
+                return sectionPromise;
 
-            //})
-            //[> end fo section#2 <]
+            })
+            /* end fo section#2 */
 
-            //[> section#3 相册 by gonghao <]
-            //.follow().done(function() {
+            /* section#3 相册 by gonghao */
+            .follow().done(function() {
 
-                //// return wait(0);
+                // return wait(0);
 
-                //var sectionDemon = sectionDemons[3],
-                    //chaoge = judges['chaoge'].demon,
-                    //su37 = judges['su37'].demon,
-                    //yingzi = judges['yingzi'].demon,
-                    //lu13 = judges['lu13'].demon,
-                    //sectionPromise = new event.Promise();
+                var sectionDemon = sectionDemons[3],
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
-                //piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12, sfx['piggy/section-3']);
+                piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12, sfx['piggy/section-3']);
 
-                //wait(1500 + 200).done(function() {
+                wait(1500 + 200).done(function() {
 
-                    //sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
 
-                    //wait(1000).done(function() {
+                    wait(1000).done(function() {
 
-                        //su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12, sfx['su37/section-3']);
+                        su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12, sfx['su37/section-3']);
 
-                        //return wait(1000 + 800);
+                        return wait(1000 + 800);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //chaoge.speak('想：这也能黑柴静？！', 1000, 12);
+                        chaoge.speak('想：这也能黑柴静？！', 1000, 12);
 
-                        //return wait(1000 + 300);
+                        return wait(1000 + 300);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //yingzi.speak('想：嗯，给力！', 500, 10);
+                        yingzi.speak('想：嗯，给力！', 500, 10);
 
-                        //lu13.speak('想：大爱X大呀！', 600, 12, sfx['lu13/section-3']);
+                        lu13.speak('想：大爱X大呀！', 600, 12, sfx['lu13/section-3']);
 
-                        //return wait(800 + 200);
+                        return wait(800 + 200);
 
-                    //});
+                    });
 
-                    //return wait(5000 + 200);
+                    return wait(5000 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //var action = choreo().play();
+                    var action = choreo().play();
 
-                    //action.actor($('#db-global-nav', doc)[0], {
-                        //opacity: 0.5
-                    //}, 200);
+                    action.actor($('#db-global-nav', doc)[0], {
+                        opacity: 0.5
+                    }, 200);
 
-                    //action.actor($('#db-nav-sns', doc)[0], {
-                        //opacity: 0.5
-                    //}, 200);
+                    action.actor($('#db-nav-sns', doc)[0], {
+                        opacity: 0.5
+                    }, 200);
 
-                    //wait(200).done(function() {
+                    wait(200).done(function() {
 
-                        //$('#pause', doc)
-                            //.css({
-                                //position: 'absolute',
-                                //top: '20px',
-                                //right: '20px'
-                            //})
-                            //.appendTo(doc.body);
+                        $('#pause', doc)
+                            .css({
+                                position: 'absolute',
+                                top: '20px',
+                                right: '20px'
+                            })
+                            .appendTo(doc.body);
 
-                        //return wait(500);
+                        return wait(500);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //screen.pan({
-                            //elem: $('.pic', sectionDemon.me),
-                            //zoom: 2,
-                            //offset: {
-                                //top: -60
-                            //},
-                            //duration: 800
-                        //});
+                        screen.pan({
+                            elem: $('.pic', sectionDemon.me),
+                            zoom: 2,
+                            offset: {
+                                top: -60
+                            },
+                            duration: 800
+                        });
 
-                        //return wait(800 + 200);
+                        return wait(800 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //var mouse = $('#mouse', doc)
-                                //.css({
-                                    //position: 'absolute',
-                                    //top: '170px',
-                                    //left: '290px',
-                                    //zIndex: '1'
-                                //}).appendTo(doc.body),
+                        var mouse = $('#mouse', doc)
+                                .css({
+                                    position: 'absolute',
+                                    top: '170px',
+                                    left: '290px',
+                                    zIndex: '1'
+                                }).appendTo(doc.body),
 
-                            //action = choreo().play();
+                            action = choreo().play();
 
-                        //action.actor(mouse[0], {
-                            //top: '170px',
-                            //left: '490px'
-                        //}, 500, 'easeOut');
+                        action.actor(mouse[0], {
+                            top: '170px',
+                            left: '490px'
+                        }, 500, 'easeOut');
 
-                        //return wait(500 + 200);
+                        return wait(500 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //var saveAs = $('#save-as', doc)
-                                //.css({
-                                    //position: 'absolute',
-                                    //top: '50px',
-                                    //left: '430px',
-                                    //opacity: 0
-                                //}).appendTo(doc.body),
+                        var saveAs = $('#save-as', doc)
+                                .css({
+                                    position: 'absolute',
+                                    top: '50px',
+                                    left: '430px',
+                                    opacity: 0
+                                }).appendTo(doc.body),
 
-                            //action = choreo().play();
+                            action = choreo().play();
 
-                        //action.actor(saveAs[0], {
-                            //opacity: 1
-                        //}, 300, 'easeIn');
+                        action.actor(saveAs[0], {
+                            opacity: 1
+                        }, 300, 'easeIn');
 
-                        //return wait(300 + 200);
+                        return wait(300 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //var saveAsDialog = $('#save-as-dlg', doc)
-                                //.css({
-                                    //position: 'absolute',
-                                    //top: '95px',
-                                    //left: '370px',
-                                    //opacity: 0
-                                //}).appendTo(doc.body),
+                        var saveAsDialog = $('#save-as-dlg', doc)
+                                .css({
+                                    position: 'absolute',
+                                    top: '95px',
+                                    left: '370px',
+                                    opacity: 0
+                                }).appendTo(doc.body),
 
-                            //action = choreo().play();
+                            action = choreo().play();
 
-                        //$('#mouse', doc).css('zIndex', 0);
+                        $('#mouse', doc).css('zIndex', 0);
 
-                        //action.actor(saveAsDialog[0], {
-                            //opacity: 1
-                        //}, 300, 'easeInOut');
+                        action.actor(saveAsDialog[0], {
+                            opacity: 1
+                        }, 300, 'easeInOut');
 
-                        //return wait(300 + 800);
+                        return wait(300 + 800);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //$('#mouse', doc).remove();
-                        //$('#save-as', doc).remove();
+                        $('#mouse', doc).remove();
+                        $('#save-as', doc).remove();
 
-                        //var saveAsDialog = $('#save-as-dlg', doc),
-                            //action = choreo().play();
+                        var saveAsDialog = $('#save-as-dlg', doc),
+                            action = choreo().play();
 
-                        //action.actor(saveAsDialog[0], {
-                            //opacity: 0
-                        //}, 200, 'easeIn');
+                        action.actor(saveAsDialog[0], {
+                            opacity: 0
+                        }, 200, 'easeIn');
 
-                        //action.follow().done(function() {
-                            //saveAsDialog.remove();
-                        //});
+                        action.follow().done(function() {
+                            saveAsDialog.remove();
+                        });
 
-                        //return wait(200 + 500);
+                        return wait(200 + 500);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //screen.reset(500);
+                        screen.reset(500);
 
-                        //return wait(500 + 200);
+                        return wait(500 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //var action = choreo().play();
+                        var action = choreo().play();
 
-                        //action.actor($('#pause', doc)[0], {
-                            //opacity: 0
-                        //}, 200, 'easeIn');
+                        action.actor($('#pause', doc)[0], {
+                            opacity: 0
+                        }, 200, 'easeIn');
 
-                        //action.actor($('#db-global-nav', doc)[0], {
-                            //opacity: 1
-                        //}, 200);
+                        action.actor($('#db-global-nav', doc)[0], {
+                            opacity: 1
+                        }, 200);
 
-                        //action.actor($('#db-nav-sns', doc)[0], {
-                            //opacity: 1
-                        //}, 200);
+                        action.actor($('#db-nav-sns', doc)[0], {
+                            opacity: 1
+                        }, 200);
 
-                        //action.follow().done(function() {
-                            //$('#pause', doc).remove();
-                        //});
+                        action.follow().done(function() {
+                            $('#pause', doc).remove();
+                        });
 
-                        //return wait(200 + 200);
+                        return wait(200 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //$('#pause', doc).remove();
+                        $('#pause', doc).remove();
 
-                        //lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
-                        //yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
-                        //su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12, sfx['su37/section-3-1']);
-                        //chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        lu13.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
+                        yingzi.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 11);
+                        su37.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12, sfx['su37/section-3-1']);
+                        chaoge.speak('不符合社区指导规则。。。嘿嘿嘿。', 2000, 12);
 
-                        //return wait(2000 + 200);
+                        return wait(2000 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //var sectionDemon = sectionDemons[3];
+                        var sectionDemon = sectionDemons[3];
 
-                        //sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                        sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
 
-                        //return wait(3000 + 200);
+                        return wait(3000 + 200);
 
-                    //}).follow().done(function() {
+                    }).follow().done(function() {
 
-                        //// section end
-                        //sectionPromise.fire();
+                        // section end
+                        sectionPromise.fire();
 
-                    //});
+                    });
 
-                //});
+                });
 
-                //return sectionPromise;
+                return sectionPromise;
 
-            //})
-            //[> end fo section#3 <]
+            })
+            /* end fo section#3 */
 
-            //[> section#4 猫 by zhaoguo <]
-            //.follow().done(function() {
+            /* section#4 猫 by zhaoguo */
+            .follow().done(function() {
 
-                //// return wait(0);
+                // return wait(0);
 
-                //var sectionDemon = sectionDemons[4],
-                    //chaoge = judges['chaoge'].demon,
-                    //su37 = judges['su37'].demon,
-                    //yingzi = judges['yingzi'].demon,
-                    //lu13 = judges['lu13'].demon,
-                    //sectionPromise = new event.Promise();
+                var sectionDemon = sectionDemons[4],
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
-                //piggyDemon.speak('欢迎下一位选手', 2000, 12, sfx['piggy/section-4']);
+                piggyDemon.speak('欢迎下一位选手', 2000, 12, sfx['piggy/section-4']);
 
-                //wait(2000 + 200).done(function() {
+                wait(2000 + 200).done(function() {
 
-                    //piggyDemon.sound(sfx['mao/in'],6000,70);
-                    //sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3500);
+                    piggyDemon.sound(sfx['mao/in'],6000,70);
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3500);
 
-                    //return wait(3500 + 400);
+                    return wait(3500 + 400);
 
-                //}).follow().done(function(){
+                }).follow().done(function(){
 
-                        //sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',7500,6, sfx['mao/section-4-1']);
+                        sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',7500,6, sfx['mao/section-4-1']);
 
-                    //return wait(7500 + 200);
+                    return wait(7500 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 6000, 12, sfx['lu13/section-4']);
+                    lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 6000, 12, sfx['lu13/section-4']);
 
-                    //wait(6000).done(function(){
+                    wait(6000).done(function(){
 
-                        //yingzi.speak('赶出去！！！', 1500, 12, sfx['lu13/section-mao']);
-                        //su37.speak('赶出去！！！', 1500, 12);
+                        yingzi.speak('赶出去！！！', 1500, 12, sfx['lu13/section-mao']);
+                        su37.speak('赶出去！！！', 1500, 12);
 
-                        //wait(1000 + 200).done(function(){
-                            //chaoge.speak('额。。。。。。', 1000, 12);
-                        //});
+                        wait(1000 + 200).done(function(){
+                            chaoge.speak('额。。。。。。', 1000, 12);
+                        });
 
-                    //});
+                    });
 
-                    //return wait(7500 + 300);
+                    return wait(7500 + 300);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',8000,6, sfx['mao/section-4-2']);
+                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',8000,6, sfx['mao/section-4-2']);
 
-                    //wait(6500).done(function(){
-                        //piggyDemon.sound(sfx['mao/in'],7000,70);
-                        //sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
-                    //});
+                    wait(6500).done(function(){
+                        piggyDemon.sound(sfx['mao/in'],7000,70);
+                        sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
+                    });
 
-                    //return wait(8500 + 300);
+                    return wait(8500 + 300);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //piggyDemon.speak('好吧，有后台我们惹不起~~', 3000, 9, sfx['piggy/section-4-1']);
-                    //lu13.speak('。。。。。。',900,12);
-                    //su37.speak('。。。。。。',900,12);
-                    //chaoge.speak('。。。。。。',900,12);
-                    //yingzi.speak('。。。。。。',900,12);
+                    piggyDemon.speak('好吧，有后台我们惹不起~~', 3000, 9, sfx['piggy/section-4-1']);
+                    lu13.speak('。。。。。。',900,12);
+                    su37.speak('。。。。。。',900,12);
+                    chaoge.speak('。。。。。。',900,12);
+                    yingzi.speak('。。。。。。',900,12);
 
-                    //return wait( 3000 + 300 );
+                    return wait( 3000 + 300 );
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //// section end
-                    //sectionPromise.fire();
+                    // section end
+                    sectionPromise.fire();
 
-                //});
+                });
 
-                //return sectionPromise;
+                return sectionPromise;
 
-            //})
-            //[> end fo section#4 <]
+            })
+            /* end fo section#4 */
 
-            //[> section#5 阿北 by gonghao <]
-            //.follow().done(function() {
+            /* section#5 阿北 by gonghao */
+            .follow().done(function() {
 
-                //// return wait(0);
+                // return wait(0);
 
-                //var sectionDemon = sectionDemons[5],
-                    //chaoge = judges['chaoge'].demon,
-                    //su37 = judges['su37'].demon,
-                    //yingzi = judges['yingzi'].demon,
-                    //lu13 = judges['lu13'].demon,
-                    //sectionPromise = new event.Promise();
+                var sectionDemon = sectionDemons[5],
+                    chaoge = judges['chaoge'].demon,
+                    su37 = judges['su37'].demon,
+                    yingzi = judges['yingzi'].demon,
+                    lu13 = judges['lu13'].demon,
+                    sectionPromise = new event.Promise();
 
-                //piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 2500, 12, sfx['piggy/section-5']);
+                piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 2500, 12, sfx['piggy/section-5']);
 
-                //sectionDemon.me.css('top', '140px');
+                sectionDemon.me.css('top', '140px');
 
-                //wait(2500 + 200).done(function() {
+                wait(2500 + 200).done(function() {
 
-                    //sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
 
-                    //wait(3000).done(function() {
+                    wait(3000).done(function() {
 
-                        //chaoge.speak('想：月『精』日记又出现了！', 1500, 10);
-                        //su37.speak('想：月『精』日记又出现了！', 1500, 12, sfx['su37/section-5']);
-                        //lu13.speak('想：月『精』日记又出现了！', 1500, 12);
+                        chaoge.speak('想：月『精』日记又出现了！', 1500, 10);
+                        su37.speak('想：月『精』日记又出现了！', 1500, 12, sfx['su37/section-5']);
+                        lu13.speak('想：月『精』日记又出现了！', 1500, 12);
 
-                    //});
+                    });
 
-                    //return wait(5000 + 200);
+                    return wait(5000 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //screen.pan({
-                        //elem: $('.ahbei-like', sectionDemon.me),
-                        //zoom: 2.6,
-                        //duration: 800
-                    //});
+                    screen.pan({
+                        elem: $('.ahbei-like', sectionDemon.me),
+                        zoom: 2.6,
+                        duration: 800
+                    });
 
-                    //return wait(800 + 200);
+                    return wait(800 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //var ahbeiLike = $('.ahbei-like', sectionDemon.me),
-                        //shiningDuration = 300,
-                        //shiningTimes = 5,
-                        //i = 0;
+                    var ahbeiLike = $('.ahbei-like', sectionDemon.me),
+                        shiningDuration = 300,
+                        shiningTimes = 5,
+                        i = 0;
 
-                    //ahbeiLike.css('color', 'red');
+                    ahbeiLike.css('color', 'red');
 
-                    //for (; i < shiningTimes; i++) {
+                    for (; i < shiningTimes; i++) {
 
-                        //var fn = (function(count) {
-                            //if (count % 2 === 0) {
-                                //return function() {
-                                    //ahbeiLike.attr('style', '');
-                                //};
-                            //}
+                        var fn = (function(count) {
+                            if (count % 2 === 0) {
+                                return function() {
+                                    ahbeiLike.attr('style', '');
+                                };
+                            }
 
-                            //return function() {
-                                //ahbeiLike.css('color', 'red');
-                            //};
-                        //})(i);
+                            return function() {
+                                ahbeiLike.css('color', 'red');
+                            };
+                        })(i);
 
-                        //wait((shiningDuration + 1) * i).done(fn);
-                    //}
+                        wait((shiningDuration + 1) * i).done(fn);
+                    }
 
-                    //return wait((shiningDuration + 1) * shiningTimes + 300);
+                    return wait((shiningDuration + 1) * shiningTimes + 300);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //screen.reset(800);
+                    screen.reset(800);
 
-                    //return wait(800 + 200);
+                    return wait(800 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //lu13.speak('通过！！！', 2000, 1, sfx['lu13/section-5']);
-                    //yingzi.speak('通过！！！', 2000, 11);
-                    //su37.speak('通过！！！', 2000, 12);
-                    //chaoge.speak('通过！！！', 2000, 12);
+                    lu13.speak('通过！！！', 2000, 1, sfx['lu13/section-5']);
+                    yingzi.speak('通过！！！', 2000, 11);
+                    su37.speak('通过！！！', 2000, 12);
+                    chaoge.speak('通过！！！', 2000, 12);
 
-                    //return wait(2000 + 200);
+                    return wait(2000 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
 
-                    //return wait(3000 + 200);
+                    return wait(3000 + 200);
 
-                //}).follow().done(function() {
+                }).follow().done(function() {
 
-                    //sectionPromise.fire();
+                    sectionPromise.fire();
 
-                //});
+                });
 
-                //return sectionPromise;
+                return sectionPromise;
 
-            //})
+            })
             /* end fo section#5 */
 
             /* section#6 拖黑 by zhaoguo */
