@@ -393,6 +393,7 @@ define([
 
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
+                //fucking debug
                 //return wait(0)
 
                 var sectionDemon = sectionDemons[1],
@@ -442,6 +443,7 @@ define([
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+                //fucking debug
                 //return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
@@ -526,6 +528,7 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
+                //fucking debug
                 //return wait(0);
 
                 var sectionDemon = sectionDemons[3],
@@ -758,6 +761,7 @@ define([
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
 
+                //fucking debug 
                 //return wait(0);
 
                 var sectionDemon = sectionDemons[4],
@@ -835,7 +839,8 @@ define([
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
 
-                // return wait(0);
+                //fucking debug
+                //return wait(0);
 
                 var sectionDemon = sectionDemons[5],
                     chaoge = judges['chaoge'].demon,
@@ -995,6 +1000,9 @@ define([
                     wait(1500).done(function(){
                         laoka.speak('干嘛呢，干嘛呢，非法集会，还讨论敏感话题，通通别动！', 9000, 3);
                     });
+                    wait(3500).done(function(){
+                        chaoge.walk([-300,0],8000);
+                    });
 
                     return wait( 1500 + 7000 + 400);
 
@@ -1006,28 +1014,28 @@ define([
                     su37.walk([-300,-2000],2000);
                     su37.speak('靠！！！',2000,12, sfx['su37/section-6']);
 
-                    chaoge.walk([-2000,-100],1200);
-                    chaoge.speak('额。。。。。',800,12);
+                    chaoge.walk([-1000,-100],500);
 
                     yingzi.walk([-2100,50],1200);
                     yingzi.speak('匿了',800,12);
 
-                    sectionDemon.walk([1000,-200],1200);
+                    sectionDemon.walk([2000,-200],1200);
                     lu13.speak('又有砸场的？？？',800,12);
 
                     wait(1000).done(function(){
 
                         piggyDemon.speak('不要丢下我啊~~~~', 800, 11);
                         piggyDemon.walk([-400,0],1000);
+                        piggyDemon.sound(sfx['piggy/end'],2500,100);
 
                         wait(1000).done(function(){
                             piggyDemon.walk([2000,0],1500);
-                            piggyDemon.speak('救命~~~~~', 2500, 9 , sfx['piggy/end']);
+                            piggyDemon.speak('救命~~~~~', 800, 9);
                         });
 
                     });
 
-                    return wait(4000 + 500);
+                    return wait(2000 + 500);
 
                 }).follow().done(function(){
 
@@ -1037,8 +1045,21 @@ define([
                     wait(2000 + 200).done(function(){
                         laoka.speak('哼哼，这下知道首页是谁的了吧！！！',4000, 6);
                     });
-                    wait(6000+300).done(function(){
-                        laoka.walk([2400,-50],4000);
+                    wait(5000+300).done(function(){
+                        laoka.walk([2400,-50],6000);
+                    });
+
+                    wait(9000).done(function(){
+                        $('#wrapper',doc).append('<div id="end-form">\
+                                纯属虚构 如有雷同<br> \
+                                那是故意\
+                            </div>');
+                        $('#end-form',doc).css({
+                            'text-align':'center'
+                            ,'font-size':'40px'
+                            ,'margin-top':'200px'
+                            ,'opacity':'0'
+                        }).animate({opacity:1},'fast')
                     });
 
                     return wait(18000 + 200);
@@ -1050,7 +1071,7 @@ define([
 
                 });
 
-                return sectionPromise;
+                //return sectionPromise;
 
             })
             /* end fo section#6 */
