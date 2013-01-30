@@ -55,6 +55,7 @@ define([
         sfx: {
             intro: '/media/guess/intro.mp3',
             exiting: '/media/guess/exiting.mp3',
+            click: '/media/guess/click.mp3',
             'piggy/chaoge': '/media/guess/piggy/intro.m4a',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
@@ -88,9 +89,9 @@ define([
             'su37/intro-1': '/media/guess/su37/2.m4a',
             'su37/section-1': '/media/guess/su37/3zongshi.m4a',
             'su37/section-2': '/media/guess/su37/4fm-ad.m4a',
-            'su37/section-3': '/media/guess/su37/5xiangce.m4a',
-            'su37/section-3-1': '/media/guess/su37/5xiangce-2.m4a',
-            'su37/section-5': '/media/guess/su37/6riji.m4a',
+            'su37/section-3': '/media/guess/su37/5xiangce.mp3',
+            'su37/section-3-1': '/media/guess/su37/5xiangce-2.mp3',
+            'su37/section-5': '/media/guess/su37/6riji.mp3',
             'su37/section-6': '/media/guess/su37/7paolu.m4a',
             'mao/section-4-1': '/media/guess/mao/1.m4a',
             'mao/in': '/media/guess/mao/maoin.mp3',
@@ -288,7 +289,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('接下来是芙蓉镇影支书～～', 3000, 8, sfx['piggy/intro-yingzi']);
+                piggyDemon.speak('接下来是芙蓉镇田佳芝～～', 3000, 8, sfx['piggy/intro-yingzi']);
 
                 wait(3000 + 200).done(function() {
 
@@ -385,7 +386,7 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
-                // return wait(0);
+                return wait(0);
 
                 var sectionDemon = sectionDemons[1],
                     chaoge = judges['chaoge'].demon,
@@ -434,6 +435,8 @@ define([
 
             /* section#2 FM by lifei */
             .follow().done(function() {
+
+                return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
@@ -526,35 +529,35 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 1500, 12, sfx['piggy/section-3']);
+                piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 6000, 12, sfx['piggy/section-3']);
 
-                wait(1500 + 200).done(function() {
+                wait(6000 + 200).done(function() {
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
 
-                    wait(1000).done(function() {
+                    wait(800).done(function() {
 
-                        su37.speak('想：远了点儿，走近了爷仔细看看', 1000, 12, sfx['su37/section-3']);
+                        su37.speak('远了点儿，走近了爷仔细看看', 4500, 12, sfx['su37/section-3']);
 
-                        return wait(1000 + 800);
+                        return wait(3000);
 
-                    }).follow().done(function() {
+                    // }).follow().done(function() {
 
-                        chaoge.speak('想：这也能黑柴静？！', 1000, 12);
+                    //     chaoge.speak('想：这也能黑柴静？！', 1000, 12);
 
-                        return wait(1000 + 300);
+                    //     return wait(1000 + 300);
 
                     }).follow().done(function() {
 
                         yingzi.speak('想：嗯，给力！', 500, 10);
 
-                        lu13.speak('想：大爱X大呀！', 600, 12, sfx['lu13/section-3']);
+                        lu13.speak('想：大爱X大呀！', 600, 12);
 
                         return wait(800 + 200);
 
                     });
 
-                    return wait(5000 + 200);
+                    return wait(6000 + 200);
 
                 }).follow().done(function() {
 
@@ -610,7 +613,11 @@ define([
                             left: '490px'
                         }, 500, 'easeOut');
 
-                        return wait(500 + 200);
+                        wait(500 + 200).done(function() {
+                            sectionDemon.sound(sfx['click'], 1000, 100);
+                        });
+
+                        return wait(500 + 200 + 1000 + 200);
 
                     }).follow().done(function() {
 
@@ -649,6 +656,20 @@ define([
                         }, 300, 'easeInOut');
 
                         return wait(300 + 800);
+
+                    }).follow().done(function() {
+
+                        var action = choreo().play(),
+                            mouse = $('#mouse', doc);
+
+                        mouse.css('zIndex', 1);
+
+                        action.actor(mouse[0], {
+                            top: '420px',
+                            left: '750px'
+                        }, 800, 'easeOut');
+
+                        return wait(800 + 400);
 
                     }).follow().done(function() {
 
@@ -818,23 +839,23 @@ define([
                     lu13 = judges['lu13'].demon,
                     sectionPromise = new event.Promise();
 
-                piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 2500, 12, sfx['piggy/section-5']);
+                piggyDemon.speak('有请下一位选手入场，这位选手是一篇日记的名字叫『21天精通精益创业』，大家欢迎！', 7000, 12, sfx['piggy/section-5']);
 
                 sectionDemon.me.css('top', '140px');
 
-                wait(2500 + 200).done(function() {
+                wait(7000 + 200).done(function() {
 
-                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
 
-                    wait(3000).done(function() {
+                    wait(1000).done(function() {
 
-                        chaoge.speak('想：月『精』日记又出现了！', 1500, 10);
-                        su37.speak('想：月『精』日记又出现了！', 1500, 12, sfx['su37/section-5']);
-                        lu13.speak('想：月『精』日记又出现了！', 1500, 12);
+                        chaoge.speak('想：月『精』日记又出现了！', 2500, 10);
+                        su37.speak('月『精』日记又出现了！', 3500, 12, sfx['su37/section-5']);
+                        lu13.speak('想：月『精』日记又出现了！', 2500, 12);
 
                     });
 
-                    return wait(5000 + 200);
+                    return wait(2000 + 3500 + 200);
 
                 }).follow().done(function() {
 
@@ -844,12 +865,12 @@ define([
                         duration: 800
                     });
 
-                    return wait(800 + 200);
+                    return wait(800 + 500);
 
                 }).follow().done(function() {
 
                     var ahbeiLike = $('.ahbei-like', sectionDemon.me),
-                        shiningDuration = 300,
+                        shiningDuration = 400,
                         shiningTimes = 5,
                         i = 0;
 
