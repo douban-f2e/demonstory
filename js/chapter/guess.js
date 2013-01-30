@@ -272,7 +272,7 @@ define([
                     lu13.rotateHand('right', '-60deg');
                     lu13.rotateHand('left', '-66deg');
 
-                    lu13.walk([ 1200, -10 ], 2500);
+                    lu13.walk([ 1040, -10 ], 2500);
 
                     wait(2500 + 300).done(function() {
 
@@ -306,7 +306,7 @@ define([
 
                     var yingzi = judges['yingzi'].demon;
 
-                    yingzi.walk([ 1060, -14 ], 2500);
+                    yingzi.walk([ 900, -14 ], 2500);
 
                     wait(2500 + 200).done(function() {
 
@@ -326,7 +326,7 @@ define([
 
                     var su37 = judges['su37'].demon;
 
-                    su37.walk([ 820, -12 ], 2000);
+                    su37.walk([ 650, -12 ], 2000);
 
                     wait(2000 + 200).done(function() {
 
@@ -380,7 +380,7 @@ define([
 
                     var chaoge = judges['chaoge'].demon;
 
-                    chaoge.walk([ 550, -10 ], 1500);
+                    chaoge.walk([ 330, -10 ], 1500);
 
                     wait(1500 + 200).done(function() {
 
@@ -390,7 +390,7 @@ define([
 
                 });
 
-                return wait(3200 + 1700 + 8000 + 200);
+                return wait(3200 + 1700 + 8000 + 2000000);
 
             })
 
@@ -780,7 +780,7 @@ define([
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
 
-                //fucking debug 
+                //fucking debug
                 //return wait(0);
 
                 var sectionDemon = sectionDemons[4],
