@@ -198,7 +198,7 @@ define([
       }).follow().done(function() {
         return demonWang.speak('愿闻其详！', 2000, 10, sfx.w8)
       }).follow().done(function() {
-        demonWang.sound(sfx.ending, 20000, 40)
+        demonWang.sound(sfx.ending, 14000, 40)
         return demonCover.speak('都在电子特别版后记呐...', 3000, 3, sfx.c15)
       }).follow().done(function() {
         demonBtn = demon({
