@@ -354,7 +354,7 @@ body .status-item {
   width: 16px;
   height: 16px;
   position: absolute;
-  z-index: 100;
+  z-index: 2000;
   background: url(/pics/cursor.png) no-repeat 0 0;
 }
 .cursor.inputing {
@@ -366,6 +366,9 @@ body .status-item {
 	animation-name: border_flash;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-duration: 2s;
+}
+.cursor-hand {
+  background-image: url(/pics/cursor-hand.png);
 }
 @-webkit-keyframes border_flash {
 	0%, 50%, 100% {border-width: 1px;}	
@@ -385,4 +388,21 @@ body .status-item {
 @keyframes border_flash {
 	0%, 50%, 100% {border-width: 1px;}	
 	25%, 75% {border-width: 0;}
+}
+
+#db-isay.active textarea { font-size: 14px; }
+
+#shuai {
+  text-align: center;
+  line-height: 600px;
+  font-size: 480px;
+  font-weight: 600;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 100;
+  color: #ddd;
+  text-shadow: 1px 5px rgba(0,0,0,0.9);
+  -webkit-animation-duration: 1s;
 }

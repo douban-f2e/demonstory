@@ -57,10 +57,10 @@ define([
     var translate = 'translate(' + x + 'px,' + y + 'px)';
     action.actor(doc[0], {
       transform: translate
-    }, duration);
+    }, duration, 'easeOut');
     return action.actor(doc[0], {
       transform: 'scale(' + zoom + ',' + zoom + ')'
-    }, duration).follow();
+    }, duration, 'easeOut').follow();
   };
 
   Camera.prototype.reset = function(duration) {
