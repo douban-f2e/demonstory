@@ -61,7 +61,7 @@ define([
         , vote = $('#vote', doc)
 
       // teamMemberShow {
-      var person_tmpl = '<img width="96" height="96" src="/pics/gavatar/${id}.jpg">${name}'
+      var person_tmpl = '<img width="96" height="96" src="../../pics/gavatar/${id}.jpg">${name}'
         , f2e_list = [
             { name: 'Kejun', id: 'kejun' }
             ,{ name: '龚浩', id: 'gonghao' }
@@ -387,6 +387,7 @@ define([
 
       // teamMemberShowAction {
       .done(function(){
+        //util.preview_mode = screen.preview_mode = demonRobot.preview_mode = preview_mode = false;
         var offset = 200
           , left = baseLeft - 250
           , height = 500
