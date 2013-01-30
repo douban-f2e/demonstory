@@ -985,27 +985,19 @@ define([
                 }).follow().done(function(){
 
                     sectionDemon.speak('一个人的粗话，却有可能是另一个人的抒情诗。这是表达的尊严。', 4000 , 6 , sfx['li/cuhua']);
+                    chaoge.speak('说得好！！',3200,9);
 
                     wait(4000 + 100).done(function(){
 
-                        sectionDemon.speak('我的祖国，从宪法意义上讲，我只不过是你地盘上的一个古人。', 7000 , 6 , sfx['li/zuguo']);
+                        sectionDemon.speak('我从不是圣人，而是一名不断努力的罪人', 4000 , 6 , sfx['li/shengren']);
 
-                        lu13.speak('CA。。。。。',3100,12);
-                        su37.speak('装逼遭雷劈',4000,12);
-
-                        wait(7000 + 100).done(function(){
-
-                            chaoge.speak('说得好！！',2200,12);
-
-                            sectionDemon.speak('我从不是圣人，而是一名不断努力的罪人', 4000 , 6 , sfx['li/shengren']);
-
-                            yingzi.speak('Zzzzzz.....',5000,12);
-
-                        });
+                        lu13.speak('CA。。。。。',3100,3);
+                        su37.speak('装X遭雷劈',3000,12);
+                        yingzi.speak('Zzzzzz.....',3000,12);
 
                     });
 
-                    return wait(7000 + 7000 + 2000 + 400);
+                    return wait(4000 + 4000 + 400);
 
                 }).follow().done(function(){
 
