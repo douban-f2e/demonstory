@@ -20,7 +20,7 @@ define([
         },
 
         announce: function(screen, sfx){
-            return screen('首页', DESC, 500, sfx.walking);
+            return screen('首页', DESC, 5000, sfx.walking);
         },
 
         main: function(win, promise, sfx, root){

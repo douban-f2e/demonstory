@@ -33,6 +33,10 @@ define([
     }, duration || 1000, 'easeOut')
   }
 
+  function hide(el) {
+    el.remove()
+  }
+
   return {
     sfx: sfx,
 
@@ -50,10 +54,83 @@ define([
         , imgReception = $('#reception', doc)
         , imgCraftsman = $('#craftsman', doc)
         , imgCtba = $('#ctba', doc)
+        , imgCode = $('#code', doc)
+        , imgAlphatown = $('#alphatown', doc)
         , vote = $('#vote', doc)
 
-      demonRobot.sound(sfx.bgm, 200000, 80)
+      // teamMemberShow {
+      var person_tmpl = '<img width="96" height="96" src="/pics/gavatar/${id}.jpg">${name}'
+        , f2e_list = [
+            { name: 'Kejun', id: 'kejun' }
+            ,{ name: '龚浩', id: 'gonghao' }
+            ,{ name: '小明', id: 'dai' }
+            ,{ name: '石头', id: 'mockee' }
+            ,{ name: '大光', id: 'cmonday' }
+            ,{ name: '杨青', id: 'yangqing' }
+            ,{ name: '糖拌西红柿', id: 'migao' }
+            ,{ name: 'Robin', id: 'rob' }
+            ,{ name: 'Huwei', id: 'huwei' }
+            ,{ name: 'Dexter.yy', id: 'yy' }
+            ,{ name: '李飞', id: 'lifei' }
+            ,{ name: 'Ryan', id: 'ryan' }
+            ,{ name: '超哥', id: 'seechaos' }
+            ,{ name: '北玉', id: 'beiyuu' }
+            ,{ name: '饼饼', id: 'bingbing' }
+          ]
+        , wrapper
+        , f2es
 
+      function initF2es(){
+        var f2es = {};
+        f2e_list.forEach(function(item){
+          var person = item.name
+            , body = $('body', win.document)
+            , node = document.createElement('div')
+
+          node.className = 'f2e ' + item.id
+          node = $(node)
+          node.html(person_tmpl.replace('${id}', item.id)
+            .replace('${name}', item.name))
+
+          body.append(node)
+          node.css({
+            position: 'absolute',
+            top: '0px',
+            left: '-200px'
+          })
+
+          var demonItem = demon({
+            origin: node[0],
+            className: 'demon-' + item.id,
+            window: win
+          })
+
+          demonItem.showBody().showHands().showLegs();
+          f2es[item.id] = {
+            name: item.name,
+            dom: node,
+            demon: demonItem
+          }
+        })
+        return f2es
+      }
+
+      f2es = initF2es()
+
+      var kejun = f2es.kejun.demon
+        , yy = f2es.yy.demon
+        , cmonday = f2es.cmonday.demon
+        , bingbing = f2es.bingbing.demon
+        , gonghao = f2es.gonghao.demon
+        , seechaos = f2es.seechaos.demon
+
+      wrapper = $('.wrapper', win.document)
+      // }
+
+      var baseLeft = wrapper[0].offsetLeft + 200
+        , baseRight = wrapper.width() + baseLeft - 500
+
+      demonRobot.sound(sfx.bgm, 200000, 80)
       wait(1000).done(function() {
         util.showDemon(demonRobot)
         return wait(200 + 2000)
@@ -139,7 +216,7 @@ define([
       }).follow().done(function() {
         demonRobot.rotateHand('left', '30deg', 200)
         demonRobot.rotateHand('right', '-30deg', 200)
-        return demonRobot.walk([200, -150], 5000, 'easeOut')
+        return demonRobot.walk([200, -150], 500, 'easeOut')
       }).follow().done(function() {
         return fadeIn(imgReception[0])
       }).follow().done(function() {
@@ -167,10 +244,15 @@ define([
       }).follow().done(function() {
         return demonRobot.rotateHand('right', '-180deg', 300)
       }).follow().done(function() {
+        fadeIn(imgCode[0])
         return demonRobot.speak(
           '其实前端与其他码农的基本工作无异，都是将需求人肉变成机器语言。'
         , 6000, 7, sfx.r14)
       }).follow().done(function() {
+        return fadeOut(imgCode[0])
+      }).follow().done(function() {
+        imgCode.hide()
+        fadeIn(imgAlphatown[0])
         return demonRobot.speak(
           '区别在于，前端代码会蜕变为优雅易用的界面服务于最终用户。'
         , 6000, 7, sfx.r15)
@@ -179,6 +261,7 @@ define([
         demonRobot.rotateHand('right', '-30deg', 300)
         return demonRobot.walk([-80, 0], 1000, 'easeOut')
       }).follow().done(function() {
+        imgAlphatown.hide()
         return demonRobot.speak(
           '不过，早在驴宗年间，并没有多少人提及前端开发这个词儿。'
         , 5000, 6, sfx.r16)
@@ -225,7 +308,7 @@ define([
         return fadeIn(imgCtba[0])
       }).follow().done(function() {
         return demonRobot.speak(
-          '不过您可别小瞧了这些手艺人，他们中间很多都曾是身经百战风光一时的个人站长。'
+          '不过您可别小看了这些手艺人，他们中间很多都曾是身经百战风光一时的个人站长。'
         , 7000, 2, sfx.r19)
       }).follow().done(function() {
         demonRobot.rotateHand('left', '40deg', 300)
@@ -283,6 +366,87 @@ define([
         return demonRobot.speak(
           '显然，网页制作已无法准确描述这份庞杂的差事，前端开发一词由此诞生。'
         , 8000, 3, sfx.r24)
+      }).follow().done(function() {
+        return demonRobot.walk([100, -30], 500, 'easeOut')
+      }).follow().done(function() {
+        return demonRobot.speak('说了这么多，我们再来听听长工心目中的前端。', 3000, 6)
+      }).follow().done(function() {
+        return demonRobot.walk([250, -130], 600, 'easeOut')
+      })
+
+
+      // teamMemberShowAction {
+      .done(function(){
+        var offset = 150
+          , left = baseLeft - 150
+          , height = 500
+
+        cmonday.walk([ left + offset, height ], 1);
+        seechaos.walk([ left, height ], 1);
+        gonghao.walk([ left + offset*2, height ], 1);
+        return bingbing.walk([ left + offset*3, height ], 1);
+      }).follow().done(function(){
+        cmonday.walk([ 200, 1 ], 1900);
+        gonghao.walk([ 200, 1 ], 1900);
+        bingbing.walk([ 200, 1 ], 1900);
+        return seechaos.walk([ 200, 1 ], 2000);
+      }).follow().done(function(){
+        return wait(2000)
+      }).follow().done(function(){
+        return cmonday.walk([-120, -250], 2000)
+      }).follow().done(function(){
+        cmonday.rotateHand('right', '-120deg', 400)
+        return cmonday.speak('前端!就是能征服IE6的好小伙!!!', 3000, 3)
+      }).follow().done(function(){
+        cmonday.rotateHand('right', '40deg', 400)
+        return bingbing.walk([1, -200], 1000)
+      }).follow().done(function(){
+        return bingbing.speak('辰老师您说的不全', 3000, 1)
+      }).follow().done(function(){
+        return bingbing.speak('不会佛陀绣谱好意思说自己是前端吗？', 4000, 9)
+      }).follow().done(function(){
+        cmonday.walk([-100, -40], 2000)
+        bingbing.walk([50, 1], 300)
+        return gonghao.walk([-230, -250], 2000)
+      }).follow().done(function(){
+        return wait(200)
+      }).follow().done(function(){
+        return gonghao.speak('....', 2000, 12)
+      }).follow().done(function(){
+        return gonghao.speak('前端开发？前台端茶送水的，这还需要开发么？？', 3000, 3)
+      }).follow().done(function(){
+        gonghao.walk([150, 0], 1000)
+        return seechaos.jump(20, 20, 400)
+      }).follow().done(function(){
+        return seechaos.jump(20, 20, 400)
+      }).follow().done(function(){
+        return seechaos.speak('其实呢', 1000 , 9)
+      }).follow().done(function(){
+        return seechaos.walk([40, -100], 2000)
+      }).follow().done(function(){
+        seechaos.rotateHand('right', '-120deg', 400)
+        return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到……', 4000, 3)
+      }).follow().done(function(){
+        return wait(4000)
+      }).follow().done(function(){
+        cmonday.walk([-2000, 0], 500)
+        gonghao.walk([-2000, 0], 500)
+        bingbing.walk([-2000, 0], 500)
+        return seechaos.walk([-2000, 0], 500)
+      })
+      // }
+
+      .follow().done(function(){
+        return demonRobot.walk([-250, 130], 600, 'easeOut')
+      }).follow().done(function(){
+        return demonRobot.speak('网络世界中，前端的身影无处不在，它们见证了时代的变迁，你我生活的改变...', 6000, 6)
+      }).follow().done(function(){
+        return demonRobot.speak('好了，虽然呢还没跟您聊够。但是节目时长有限，咱们今天只能先聊到这儿了。', 6000, 6)
+      }).follow().done(function(){
+        return demonRobot.speak('如果您对前端这个行当还是意犹未尽，没关系，咱们年会结束后找个僻静的地方继续聊聊前端的人生理想。', 6000, 6)
+      }).follow().done(function(){
+        demonRobot.rotateHand('right', '-130deg', 200)
+        return demonRobot.speak('2013 新年快乐！回见了您呐。', 2000, 6)
       })
 
       return promise
