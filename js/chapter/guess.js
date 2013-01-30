@@ -66,6 +66,7 @@ define([
             'piggy/intro': '/media/guess/piggy/1.mp3',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
+            'piggy/clap': '/media/guess/piggy/clap.mp3',
             'piggy/push': '/media/guess/piggy/goaway.mp3',
             'piggy/intro-lu13': '/media/guess/piggy/2lu13.mp3',
             'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.mp3',
@@ -293,6 +294,7 @@ define([
 
                                 lu13.rotateHand('left', '30deg', 300);
                                 lu13.rotateHand('right', '-32deg', 240);
+                                piggyDemon.sound(sfx['piggy/clap'],5000,100);
 
                             });
 
@@ -317,6 +319,9 @@ define([
                     wait(2500 + 200).done(function() {
 
                         yingzi.speak('喜欢一切雅俗共赏、能刷新认识的电影…文艺你伤不起', 8000, 10, sfx['yingzi/intro']);
+                        wait(7500).done(function(){
+                            piggyDemon.sound(sfx['piggy/clap'],5000,100);
+                        })
 
                     });
 
@@ -338,11 +343,12 @@ define([
 
                         su37.speak('为了方便大家记忆，从今年开始，以后每年我都是37岁，今后大家再也不用计算我多少岁啦，是不是好轻松的感觉！举手之劳，方便别人，方便自己，低碳环保，利国利民。', 14000, 12, sfx['su37/intro']);
 
-                        wait(14000 + 200).done(function() {
+                        wait(13500 + 200).done(function() {
 
                             su37.rotateHand('right', '-56deg', 200);
+                            piggyDemon.sound(sfx['piggy/clap'],3000,100);
 
-                            wait(200 + 100).done(function() {
+                            wait(1000 + 100).done(function() {
 
                                 su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 4000, 11, sfx['su37/intro-1']);
 
@@ -390,7 +396,10 @@ define([
 
                     wait(1500 + 200).done(function() {
 
-                        chaoge.speak('我也不知道我为什么会出现在这里，要问就问编剧吧。虽然我也不知道编剧是谁……', 8000, 12, sfx['chaoge/hello']);
+                        chaoge.speak('我也不知道我为什么会出现在这里，要问就问编剧吧。虽然我也不知道编剧是谁', 8000, 12, sfx['chaoge/hello']);
+                        wait(7500).done(function(){
+                            piggyDemon.sound(sfx['piggy/clap'],2000,100);
+                        })
 
                     });
 
@@ -444,6 +453,7 @@ define([
                     return wait(3000 + 2000 + 9800 + 14800 + 2800 + 6000 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    piggyDemon.sound(sfx['piggy/clap'],3000,100);
                     sectionPromise.fire();
                 });
 
@@ -523,6 +533,7 @@ define([
                     return wait(25000);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                    piggyDemon.sound(sfx['piggy/clap'],3000,100);
                     return wait(3000 + 200);
 
                 }).follow().done(function() {
@@ -948,6 +959,7 @@ define([
 
                 }).follow().done(function() {
 
+                    piggyDemon.sound(sfx['piggy/clap'],3000,100);
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
 
                     return wait(3000 + 200);
