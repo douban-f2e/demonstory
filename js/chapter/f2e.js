@@ -12,7 +12,7 @@ define([
     , jump_count = 0
     , sfx = {}
 
-  for (var i = 1; i < 30; i++) {
+  for (var i = 1; i < 35; i++) {
     sfx['r' + i] = 'f2e/r' + i + '.mp3'
   }
 
@@ -393,14 +393,14 @@ define([
         return cmonday.walk([-120, -250], 2000)
       }).follow().done(function(){
         cmonday.rotateHand('right', '-120deg', 400)
-        return cmonday.speak('前端!就是能征服IE6的好小伙!!!', 3000, 3)
+        return cmonday.speak('前端!就是能征服IE6的好小伙!!!', 3000, 3, sfx.r30)
       }).follow().done(function(){
         cmonday.rotateHand('right', '40deg', 400)
         return bingbing.walk([1, -200], 1000)
       }).follow().done(function(){
-        return bingbing.speak('辰老师您说的不全', 3000, 1)
+        return bingbing.speak('辰老师您说的不全', 2000, 1, sfx.r31)
       }).follow().done(function(){
-        return bingbing.speak('不会佛陀绣谱好意思说自己是前端吗？', 3000, 9)
+        return bingbing.speak('不会佛陀绣谱好意思说自己是前端吗？', 4000, 9, sfx.r32)
       }).follow().done(function(){
         cmonday.walk([-100, -40], 2000)
         bingbing.walk([50, 1], 300)
@@ -408,12 +408,13 @@ define([
       }).follow().done(function(){
         return seechaos.jump(20, 20, 400)
       }).follow().done(function(){
-        return seechaos.speak('其实呢', 1000 , 9)
+        return seechaos.speak('其实呢', 2000 , 9, sfx.r33)
       }).follow().done(function(){
         return seechaos.walk([40, -100], 1000)
       }).follow().done(function(){
         seechaos.rotateHand('right', '-120deg', 400)
-        return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到……', 4000, 3)
+        return seechaos.speak('前端开发是最有资本卖萌的工程师职位。因为在网页源代码里示个爱，搞个浏览器插件求婚什么的，女朋友很容易看到……',
+               11000, 3, sfx.r34)
       }).follow().done(function(){
         return wait(4000)
       }).follow().done(function(){
