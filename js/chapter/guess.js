@@ -411,7 +411,7 @@ define([
                         return wait(14000 + 800);
 
                     });
-                    return wait(3000 + 2000 + 9800 + 14800 + 2800 + 6000 + 200);
+                    return wait(3000 + 2000 + 9800 + 14800 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     piggyDemon.sound(sfx['piggy/clap'],3000,100);
