@@ -89,7 +89,7 @@
     left: 0px;
     @include transform-origin(50%, 0%);
     @include transition(
-      height 0.4s ease-in-out
+      height 0.4s ceaser('easeOutBack')
     );
   }
 
