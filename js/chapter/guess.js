@@ -177,7 +177,7 @@ define([
 
                 piggyDemon.speak('旧的不去，新的不来，今儿我们启用全新的大舞台！', 4000, 9);
 
-                return wait(5000);
+                return wait(4200);
 
             }).follow().done(function() {
 
@@ -280,7 +280,7 @@ define([
 
                             lu13.speak('他大舅他二舅都是他舅，高桌子低板凳都是木头，我是你十三爷。', 8000, 12, sfx['lu13/intro']);
 
-                            wait(7000).done(function() {
+                            wait(6500).done(function() {
 
                                 lu13.rotateHand('left', '30deg', 300);
                                 lu13.rotateHand('right', '-32deg', 240);
@@ -294,7 +294,7 @@ define([
 
                 });
 
-                return wait(800 + 3200 + 8500 + 300);
+                return wait(800 + 3200 + 8000);
 
             }).follow().done(function() {
 
@@ -341,7 +341,7 @@ define([
 
                                 su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 4000, 11, sfx['su37/intro-1']);
 
-                                wait(4000 + 200).done(function() {
+                                wait(3800).done(function() {
 
                                     var lu13 = judges['lu13'].demon,
                                         yingzi = judges['yingzi'].demon;
@@ -371,14 +371,14 @@ define([
 
                 });
 
-                return wait(3000 + 2000 + 14000 + 5800);
+                return wait(3000 + 2000 + 14000 + 5000);
 
             })
 
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
                 //fucking debug
-                //return wait(0)
+                return wait(0)
 
                 var sectionDemon = sectionDemons[1],
                     su37 = judges['su37'].demon,
@@ -390,30 +390,29 @@ define([
 
                 sectionDemon.me.css('top', '140px');
 
-                wait(4500).done(function() {
+                wait(4000).done(function() {
                     sectionDemon.sound(sfx['yidai'], 3000, 100);
 
-                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
-                    wait(2500).done(function() {
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 2000);
+                    wait(2000).done(function() {
 
                         lu13.speak('骚！', 1800, 12, sfx['lu13/section-1']);
-                        return wait(1800 + 800);
+                        return wait(2000);
 
                     }).follow().done(function() {
 
                         yingzi.speak('我。没。看。懂。这。个。武。术。家。出。轨。未。遂。的。片。子。呀。。。', 9000, 12, sfx['yingzi/section-1']);
-                        return wait(9000 + 800);
+                        return wait(9000);
 
                     }).follow().done(function() {
 
                         su37.speak('故事都讲不周全，还拍个啥电影？只会摆格调的话，应该去搞展览，比如”带墨镜的人”之类的主题展应该更适合他。', 14000, 12, sfx['su37/section-1']);
                         return wait(14000);
 
-                    });
-                    return wait(3000 + 2000 + 9800 + 14800 + 200);
+                    })
+                    return wait(3000 + 2000 + 9000 + 10500);
                 }).follow().done(function() {
-                    sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                    piggyDemon.sound(sfx['piggy/clap'],3000,100);
+                    sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 1500, 'easeIn');
                     sectionPromise.fire();
                 });
 
