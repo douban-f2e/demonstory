@@ -43,7 +43,13 @@ define([
         , splHeadline
         , splCenter
 
-      // splCover.startFollowing()
+  function previewMode(bo) {
+     util.preview_mode = screen.preview_mode
+      = demonWang.preview_mode
+      = demonCover.preview_mode = bo
+  }
+
+
 
       wait(1000).done(function(){
         demonWang = demon({
@@ -117,7 +123,7 @@ define([
           return demonWang.rotateHand('right', '-150deg', 200);
         });
         return demonWang.jump(40, [], 405).done(function(){
-          if (jump_count++ < 2) {
+          if (jump_count++ < 1) {
             return fn();
           } else {
             jump_count = 0;
@@ -165,17 +171,17 @@ define([
       }).follow().done(function() {
         return demonWang.speak('。。。', 1000, 10)
       }).follow().done(function() {
-        return demonCover.speak('你所在的所谓 Facebook 正是拆分后的大社区。', 5000, 2, sfx.c7)
+        return demonCover.speak('你所在的所谓 Facebook 正是拆分后的大社区。', 4800, 2, sfx.c7)
       }).follow().done(function() {
-        return demonCover.speak('不仅如此...', 2000, 3, sfx.c8)
+        return demonCover.speak('不仅如此...', 1200, 3, sfx.c8)
       }).follow().done(function() {
-        return demonWang.speak('别磨叽！', 1000, 10, sfx.w5)
+        return demonWang.speak('别磨叽！', 800, 10, sfx.w5)
       }).follow().done(function() {
-        return demonCover.speak('推特其实也不存在，人们所知的推特只是友邻广播的一个分支版本。', 6500, 2, sfx.c9)
+        return demonCover.speak('推特其实也不存在，人们所知的推特只是友邻广播的一个分支版本。', 6100, 2, sfx.c9)
       }).follow().done(function() {
-        return demonCover.speak('豆瓣FM 后来成了潘多拉。', 3000, 3, sfx.c10)
+        return demonCover.speak('豆瓣FM 后来成了潘多拉。', 2400, 3, sfx.c10)
       }).follow().done(function() {
-        return demonCover.speak('最近被封的 github 的正是 Code 项目的延续...', 4000, 2, sfx.c11)
+        return demonCover.speak('最近被封的 github 的正是 Code 项目的延续...', 3500, 2, sfx.c11)
       }).follow().done(function() {
         splCenter.light.addClass('fadeOut')
         return demonCover.speak('这些拆分后的小公司大都成了各自领域的标杆，从而激起了整个互联网的进取之心', 6000, 3, sfx.c12)
@@ -191,7 +197,7 @@ define([
         demonCover.walk([-250, -50], 600, 'easeOut')
         return wait(500)
       }).follow().done(function() {
-        return demonCover.speak('呵呵，就知道你小子会喜欢', 4000, 3, sfx.c14)
+        return demonCover.speak('呵呵，就知道你小子会喜欢', 3700, 3, sfx.c14)
       }).follow().done(function() {
         demonWang.walk([-240, -130], 600, 'easeOut')
         return wait(500)
@@ -209,7 +215,7 @@ define([
       }).follow().done(function() {
         demonBtn.rotateHand('left', '150deg', 400);
         demonBtn.rotateHand('right', '-150deg', 400);
-        return demonBtn.speak('现在戳我购买还送 192k 高速 VPN 哦！', 5900, 3, sfx.btn)
+        return demonBtn.speak('现在戳我购买还送 192k 高速 VPN 哦！', 4600, 3, sfx.btn)
       }).follow().done(function() {
         demonWang.speak('赞！', 1000, 10, sfx.c16)
         return demonCover.speak('赞！', 1000, 3, sfx.w9)
