@@ -393,8 +393,6 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
-                return wait(0);
-
                 var sectionDemon = sectionDemons[1],
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
@@ -442,8 +440,6 @@ define([
 
             /* section#2 FM by lifei */
             .follow().done(function() {
-
-                return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
@@ -1032,14 +1028,14 @@ define([
                 }).follow().done(function(){
 
                     laoka.walk([400,-50],2000);
-                    laoka.sound(sfx['ka/section-6-2'],6000,100)
-                    piggyDemon.sound(sfx['piggy/police'],15000,100)
+                    laoka.sound(sfx['ka/section-6-2'],6000,100);
+                    piggyDemon.sound(sfx['piggy/police'],15000,100);
                     wait(2000 + 200).done(function(){
                         laoka.speak('哼哼，这下知道首页是谁的了吧！！！',4000, 6);
                     });
                     wait(6000+300).done(function(){
                         laoka.walk([2400,-50],4000);
-                    })
+                    });
 
                     return wait(18000 + 200);
 
