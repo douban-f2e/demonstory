@@ -58,7 +58,6 @@ define([
             opening: '/media/guess/opening.mp3',
             exiting: '/media/guess/exiting.mp3',
             click: '/media/guess/click.mp3',
-            'piggy/chaoge': '/media/guess/piggy/intro.m4a',
             'piggy/intro': '/media/guess/piggy/1.mp3',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
@@ -110,7 +109,8 @@ define([
             'fm/fm_pro': '/media/guess/fm/fm_pro.mp3',
             'li/zuguo': '/media/guess/lichengpeng/zuguo.m4a',
             'li/cuhua': '/media/guess/lichengpeng/cuhua.m4a',
-            'li/shengren': '/media/guess/lichengpeng/shengren.m4a'
+            'li/shengren': '/media/guess/lichengpeng/shengren.m4a',
+            'xiangce/bg': '/media/guess/xiangce/bg.mp3'
         },
 
         announce: function(screen, sfx) {
@@ -522,43 +522,40 @@ define([
             /* section#3 相册 by gonghao */
             .follow().done(function() {
 
-                // return wait(0);
-
                 var sectionDemon = sectionDemons[3],
                     chaoge = judges['chaoge'].demon,
                     su37 = judges['su37'].demon,
                     yingzi = judges['yingzi'].demon,
                     lu13 = judges['lu13'].demon,
-                    sectionPromise = new event.Promise();
+                    sectionPromise = new event.Promise(),
+                    bgAudio = sfx['xiangce/bg'];
 
                 piggyDemon.speak('欢迎下一位选手入场，这位选手的名字叫『有容乃大』。。。', 6000, 12, sfx['piggy/section-3']);
 
                 wait(6000 + 200).done(function() {
 
-                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
+                    bgAudio.setVolume(20);
+                    bgAudio.play();
 
-                    wait(800).done(function() {
+                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 8000);
+
+                    wait(1500).done(function() {
 
                         su37.speak('远了点儿，走近了爷仔细看看', 4500, 12, sfx['su37/section-3']);
 
                         return wait(3000);
 
                     }).follow().done(function() {
-                        chaoge.speak('Hmm.. 看起来很美味的样子', 6000, 12, sfx['chaoge/yummy']);
+                        chaoge.speak('Hmm.. 看起来很美味的样子', 4500, 12, sfx['chaoge/yummy']);
 
-                        return wait(6000 + 300);
-
-                    }).follow().done(function() {
-
-                        yingzi.speak('想：嗯，给力！', 500, 10);
-
-                        lu13.speak('想：大爱X大呀！', 600, 12);
-
-                        return wait(800 + 200);
+                        wait(2000).done(function() {
+                            yingzi.speak('想：嗯，给力！', 500, 10);
+                            lu13.speak('想：大爱X大呀！', 600, 12);
+                        });
 
                     });
 
-                    return wait(6000 + 200);
+                    return wait(8500 + 200);
 
                 }).follow().done(function() {
 
@@ -582,6 +579,8 @@ define([
                             })
                             .appendTo(doc.body);
 
+                        bgAudio.pause();
+
                         return wait(500);
 
                     }).follow().done(function() {
@@ -595,7 +594,7 @@ define([
                             duration: 800
                         });
 
-                        return wait(800 + 200);
+                        return wait(800 + 500);
 
                     }).follow().done(function() {
 
@@ -723,10 +722,11 @@ define([
                         }, 200);
 
                         action.follow().done(function() {
+                            bgAudio.play();
                             $('#pause', doc).remove();
                         });
 
-                        return wait(200 + 200);
+                        return wait(200 + 1000);
 
                     }).follow().done(function() {
 
@@ -743,7 +743,10 @@ define([
 
                         var sectionDemon = sectionDemons[3];
 
-                        sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                        sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn')
+                            .done(function() {
+                                bgAudio.fadeOut(200);
+                            });
 
                         return wait(3000 + 200);
 
@@ -763,8 +766,6 @@ define([
 
             /* section#4 猫 by zhaoguo */
             .follow().done(function() {
-
-                // return wait(0);
 
                 var sectionDemon = sectionDemons[4],
                     chaoge = judges['chaoge'].demon,
@@ -840,8 +841,6 @@ define([
 
             /* section#5 阿北 by gonghao */
             .follow().done(function() {
-
-                // return wait(0);
 
                 var sectionDemon = sectionDemons[5],
                     chaoge = judges['chaoge'].demon,
@@ -945,8 +944,6 @@ define([
 
             /* section#6 拖黑 by zhaoguo */
             .follow().done(function() {
-
-                // return wait(0);
 
                 var sectionDemon = sectionDemons[6],
                     chaoge = judges['chaoge'].demon,
