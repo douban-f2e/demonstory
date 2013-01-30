@@ -55,6 +55,7 @@ define([
         sfx: {
             intro: '/media/guess/intro.mp3',
             exiting: '/media/guess/exiting.mp3',
+            click: '/media/guess/click.mp3',
             'piggy/chaoge': '/media/guess/piggy/intro.m4a',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
@@ -288,7 +289,7 @@ define([
 
             }).follow().done(function() {
 
-                piggyDemon.speak('接下来是芙蓉镇影支书～～', 3000, 8, sfx['piggy/intro-yingzi']);
+                piggyDemon.speak('接下来是芙蓉镇田佳芝～～', 3000, 8, sfx['piggy/intro-yingzi']);
 
                 wait(3000 + 200).done(function() {
 
@@ -385,7 +386,7 @@ define([
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
-                // return wait(0);
+                return wait(0);
 
                 var sectionDemon = sectionDemons[1],
                     chaoge = judges['chaoge'].demon,
@@ -435,7 +436,7 @@ define([
             /* section#2 FM by lifei */
             .follow().done(function() {
 
-                // return wait(0);
+                return wait(0);
 
                 var proDemon = sectionDemons['fm-pro'],
                     normalDemon = sectionDemons['fm-normal'],
@@ -534,11 +535,11 @@ define([
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 5000);
 
-                    wait(1000).done(function() {
+                    wait(800).done(function() {
 
-                        su37.speak('远了点儿，走近了爷仔细看看', 6000, 12, sfx['su37/section-3']);
+                        su37.speak('远了点儿，走近了爷仔细看看', 4500, 12, sfx['su37/section-3']);
 
-                        return wait(4000);
+                        return wait(3000);
 
                     // }).follow().done(function() {
 
@@ -556,7 +557,7 @@ define([
 
                     });
 
-                    return wait(10000 + 200);
+                    return wait(6000 + 200);
 
                 }).follow().done(function() {
 
@@ -612,7 +613,11 @@ define([
                             left: '490px'
                         }, 500, 'easeOut');
 
-                        return wait(500 + 200);
+                        wait(500 + 200).done(function() {
+                            sectionDemon.sound(sfx['click'], 1000, 100);
+                        });
+
+                        return wait(500 + 200 + 1000 + 200);
 
                     }).follow().done(function() {
 
