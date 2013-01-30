@@ -679,7 +679,12 @@ define([
                             left: '750px'
                         }, 800, 'easeOut');
 
-                        return wait(800 + 400);
+                        wait(800 + 200).done(function() {
+                            sfx['click'].setTime(0);
+                            sectionDemon.sound(sfx['click'], 1000, 100);
+                        });
+
+                        return wait(800 + 400 + 500);
 
                     }).follow().done(function() {
 
