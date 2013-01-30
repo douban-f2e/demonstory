@@ -11,7 +11,7 @@ define([
 
     var wait = util.wait,
 
-        DESC = '本节目由豆瓣广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣阅读，豆瓣小组，豆瓣 FM 及 更多 赞助播出。好条目数据由 fili 鼎力呈现，上 fili ， 与 502 也不期而遇……',
+    //DESC = '本节目由豆瓣广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣阅读，豆瓣小组，豆瓣 FM 及 更多 赞助播出。豆瓣电影，让好座位来找你；豆瓣FM，与好音乐期而遇；豆瓣阅读，带来雪意与五点钟。好条目由 fili 鼎力呈现，上 fili ， 与 502 不期而遇……',
 
         JUDGE_LIST = [
             { name: '卤十三', id: 'lu13' },
@@ -54,7 +54,7 @@ define([
 
         sfx: {
             intro: '/media/guess/intro.mp3',
-            curtain: '/media/guess/curtain.mp3',
+            curtain: '/media/guess/curtain-long.mp3',
             opening: '/media/guess/opening.mp3',
             exiting: '/media/guess/exiting.mp3',
             click: '/media/guess/click.mp3',
@@ -116,7 +116,7 @@ define([
 
         announce: function(screen, sfx) {
 
-            return screen('“豆瓣好条目”——我要上首页', DESC, 5500, sfx.curtain);
+            return screen('“豆瓣好条目”——我要上首页', '', 15000, sfx.curtain);
 
         },
 
