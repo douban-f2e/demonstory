@@ -4,10 +4,13 @@ define([
     'choreo'
 ], function(_, $, choreo){
 
+  var PREVIEW_DURATION = 10;
+
   function Camera(win) {
     this.action = choreo().play();
     this.win = win;
     this.doc = $(win.document.body);
+    this.preview_mode = false;
   }
 
   // Move viewport to some center point
@@ -17,6 +20,10 @@ define([
     var offset = args.offset;
     var zoom = args.zoom || 1.5;
     var duration = args.duration || 1200;
+
+    if (this.preview_mode) {
+      duration = PREVIEW_DURATION;
+    }
 
     var action = choreo().play();
 
@@ -58,6 +65,10 @@ define([
 
   Camera.prototype.reset = function(duration) {
     duration = duration || 320;
+    if (this.preview_mode) {
+      duration = PREVIEW_DURATION;
+    }
+
     var action = choreo().play();
 
     var doc = this.doc;

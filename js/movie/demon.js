@@ -8,10 +8,13 @@ define([
     'moui/bubble'
 ], function(_, $, event, choreo, buzz, bubble){
 
+    var PREVIEW_DURATION = 10;
+
     function Demon(opt){
         var win = this.window = opt.window || window,
             body = $(win.document.body),
             origin = this.origin = $(opt.origin);
+        this.preview_mode = false;
         this._resolved_promise = event().resolve();
         this.eyeLeft = $('<span class="eye eye-left"><span></span></span>');
         this.eyeRight = $('<span class="eye eye-right"><span></span></span>');
@@ -61,6 +64,9 @@ define([
         },
 
         rotateEye: function(deg, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var action = choreo().play(),
                 v = 'rotate(' + deg + ')';
             action.actor(this.eyeLeft[0], {
@@ -73,6 +79,9 @@ define([
         },
 
         moveEye: function(offset, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             this.normalEye();
             var action = choreo().play(),
                 left_pupil = this.eyeLeft.find('span')[0],
@@ -88,6 +97,9 @@ define([
         },
 
         squintEye: function(duration){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var self = this,
                 promise = new event.Promise();
             this.rotateEye('0');
@@ -108,6 +120,9 @@ define([
         }, 
 
         rotateHand: function(side, deg, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var action = choreo().play(),
                 v = 'rotate(' + deg + ')';
             action.actor(this['hand' + capitalize(side)][0], {
@@ -117,34 +132,40 @@ define([
         },
 
         waveHand: function(side, times, gap, deg, duration) {
-          side = side || 'left';
-          times = times || 6;
-          duration = duration || 400;
-          gap = gap || 30;
-          deg = deg || 150;
-
-          var self = this;
-          var ended = false;
-          function doRotate() {
-            if (!times) return;
-            var d = deg + gap;
-            if (ended) {
-              d = 30;
-              duration = 200;
-            } else if (times == 1) {
-              ended = true;
-              times += 1;
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
             }
-            self.rotateHand(side, d + 'deg', duration).done(function() {
-              times--;
-              gap = - gap;
-              doRotate();
-            });
-          }
-          return doRotate();
+            side = side || 'left';
+            times = times || 6;
+            duration = duration || 400;
+            gap = gap || 30;
+            deg = deg || 150;
+
+            var self = this;
+            var ended = false;
+            function doRotate() {
+                if (!times) return;
+                var d = deg + gap;
+                if (ended) {
+                    d = 30;
+                    duration = 200;
+                } else if (times == 1) {
+                    ended = true;
+                    times += 1;
+                }
+                self.rotateHand(side, d + 'deg', duration).done(function() {
+                    times--;
+                    gap = - gap;
+                    doRotate();
+                });
+            }
+            return doRotate();
         },
 
         rotateLeg: function(side, deg, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var action = choreo().play(),
                 v = 'rotate(' + deg + ')';
             action.actor(this['leg' + capitalize(side)][0], {
@@ -154,6 +175,9 @@ define([
         },
 
         jump: function(height, offsets, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var action = choreo(),
                 action_drop = choreo(),
                 me = this.me,
@@ -171,6 +195,9 @@ define([
         },
 
         move: function(offsets, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var self = this,
                 action = choreo(),
                 x = parseFloat(offsets[0] || 0),
@@ -192,6 +219,9 @@ define([
         },
 
         walk: function(offsets, duration, easing){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var left_action = choreo(),
                 right_action = choreo(),
                 is_end = false,
@@ -242,6 +272,9 @@ define([
         },
 
         speak: function(text, duration, clock, src, vol){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var self = this,
                 promise = new event.Promise();
             clearTimeout(self._wordsTimer);
@@ -276,6 +309,9 @@ define([
         },
 
         sound: function(src, duration, vol){
+            if (this.preview_mode) {
+                duration = PREVIEW_DURATION;
+            }
             var sound,
                 promise = new event.Promise();
             if (typeof src === 'string' || Array.isArray(src)) {
