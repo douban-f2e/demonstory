@@ -4,27 +4,28 @@ define([
     'dollar',
     'eventmaster',
     'movie/util',
+    'movie/camera',
     'movie/demon'
-], function(_, $, event, util, demon){
+], function(_, $, event, util, camera, demon){
 
     var wait = util.wait,
-
-        DESC = "我们的第一个故事就发生在今年，那是一个晴朗慵懒的午后，工程师们都去BHG抢盒饭了，豆瓣的首页沉浸在改版后一片宁静祥和的气氛中……", 
 
         jump_count = 0;
 
     return {
 
         sfx: {
-            walking: 'walking.mp3'
+            odyssey: 'intro/2001spaceodyssey.mp3'
         },
 
         announce: function(screen, sfx){
-            return screen('首页', DESC, 5000, sfx.walking);
+            sfx.odyssey.play();
+            return screen('2012', "", 19000);
         },
 
         main: function(win, promise, sfx, root){
             var doc = win.document,
+                screen = camera(win),
                 nav_elms = $('.nav-items li a', doc),
                 topbar_elms = $('.global-nav-items ul li a', doc),
                 demon_book = demon({
@@ -78,93 +79,176 @@ define([
                     window: win
                 });
 
-            demon_update.showBody();
-            wait(400 + 1000).done(function(){
+            wait(7800).done(function(){
 
-                demon_update.speak('要有光！', 2000, 6, sfx.walking);
-                return wait(1300);
+                demon_update.showBody();
+                return wait(4500);
+
+            }).follow().done(function(){
+
+                return screen.pan({
+                    elem: demon_update.me[0],
+                    offset: {
+                        top: -240
+                    },
+                    zoom: 2,
+                    duration: 4000
+                });
+
+            }).follow().done(function(){
+
+                return wait(800);
 
             }).follow().done(function(){
 
                 demon_update.showEyes();
-                return wait(400 + 1500);
+                return wait(2200);
 
             }).follow().done(function(){
 
-                demon_update.rotateEye('90deg', 0);
-                return demon_update.moveEye(0.6, 200);
+                demon_update.rotateEye('-90deg', 0);
+                return demon_update.moveEye(0.6, 800);
+
+            }).follow().done(function(){
+
+                return wait(1700);
+
+            }).follow().done(function(){
+
+                return demon_update.rotateEye('130deg', 800);
                 
             }).follow().done(function(){
 
-                return wait(800);
+                return wait(2000);
 
             }).follow().done(function(){
 
-                demon_update.speak('要有脚！', 2000, 6);
-                return wait(1300);
+                demon_dongxi.speak('', 1000, 3);
+                return demon_update.rotateEye('90deg', 500);
+
+            }).follow().done(function(){
+
+                return wait(1000);
 
             }).follow().done(function(){
 
                 demon_update.showLegs();
-                return wait(400 + 1200);
-
-            }).follow().done(function(){
-
-                return demon_update.rotateEye('130deg', 400);
-
-            }).follow().done(function(){
-
-                return wait(800);
-
-            }).follow().done(function(){
-
-                demon_update.speak('组成躯干和手臂！', 2500, 6);
-                return wait(1500);
+                return wait(4500);
 
             }).follow().done(function(){
 
                 demon_update.showHands();
-                return wait(400 + 1200);
+                return wait(2000);
 
             }).follow().done(function(){
 
-                demon_update.rotateEye('-90deg', 400);
+                demon_update.rotateHand('left', '30deg', 400);
+                demon_update.rotateHand('right', '-30deg', 400);
 
-                demon_update.speak('我来组成头部！！！', 1000, 6);
-
-                demon_update.rotateHand('left', '150deg', 400);
-                return demon_update.rotateHand('right', '-150deg', 400);
+                return demon_update.moveEye(-0.8, 800);
 
             }).follow().done(function(){
 
-                demon_update.rotateHand('left', '50deg', 400);
-                return demon_update.rotateHand('right', '-50deg', 400);
+                demon_update.rotateHand('left', '170deg', 3000);
+                return demon_update.rotateHand('right', '-170deg', 3000);
 
             }).follow().done(function(){
 
-                demon_update.rotateHand('left', '150deg', 400);
-                return demon_update.rotateHand('right', '-150deg', 400);
+                return wait(1000);
 
             }).follow().done(function(){
 
-                demon_update.speak('不好意思，入戏太深了……', 1000, 6);
-                return demon_update.squintEye(1400);
+                demon_update.rotateHand('left', '60deg', 1000);
+                return demon_update.rotateHand('right', '-60deg', 1000);
 
             }).follow().done(function(){
 
-                return util.showDemon(demon_suit);
+                var fn = arguments.callee;
+
+                demon_update.rotateHand('left', '60deg', 1000).done(function(){
+                    return demon_update.rotateHand('left', '150deg', 1000);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('left', '60deg', 1000);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('left', '150deg', 1000);
+                });
+
+                demon_update.rotateHand('right', '-60deg', 1000).done(function(){
+                    return demon_update.rotateHand('right', '-150deg', 1000);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('right', '-60deg', 1000);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('right', '-150deg', 1000);
+                });
+
+                return demon_update.jump(20, [], 2000).done(function(){
+                    if (jump_count++ < 9) {
+                        if (jump_count == 5) {
+                            screen.pan({
+                                elem: demon_update.me[0],
+                                offset: {
+                                    top: -240
+                                },
+                                zoom: 1,
+                                duration: 8000
+                            });
+                        }
+                        return fn();
+                    } else {
+                        jump_count = 0;
+                        return wait(1000);
+                    }
+                }).follow();
 
             }).follow().done(function(){
+
+                jump_count = 0;
+                demon_update.squintEye(2000);
+                return wait(10);
+
+            }).follow().done(function(){
+
+                var fn = arguments.callee;
+
+                demon_update.rotateHand('left', '60deg', 400).done(function(){
+                    return demon_update.rotateHand('left', '150deg', 400);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('left', '60deg', 400);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('left', '150deg', 400);
+                });
+
+                demon_update.rotateHand('right', '-60deg', 400).done(function(){
+                    return demon_update.rotateHand('right', '-150deg', 400);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('right', '-60deg', 400);
+                }).follow().done(function(){
+                    return demon_update.rotateHand('right', '-150deg', 400);
+                });
+
+                return wait(800).done(function(){
+                    if (jump_count++ < 3) {
+                        return fn();
+                    } else {
+                        jump_count = 0;
+                        return wait(400);
+                    }
+                }).follow();
+
+            }).follow().done(function(){
+
+                util.showDemon(demon_suit);
+                return wait(400);
+
+            }).follow().done(function(){
+
+                demon_update.moveEye(0.6, 0);
+                demon_update.rotateEye('40deg', 600);
 
                 demon_suit.rotateEye('-90deg', 0);
                 demon_suit.moveEye(0.6, 200).done(function(){
                     demon_suit.rotateEye('-140deg', 400);
                 });
-
-                demon_update.rotateHand('left', '50deg', 400);
-                demon_update.rotateHand('right', '-50deg', 400);
-                demon_update.moveEye(0.6, 0);
-                demon_update.rotateEye('40deg', 400);
 
                 return demon_suit.speak('吵死了吵死了', 1500, 9);
 
@@ -177,6 +261,9 @@ define([
                 return wait(500);
 
             }).follow().done(function(){
+
+                demon_update.rotateHand('left', '50deg', 400);
+                demon_update.rotateHand('right', '-50deg', 400);
 
                 return demon_update.speak('矮油', 1500, 6);
 
