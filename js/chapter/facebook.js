@@ -169,11 +169,11 @@ define([
       }).follow().done(function() {
         return demonCover.speak('后来为了避免被反垄断法缠身，驴宗王先一步拆分了公司。', 6000, 3, sfx.c6)
       }).follow().done(function() {
-        return demonWang.speak('。。。', 1000, 10)
+        return demonWang.speak('。。。', 400, 10)
       }).follow().done(function() {
         return demonCover.speak('你所在的所谓 Facebook 正是拆分后的大社区。', 4800, 2, sfx.c7)
       }).follow().done(function() {
-        return demonCover.speak('不仅如此...', 1200, 3, sfx.c8)
+        return demonCover.speak('不仅如此...', 1400, 3, sfx.c8)
       }).follow().done(function() {
         return demonWang.speak('别磨叽！', 800, 10, sfx.w5)
       }).follow().done(function() {
@@ -215,7 +215,7 @@ define([
       }).follow().done(function() {
         demonBtn.rotateHand('left', '150deg', 400);
         demonBtn.rotateHand('right', '-150deg', 400);
-        return demonBtn.speak('现在戳我购买还送 192k 高速 VPN 哦！', 4600, 3, sfx.btn)
+        return demonBtn.speak('现在戳我购买还送 192k 高速 VPN 哦！', 4100, 3, sfx.btn)
       }).follow().done(function() {
         demonWang.speak('赞！', 1000, 10, sfx.c16)
         return demonCover.speak('赞！', 1000, 3, sfx.w9)
