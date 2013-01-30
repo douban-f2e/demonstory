@@ -46,19 +46,20 @@ define([
 
                 var sfx_queue = [],
                     sfx_lib = {};
-                Object.keys(script.sfx).forEach(function(name){
-                    var promise = new event.Promise();
-                    var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
-                    sound.load();
-                    sound.bindOnce('canplay', promise.pipe.resolve);
-                    sfx_queue.push(promise);
-                }, script.sfx);
+                if (script.sfx) {
+                    Object.keys(script.sfx).forEach(function(name){
+                        var promise = new event.Promise();
+                        var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
+                        sound.load();
+                        sound.bindOnce('canplay', promise.pipe.resolve);
+                        sfx_queue.push(promise);
+                    }, script.sfx);
+                }
+                if (!sfx_queue.length) {
+                    sfx_queue.push(new event.Promise().resolve());
+                }
 
                 event.when.apply(event, sfx_queue).done(function(){
-
-                    return script.announce(screen, sfx_lib);
-
-                }).follow().done(function(){
 
                     director.stage.bind('load', function(){
                         var win = this.contentWindow;
@@ -69,16 +70,20 @@ define([
                         }, 200);
                     }).attr('src', chapter.stage);
 
-                });
+                    return observer.promise('ready');
 
-                observer.when('ready', 'announceHidden').done(function(win){
+                }).follow().done(function(win){
 
-                    director.curtain.addClass('folded');
-                    setTimeout(function(){
-                        observer.fire('go', [win]);
-                    }, 1000);
+                    return script.announce(screen, sfx_lib).done(function(){
 
-                    return observer.promise('go');
+                        director.curtain.addClass('folded');
+                        setTimeout(function(){
+                            observer.fire('go', [win]);
+                        }, 1000);
+
+                        return observer.promise('go');
+
+                    }).follow();
 
                 }).follow().done(function(win){
 
@@ -118,23 +123,22 @@ define([
         } else {
             sound = src;
         }
-        if (vol) {
-            sound.setVolume(vol);
+        if (sound) {
+            if (vol) {
+                sound.setVolume(vol);
+            }
+            sound.play();
         }
-        sound.play();
-        observer.when('ready', 'announceEnd').then(function(){
+        setTimeout(function(){
+            if (sound && !sound.isEnded()) {
+                sound.pause();
+            }
             box.removeClass('active');
             setTimeout(function(){
                observer.fire('announceHidden');
             }, 500);
-        });
-        setTimeout(function(){
-            if (!sound.isEnded()) {
-                sound.pause();
-            }
-            observer.fire('announceEnd');
         }, duration || 1000);
-        return observer.promise('announceEnd');
+        return observer.promise('announceHidden');
     }
 
     return director;
