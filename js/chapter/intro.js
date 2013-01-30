@@ -9,18 +9,24 @@ define([
 ], function(_, $, event, util, camera, demon){
 
     var wait = util.wait,
-
+        PREVIEW_DURATION = 10,
+        preview_mode = false,
         jump_count = 0;
 
     return {
 
         sfx: {
-            odyssey: 'intro/2001spaceodyssey.mp3'
+            odyssey: 'intro/2001spaceodyssey.mp3',
+            suit_1: 'intro/suit_1.m4a',
+            suit_2: 'intro/suit_2.m4a',
+            update_1: 'intro/update_1.m4a',
+            update_2: 'intro/update_2.m4a'
         },
 
         announce: function(screen, sfx){
             sfx.odyssey.play();
-            return screen('2012', "", 19000);
+            return screen('2012', "", 
+                preview_mode ? PREVIEW_DURATION : 19000);
         },
 
         main: function(win, promise, sfx, root){
@@ -79,6 +85,8 @@ define([
                     window: win
                 });
 
+            util.preview_mode = screen.preview_mode = demon_update.preview_mode = preview_mode;
+
             wait(7800).done(function(){
 
                 demon_update.showBody();
@@ -97,6 +105,7 @@ define([
 
             }).follow().done(function(){
 
+                demon_dongxi.speak('', 200, 3);
                 return wait(800);
 
             }).follow().done(function(){
@@ -123,7 +132,6 @@ define([
 
             }).follow().done(function(){
 
-                demon_dongxi.speak('', 1000, 3);
                 return demon_update.rotateEye('90deg', 500);
 
             }).follow().done(function(){
@@ -142,8 +150,8 @@ define([
 
             }).follow().done(function(){
 
-                demon_update.rotateHand('left', '30deg', 400);
-                demon_update.rotateHand('right', '-30deg', 400);
+                demon_update.rotateHand('left', '0deg', 0);
+                demon_update.rotateHand('right', '0deg', 0);
 
                 return demon_update.moveEye(-0.8, 800);
 
@@ -191,6 +199,8 @@ define([
                                 },
                                 zoom: 1,
                                 duration: 8000
+                            }).done(function(){
+                                demon_dongxi.speak('', 0, 3);
                             });
                         }
                         return fn();
@@ -227,7 +237,7 @@ define([
                 });
 
                 return wait(800).done(function(){
-                    if (jump_count++ < 3) {
+                    if (jump_count++ < 2) {
                         return fn();
                     } else {
                         jump_count = 0;
@@ -236,6 +246,8 @@ define([
                 }).follow();
 
             }).follow().done(function(){
+
+                util.preview_mode = screen.preview_mode = demon_update.preview_mode = preview_mode = false;
 
                 util.showDemon(demon_suit);
                 return wait(400);
@@ -250,11 +262,11 @@ define([
                     demon_suit.rotateEye('-140deg', 400);
                 });
 
-                return demon_suit.speak('吵死了吵死了', 1500, 9);
+                return demon_suit.speak('吵死了吵死了', 1500, 9, sfx.suit_1);
 
             }).follow().done(function(){
 
-                return demon_suit.speak('还让不让人睡午觉？', 1500, 9);
+                return demon_suit.speak('还让不让人睡午觉？', 1500, 9, sfx.suit_2);
 
             }).follow().done(function(){
 
@@ -265,11 +277,11 @@ define([
                 demon_update.rotateHand('left', '50deg', 400);
                 demon_update.rotateHand('right', '-50deg', 400);
 
-                return demon_update.speak('矮油', 1500, 6);
+                return demon_update.speak('矮油', 1500, 6, sfx.update_1);
 
             }).follow().done(function(){
 
-                return demon_update.speak('小小一张条目封面，日均UV超不过10K', 2500, 6);
+                return demon_update.speak('小小一张条目封面，日均UV超不过10K', 2500, 6, sfx.update_2);
 
             }).follow().done(function(){
 
