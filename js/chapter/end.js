@@ -20,6 +20,7 @@ define([
         },
 
         main: function(win, promise){
+                win.xxxxx();
         },
 
         reset: function(){
