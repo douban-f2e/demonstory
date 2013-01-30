@@ -43,6 +43,8 @@ define([
                 dom: dom,
                 demon: demonItem
             };
+
+            demonItem.preview_mode = true;
         });
 
         materials.hide();
@@ -112,7 +114,8 @@ define([
             'li/zuguo': '/media/guess/lichengpeng/zuguo.mp3',
             'li/cuhua': '/media/guess/lichengpeng/cuhua.mp3',
             'li/shengren': '/media/guess/lichengpeng/shengren.mp3',
-            'xiangce/bg': '/media/guess/xiangce/bg.mp3'
+            'xiangce/bg': '/media/guess/xiangce/bg.mp3',
+            'yidai': '/media/guess/yidai.mp3'
         },
 
         announce: function(screen, sfx) {
@@ -408,6 +411,7 @@ define([
                 sectionDemon.me.css('top', '140px');
 
                 wait(5000 + 200).done(function() {
+                    sectionDemon.sound(sfx['yidai'], 3000, 100);
 
                     sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3000);
                     wait(3000).done(function() {
@@ -1071,8 +1075,7 @@ define([
                             'text-align':'center'
                             ,'font-size':'40px'
                             ,'margin-top':'200px'
-                            ,'opacity':'0'
-                        }).animate({opacity:1},'fast')
+                        });
                     });
 
                     return wait(18000 + 200);
