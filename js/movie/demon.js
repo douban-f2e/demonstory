@@ -268,6 +268,7 @@ define([
             }
 
             if (this.walkSound) {
+                this.walkSound.loop();
                 this.sound(this.walkSound, duration, vol || 100);
             }
 
