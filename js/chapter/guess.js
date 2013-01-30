@@ -11,7 +11,7 @@ define([
 
     var wait = util.wait,
 
-        DESC = '本节目由豆瓣友邻广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣小组，豆瓣 FM及豆瓣更多赞助播出。豆瓣读书，带来雪姨与五点钟。豆瓣电影，让好电影来找你。豆瓣 FM，与好音乐不期而遇。上 fili, 与 502 也不期而遇。',
+        DESC = '本节目由豆瓣广播，豆瓣读书，豆瓣电影，豆瓣音乐，豆瓣同城，豆瓣阅读，豆瓣小组，豆瓣 FM 及 更多 赞助播出。好条目数据由 fili 鼎力呈现，上 fili ， 与 502 也不期而遇……',
 
         JUDGE_LIST = [
             { name: '卤十三', id: 'lu13' },
@@ -54,24 +54,27 @@ define([
 
         sfx: {
             intro: '/media/guess/intro.mp3',
+            curtain: '/media/guess/curtain.mp3',
+            opening: '/media/guess/opening.mp3',
             exiting: '/media/guess/exiting.mp3',
             click: '/media/guess/click.mp3',
             'piggy/chaoge': '/media/guess/piggy/intro.m4a',
+            'piggy/intro': '/media/guess/piggy/1.mp3',
             'piggy/mubu': '/media/guess/piggy/mubu.mp3',
             'piggy/boo': '/media/guess/piggy/boo.mp3',
             'piggy/push': '/media/guess/piggy/goaway.mp3',
-            'piggy/intro': '/media/guess/piggy/1.m4a',
-            'piggy/intro-lu13': '/media/guess/piggy/2lu13.m4a',
-            'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.m4a',
-            'piggy/intro-su37': '/media/guess/piggy/4su37.m4a',
-            'piggy/intro-chaoge': '/media/guess/piggy/5chaoge.m4a',
-            'piggy/section-1': '/media/guess/piggy/7yidaizongshi.m4a',
-            'piggy/section-2': '/media/guess/piggy/8normal-fm.m4a',
-            'piggy/section-3': '/media/guess/piggy/9xiangce.m4a',
-            'piggy/section-4': '/media/guess/piggy/10xiayiwei.m4a',
-            'piggy/section-4-1': '/media/guess/piggy/11houtai.m4a',
-            'piggy/section-5': '/media/guess/piggy/12riji.m4a',
-            'piggy/section-6': '/media/guess/piggy/13lichengpeng.m4a',
+            'piggy/intro-lu13': '/media/guess/piggy/2lu13.mp3',
+            'piggy/intro-yingzi': '/media/guess/piggy/3yingzi.mp3',
+            'piggy/intro-su37': '/media/guess/piggy/4su37.mp3',
+            'piggy/intro-chaoge': '/media/guess/piggy/5chaoge.mp3',
+            'piggy/police': '/media/guess/piggy/police.mp3',
+            'piggy/section-1': '/media/guess/piggy/7yidaizongshi.mp3',
+            'piggy/section-2': '/media/guess/piggy/8normal-fm.mp3',
+            'piggy/section-3': '/media/guess/piggy/9xiangce.mp3',
+            'piggy/section-4': '/media/guess/piggy/10xiayiwei.mp3',
+            'piggy/section-4-1': '/media/guess/piggy/11houtai.mp3',
+            'piggy/section-5': '/media/guess/piggy/12riji.mp3',
+            'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
             'piggy/end': '/media/guess/piggy/14run.m4a',
             'lu13/intro': '/media/guess/lu13/dajiu.m4a',
             'lu13/intro-1': '/media/guess/lu13/2he1.m4a',
@@ -93,11 +96,15 @@ define([
             'su37/section-3-1': '/media/guess/su37/5xiangce-2.mp3',
             'su37/section-5': '/media/guess/su37/6riji.mp3',
             'su37/section-6': '/media/guess/su37/7paolu.m4a',
+            'chaoge/hello': '/media/guess/chaoge/hello.m4a',
+            'chaoge/section-1': '/media/guess/chaoge/section-1.m4a',
+            'chaoge/yummy': '/media/guess/chaoge/yummy.m4a',
+            'chaoge/pass': '/media/guess/chaoge/pass.m4a',
             'mao/section-4-1': '/media/guess/mao/1.m4a',
             'mao/in': '/media/guess/mao/maoin.mp3',
             'mao/section-4-2': '/media/guess/mao/2xiachang.m4a',
-            'ka/section-6-1': '/media/guess/ka/1.m4a',
-            'ka/section-6-2': '/media/guess/ka/2.m4a',
+            'ka/section-6-1': '/media/guess/ka/1.mp3',
+            'ka/section-6-2': '/media/guess/ka/2.mp3',
             'fm/fm_normal': '/media/guess/fm/fm_normal.mp3',
             'fm/fm_ad': '/media/guess/fm/fm_ad.mp3',
             'fm/fm_pro': '/media/guess/fm/fm_pro.mp3',
@@ -108,7 +115,7 @@ define([
 
         announce: function(screen, sfx) {
 
-            return screen('“豆瓣好条目”——我要上首页', DESC, 1000, sfx.intro);
+            return screen('“豆瓣好条目”——我要上首页', DESC, 7000, sfx.curtain);
 
         },
 
@@ -269,9 +276,9 @@ define([
 
                         wait(600).done(function() {
 
-                            lu13.speak('他大舅他二舅都是他舅，高桌子低板凳都是木头，我是你十三爷。', 9000, 12, sfx['lu13/intro']);
+                            lu13.speak('他大舅他二舅都是他舅，高桌子低板凳都是木头，我是你十三爷。', 8000, 12, sfx['lu13/intro']);
 
-                            wait(8000 + 200).done(function() {
+                            wait(7000 + 200).done(function() {
 
                                 lu13.rotateHand('left', '30deg', 300);
                                 lu13.rotateHand('right', '-32deg', 240);
@@ -284,7 +291,7 @@ define([
 
                 });
 
-                return wait(800 + 3200 + 10000 + 300);
+                return wait(800 + 3200 + 8500 + 300);
 
             }).follow().done(function() {
 
@@ -328,7 +335,7 @@ define([
 
                                 su37.speak('旁边两位靠这么近干嘛呀，激情四射呀！', 4000, 11, sfx['su37/intro-1']);
 
-                                wait(4000).done(function() {
+                                wait(4000 + 200).done(function() {
 
                                     var lu13 = judges['lu13'].demon,
                                         yingzi = judges['yingzi'].demon;
@@ -372,13 +379,13 @@ define([
 
                     wait(1500 + 200).done(function() {
 
-                        chaoge.speak('为什么有人喜欢黑柴静和刘瑜。整天从傻逼那儿找智商优越感，有意思吗？', 2000, 12);
+                        chaoge.speak('我也不知道我为什么会出现在这里，要问就问编剧吧。虽然我也不知道编剧是谁', 8000, 12, sfx['chaoge/hello']);
 
                     });
 
                 });
 
-                return wait(3000 + 1700 + 2000 + 200);
+                return wait(3000 + 1700 + 8000 + 200);
 
             })
 
@@ -418,11 +425,11 @@ define([
 
                     }).follow().done(function() {
 
-                        chaoge.speak('hold住就是胜利', 2000, 12);
-                        return wait(2000 + 800);
+                        chaoge.speak('要是用十块钱的电影票我就觉得还行，30块就不值啦..', 6000, 12, sfx['chaoge/section-1']);
+                        return wait(6000 + 800);
 
                     });
-                    return wait(3000 + 2000 + 9800 + 14800 + 2800 + 200);
+                    return wait(3000 + 2000 + 9800 + 14800 + 2800 + 6000 + 200);
                 }).follow().done(function() {
                     sectionDemon.walk([ viewportWidth + sectionDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     sectionPromise.fire();
@@ -540,11 +547,10 @@ define([
 
                         return wait(3000);
 
-                    // }).follow().done(function() {
+                    }).follow().done(function() {
+                        chaoge.speak('Hmm.. 看起来很美味的样子', 6000, 12, sfx['chaoge/yummy']);
 
-                    //     chaoge.speak('想：这也能黑柴静？！', 1000, 12);
-
-                    //     return wait(1000 + 300);
+                        return wait(6000 + 300);
 
                     }).follow().done(function() {
 
@@ -790,13 +796,13 @@ define([
                         yingzi.speak('赶出去！！！', 1500, 12, sfx['lu13/section-mao']);
                         su37.speak('赶出去！！！', 1500, 12);
 
-                        wait(2000 + 200).done(function(){
+                        wait(1000 + 200).done(function(){
                             chaoge.speak('额。。。。。。', 1000, 12);
                         });
 
                     });
 
-                    return wait(6000 + 3000 + 300);
+                    return wait(7500 + 300);
 
                 }).follow().done(function() {
 
@@ -807,7 +813,7 @@ define([
                         sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
                     });
 
-                    return wait(8000 +2000+ 300);
+                    return wait(8500 + 300);
 
                 }).follow().done(function() {
 
@@ -910,9 +916,14 @@ define([
                     lu13.speak('通过！！！', 2000, 1, sfx['lu13/section-5']);
                     yingzi.speak('通过！！！', 2000, 11);
                     su37.speak('通过！！！', 2000, 12);
-                    chaoge.speak('通过！！！', 2000, 12);
 
                     return wait(2000 + 200);
+
+                }).follow().done(function() {
+
+                    chaoge.speak('过吧...', 1000, 12, sfx['chaoge/pass']);
+
+                    return wait(1000 + 200);
 
                 }).follow().done(function() {
 
@@ -961,13 +972,22 @@ define([
 
                         sectionDemon.speak('我的祖国，从宪法意义上讲，我只不过是你地盘上的一个古人。', 7000 , 6 , sfx['li/zuguo']);
 
+                        lu13.speak('CA。。。。。',3100,12);
+                        su37.speak('装逼遭雷劈',4000,12);
+
                         wait(7000 + 100).done(function(){
+
+                            chaoge.speak('说得好！！',2200,12);
+
                             sectionDemon.speak('我从不是圣人，而是一名不断努力的罪人', 4000 , 6 , sfx['li/shengren']);
+
+                            yingzi.speak('Zzzzzz.....',5000,12);
+
                         });
 
                     });
 
-                    return wait(7000 + 7000 + 4000 + 400);
+                    return wait(7000 + 7000 + 2000 + 400);
 
                 }).follow().done(function(){
 
@@ -1016,11 +1036,16 @@ define([
                 }).follow().done(function(){
 
                     laoka.walk([400,-50],2000);
+                    laoka.sound(sfx['ka/section-6-2'],6000,100)
+                    piggyDemon.sound(sfx['piggy/police'],15000,100)
                     wait(2000 + 200).done(function(){
-                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',6000, 6, sfx['ka/section-6-2']);
+                        laoka.speak('哼哼，这下知道首页是谁的了吧！！！',4000, 6);
                     });
+                    wait(6000+300).done(function(){
+                        laoka.walk([2400,-50],4000);
+                    })
 
-                    return wait(8000 + 2500 + 200);
+                    return wait(18000 + 200);
 
                 }).follow().done(function() {
 
