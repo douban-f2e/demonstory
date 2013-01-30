@@ -436,25 +436,25 @@ define([
                 piggyDemon.speak('有请下一位选手入场，歌曲“Put Your Records On“', 4000, 12, sfx['piggy/section-2']);
 
                 wait(4000 + 200).done(function() {
-                    normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 10000);
-                    normalDemon.sound(sfx['fm/fm_normal'], 10000, 100);
+                    normalDemon.walk([ (viewportWidth - normalDemon.me.width()) / 2 + normalDemon.me.width(), 0 ], 5000);
+                    normalDemon.sound(sfx['fm/fm_normal'], 7000, 100);
 
-                    wait(10000).done(function() {
+                    wait(6800).done(function() {
 
                         lu13.speak('才 64k，还不如广告音质好，不通过！', 5000, 3, sfx['lu13/section-2']);
                         su37.speak('才 64k，还不如广告音质好，不通过！', 5000, 10);
                         yingzi.speak('才 64k，还不如广告音质好，不通过！', 5000, 0);
 
                     });
-                    return wait(13000 + 800);
+                    return wait(12000);
 
                 }).follow().done(function() {
-                    normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 3000, 'easeIn');
-                    normalDemon.speak('嘤嘤嘤嘤', 1500, 6);
-                    return wait(3000 + 200);
+                    normalDemon.walk([ viewportWidth + normalDemon.me.width() + 20, 30 ], 2000, 'easeIn');
+                    normalDemon.speak('嘤嘤嘤嘤', 1000, 6);
+                    return wait(2200);
 
                 }).follow().done(function() {
-                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 4000);
+                    adDemon.walk([ (viewportWidth - adDemon.me.width()) / 2 + adDemon.me.width(), 0 ], 2000);
                     adDemon.sound(sfx['fm/fm_ad'], 8000, 100);
                     wait(4000).done(function() {
 
@@ -463,15 +463,15 @@ define([
 
                     });
 
-                    return wait(7000 + 400);
+                    return wait(6000);
 
                 }).follow().done(function() {
-                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 10000);
+                    proDemon.walk([ (viewportWidth - proDemon.me.width()) / 2 + proDemon.me.width(), 0 ], 7000);
                     proDemon.sound(sfx['fm/fm_pro'], 20000, 100);
-                    wait(3000).done(function() {
+                    wait(1500).done(function() {
                         proDemon.speak('Pro登场，广告还不速速退场！', 3000, 3);
                         adDemon.speak('灰溜溜地逃走', 1500, 5);
-                        adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 3000, 'easeIn');
+                        adDemon.walk([ viewportWidth + adDemon.me.width() + 20, 30 ], 1000, 'easeIn');
                         return wait(5000 + 200);
                     }).follow().done(function() {
                         proDemon.speak('更纯洁的音质，无广告的体验', 3500, 10);
@@ -485,7 +485,7 @@ define([
                         yingzi.speak('高端大气上档次，通过！', 3500, 0);
                     });
 
-                    return wait(25000);
+                    return wait(20000);
                 }).follow().done(function() {
                     proDemon.walk([ viewportWidth + proDemon.me.width() + 20, 30 ], 3000, 'easeIn');
                     piggyDemon.sound(sfx['piggy/clap'],3000,100);
@@ -740,73 +740,73 @@ define([
             /* end fo section#3 */
 
             /* section#4 猫 by zhaoguo */
-            .follow().done(function() {
+            //.follow().done(function() {
 
-                //fucking debug
-                //return wait(0);
+                ////fucking debug
+                ////return wait(0);
 
-                var sectionDemon = sectionDemons[4],
-                    su37 = judges['su37'].demon,
-                    yingzi = judges['yingzi'].demon,
-                    lu13 = judges['lu13'].demon,
-                    sectionPromise = new event.Promise();
+                //var sectionDemon = sectionDemons[4],
+                    //su37 = judges['su37'].demon,
+                    //yingzi = judges['yingzi'].demon,
+                    //lu13 = judges['lu13'].demon,
+                    //sectionPromise = new event.Promise();
 
-                piggyDemon.speak('欢迎下一位选手', 2000, 12, sfx['piggy/section-4']);
+                //piggyDemon.speak('欢迎下一位选手', 2000, 12, sfx['piggy/section-4']);
 
-                wait(2000 + 200).done(function() {
+                //wait(2000 + 200).done(function() {
 
-                    piggyDemon.sound(sfx['mao/in'],6000,70);
-                    sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3500);
+                    //piggyDemon.sound(sfx['mao/in'],6000,70);
+                    //sectionDemon.walk([ (viewportWidth - sectionDemon.me.width()) / 2 + sectionDemon.me.width(), 0 ], 3500);
 
-                    return wait(3500 + 400);
+                    //return wait(3500 + 400);
 
-                }).follow().done(function(){
+                //}).follow().done(function(){
 
-                        sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',7500,6, sfx['mao/section-4-1']);
+                        //sectionDemon.speak('四大音乐剧之首，《猫》中文版可以在豆瓣购票了，喵~',7500,6, sfx['mao/section-4-1']);
 
-                    return wait(7500 + 200);
+                    //return wait(7500 + 200);
 
-                }).follow().done(function() {
+                //}).follow().done(function() {
 
-                    lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 6000, 12, sfx['lu13/section-4']);
+                    //lu13.speak('保安呢，怎么回事，谁把票贩子放进来了，赶出去！', 6000, 12, sfx['lu13/section-4']);
 
-                    wait(6000).done(function(){
+                    //wait(6000).done(function(){
 
-                        yingzi.speak('赶出去！！！', 1500, 12, sfx['lu13/section-mao']);
-                        su37.speak('赶出去！！！', 1500, 12);
-                    });
+                        //yingzi.speak('赶出去！！！', 1500, 12, sfx['lu13/section-mao']);
+                        //su37.speak('赶出去！！！', 1500, 12);
+                    //});
 
-                    return wait(6000 + 300);
+                    //return wait(6000 + 300);
 
-                }).follow().done(function() {
+                //}).follow().done(function() {
 
-                    sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',8000,6, sfx['mao/section-4-2']);
+                    //sectionDemon.speak('喵了个咪的，你们这些土了吧唧的XX，不知道我是内定的吗，白白了您内~',8000,6, sfx['mao/section-4-2']);
 
-                    wait(6500).done(function(){
-                        sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
-                    });
+                    //wait(6500).done(function(){
+                        //sectionDemon.walk([-( viewportWidth + sectionDemon.me.width() - 20), 30 ], 3000, 'easeIn');
+                    //});
 
-                    return wait(7000 + 300);
+                    //return wait(7000 + 300);
 
-                }).follow().done(function() {
+                //}).follow().done(function() {
 
-                    piggyDemon.speak('好吧，有后台我们惹不起~~', 3000, 9, sfx['piggy/section-4-1']);
-                    lu13.speak('。。。。。。',900,12);
-                    su37.speak('。。。。。。',900,12);
-                    yingzi.speak('。。。。。。',900,12);
+                    //piggyDemon.speak('好吧，有后台我们惹不起~~', 3000, 9, sfx['piggy/section-4-1']);
+                    //lu13.speak('。。。。。。',900,12);
+                    //su37.speak('。。。。。。',900,12);
+                    //yingzi.speak('。。。。。。',900,12);
 
-                    return wait( 3000 + 300 );
+                    //return wait( 3000 + 300 );
 
-                }).follow().done(function() {
+                //}).follow().done(function() {
 
-                    // section end
-                    sectionPromise.fire();
+                    //// section end
+                    //sectionPromise.fire();
 
-                });
+                //});
 
-                return sectionPromise;
+                //return sectionPromise;
 
-            })
+            //})
             /* end fo section#4 */
 
             /* section#5 阿北 by gonghao */
