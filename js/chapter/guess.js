@@ -386,14 +386,14 @@ define([
 
                 });
 
-                return wait(1600 + 1700 + 8000 + 200);
+                return wait(3200 + 1700 + 8000 + 200);
 
             })
 
             /* section#1 一代宗师 by lifei */
             .follow().done(function() {
 
-                return wait(0);
+                //return wait(0);
 
                 var sectionDemon = sectionDemons[1],
                     chaoge = judges['chaoge'].demon,
