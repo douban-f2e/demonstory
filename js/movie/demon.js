@@ -15,6 +15,7 @@ define([
             body = $(win.document.body),
             origin = this.origin = $(opt.origin);
         this.preview_mode = false;
+        this.walkSound = opt.walkSound;
         this._resolved_promise = event().resolve();
         this.eyeLeft = $('<span class="eye eye-left"><span></span></span>');
         this.eyeRight = $('<span class="eye eye-right"><span></span></span>');
@@ -218,7 +219,7 @@ define([
             });
         },
 
-        walk: function(offsets, duration, easing){
+        walk: function(offsets, duration, easing, vol){
             if (this.preview_mode) {
                 duration = PREVIEW_DURATION;
             }
@@ -264,6 +265,10 @@ define([
                 return right_action.play().follow().done(function(){
                     return right_step();
                 }).follow();
+            }
+
+            if (this.walkSound) {
+                this.sound(this.walkSound, duration, vol || 100);
             }
 
             return this.move(offsets, duration, easing).done(function(){

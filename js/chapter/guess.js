@@ -21,7 +21,7 @@ define([
             { name: '老卡', id: 'laoka' }
         ];
 
-    function initJudges(win) {
+    function initJudges(win, sfx) {
         var doc = win.document,
             judges = {},
             materials = $('#materials', doc);
@@ -33,7 +33,8 @@ define([
                 demonItem = demon({
                     origin: dom,
                     className: 'demon-' + item.id,
-                    window: win
+                    window: win,
+                    walkSound: sfx['walking']
                 });
 
             demonItem.showBody().showHands().showLegs();
@@ -57,6 +58,7 @@ define([
         sfx: {
             intro: '/media/guess/intro.mp3',
             curtain: '/media/guess/curtain-long.mp3',
+            walking: '/media/guess/walking.mp3',
             opening: '/media/guess/opening.mp3',
             exiting: '/media/guess/exiting.mp3',
             click: '/media/guess/click.mp3',
@@ -79,6 +81,7 @@ define([
             'piggy/section-6': '/media/guess/piggy/13lichengpeng.mp3',
             'piggy/end': '/media/guess/piggy/14run.mp3',
             'piggy/abei': '/media/guess/piggy/abei.mp3',
+            'piggy/zhangsheng': '/media/guess/piggy/zhangsheng.mp3',
             'lu13/intro': '/media/guess/lu13/dajiu.mp3',
             'lu13/intro-1': '/media/guess/lu13/2he1.mp3',
             'lu13/section-1': '/media/guess/lu13/3zongshi.mp3',
@@ -132,7 +135,7 @@ define([
                 piggyDemon,
                 materials = $('#materials', doc),
                 sectionDemons = {},
-                judges = initJudges(win),
+                judges = initJudges(win, sfx),
                 viewportWidth = win.innerWidth;
 
             piggyPromise.done(function() {
@@ -148,7 +151,8 @@ define([
                 piggyDemon = demon({
                     origin: piggy,
                     className: 'demon-piggy',
-                    window: win
+                    window: win,
+                    walkSound: sfx['walking']
                 });
 
                 piggyDemon.sound(sfx['piggy/mubu'],5000,70);
@@ -217,7 +221,8 @@ define([
                         sectionDemon = demon({
                             origin: dom,
                             className: 'demon-section',
-                            window: win
+                            window: win,
+                            walkSound: sfx['walking']
                         });
 
                         sectionDemon.showBody().showHands().showLegs();
@@ -264,6 +269,7 @@ define([
                 return wait(6200 + 400);
 
             }).follow().done(function() {
+                piggyDemon.sound(sfx['piggy/zhangsheng'],6000,100);
 
                 wait(700).done(function() {
 
@@ -1070,7 +1076,7 @@ define([
                         });
                     });
 
-                    return wait(17000 + 200);
+                    return wait(16000 + 200);
 
                 }).follow().done(function() {
 
