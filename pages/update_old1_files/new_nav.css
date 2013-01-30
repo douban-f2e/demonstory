@@ -421,7 +421,7 @@ background-image: -o-image-set(url(./lg_main_a11_1.png) 1x,url(./lg_main@2x.png)
                                       background-color: #072;
                                       color: #fff;
                                     }#db-nav-sns li {
-                                      display: inline;
+                                      display: inline-block;
                                     }#db-nav-sns .nav-items {
                                       float: left;
                                       margin-top: 15px;

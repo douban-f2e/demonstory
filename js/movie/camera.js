@@ -57,14 +57,15 @@ define([
     var translate = 'translate(' + x + 'px,' + y + 'px)';
     action.actor(doc[0], {
       transform: translate
-    }, duration);
+    }, duration, 'easeOut');
     return action.actor(doc[0], {
       transform: 'scale(' + zoom + ',' + zoom + ')'
-    }, duration).follow();
+    }, duration, 'easeOut').follow();
   };
 
-  Camera.prototype.reset = function(duration) {
+  Camera.prototype.reset = function(duration, easing) {
     duration = duration || 320;
+    easing = easing || 'ease';
     if (this.preview_mode) {
       duration = PREVIEW_DURATION;
     }
@@ -75,11 +76,11 @@ define([
 
     action.actor(doc[0], {
       transform: 'scale(1,1)' 
-    }, duration);
+    }, duration, easing);
 
     return action.actor(doc[0], {
       transform: 'translate(0,0)' 
-    }, duration).follow();
+    }, duration, easing).follow();
   };
 
   function exports(win) {
