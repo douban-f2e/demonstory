@@ -221,6 +221,8 @@ define([
         return demonCover.speak('赞！', 1000, 3, sfx.w9)
       }).follow().done(function() {
           sfx.ending.pause()
+          return wait(500);
+      }).follow().done(function() {
           promise.fire()
       })
       return promise

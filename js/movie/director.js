@@ -5,8 +5,9 @@ define([
     'mo/network',
     'mo/template',
     'buzz',
-    'eventmaster'
-], function(_, $, net, tpl, buzz, event){
+    'eventmaster',
+    './util'
+], function(_, $, net, tpl, buzz, event, util){
 
     var TPL_ANNOUNCE = '<h6>{%= order %}</h6><h2>{%= title %}</h2><div class="desc">{%= desc %}</div>',
         
@@ -19,6 +20,7 @@ define([
             stageStyle: ''
         },
 
+        wait = util.wait,
         observer;
 
     var director = {
@@ -44,59 +46,50 @@ define([
 
             require([chapter.script], function(script){
 
-                var sfx_queue = [],
-                    sfx_lib = {};
-                if (script.sfx) {
-                    Object.keys(script.sfx).forEach(function(name){
-                        var promise = new event.Promise();
-                        var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
-                        sound.load();
-                        sound.bindOnce('canplay', promise.pipe.resolve);
-                        sfx_queue.push(promise);
-                    }, script.sfx);
-                }
-                if (!sfx_queue.length) {
-                    sfx_queue.push(new event.Promise().resolve());
-                }
+                var sfx_lib = {};
 
-                event.when.apply(event, sfx_queue).done(function(){
+                director.stage.bind('load', function(){
+                    var win = this.contentWindow;
+                    setTimeout(function(){
+                        observer.fire('ready', [win]);
+                    }, 200);
+                }).attr('src', chapter.stage);
 
-                    director.stage.bind('load', function(){
-                        var win = this.contentWindow;
-                        net.getStyle.call(win, director.stageStyle);
-                        net.getStyle.call(win, chapter.style);
-                        setTimeout(function(){
-                            observer.fire('ready', [win]);
-                        }, 200);
-                    }).attr('src', chapter.stage);
-
-                    return observer.promise('ready');
-
+                observer.promise('ready').done(function(win){
+                    net.getStyle.call(win, director.stageStyle);
+                    net.getStyle.call(win, chapter.style);
+                    var sfx_queue = [];
+                    if (script.sfx) {
+                        Object.keys(script.sfx).forEach(function(name){
+                            var promise = new event.Promise();
+                            var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
+                            sound.load();
+                            sound.bindOnce('canplay', function(){
+                                promise.resolve([win]);
+                            });
+                            sfx_queue.push(promise);
+                        }, script.sfx);
+                    }
+                    if (!sfx_queue.length) {
+                        sfx_queue.push(new event.Promise().resolve([win]));
+                    }
+                    return event.when.apply(event, sfx_queue);
                 }).follow().done(function(win){
-
                     return script.announce(screen, sfx_lib).done(function(){
-
                         director.curtain.addClass('folded');
                         setTimeout(function(){
                             observer.fire('go', [win]);
                         }, 1000);
-
                         return observer.promise('go');
-
                     }).follow();
-
                 }).follow().done(function(win){
-
                     return script.main(win, observer.promise('end'), sfx_lib, {
                         image: director.imageRoot,
                         media: director.mediaRoot
                     });
-
                 }).follow().done(function(){
-
                     director.curtain.removeClass('folded');
                     director.lock = false;
-
                 });
 
             });

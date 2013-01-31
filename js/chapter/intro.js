@@ -52,7 +52,7 @@ define([
             if (!preview_mode) {
                 sfx.odyssey.play();
             }
-            return screen('2012', 'War. War never changes...', 
+            return screen('2012', 'War. War never changes.', 
                 preview_mode ? PREVIEW_DURATION : 19000);
         },
 
@@ -358,15 +358,11 @@ define([
 
             }).follow().done(function(){
 
-                return wait(500);
-
-            }).follow().done(function(){
-
                 return demon_update.speak('默认作首页', 1500, 6, sfx.update_6);
 
             }).follow().done(function(){
 
-                return wait(300);
+                return wait(100);
 
             }).follow().done(function(){
 
@@ -382,21 +378,11 @@ define([
 
             }).follow().done(function(){
 
-                return wait(300);
+                return wait(100);
 
             }).follow().done(function(){
 
                 return demon_update.speak('勾结算法目无天，占我首页夺我名', 4600, 6, sfx.update_9);
-
-            }).follow().done(function(){
-
-                return wait(300);
-
-            //}).follow().done(function(){
-
-                //demon_update.rotateEye('90deg', 0);
-                //demon_update.moveEye(-0.8, 400);
-                //return demon_update.rotateHand('right', '90deg', 400);
 
             }).follow().done(function(){
 
@@ -652,6 +638,7 @@ define([
 
             }).follow().done(function(){
 
+                //util.preview_mode = screen.preview_mode = demon_dongxi.preview_mode = demon_hood.preview_mode = demon_group.preview_mode = demon_update.preview_mode = demon_suit.preview_mode = demon_home.preview_mode = demon_read.preview_mode = preview_mode = false;
                 promise.fire(); // 结束，进入下一章节
 
             });

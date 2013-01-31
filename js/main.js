@@ -40,15 +40,15 @@ require([
         script: '../chapter/guess'
     }, {
         stage: 'pages/update_old1.html',
-        script: '../chapter/chaos.js',
+        script: '../chapter/chaos',
         style: '../dist/css/chapter/chaos.css'
     }, {
         stage: 'pages/facebook.html',
         style: '../dist/css/chapter/facebook.css',
         script: '../chapter/facebook'
-    },{
+    }, {
         stage: 'pages/f2e.html',
-        script: '../chapter/f2e.js',
+        script: '../chapter/f2e',
         style: '../dist/css/chapter/f2e.css'
     }, {
         stage: 'pages/end/guess.html',
@@ -69,10 +69,12 @@ require([
         director.next();
     });
 
-    //observer.bind('end', function(){
-        //director.next();
-    //});
+    observer.bind('end', function(){
+        setTimeout(function(){
+            director.next();
+        }, 500);
+    });
 
-    //director.next();
+    director.next();
 
 });
