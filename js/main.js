@@ -1,6 +1,7 @@
 
 require.config({
     baseUrl: 'js/mod/',
+    distUrl: 'dist/js/mod/',
     aliases: {
         movie: '../movie/'
     }
@@ -14,6 +15,13 @@ define('buzz-src', 'buzz.js');
 define('buzz', ['buzz-src'], function(){
     return window.buzz;
 });
+
+define('chapter1', '../chapter/intro.js');
+define('chapter2', '../chapter/guess.js');
+define('chapter3', '../chapter/chaos.js');
+define('chapter4', '../chapter/facebook.js');
+define('chapter5', '../chapter/f2e.js');
+define('chapter6', '../chapter/end.js');
 
 require([
     'mo/lang',
@@ -33,26 +41,26 @@ require([
     var story = [{
         stage: 'pages/index.html',
         style: '../dist/css/chapter/intro.css',
-        script: '../chapter/intro'
+        script: 'chapter1'
     }, {
         stage: 'pages/update.html',
         style: '../dist/css/chapter/guess.css',
-        script: '../chapter/guess'
+        script: 'chapter2'
     }, {
         stage: 'pages/update_old1.html',
-        script: '../chapter/chaos',
+        script: 'chapter3',
         style: '../dist/css/chapter/chaos.css'
     }, {
         stage: 'pages/facebook.html',
         style: '../dist/css/chapter/facebook.css',
-        script: '../chapter/facebook'
+        script: 'chapter4'
     }, {
         stage: 'pages/f2e.html',
-        script: '../chapter/f2e',
+        script: 'chapter5',
         style: '../dist/css/chapter/f2e.css'
     }, {
         stage: 'pages/end/guess.html',
-        script: '../chapter/end'
+        script: 'chapter6'
     }];
 
     var observer = event();

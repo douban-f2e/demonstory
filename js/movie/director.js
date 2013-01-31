@@ -44,7 +44,30 @@ define([
             }
             this.lock = true;
 
-            require([chapter.script], function(script){
+            switch(chapter.script) {
+                case 'chapter1':
+                    require('chapter1', load);
+                    break;
+                case 'chapter2':
+                    require('chapter2', load);
+                    break;
+                case 'chapter3':
+                    require('chapter3', load);
+                    break;
+                case 'chapter4':
+                    require('chapter4', load);
+                    break;
+                case 'chapter5':
+                    require('chapter5', load);
+                    break;
+                case 'chapter6':
+                    require('chapter6', load);
+                    break;
+                default:
+                    // code
+            }
+
+            function load(script){
 
                 var sfx_lib = {};
 
@@ -92,7 +115,7 @@ define([
                     director.lock = false;
                 });
 
-            });
+            }
 
         },
 

@@ -2,12 +2,19 @@
 define([
     'mo/lang',
     'dollar',
-    'eventmaster'
-], function(_, $, event){
+    'eventmaster',
+    './demon',
+    'moui/bubble'
+], function(_, $, event, demon, bubble){
 
     var PREVIEW_DURATION = 10;
 
-    var util = {};
+    var util = {
+
+        demon: demon,
+        bubble: bubble
+
+    };
 
     util.wait = function(fn, duration){
         if (_.isFunction(fn)) {

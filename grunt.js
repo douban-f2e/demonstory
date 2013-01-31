@@ -41,6 +41,18 @@ module.exports = function(grunt) {
                 }
             }
         },
+        ozma: {
+            main: {
+                src: 'js/main.js',
+                //saveConfig: true
+                config: {
+                    baseUrl: "js/mod/",
+                    distUrl: "dist/js/mod/",
+                    loader: "../lib/oz.js",
+                    disableAutoSuffix: true
+                }
+            }
+        },
         compass: {
             main: {
                 options: {
@@ -61,6 +73,9 @@ module.exports = function(grunt) {
             }
         },
         watch: [{
+            files: 'js/**/*.js',
+            tasks: 'ozma'
+        }, {
             files: 'css/**/*.scss',
             tasks: 'compass'
         }]
@@ -71,7 +86,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     
     grunt.registerTask('default', [
-        'compass'
+        'compass',
+        'ozma'
     ]);
 
 };
