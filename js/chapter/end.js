@@ -16,7 +16,7 @@ define([
     return {
 
         announce: function(screen){
-            return screen('豆瓣改变生活', DESC, 1000);
+            return screen('豆瓣改变生活', DESC, 2500);
         },
 
         main: function(win, promise){
