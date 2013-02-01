@@ -69,7 +69,7 @@ require([
         observer: observer,
         story: story,
         imageRoot: 'pics/',
-        mediaRoot: 'media/',
+        mediaRoot: '../media/',
         stageStyle: '../dist/css/stage.css'
     });
 

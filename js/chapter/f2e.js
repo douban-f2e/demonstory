@@ -61,7 +61,7 @@ define([
         , vote = $('#vote', doc)
 
       // teamMemberShow {
-      var person_tmpl = '<img width="96" height="96" src="../../pics/gavatar/${id}.jpg">${name}'
+      var person_tmpl = '<img width="96" height="96" src="../pics/gavatar/${id}.jpg">${name}'
         , f2e_list = [
             { name: 'Kejun', id: 'kejun' }
             ,{ name: '龚浩', id: 'gonghao' }
@@ -86,8 +86,8 @@ define([
         var f2es = {};
         f2e_list.forEach(function(item){
           var person = item.name
-            , body = $('body', win.document)
-            , node = document.createElement('div')
+            , body = $('body', doc)
+            , node = doc.createElement('div')
 
           node.className = 'f2e ' + item.id
           node = $(node)
@@ -126,7 +126,7 @@ define([
         , gonghao = f2es.gonghao.demon
         , seechaos = f2es.seechaos.demon
 
-      wrapper = $('.wrapper', win.document)
+      wrapper = $('.wrapper', doc)
       // }
 
       var baseLeft = wrapper[0].offsetLeft + 200
@@ -456,7 +456,7 @@ define([
         demonRobot.rotateHand('right', '-130deg', 200)
         return demonRobot.speak('回见了您呐！', 2000, 6, sfx.r29)
       }).follow().done(function(){
-        demonRobot.walk([-2000, 0], 500)
+        return demonRobot.walk([-2000, 0], 500)
       }).follow().done(function(){
         promise.fire()
       })

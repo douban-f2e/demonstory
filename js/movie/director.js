@@ -85,7 +85,9 @@ define([
                     if (script.sfx) {
                         Object.keys(script.sfx).forEach(function(name){
                             var promise = new event.Promise();
-                            var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name]);
+                            var sound = sfx_lib[name] = new buzz.sound(director.mediaRoot + this[name], {
+                                document: win.document
+                            });
                             sound.load();
                             sound.bindOnce('canplay', function(){
                                 promise.resolve([win]);
@@ -98,7 +100,40 @@ define([
                     }
                     return event.when.apply(event, sfx_queue);
                 }).follow().done(function(win){
-                    return script.announce(screen, sfx_lib).done(function(){
+                    return script.announce(function(title, desc, duration, src, vol){
+                        var sound,
+                            box = director.curtain.find('.announce')
+                            .html(tpl.convertTpl(TPL_ANNOUNCE, {
+                                order: director.currentChapter === director.story.length ? '尾声' 
+                                    : ('第' + CHN_NUM[director.currentChapter - 1] + '章'),
+                                title: title,
+                                desc: desc
+                            }))
+                            .addClass('active');
+                        if (typeof src === 'string' || Array.isArray(src)) {
+                            sound = new buzz.sound(src, {
+                                document: win.document
+                            });
+                        } else {
+                            sound = src;
+                        }
+                        if (sound) {
+                            if (vol) {
+                                sound.setVolume(vol);
+                            }
+                            sound.play();
+                        }
+                        setTimeout(function(){
+                            if (sound && !sound.isEnded()) {
+                                sound.pause();
+                            }
+                            box.removeClass('active');
+                            setTimeout(function(){
+                               observer.fire('announceHidden');
+                            }, 500);
+                        }, duration || 1000);
+                        return observer.promise('announceHidden');
+                    }, sfx_lib).done(function(){
                         director.curtain.addClass('folded');
                         setTimeout(function(){
                             observer.fire('go', [win]);
@@ -124,40 +159,7 @@ define([
         }
     
     };
-
-    function screen(title, desc, duration, src, vol){
-        var sound,
-            box = director.curtain.find('.announce')
-            .html(tpl.convertTpl(TPL_ANNOUNCE, {
-                order: director.currentChapter === director.story.length ? '尾声' 
-                    : ('第' + CHN_NUM[director.currentChapter - 1] + '章'),
-                title: title,
-                desc: desc
-            }))
-            .addClass('active');
-        if (typeof src === 'string' || Array.isArray(src)) {
-            sound = new buzz.sound(src);
-        } else {
-            sound = src;
-        }
-        if (sound) {
-            if (vol) {
-                sound.setVolume(vol);
-            }
-            sound.play();
-        }
-        setTimeout(function(){
-            if (sound && !sound.isEnded()) {
-                sound.pause();
-            }
-            box.removeClass('active');
-            setTimeout(function(){
-               observer.fire('announceHidden');
-            }, 500);
-        }, duration || 1000);
-        return observer.promise('announceHidden');
-    }
-
+    
     return director;
 
 });

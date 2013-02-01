@@ -321,7 +321,9 @@ define([
             var sound,
                 promise = new event.Promise();
             if (typeof src === 'string' || Array.isArray(src)) {
-                sound = new buzz.sound(src);
+                sound = new buzz.sound(src, {
+                    document: this.window.document
+                });
             } else {
                 sound = src;
             }
