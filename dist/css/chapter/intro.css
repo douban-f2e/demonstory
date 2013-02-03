@@ -1,0 +1,40 @@
+.demon-update.demon, .demon-home.demon, .demon-hood.demon {
+  font-size: 15px;
+  color: #072!important;
+  margin: -10px 0 0 -12px;
+}
+.waken.demon-update.demon, .waken.demon-home.demon, .waken.demon-hood.demon {
+  background: #cde1cd;
+}
+.has-legs.demon-update.demon .leg, .has-legs.demon-home.demon .leg, .has-legs.demon-hood.demon .leg {
+  height: 18px;
+}
+
+.demon-update.demon {
+  z-index: 5;
+}
+
+.demon-suit {
+  margin-top: -32px;
+  padding: 0;
+  border: 0;
+}
+.demon-suit img {
+  width: 80px;
+}
+
+a.demon-read, a.demon-group, a.demon-book, a.demon-movie, a.demon-music {
+  color: #d5d5d5;
+  padding: 5px 12px;
+  border: 0;
+}
+a.demon-read.waken, a.waken.demon-group, a.waken.demon-book, a.waken.demon-movie, a.waken.demon-music {
+  background: #343632;
+}
+
+.demon-dongxi {
+  width: 205px;
+  border: 0;
+  padding: 18px 20px;
+  overflow: visible;
+}

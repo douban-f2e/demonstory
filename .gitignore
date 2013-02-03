@@ -5,6 +5,5 @@ syncdb_dumps.bak
 .statictmp
 node_modules/
 .sass-cache/
-dist/
 static/
 .DS_Store

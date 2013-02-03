@@ -1,0 +1,81 @@
+#ctba,
+#vote,
+#code,
+#diors,
+#reception,
+#craftsman,
+#alphatown {
+  opacity: 0;
+}
+
+#diors {
+  margin: 104px 0 104px 200px;
+}
+
+#reception {
+  margin: 90px;
+}
+
+#craftsman {
+  margin: 60px;
+}
+
+#ctba {
+  margin: 60px 0 60px 360px;
+}
+
+#vote {
+  margin: 250px 0 0 0;
+}
+
+#code,
+#alphatown {
+  margin-top: 100px;
+}
+
+#materials {
+  display: none;
+}
+
+.demon.demon-piggy {
+  padding: 0;
+  border: none;
+}
+.demon.demon-piggy img {
+  vertical-align: top;
+}
+.demon.wyssy-item-con {
+  width: 560px;
+  border: 1px solid #eeebe7;
+  padding: 20px 0 0;
+  margin-bottom: 50px;
+  background: #fff;
+}
+.demon.wyssy-item-con .guess-item {
+  margin-bottom: 0;
+}
+.demon.wyssy-item-con .guess-item .bd {
+  border: none;
+}
+.demon.wyssy-item-con .guess-item .desc {
+  padding-right: 30px;
+}
+.demon.wyssy-item-con .album-item {
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+.demon.wyssy-item-con .event-item .pic,
+.demon.wyssy-item-con .subject-item .pic {
+  float: right;
+  margin: 0 30px 0 30px;
+}
+
+.f2e.demon {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+.f2e.demon img {
+  display: block;
+}

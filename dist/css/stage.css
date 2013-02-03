@@ -1,0 +1,394 @@
+.moui-bubble {
+  display: inline;
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.4s ease-in-out;
+  -moz-transition: -moz-transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.4s ease-in-out;
+  -o-transition: -o-transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.4s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity 0.4s ease-in-out;
+}
+.moui-bubble .moui-content {
+  display: inline-block;
+  max-width: 300px;
+  padding: 22px;
+  border: 5px solid #666666;
+  border-radius: 20px;
+  background: #ffc;
+  color: #333;
+  font-size: 18px;
+}
+.moui-bubble .moui-arrow {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  position: absolute;
+}
+.moui-bubble .moui-arrow div {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  position: absolute;
+}
+.moui-bubble.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.moui-bubble.top-arrow {
+  padding: 40px 0 0 0;
+  margin: 20px 0 0 0;
+}
+.moui-bubble.top-arrow .moui-arrow {
+  border-width: 0 20px 40px 20px;
+  border-color: transparent transparent #666666 transparent;
+}
+.moui-bubble.top-arrow .moui-arrow div {
+  border-width: 0 20px 40px 20px;
+  border-color: transparent transparent #ffffcc transparent;
+  top: 10px;
+  left: -20px;
+}
+.moui-bubble.top-arrow.left-align {
+  margin-left: -30px;
+  -webkit-transform-origin: 20% 0%;
+  -moz-transform-origin: 20% 0%;
+  -ms-transform-origin: 20% 0%;
+  -o-transform-origin: 20% 0%;
+  transform-origin: 20% 0%;
+}
+.moui-bubble.top-arrow.left-align .moui-arrow {
+  top: 0;
+  left: 30px;
+}
+.moui-bubble.top-arrow.center-align {
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+.moui-bubble.top-arrow.center-align .moui-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -20px;
+}
+.moui-bubble.top-arrow.right-align {
+  margin-left: 30px;
+  -webkit-transform-origin: 80% 0%;
+  -moz-transform-origin: 80% 0%;
+  -ms-transform-origin: 80% 0%;
+  -o-transform-origin: 80% 0%;
+  transform-origin: 80% 0%;
+}
+.moui-bubble.top-arrow.right-align .moui-arrow {
+  top: 0;
+  right: 30px;
+}
+.moui-bubble.bottom-arrow {
+  padding: 0 0 40px 0;
+  margin: -20px 0 0 0;
+}
+.moui-bubble.bottom-arrow .moui-arrow {
+  border-width: 40px 20px 0 20px;
+  border-color: #666666 transparent transparent transparent;
+}
+.moui-bubble.bottom-arrow .moui-arrow div {
+  border-width: 40px 20px 0 20px;
+  border-color: #ffffcc transparent transparent transparent;
+  bottom: 10px;
+  left: -20px;
+}
+.moui-bubble.bottom-arrow.left-align {
+  margin-left: -30px;
+  -webkit-transform-origin: 20% 100%;
+  -moz-transform-origin: 20% 100%;
+  -ms-transform-origin: 20% 100%;
+  -o-transform-origin: 20% 100%;
+  transform-origin: 20% 100%;
+}
+.moui-bubble.bottom-arrow.left-align .moui-arrow {
+  bottom: 0;
+  left: 30px;
+}
+.moui-bubble.bottom-arrow.center-align {
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+.moui-bubble.bottom-arrow.center-align .moui-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+}
+.moui-bubble.bottom-arrow.right-align {
+  margin-left: 30px;
+  -webkit-transform-origin: 80% 100%;
+  -moz-transform-origin: 80% 100%;
+  -ms-transform-origin: 80% 100%;
+  -o-transform-origin: 80% 100%;
+  transform-origin: 80% 100%;
+}
+.moui-bubble.bottom-arrow.right-align .moui-arrow {
+  bottom: 0;
+  right: 30px;
+}
+.moui-bubble.left-arrow {
+  padding: 0 0 0 40px;
+  margin: 0 0 0 20px;
+}
+.moui-bubble.left-arrow .moui-arrow {
+  border-width: 20px 40px 20px 0;
+  border-color: transparent #666666 transparent transparent;
+}
+.moui-bubble.left-arrow .moui-arrow div {
+  border-width: 20px 40px 20px 0;
+  border-color: transparent #ffffcc transparent transparent;
+  left: 10px;
+  top: -20px;
+}
+.moui-bubble.left-arrow.top-align {
+  margin-top: -30px;
+  -webkit-transform-origin: 0% 20%;
+  -moz-transform-origin: 0% 20%;
+  -ms-transform-origin: 0% 20%;
+  -o-transform-origin: 0% 20%;
+  transform-origin: 0% 20%;
+}
+.moui-bubble.left-arrow.top-align .moui-arrow {
+  left: 0;
+  top: 30px;
+}
+.moui-bubble.left-arrow.center-align {
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform-origin: 0% 50%;
+  -ms-transform-origin: 0% 50%;
+  -o-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+}
+.moui-bubble.left-arrow.center-align .moui-arrow {
+  left: 0;
+  top: 50%;
+  margin-top: -20px;
+}
+.moui-bubble.left-arrow.bottom-align {
+  margin-top: 30px;
+  -webkit-transform-origin: 0% 80%;
+  -moz-transform-origin: 0% 80%;
+  -ms-transform-origin: 0% 80%;
+  -o-transform-origin: 0% 80%;
+  transform-origin: 0% 80%;
+}
+.moui-bubble.left-arrow.bottom-align .moui-arrow {
+  left: 0;
+  bottom: 30px;
+}
+.moui-bubble.right-arrow {
+  padding: 0 40px 0 0;
+  margin: 0 0 0 -20px;
+}
+.moui-bubble.right-arrow .moui-arrow {
+  border-width: 20px 0 20px 40px;
+  border-color: transparent transparent transparent #666666;
+}
+.moui-bubble.right-arrow .moui-arrow div {
+  border-width: 20px 0 20px 40px;
+  border-color: transparent transparent transparent #ffffcc;
+  right: 10px;
+  top: -20px;
+}
+.moui-bubble.right-arrow.top-align {
+  margin-top: -30px;
+  -webkit-transform-origin: 100% 20%;
+  -moz-transform-origin: 100% 20%;
+  -ms-transform-origin: 100% 20%;
+  -o-transform-origin: 100% 20%;
+  transform-origin: 100% 20%;
+}
+.moui-bubble.right-arrow.top-align .moui-arrow {
+  right: 0;
+  top: 30px;
+}
+.moui-bubble.right-arrow.center-align {
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+.moui-bubble.right-arrow.center-align .moui-arrow {
+  right: 0;
+  top: 50%;
+  margin-top: -20px;
+}
+.moui-bubble.right-arrow.bottom-align {
+  margin-top: 30px;
+  -webkit-transform-origin: 100% 80%;
+  -moz-transform-origin: 100% 80%;
+  -ms-transform-origin: 100% 80%;
+  -o-transform-origin: 100% 80%;
+  transform-origin: 100% 80%;
+}
+.moui-bubble.right-arrow.bottom-align .moui-arrow {
+  right: 0;
+  bottom: 30px;
+}
+
+.demon {
+  position: absolute;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  -webkit-transition: background-color 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  -moz-transition: background-color 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  -o-transition: background-color 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  transition: background-color 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+.demon span {
+  z-index: 1;
+}
+.demon .eye {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: absolute;
+  left: 0px;
+  top: -15px;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  -moz-transition: -moz-transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  -o-transition: -o-transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.demon .eye span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #000;
+  border-radius: 5px;
+  position: absolute;
+  top: 7.5px;
+  left: 7.5px;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.demon .eye.squint span {
+  width: 100%;
+  height: 3px;
+  left: 50%;
+  margin-left: -50%;
+}
+.demon .eye-right {
+  left: auto;
+  right: 0px;
+}
+.demon .hand {
+  width: 5px;
+  height: 0px;
+  background: #333;
+  border-radius: 10px;
+  position: absolute;
+  top: 8px;
+  left: -2px;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -webkit-transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  -moz-transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  -o-transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.demon .hand-right {
+  left: auto;
+  right: -2px;
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.demon .leg {
+  width: 5px;
+  height: 0px;
+  background: #333;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  -moz-transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  -o-transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition: height 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.demon .leg-right {
+  left: auto;
+  right: 0px;
+}
+.demon.waken {
+  background: #cde1cd;
+}
+.demon.has-eyes .eye {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.demon.has-hands .hand {
+  height: 30px;
+}
+.demon.has-legs .leg {
+  height: 20px;
+}
+.demon.moving {
+  z-index: 10;
+}
+.demon.bow-left {
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+.demon.bow-right {
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
