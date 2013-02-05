@@ -2236,6 +2236,16 @@ define('moui/bubble', [
 // THE SOFTWARE.
 // ----------------------------------------------------------------------------
 
+(function(name, context, factory){
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = factory();
+    } else if (typeof context.define === 'function' && context.define.amd) {
+        define(name, [], factory);
+    } else {
+        context[name] = factory;
+    }
+})('buzz', this, function(){
+
 var buzz = {
     defaults: {
         autoplay: false,
@@ -3061,8 +3071,9 @@ var buzz = {
     }
 };
 
-/* autogeneration */
-define("buzz-src", [], function(){});
+return buzz;
+
+});
 
 /* @source eventmaster.js */;
 
@@ -4349,7 +4360,9 @@ define("choreo", [
     }
 
     function when_transition_end(e){
-        e.stopPropagation();
+        if (e.target !== this) {
+            return;
+        }
         var self = this,
             hash = this._oz_fx,
             sets = _transition_sets[hash];
@@ -4528,7 +4541,7 @@ define("choreo", [
 
     _.mix(exports, {
 
-        VERSION: '1.0.1',
+        VERSION: '1.0.3',
         renderMode: useCSS ? 'css' : 'js',
         Stage: Stage,
         Actor: Actor,
@@ -6127,11 +6140,6 @@ require.config({
 
 define('jquery', ['dollar'], function($){
     return $;
-});
-
-define('buzz-src', 'buzz.js');
-define('buzz', ['buzz-src'], function(){
-    return window.buzz;
 });
 
 define('chapter1', '../chapter/intro.js');
