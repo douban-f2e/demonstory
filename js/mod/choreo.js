@@ -628,7 +628,9 @@ define("choreo", [
     }
 
     function when_transition_end(e){
-        e.stopPropagation();
+        if (e.target !== this) {
+            return;
+        }
         var self = this,
             hash = this._oz_fx,
             sets = _transition_sets[hash];
@@ -807,7 +809,7 @@ define("choreo", [
 
     _.mix(exports, {
 
-        VERSION: '1.0.1',
+        VERSION: '1.0.3',
         renderMode: useCSS ? 'css' : 'js',
         Stage: Stage,
         Actor: Actor,
