@@ -11,11 +11,6 @@ define('jquery', ['dollar'], function($){
     return $;
 });
 
-define('buzz-src', 'buzz.js');
-define('buzz', ['buzz-src'], function(){
-    return window.buzz;
-});
-
 define('chapter1', '../chapter/intro.js');
 define('chapter2', '../chapter/guess.js');
 define('chapter3', '../chapter/chaos.js');
